@@ -47,24 +47,24 @@ Die Implementierung dieses Moduls ist verpflichtend für alle Systeme, die struk
 z.B.
 * [IHE-MHD](http://build.fhir.org/ig/IHE/ITI.MHD/), QEDm, mXDE (Use-Case-Beschreibung, Austauschverfahren)
 * KBV-MIOs (Mio-Metadaten und ePA-API, Attachments zu Mios)
-* KBV AWS
+* [KBV AWS](https://simplifier.net/pvs-archivierungs-undwechselschnittstelle/kbvprawanlage)
 * Gematik ePA-Schnittstelle (IHE-XDS) und deren Migrationspfad nach FHIR
 * IHE-DE ValueSets (Terminologie)
-* KDL(Terminologie)
+* [KDL(Terminologie)](https://simplifier.net/KDL)
 * [Argonaut Write (?)](https://confluence.hl7.org/display/AP/Argo+Write+Homepage)
 
 ## Datenobjekte/FHIR-Ressourcen
 ### aus anderen Modulen
 
-* Patient (Basis)
-* Encounter (Basis)
-* Bundle/Composition (Basis)
+* [Patient](https://simplifier.net/isik/isikpatient) (Basis)
+* [Encounter](https://simplifier.net/isik/isikencounter) (Basis)
+* [Bundle](https://simplifier.net/isik/isikberichtbundle)/[Composition](https://simplifier.net/isik/isikberichtsubsysteme) (Basis)
 
 ### neue Datenobjekte
-* DocumentReference
-* DocumentManifest (?)
-* Binary
-* Provenance
+* [DocumentReference](http://hl7.org/fhir/DocumentReference)
+* [DocumentManifest (?)](http://hl7.org/fhir/DocumentManifest)
+* [Binary](http://hl7.org/fhir/Binary)
+* [Provenance](http://hl7.org/fhir/Provenance)
 
 
 ## Potentielle Probleme/Risiken
@@ -74,9 +74,6 @@ Kann mittels Bridge angebunden werden:
 ![Quelle: https://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)](https://wiki.ihe.net/images/e/e9/Slide1.PNG)
 * DiGa-Export-Format (nocht) nicht spezifiziert (Work in Progress bei BfArm/Gematik/KBV)
 * inkompatibel mit derzeit genutzen (strukturierten) Formaten für den bundeseinheitlichen Medikationsplan (xml zu FHIR-Komvertierung im Rahmen des MPP Projektes basiert noch auf FHIR STU3)
+* KIS-Systeme verlangen stets(?) den Fallbezug klinischer Dokumente. Dieser ist jedoch bei IHE-MHD nicht berücksichtigt und insbesondere bei den Dokumenten in der ePA nicht enthalten. Bei den UseCases des KHZG (Portale, Terminplanung) könnten sogar Dokumente entstehen, die sich auf im KIS noch nicht angelegte Patienten beziehen. Diese Konstellationen sollten berücksichtigt werden.
 
-## Protokolle
-### 16.07.2021 Abstimmung KBV
-* Großes Interesse seitens der KBV, aktuell keine parallelen Entwicklungen.
-* Dokumente sind tw. in AWS enthalten
-* Dokumente sind interessant als Attachments an MIOs
+
