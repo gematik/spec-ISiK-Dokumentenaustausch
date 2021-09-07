@@ -45,7 +45,7 @@ Die Implementierung dieses Moduls ist verpflichtend für alle Systeme, die struk
 
 ## Relevante Spezifikationen
 z.B.
-* [IHE-MHD](http://build.fhir.org/ig/IHE/ITI.MHD/), QEDm, mXDE (Use-Case-Beschreibung, Austauschverfahren)
+* [IHE-MHD](http://build.fhir.org/ig/IHE/ITI.MHD/),[MHDS](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHDS.pdf) QEDm, mXDE (Use-Case-Beschreibung, Austauschverfahren)
 * [IHE-PMIR](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PMIR.pdf) (Beschreibung von "merge" auf Seite 43 ff.)
 * KBV-MIOs (Mio-Metadaten und ePA-API, Attachments zu Mios)
 * [KBV AWS](https://simplifier.net/pvs-archivierungs-undwechselschnittstelle/kbvprawanlage)
