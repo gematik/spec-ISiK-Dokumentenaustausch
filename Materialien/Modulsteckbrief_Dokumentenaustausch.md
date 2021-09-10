@@ -45,7 +45,9 @@ Die Implementierung dieses Moduls ist verpflichtend für alle Systeme, die struk
 
 ## Relevante Spezifikationen
 z.B.
-* [IHE-MHD](http://build.fhir.org/ig/IHE/ITI.MHD/),[MHDS](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHDS.pdf) QEDm, mXDE (Use-Case-Beschreibung, Austauschverfahren)
+* [IHE-MHD(ci)](http://build.fhir.org/ig/IHE/ITI.MHD/)
+* [IHE-MHD(4.0.1)](https://profiles.ihe.net/ITI/MHD/)
+* [MHDS](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHDS.pdf) QEDm, mXDE (Use-Case-Beschreibung, Austauschverfahren)
 * [IHE-PMIR](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PMIR.pdf) (Beschreibung von "merge" auf Seite 43 ff.)
 * KBV-MIOs (Mio-Metadaten und ePA-API, Attachments zu Mios)
 * [KBV AWS](https://simplifier.net/pvs-archivierungs-undwechselschnittstelle/kbvprawanlage)
@@ -62,7 +64,8 @@ z.B.
 * [Bundle](https://simplifier.net/isik/isikberichtbundle)/[Composition](https://simplifier.net/isik/isikberichtsubsysteme) (Basis)
 
 ### neue Datenobjekte
-* [DocumentReference](http://hl7.org/fhir/DocumentReference)
+* ~~[DocumentReference]~~(http://hl7.org/fhir/DocumentReference) In MHD >4.0.0 durch List ersetzt
+* [List](http://hl7.org/fhir/List)
 * [DocumentManifest (?)](http://hl7.org/fhir/DocumentManifest)
 * [Binary](http://hl7.org/fhir/Binary)
 * [Provenance](http://hl7.org/fhir/Provenance)
