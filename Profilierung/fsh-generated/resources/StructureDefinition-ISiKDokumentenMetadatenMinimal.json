@@ -85,17 +85,34 @@
         }
       },
       {
+        "id": "DocumentReference.securityLabel",
+        "path": "DocumentReference.securityLabel",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://ihe-d.de/ValueSets/IHEXDSconfidentialityCode"
+        }
+      },
+      {
         "id": "DocumentReference.content.format",
         "path": "DocumentReference.content.format",
+        "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://ihe-d.de/ValueSets/IHEXDSformatCodeDE"
+        }
+      },
+      {
+        "id": "DocumentReference.context.encounter",
+        "path": "DocumentReference.context.encounter",
         "comment": "Encounter-Verbot muss aufgehoben werden!"
       },
       {
         "id": "DocumentReference.context.event",
         "path": "DocumentReference.context.event",
-        "comment": "In MHD ohne MustSupport. Wird in XDS-DE für KDL verwendet, wäre aber eigentlich besser ein DocumentReference.type",
+        "comment": "Encounter-Verbot muss aufgehoben werden!",
         "binding": {
           "strength": "preferred",
-          "valueSet": "http://dvmd.de/fhir/ValueSet/kdl"
+          "valueSet": "http://ihe-d.de/ValueSets/IHEXDSeventCodeList"
         }
       },
       {

@@ -20,6 +20,7 @@ Title: "Minimale Dokumentenmetadaten"
 * custodian ..0
 * relatesTo MS
 * securityLabel MS
+* securityLabel from http://ihe-d.de/ValueSets/IHEXDSconfidentialityCode (extensible)
 * content ..1
 * content.attachment.contentType 1..
 * content.attachment.language MS
@@ -27,10 +28,14 @@ Title: "Minimale Dokumentenmetadaten"
 * content.attachment.url 1..
 * content.attachment.creation MS
 * content.format MS
-  * ^comment = "Encounter-Verbot muss aufgehoben werden!"
+* content.format from http://ihe-d.de/ValueSets/IHEXDSformatCodeDE (preferred)
+  * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"  
 * context.encounter ..0
-* context.event from http://dvmd.de/fhir/ValueSet/kdl (preferred)
-  * ^comment = "In MHD ohne MustSupport. Wird in XDS-DE für KDL verwendet, wäre aber eigentlich besser ein DocumentReference.type"
+  * ^comment = "Encounter-Verbot muss aufgehoben werden!"
+* context.event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (preferred)
+// * context.event from http://dvmd.de/fhir/ValueSet/kdl (preferred)
+//... wo gehört das KDL Binding hin...?
+  * ^comment = "Encounter-Verbot muss aufgehoben werden!"
 * context.period MS
 * context.facilityType MS
 * context.facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (preferred)
