@@ -1,0 +1,131 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ISiKDokumentenMetadatenOptimal",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Documents"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "https://gematik.de/fhir/IsiK//StructureDefinition/ISiKDokumentenMetadatenOptimal",
+  "version": "0.1.0",
+  "name": "ISiKDokumentenMetadatenOptimal",
+  "title": "Optimale Dokumentenmetadaten",
+  "status": "active",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "fhircomposition",
+      "uri": "http://hl7.org/fhir/composition",
+      "name": "FHIR Composition"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "xds",
+      "uri": "http://ihe.net/xds",
+      "name": "XDS metadata equivalent"
+    },
+    {
+      "identity": "DocumentEntry-Mapping",
+      "uri": "XDS",
+      "name": "XDS and MHD Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "DocumentReference",
+  "baseDefinition": "https://gematik.de/fhir/IsiK//StructureDefinition/ISiKDokumentenMetadatenMinimal",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DocumentReference.type",
+        "path": "DocumentReference.type",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.category",
+        "path": "DocumentReference.category",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.subject",
+        "path": "DocumentReference.subject",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.date",
+        "path": "DocumentReference.date",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.securityLabel",
+        "path": "DocumentReference.securityLabel",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.content.attachment.language",
+        "path": "DocumentReference.content.attachment.language",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.content.attachment.creation",
+        "path": "DocumentReference.content.attachment.creation",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.content.format",
+        "path": "DocumentReference.content.format",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.context",
+        "path": "DocumentReference.context",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.context.facilityType",
+        "path": "DocumentReference.context.facilityType",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.context.practiceSetting",
+        "path": "DocumentReference.context.practiceSetting",
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.context.sourcePatientInfo",
+        "path": "DocumentReference.context.sourcePatientInfo",
+        "min": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: de.gematik.isik-dokumentenaustausch
+canonical: https://gematik.de/fhir/IsiK/
+name: ISiK_Dokumentenaustausch
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+publisher:
+  name: Gematik GmbH
+  url: https://gematik.de
+dependencies: 
+    de.basisprofil.r4: 
+        uri: http://fhir.de/ImplementationGuide/basisprofil-de-r4
+        version: 1.0.0-rc4
+    ihe.mhd.fhir:
+        version: 4.0.1
+FSHOnly: true
