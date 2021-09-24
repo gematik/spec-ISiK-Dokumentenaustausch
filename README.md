@@ -1,4 +1,4 @@
-"# Modul "Dokumentenaustausch" im Rahmen des ISiK(Informationssysteme im Krankenhaus)-Projektes der Gematik
+# Modul "Dokumentenaustausch" im Rahmen des ISiK(Informationssysteme im Krankenhaus)-Projektes der Gematik
 
 ### Diskussion
 Die Abstimmung und Diskussion findet im  [ISiK-Unterforum](https://chat.fhir.org/#streams/287581/german.2Fisik) des internationalen FHIR-Chats statt.
