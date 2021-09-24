@@ -1,3 +1,4 @@
+### Motivation 
 Die regelmäßige Teilnahme an den Abstimmungsterminen für die Module in ISiK-Stufe 2 ist für alle Beteiligten sehr zeitaufwändig. 
 Daher möchten wir die zur Verfügung stehende Zeit gerne optimal nutzen, indem wir Regeln festlegen, die einer schnellen Konsensfindung nach demokratischen Prinzipien dienen.
 Wir orientieren uns dabei an der Diskussionskultur bei HL7 International.
