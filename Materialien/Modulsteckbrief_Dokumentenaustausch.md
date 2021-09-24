@@ -25,6 +25,16 @@ Beispiel: Ein Primärsystem verfügt über einen Ablagebereich für Dokumente so
 ##### Variante 2: Bei der Entgegennahme von Dokumenten (aus unbekannten oder weniger vertrauenswürdigen Quellen) analysiert das Primärsystem deren Inhalt und bietet dem Anwender die validen Blutdruckmesswerte zur Übernahme in die Kurve an. Die Entscheidung obliegt dem Anwender, ob die Daten übernommen werden sollen.
 Für die Unterstützung dieses UseCases beschreibt dieses Modul den Umgang mit strukturierten FHIR-basierten Dokumenten und der Extraktion der darin enthaltenen Ressourcen unter Beibehaltung des unveränderten Originaldokumentes und Kenntlichmachung der Herkunft der übernommenen Daten.
 
+#### relevante UseCases aus KHZG
+FTB 2.A:
+
+\[...\]es den Patientinnen und Patienten ermöglichen, ihre Behandlungsunterlagen sowie weitere zur Aufnahme und Behandlung relevante Daten und Unterlagen, insbesondere den bundeseinheitlichen Medikationsplan (Barcode-Scan zur strukturieten Weiterverarbeitung), vorab online hochzuladen, oder dem Leistungserbringer im Rahmen einer vom Patienten oder der Patientin digital erteilten temporären Berechtigung (Consent) den Zugriff auf diese Daten (z. B. in einer existierenden elektronischen Akte) zu ermöglichen,
+\[...\]
+
+\[...\]es vorgelagerten Leistungserbringern ermöglichen, Überweisungsscheine bereits vorab online der Klinik zukommen zu lassen,\[...\]
+
+\[...\]Schnittstellen zu bestehenden KIS und/oder ERP-Systemen vorweisen, sodass die digital erfassten Daten der Patientin/des Patienten auch für nachgelagerte organisatorische Prozesse sowie Prozesse der Ressourcenplanung (z. B. Personalplanung oder Bettenmanagement) automatisch und interoperabel zur Verfügung stehen.\[...\]
+
 ## weitere potentielle Features 
 ### genannt von Teilnehmern der Auftaktveranstaltung am 16.07.
 * Bildübertragung (ImagingStudy) -> sollte aufgrund der geringen Überlappung zum Dokumentenaustausch (ImagingStudy vs. DocumentReference) in separatem Modul behandelt werden (Stufe 3?). Die Kommunikation von Nicht-DICOM-Objekten (JPEG, PNG etc.) fällt jedoch in den Scope des Dokumenten-Moduls. 
