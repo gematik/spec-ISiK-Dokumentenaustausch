@@ -74,9 +74,9 @@ z.B.
 * [Bundle](https://simplifier.net/isik/isikberichtbundle)/[Composition](https://simplifier.net/isik/isikberichtsubsysteme) (Basis)
 
 ### neue Datenobjekte
-* ~~[DocumentReference]~~(http://hl7.org/fhir/DocumentReference) In MHD >4.0.0 durch List ersetzt
+* [DocumentReference](http://hl7.org/fhir/DocumentReference) In MHD >4.0.0 durch List ersetzt
+* ~~[DocumentManifest (?)](http://hl7.org/fhir/DocumentManifest)~~ In MHD >4.0.0 durch List ersetzt
 * [List](http://hl7.org/fhir/List)
-* [DocumentManifest (?)](http://hl7.org/fhir/DocumentManifest)
 * [Binary](http://hl7.org/fhir/Binary)
 * [Provenance](http://hl7.org/fhir/Provenance)
 
@@ -86,7 +86,7 @@ z.B.
 * wird derzeit einrichtungsintern und -übergreifend bereits mit IHE-XDS/HL7 MDM abgebildet (??)
 Kann mittels Bridge angebunden werden:
 ![Quelle: https://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)](https://wiki.ihe.net/images/e/e9/Slide1.PNG)
-* DiGa-Export-Format (nocht) nicht spezifiziert (Work in Progress bei BfArm/Gematik/KBV)
+* DiGa-Export-Format (noch) nicht spezifiziert (Work in Progress bei BfArm/Gematik/KBV)
 * inkompatibel mit derzeit genutzen (strukturierten) Formaten für den bundeseinheitlichen Medikationsplan (xml zu FHIR-Komvertierung im Rahmen des MPP Projektes basiert noch auf FHIR STU3)
 * KIS-Systeme verlangen stets(?) den Fallbezug klinischer Dokumente. Dieser ist jedoch bei IHE-MHD nicht berücksichtigt und insbesondere bei den Dokumenten in der ePA nicht enthalten. Bei den UseCases des KHZG (Portale, Terminplanung) könnten sogar Dokumente entstehen, die sich auf im KIS noch nicht angelegte Patienten beziehen. Diese Konstellationen sollten berücksichtigt werden.
 
