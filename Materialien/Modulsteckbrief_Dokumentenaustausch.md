@@ -44,6 +44,8 @@ Gemeinsam mit dem KIM-Team der Gematik sollen BestPractice-Empfehlungen für die
 * Persistieren von Sender- und Empfänger-Daten im Dokument
 * Beschreibung des Zusammenhangs zwischen KIM-Metadaten (z.B. Dienstkennung) und Dokumentenmetadaten 
 * Umgang mit Fehlermeldungen
+### Abbildung von Einwilligungen zum Dokumentenaustausch
+z.B. in Richtung Patientenportal oder ePA
 
 ## Bezug KHZG
 Fördertatbestand 2: Patientenportale (§ 19 Abs. 1 Satz 1 Nr. 2 KHSFV): 
