@@ -50,7 +50,7 @@ Fördertatbestand 2: Patientenportale (§ 19 Abs. 1 Satz 1 Nr. 2 KHSFV):
 * Dokumentenupload und bundeseinheitlicher Medikationsplan
 
 ## Bestätigungsrelevante Systeme (DRAFT!)
-Die Implementierung dieses Moduls ist verpflichtend für alle Systeme, die strukturierte FHIR-basierte Dokumente _**oder **_ unstrukturierte Dokumente (PDF, DOC, JPEG) im Sinne einer elektronsichen Patientenakte speichern.
+Die Implementierung dieses Moduls ist verpflichtend für alle Systeme, die strukturierte FHIR-basierte Dokumente _**oder **_ unstrukturierte Dokumente (PDF, DOC, JPEG) im Sinne einer elektronischen Patientenakte speichern.
 
 
 ## Relevante Spezifikationen
