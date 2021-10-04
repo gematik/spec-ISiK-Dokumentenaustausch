@@ -6,12 +6,12 @@
 * Einstellen von Dokumenten durch Sub- oder Portalsysteme in ein KIS- oder Dokumentenverwaltungssystem
 * Integration von Archivsystemen in Primärsysteme
 * Schaffung der Grundlagen  für eine kontinuierliche Weiterentwicklung (vom Erstellen und Abfragen strukturierter Metadaten zu unstrukturierten Dokumenten hin zu vollständiger Durchsuchbarkeit von strukturierten Daten in Dokumenten, gezielte Weiterverarbeitung strukturierter Daten aus Dokumenten mit Nachverfolgbarkeit der Herkunft, Erzeugung von strukturierten ad hoc Dokumenten.
-#### Use Case a) Einstellen eines Dokumentes
-Ein Subsystem möchte einen Befund/Bericht in Form eines vorformatierten Dokumentes (z.B. Mikrobiologiebefund) an das Primärsystem übermitteln.
-Für die Unterstützung dieses UseCases wird die Datenrückübermittlung der IsiK Stufe 1 in diesem Modul auf unstrukturierte Dokumente (PDF, DOC, JPEG) ausgeweitet.
-#### Use Case b) Abfrage von Dokumenten
+#### Use Case a) Abfrage von Dokumenten
 Ein Subsystem möchte eine Übersicht aller Dokumente zum einem Besuch anzeigen.
 Für die Unterstützung dieses UseCases definiert dieses Modul die zu unterstützenden Suchparameter für die FHIR-Ressource DocumentReference 
+#### Use Case b) Einstellen eines Dokumentes
+Ein Subsystem möchte einen Befund/Bericht in Form eines vorformatierten Dokumentes (z.B. Mikrobiologiebefund) an das Primärsystem übermitteln.
+Für die Unterstützung dieses UseCases wird die Datenrückübermittlung der IsiK Stufe 1 in diesem Modul auf unstrukturierte Dokumente (PDF, DOC, JPEG) ausgeweitet.
 #### Use Case c) Weiterverarbeitung strukturierter Daten aus FHIR-basierten Dokumenten,
 z.B. 
 * Rückübermittlung aus Subsystemen gem. Isik Basis Stufe 1
