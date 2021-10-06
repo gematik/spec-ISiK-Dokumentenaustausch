@@ -50,7 +50,7 @@ Eingehende Befunde nach Konsilanforderungen sollen in Bezug auf die ausgehende k
  * Die Signalisierungsfunktion widerspricht dem query-getriebenen Paradigma hinter ITI-67 (lösbar nur über engmaschiges Polling)
  * klinische Fragestellung, Behandlungskontext erfordert die Einbindung der Dokumente in einen OrderEntry-Workflow, dieser ist im scope von MHD/XDS nicht abgebildet.
  * Bei der Frage zur Berechtigungssteuerung verweist MHD auf IUA (Oauth2)
- * SourceId (=Herkunftssystem/Fachverfahren) enthält lediglich eine OID, keine Verknüpfung auf ein Objekt, das menschenlesbare Informationen enthält. Kann als Selektionskriterieum herangezogen werden, aber nicht als Informationsquelle (außer über eine externe API)
+ * SourceId (=Herkunftssystem/Fachverfahren) enthält lediglich eine OID, keine Verknüpfung auf ein Objekt, das menschenlesbare Informationen enthält. Kann als Selektionskriterieum herangezogen werden, aber nicht als Informationsquelle (außer über eine externe API). In MHD als [ihe-sourceId-Extension](https://profiles.ihe.net/ITI/MHD/StructureDefinition-ihe-sourceId.html) an SubmissionSet (List) abgebildet.
 #### Umsetzung im Rahmen von ISiK Stufe 2
  * Best Practice Empfehlungen zur Implementierung von Subscription 
  * Erweiterung der Dokumentenmetadaten zur genaueren Typisierung (z.B. mittels KDL)
