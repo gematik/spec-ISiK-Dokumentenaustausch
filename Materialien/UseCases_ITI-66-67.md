@@ -45,7 +45,7 @@ um die Befundfreigabe vorantreiben zu können.
 Eingehende Befunde nach Konsilanforderungen sollen in Bezug auf die ausgehende klinische Fragestellung gruppiert und so sortiert werden, dass der aktuellste Befund zuerst und weitere Befunde chronologisch folgend angezeigt werden. Hierbei sind Signalisierungsfunktionen gewünscht und zum letzten Befund können idealerweise die im Kontext der Behandlung, im Kontext der Dokumententypen und -Klassen relevanten Dokumente gleich mit aufgerufen werden. Die "Provenance"-informationen sind mit angegeben, so dass der Arzt sich zur weiteren Arbeit an das passende Fachverfahren selbst oder über die Einbeziehung der verantwortlichen Fachabteilung weiter notfalls informieren kann. Berücksichtigt werden Berechtigungen, so dass z.B. Psychiatrische Befunde oder für die im Behandlungskontext nicht relevanten Dokumente nicht zur Anzeige kommen (abhängig von den Regelungen zur OH-KIS bzw. der Festlegungen des Krankenhauses).
 #### Umsetzung im Rahmen von MHD/XDS
 * nicht umsetzbar
-  * Die Implementierung des `_sort`-Parameters ist in MHD erlaubtm aber nicht gefordert.
+  * Die Implementierung des `_sort`-Parameters ist in MHD erlaubt, aber nicht gefordert.
   * Die Signalisierungsfunktion widerspricht dem query-getriebenen Paradigma hinter ITI-67
   * klinische Fragestellung, Behandlungskontext erfordert die Einbindung der Dokumente in einen OrderEntry-Workflow, dieser ist in MHD/XDS nicht abgebildet.
   * Bei der Frage zur Berechtigungssteuerung verweist MHD auf IUA (Oauth2)
