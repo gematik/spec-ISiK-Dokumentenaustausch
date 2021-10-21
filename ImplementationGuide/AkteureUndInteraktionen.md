@@ -23,6 +23,6 @@ Ein (webbasierter/mobiler) Client möchte neu erstellte, geänderte oder erweite
 ### erweiterte Interaktionen
 #### Dokumentenaustausch mit der ePA
 
-#### Dokumentenaustausch vie KIM
+#### Dokumentenaustausch via KIM
 
 ### Dokumentenaustausch mit einem externen IHE-XDS/MHD Repository
