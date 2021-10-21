@@ -12,6 +12,8 @@ Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien 
 Weiterhin können Clients neu erstellte, geänderte oder erweiterte Dokumente an einen Dokumentenserver übermitteln. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten bereitstellen.
 Sowohl die Implementierung der Interaktion "Dokumentenabfrage" als auch "Dokumentenbereitstellung" sind für Clients optional.
 
+{{render:ImplementationGuide/Bilder/ISiKPrimärScope.jpg/Composition-Bundle.png}} 
+
 ### Interaktionen
 #### Dokumentenabfrage
 Ein (webbasierter/mobiler) Client möchte Dokumente anhand definierter Kriterien abfragen.
