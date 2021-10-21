@@ -1,0 +1,95 @@
+{
+  "resourceType": "ImplementationGuide",
+  "url": "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-Dokumentenaustausch",
+  "name": "Implementierungsleitfaden ISiK-Modul Dokumentenaustausch",
+  "status": "draft",
+  "fhirVersion": [
+    "4.0.0"
+  ],
+  "packageId": "0.0.1",
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "Patient/test"
+        }
+      }
+    ],
+    "page": {
+      "nameUrl": "ImplementationGuide_Dokumentenaustausch/Einfuehrung.md",
+      "title": "Einführung",
+      "generation": "markdown",
+      "page": [
+        {
+          "nameUrl": "ImplementationGuide_Dokumentenaustausch/Motivation.md",
+          "title": "Motivation",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide_Dokumentenaustausch/UebergreifendeFestlegungen.md",
+          "title": "Übergreifende Festlegungen",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Methodik.md",
+              "title": "Methodik",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/BestaetigungsrelevanteSysteme.md",
+              "title": "Bestätigungsrelevante Systeme",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Kompatibilitaet.md",
+              "title": "Kompatibilität",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/MustSupportFlags.md",
+              "title": "Must-Support-Flags",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Repraesentationsformate.md",
+              "title": "Repräsentationsformate",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Suchparameter.md",
+              "title": "Suchparameter",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/RestApi.md",
+              "title": "REST-API",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/AnmerkungenMS.md",
+              "title": "Anmerkungen zu Must-Support-Feldern",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Interaktionen.md",
+              "title": "Interaktionen",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "generation": "markdown",
+          "nameUrl": "ImplementationGuide_Dokumentenaustausch/Datenobjekte.md",
+          "title": "Datenobjekte",
+          "page": [
+            {
+              "nameUrl": "ImplementationGuide_Dokumentenaustausch/CapabilityStatement.md",
+              "title": "CapabilityStatement",
+              "generation": "markdown"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
