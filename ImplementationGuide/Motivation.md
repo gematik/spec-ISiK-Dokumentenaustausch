@@ -6,4 +6,8 @@ Eine solche Form der Dokumentenverfügbarkeit ist jedoch die Voraussetzung dafü
 
 Das ISiK-Modul "Dokumentenaustausch" möchte diese technologische Lücke schließen und Clients darüber hinaus auch die Bereitstellung neu erstellter Dokumente (z.B. Formulare, die auf einem Tablet ausgefüllt wurden, Bilddokumentation, die mit Hilfe einer Smartphone-App erstellt wurden, Befunddokumentation, die an webbasierten Clients verfasst wurde, mit einer Smartphone-Kamera gescannte Dokumente...) in den entsprechenden Dokumentenverwaltungssystemen mit einfachen Mitteln ermöglichen.
 
-Bei der Festlegung dieser Spezifikation findet das IHE-MHD-Profil eine besondere Beachtung, um alle im ISiK-Kontext kommunizierten Dokumente mit möglichst wenig zusätzlichem Aufwand auch in einer IHE-XDS/MHD Kommunikation ausgetauschen zu  können.
+Bei der Festlegung dieser Spezifikation findet das IHE-MHD-Profil eine besondere Beachtung, um alle im ISiK-Kontext kommunizierten Dokumente mit möglichst wenig zusätzlichem Aufwand auch in einer IHE-XDS/MHD Kommunikation austauschen zu  können.
+
+Der Fokus dieser Spezifikation liegt auf den Festlegungen zum Datenaustausch innerhalb einer Einrichtung, umfasst jedoch auch Best Practice-Empfehlungen zur Einstellung von Dokumenten in die EPA eines Patienten, der Weiterleitung an andere Leistungserbringer via KIM oder dem einrichtungsübergreifenden Dokumentenaustausch via MHD/XDS.
+
+{{render:isikkontextunderwscope}}
