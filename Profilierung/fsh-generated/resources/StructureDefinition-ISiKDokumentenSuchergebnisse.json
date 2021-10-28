@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "ISiKDokumentenSuchergebnisseOptimal",
+  "id": "ISiKDokumentenSuchergebnisse",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
@@ -11,10 +11,10 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/IsiK//StructureDefinition/ISiKDokumentenSuchergebnisseOptimal",
+  "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDokumentenSuchergebnisse",
   "version": "0.1.0",
-  "name": "ISiKDokumentenSuchergebnisseOptimal",
-  "title": "Suchergebnisse einer Dokumentensuche mit optimalen Metadaten",
+  "name": "ISiKDokumentenSuchergebnisse",
+  "title": "Suchergebnisse einer Dokumentensuche",
   "status": "active",
   "fhirVersion": "4.0.1",
   "mapping": [
