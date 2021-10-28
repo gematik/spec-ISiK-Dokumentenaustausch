@@ -16,62 +16,62 @@
       }
     ],
     "page": {
-      "nameUrl": "ImplementationGuide_Dokumentenaustausch/Einfuehrung.md",
+      "nameUrl": "ImplementationGuide/Einfuehrung.md",
       "title": "Einführung",
       "generation": "markdown",
       "page": [
         {
-          "nameUrl": "ImplementationGuide_Dokumentenaustausch/Motivation.md",
+          "nameUrl": "ImplementationGuide/Motivation.md",
           "title": "Motivation",
           "generation": "markdown"
         },
         {
-          "nameUrl": "ImplementationGuide_Dokumentenaustausch/UebergreifendeFestlegungen.md",
+          "nameUrl": "ImplementationGuide/UebergreifendeFestlegungen.md",
           "title": "Übergreifende Festlegungen",
           "generation": "markdown",
           "page": [
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Methodik.md",
+              "nameUrl": "ImplementationGuide/Methodik.md",
               "title": "Methodik",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/BestaetigungsrelevanteSysteme.md",
+              "nameUrl": "ImplementationGuide/BestaetigungsrelevanteSysteme.md",
               "title": "Bestätigungsrelevante Systeme",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Kompatibilitaet.md",
+              "nameUrl": "ImplementationGuide/Kompatibilitaet.md",
               "title": "Kompatibilität",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/MustSupportFlags.md",
+              "nameUrl": "ImplementationGuide/MustSupportFlags.md",
               "title": "Must-Support-Flags",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Repraesentationsformate.md",
+              "nameUrl": "ImplementationGuide/Repraesentationsformate.md",
               "title": "Repräsentationsformate",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Suchparameter.md",
+              "nameUrl": "ImplementationGuide/Suchparameter.md",
               "title": "Suchparameter",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/RestApi.md",
+              "nameUrl": "ImplementationGuide/RestApi.md",
               "title": "REST-API",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/AnmerkungenMS.md",
+              "nameUrl": "ImplementationGuideh/AnmerkungenMS.md",
               "title": "Anmerkungen zu Must-Support-Feldern",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/Interaktionen.md",
+              "nameUrl": "ImplementationGuide/AkteureUndInteraktionen.md",
               "title": "Interaktionen",
               "generation": "markdown"
             }
@@ -79,11 +79,11 @@
         },
         {
           "generation": "markdown",
-          "nameUrl": "ImplementationGuide_Dokumentenaustausch/Datenobjekte.md",
+          "nameUrl": "ImplementationGuide/Datenobjekte.md",
           "title": "Datenobjekte",
           "page": [
             {
-              "nameUrl": "ImplementationGuide_Dokumentenaustausch/CapabilityStatement.md",
+              "nameUrl": "ImplementationGuide/CapabilityStatement.md",
               "title": "CapabilityStatement",
               "generation": "markdown"
             }

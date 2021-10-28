@@ -12,7 +12,7 @@ Clients sind nicht verpflichtet, alle von den Servern geforderten Suchkriterien 
 Weiterhin können Clients neu erstellte, geänderte oder erweiterte Dokumente an einen Dokumentenserver übermitteln. Dabei müssen sie jedoch mindestens die in diesem Modul verpflichtend festgelegten Metadaten zu den Dokumenten bereitstellen.
 Sowohl die Implementierung der Interaktion "Dokumentenabfrage" als auch "Dokumentenbereitstellung" sind für Clients optional.
 
-{{render:ImplementationGuide/Bilder/ISiKPrimärScope.jpg/Composition-Bundle.png}} 
+{{render:isikprimrscope}} 
 
 ### Interaktionen
 #### Dokumentenabfrage
@@ -23,6 +23,8 @@ Ein (webbasierter/mobiler) Client möchte neu erstellte, geänderte oder erweite
 
 
 ### erweiterte Interaktionen
+Der Fokus dieser Spezifikation liegt auf den Festlegungen zum Datenaustausch innerhalb einer Einrichtung, umfasst jedoch auch Best Practice-Empfehlungen zur Einstellung von Dokumenten in die EPA eines Patienten, der Weiterleitung an andere Leistungserbringer via KIM oder dem einrichtungsübergreifenden Dokumentenaustausch via MHD/XDS.
+{{render:isikkontextunderwscope}}
 #### Dokumentenaustausch mit der ePA
 
 #### Dokumentenaustausch via KIM
