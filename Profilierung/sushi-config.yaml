@@ -3,7 +3,7 @@
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: de.gematik.isik-dokumentenaustausch
-canonical: https://gematik.de/fhir/IsiK/
+canonical: https://gematik.de/fhir/ISiK/v2
 name: ISiK_Dokumentenaustausch
 status: draft
 version: 0.1.0
