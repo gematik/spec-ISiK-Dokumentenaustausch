@@ -69,28 +69,103 @@
       {
         "id": "DocumentReference.masterIdentifier",
         "path": "DocumentReference.masterIdentifier",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.identifier",
         "path": "DocumentReference.identifier",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.status",
+        "path": "DocumentReference.status",
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.docStatus",
         "path": "DocumentReference.docStatus",
-        "max": "0"
+        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
       },
       {
         "id": "DocumentReference.type",
         "path": "DocumentReference.type",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type:XDS",
+        "path": "DocumentReference.type",
+        "sliceName": "XDS",
         "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
         "min": 1,
+        "max": "1",
         "mustSupport": true,
         "binding": {
-          "strength": "preferred",
+          "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDStypeCode"
         }
+      },
+      {
+        "id": "DocumentReference.type:XDS.coding",
+        "path": "DocumentReference.type.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type:XDS.coding.system",
+        "path": "DocumentReference.type.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type:XDS.coding.code",
+        "path": "DocumentReference.type.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type:KDL",
+        "path": "DocumentReference.type",
+        "sliceName": "KDL",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://dvmd.de/fhir/ValueSet/kdl"
+        }
+      },
+      {
+        "id": "DocumentReference.type:KDL.coding",
+        "path": "DocumentReference.type.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type:KDL.coding.system",
+        "path": "DocumentReference.type.coding.system",
+        "min": 1,
+        "patternUri": "http://dvmd.de/fhir/CodeSystem/kdl",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type:KDL.coding.code",
+        "path": "DocumentReference.type.coding.code",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.category",
@@ -209,10 +284,81 @@
       {
         "id": "DocumentReference.context.event",
         "path": "DocumentReference.context.event",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context.event:XDS",
+        "path": "DocumentReference.context.event",
+        "sliceName": "XDS",
+        "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
         "binding": {
-          "strength": "preferred",
+          "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDSeventCodeList"
         }
+      },
+      {
+        "id": "DocumentReference.context.event:XDS.coding",
+        "path": "DocumentReference.context.event.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context.event:XDS.coding.system",
+        "path": "DocumentReference.context.event.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context.event:XDS.coding.code",
+        "path": "DocumentReference.context.event.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context.event:KDL",
+        "path": "DocumentReference.context.event",
+        "sliceName": "KDL",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://dvmd.de/fhir/ValueSet/kdl"
+        }
+      },
+      {
+        "id": "DocumentReference.context.event:KDL.coding",
+        "path": "DocumentReference.context.event.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context.event:KDL.coding.system",
+        "path": "DocumentReference.context.event.coding.system",
+        "min": 1,
+        "patternUri": "http://dvmd.de/fhir/CodeSystem/kdl",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context.event:KDL.coding.code",
+        "path": "DocumentReference.context.event.coding.code",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.context.period",

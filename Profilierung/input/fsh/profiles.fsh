@@ -4,12 +4,26 @@ Parent: DocumentReference
 Id: ISiKDokumentenMetadaten
 Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
 * modifierExtension ..0
-* masterIdentifier 1..
-* identifier 1..
-* docStatus ..0
+* masterIdentifier 1.. MS
+* identifier 1.. MS
+* status MS
+* docStatus 
+  * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
 * type 1.. MS
-* type from http://ihe-d.de/ValueSets/IHEXDStypeCode (preferred)
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
+  * ^slicing.rules = #open
+* type contains XDS 1..1 MS and KDL 0..1 MS
+* type[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
+  * coding 1..1 MS
+    * system 1..1 MS
+    * code 1..1 MS
+* type[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required) 
+  * coding 1..1 MS
+    * system 1..1 MS
+    * system = "http://dvmd.de/fhir/CodeSystem/kdl"
+    * code 1..1 MS
 * category 1..1 MS
 * category from http://ihe-d.de/ValueSets/IHEXDSclassCode (preferred)
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
@@ -34,8 +48,22 @@ Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
 * context 1.. MS
   * encounter ..1 MS
     * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung der Encounter-Referenz im ISiK-Kontext erlaubt."
-  * event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (preferred)
-  //* event from http://dvmd.de/fhir/ValueSet/kdl (preferred)
+  
+  * event 1.. MS
+    * ^slicing.discriminator.type = #pattern
+    * ^slicing.discriminator.path = "$this"
+    * ^slicing.rules = #open
+  * event contains XDS 1..1 MS and KDL 0..1 MS
+  * event[XDS] from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (required)
+    * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
+    * coding 1..1 MS
+      * system 1..1 MS
+      * code 1..1 MS
+  * event[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required) 
+    * coding 1..1 MS
+      * system 1..1 MS
+      * system = "http://dvmd.de/fhir/CodeSystem/kdl"
+      * code 1..1 MS
   * period MS
   * facilityType 1.. MS
   * facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (preferred)
