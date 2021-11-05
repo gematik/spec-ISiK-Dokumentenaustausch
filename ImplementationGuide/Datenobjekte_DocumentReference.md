@@ -1,3 +1,3 @@
-## Patient [(Patient)](http://hl7.org/fhir/patient.html)
+## Dokumentenmetadaten [(DocumentReference)](http://hl7.org/fhir/documentreference.html)
 
-Die nachfolgenden Festlegungen spezifizieren die Abbildung von Minimalanforderungen für die Bereitstellung von administrativen Patientendaten im Rahmen des Bestätigungsverfahrens der gematik.
+Die nachfolgenden Festlegungen spezifizieren die Minimalanforderungen für die Bereitstellung von Dokumentenmetadaten im Rahmen des Bestätigungsverfahrens der gematik.
