@@ -87,7 +87,7 @@ Title: "Suchergebnisse einer Dokumentensuche"
 * entry contains DocumentReference 0..*
 * entry[DocumentReference] ^short = "DocumentReference"
 * entry[DocumentReference].resource 1..
-* entry[DocumentReference].resource only ComprehensiveDocumentReference
+* entry[DocumentReference].resource only ISiKDokumentenMetadaten
 
 
 
