@@ -88,37 +88,37 @@
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide_Stufe1-1.0.0/Datenobjekte_DocumentReference.md",
-              "title": "Patient (Patient)",
+              "nameUrl": "ImplementationGuide/Datenobjekte_DocumentReference.md",
+              "title": "Documentenmetadaten (DocumentReference)",
               "generation": "markdown",
               "page": [
                 {
-                  "nameUrl": "ImplementationGuide_Stufe1-1.0.0/DocumentReference_Motivation.md",
+                  "nameUrl": "ImplementationGuide/DocumentReference_Motivation.md",
                   "title": "Motivation",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide_Stufe1-1.0.0/DocumentReference_Kompatibilitaet.md",
+                  "nameUrl": "ImplementationGuide/DocumentReference_Kompatibilitaet.md",
                   "title": "Kompatibilität",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide_Stufe1-1.0.0/DocumentReference_Profil.md",
+                  "nameUrl": "ImplementationGuide/DocumentReference_Profil.md",
                   "title": "Profil",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide_Stufe1-1.0.0/DocumentReference_AnmerkungenZuDenMustSupportFeldern.md",
+                  "nameUrl": "ImplementationGuide/DocumentReference_AnmerkungenZuDenMustSupportFeldern.md",
                   "title": "Anmerkungen zu den Must-Support Feldern",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide_Stufe1-1.0.0/DocumentReference_Interaktionen.md",
+                  "nameUrl": "ImplementationGuide/DocumentReference_Interaktionen.md",
                   "title": "Interaktionen",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide_Stufe1-1.0.0/DocumentReference_Beispiele.md",
+                  "nameUrl": "ImplementationGuide/DocumentReference_Beispiele.md",
                   "title": "Beispiele",
                   "generation": "markdown"
                 }
