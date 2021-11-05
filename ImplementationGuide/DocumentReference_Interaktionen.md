@@ -1,0 +1,101 @@
+### Interaktionen
+
+Für die Ressource DocumentReference MUSS die REST-Interaktion "READ" implementiert werden.
+
+Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
+
+1. Der Suchparameter "_id" MUSS unterstützt werden:
+
+    Beispiele:
+
+    ```GET [base]/DocumentReference?_id=103270```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all).
+
+
+1. Der Suchparameter "patient" MUSS unterstützt werden:
+
+   Beispiele:
+
+    ```GET [base]/DocumentReference?patient=Patient/123```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+	
+	Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils verpflichend.
+
+1. Der verkettete Suchparameter "patient.identifier" MUSS unterstützt werden:
+
+    Beispiele:
+
+    ```GET [base]/DocumentReference?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702```
+
+    ```GET [base]/DocumentReference?patient.identifier=1032702```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+
+    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils verpflichend.
+	
+	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](http://hl7.org/fhir/search.html#chaining).
+
+1. Der Suchparameter "category" MUSS unterstützt werden:
+
+    Beispiele
+
+    ```GET [base]/DocumentReference.category=http://ihe-d.de/CodeSystems/IHEXDSclassCode|ADM```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+
+    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils verpflichend.
+	
+1. Der Suchparameter "type" MUSS unterstützt werden:
+
+    Beispiele
+
+    ```GET [base]/DocumentReference.type=http://ihe-d.de/CodeSystems/IHEXDStypeCode|AUFN```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+
+    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils verpflichend.
+
+1. Der custom Suchparameter "creation" MUSS unterstützt werden:
+
+    Beispiele
+
+    ```GET [base]/DocumentReference.creation=2021-11-05```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/R4/search.html#date).
+	
+	Dieser Suchparameter ist nicht Bestandteil der FHIR-Kernspezifikation und wurde [von IHE im Rahmen der MHD-Spezifikation definiert](https://profiles.ihe.net/ITI/MHD/SearchParameter-DocumentReference-Creation.html).
+
+    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils verpflichend.
+
+1. Der Suchparameter "event" MUSS unterstützt werden:
+
+    Beispiele
+
+    ```GET [base]/DocumentReference.event=http://dvmd.de/fhir/CodeSystem/kdl|AD010101```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+	
+	Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils verpflichend.
+
+
+1. Der Suchparameter "encounter" MUSS unterstützt werden:
+
+   Beispiele:
+
+    ```GET [base]/DocumentReference?encounter=Encounter/123```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+
+1. Der verkettete Suchparameter "encounter.identifier" MUSS unterstützt werden:
+
+   Beispiele:
+
+    ```GET [base]/DocumentReference?encounter.identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867```
+	
+	```GET [base]/DocumentReference?encounter.identifier=7567867```
+
+    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+	
+	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](http://hl7.org/fhir/search.html#chaining).

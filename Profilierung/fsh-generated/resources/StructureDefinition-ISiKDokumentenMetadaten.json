@@ -11,7 +11,7 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK/StructureDefinition/ISiKDokumentenMetadaten",
+  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten",
   "version": "0.1.0",
   "name": "ISiKDokumentenMetadaten",
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
@@ -119,12 +119,6 @@
         "mustSupport": true
       },
       {
-        "id": "DocumentReference.date",
-        "path": "DocumentReference.date",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
         "id": "DocumentReference.author",
         "path": "DocumentReference.author",
         "mustSupport": true
@@ -152,12 +146,19 @@
       {
         "id": "DocumentReference.content",
         "path": "DocumentReference.content",
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.content.attachment",
+        "path": "DocumentReference.content.attachment",
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.content.attachment.contentType",
         "path": "DocumentReference.content.attachment.contentType",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.content.attachment.language",
@@ -195,18 +196,19 @@
       {
         "id": "DocumentReference.context",
         "path": "DocumentReference.context",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.context.encounter",
         "path": "DocumentReference.context.encounter",
-        "comment": "Encounter-Verbot muss aufgehoben werden!",
-        "max": "0"
+        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung der Encounter-Referenz im ISiK-Kontext erlaubt.",
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.context.event",
         "path": "DocumentReference.context.event",
-        "comment": "Encounter-Verbot muss aufgehoben werden!",
         "binding": {
           "strength": "preferred",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDSeventCodeList"

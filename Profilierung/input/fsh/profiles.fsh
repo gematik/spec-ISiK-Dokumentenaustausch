@@ -3,59 +3,47 @@ Profile: ISiKDokumentenMetadaten
 Parent: DocumentReference
 Id: ISiKDokumentenMetadaten
 Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
-//constraints minimal
 * modifierExtension ..0
 * masterIdentifier 1..
 * identifier 1..
 * docStatus ..0
-* type MS
+* type 1.. MS
 * type from http://ihe-d.de/ValueSets/IHEXDStypeCode (preferred)
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
-* category ..1 MS
+* category 1..1 MS
 * category from http://ihe-d.de/ValueSets/IHEXDSclassCode (preferred)
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
 * subject only Reference(Patient)
 * subject 1..1 MS
-* date MS
+//* date MS 
 * author MS
 * custodian ..0
 * relatesTo MS
-* securityLabel MS
+* securityLabel 1.. MS
 * securityLabel from http://ihe-d.de/ValueSets/IHEXDSconfidentialityCode (extensible)
-* content ..1
-* content.attachment.contentType 1..
-* content.attachment.language MS
-* content.attachment.data ..0
-* content.attachment.url 1..
-* content.attachment.creation MS
-* content.format MS
-* content.format from http://ihe-d.de/ValueSets/IHEXDSformatCodeDE (preferred)
-  * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"  
-* context.encounter ..1 MS
-* context.event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (preferred)
-* context.event from http://dvmd.de/fhir/ValueSet/kdl (preferred)
-  * ^comment = "Encounter-Verbot muss aufgehoben werden!"
-* context.period MS
-* context.facilityType MS
-* context.facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (preferred)
-  * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
-* context.practiceSetting MS
-* context.practiceSetting from http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (preferred)
-  * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
-* context.sourcePatientInfo MS
-//constraints comprehensive
-* type 1..
-* category 1..
-* date 1..
-* securityLabel 1..
-* content.attachment.language 1..
-* content.attachment.creation 1..
-* content.format 1..
-* context 1..
-* context.facilityType 1..
-* context.practiceSetting 1..
-* context.sourcePatientInfo 1..
-
+* content ..1 MS
+  * attachment MS
+    * contentType 1.. MS
+    * language 1.. MS
+    * data ..0
+    * url 1..
+    * creation 1.. MS
+  * format 1.. MS
+  * format from http://ihe-d.de/ValueSets/IHEXDSformatCodeDE (preferred)
+    * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"  
+* context 1.. MS
+  * encounter ..1 MS
+    * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung der Encounter-Referenz im ISiK-Kontext erlaubt."
+  * event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (preferred)
+  //* event from http://dvmd.de/fhir/ValueSet/kdl (preferred)
+  * period MS
+  * facilityType 1.. MS
+  * facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (preferred)
+    * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
+  * practiceSetting 1.. MS
+  * practiceSetting from http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (preferred)
+    * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
+  * sourcePatientInfo 1.. MS
 
 
 Profile: ISiKDokumentenSuchergebnisse
