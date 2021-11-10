@@ -1,4 +1,4 @@
-### FHIR-Profil
+### FHIR-Profile
 
 #### DocumentReference
 **Canonical URL**: https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten

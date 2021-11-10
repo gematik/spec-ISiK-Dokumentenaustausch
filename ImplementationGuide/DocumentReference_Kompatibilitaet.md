@@ -10,8 +10,7 @@ CR zur Harmonisierung mit IHE: https://github.com/IHE/ITI.MHD/issues/88
 
 * Die Verpflichtung zur Verwendung von `date` wurde im ISiK-Kontext aufgehoben.
 
-CR zur Harmonisierung mit IHE: https://github.com/IHE/ITI.MHD/issues/88
-https://github.com/IHE/ITI.MHD/issues/94
+CR zur Harmonisierung mit IHE: https://github.com/IHE/ITI.MHD/issues/94
 
 * Die Verwendung von `docStatus` ist im ISiK-Kontext gestattet.
 
