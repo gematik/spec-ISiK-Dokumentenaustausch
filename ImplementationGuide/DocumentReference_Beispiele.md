@@ -2,4 +2,6 @@
 
 Valides Minimalbeispiel DocumentReference:
 
-{{xml:Beispieldaten/DocumentReference.xml}}
+{{xml:Profilierung/fsh-generated/resources/DocumentReference-dok-beispiel.json}}
+
+{{xml:Profilierung/fsh-generated/resources/DocumentReference-dok-beispiel.json}}
