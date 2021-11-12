@@ -90,7 +90,9 @@
       {
         "id": "DocumentReference.type",
         "path": "DocumentReference.type",
-        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]"
+        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.type.coding",
@@ -104,30 +106,6 @@
           ],
           "rules": "open"
         },
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.type.coding:XDS",
-        "path": "DocumentReference.type.coding",
-        "sliceName": "XDS",
-        "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
-        "min": 0,
-        "max": "1",
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://ihe-d.de/ValueSets/IHEXDStypeCode"
-        }
-      },
-      {
-        "id": "DocumentReference.type.coding:XDS.system",
-        "path": "DocumentReference.type.coding.system",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.type.coding:XDS.code",
-        "path": "DocumentReference.type.coding.code",
         "min": 1,
         "mustSupport": true
       },
@@ -152,6 +130,36 @@
       },
       {
         "id": "DocumentReference.type.coding:KDL.code",
+        "path": "DocumentReference.type.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding:KDL.display",
+        "path": "DocumentReference.type.coding.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding:XDS",
+        "path": "DocumentReference.type.coding",
+        "sliceName": "XDS",
+        "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://ihe-d.de/ValueSets/IHEXDStypeCode"
+        }
+      },
+      {
+        "id": "DocumentReference.type.coding:XDS.system",
+        "path": "DocumentReference.type.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding:XDS.code",
         "path": "DocumentReference.type.coding.code",
         "min": 1,
         "mustSupport": true
@@ -287,20 +295,17 @@
         "id": "DocumentReference.context.event.coding",
         "path": "DocumentReference.context.event.coding",
         "min": 1,
-        "max": "1",
-        "mustSupport": true
+        "max": "1"
       },
       {
         "id": "DocumentReference.context.event.coding.system",
         "path": "DocumentReference.context.event.coding.system",
-        "min": 1,
-        "mustSupport": true
+        "min": 1
       },
       {
         "id": "DocumentReference.context.event.coding.code",
         "path": "DocumentReference.context.event.coding.code",
-        "min": 1,
-        "mustSupport": true
+        "min": 1
       },
       {
         "id": "DocumentReference.context.period",

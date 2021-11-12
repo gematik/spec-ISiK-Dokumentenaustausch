@@ -12,6 +12,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 * status MS
 * docStatus 
   * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
+* type 1.. MS
 * type.coding 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -20,7 +21,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand
 der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
 [Konsens der Arbeitsgruppe vom 12.11.2021]"
-* type.coding contains XDS 0..1  and KDL 1..1 MS
+* type.coding contains  KDL 1..1 MS and XDS 0..1 
 * type.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
   * system 1..1 MS
@@ -29,6 +30,7 @@ der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
   * system 1..1 MS
   * system = "http://dvmd.de/fhir/CodeSystem/kdl"
   * code 1..1 MS
+  * display 1..1 MS
 * category 0..1 
 * category ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
 Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand
@@ -71,9 +73,9 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
     * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung der Encounter-Referenz im ISiK-Kontext erlaubt."
   * event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
-    * coding 1..1 MS
-      * system 1..1 MS
-      * code 1..1 MS
+    * coding 1..1 
+      * system 1..1 
+      * code 1..1 
   * period MS
   * facilityType 1.. MS
   * facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (preferred)

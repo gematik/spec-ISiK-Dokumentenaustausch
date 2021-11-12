@@ -25,4 +25,4 @@ Description: ""
 * context.practiceSetting = $sct#408467006
 //* context.sourcePatientInfo = Reference(Patient/ex-patient)
 * context.event.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
-* context.practiceSetting = "tbd"#?? "tbd"
+* context.practiceSetting = "http://example.tbd"#?? "tbd"
