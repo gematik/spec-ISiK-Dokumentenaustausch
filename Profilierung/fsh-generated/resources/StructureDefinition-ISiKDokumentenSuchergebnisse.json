@@ -90,7 +90,7 @@
           {
             "code": "DocumentReference",
             "profile": [
-              "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
             ]
           }
         ]
