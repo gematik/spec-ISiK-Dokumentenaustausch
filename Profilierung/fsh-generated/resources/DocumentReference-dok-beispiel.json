@@ -13,42 +13,20 @@
       }
     ]
   },
-  "masterIdentifier": {
-    "system": "urn:ietf:rfc:3986",
-    "value": "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
-  },
-  "identifier": [
-    {
-      "system": "urn:ietf:rfc:3986",
-      "value": "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
-    }
-  ],
-  "status": "current",
-  "category": [
-    {
-      "coding": [
-        {
-          "code": "BEF",
-          "system": "http://ihe-d.de/CodeSystem/IHEXDSclassCode",
-          "display": "Befundbericht"
-        }
-      ]
-    }
-  ],
   "type": {
     "coding": [
       {
-        "code": "PATH",
-        "system": "http://ihe-d.de/CodeSystem/IHEXDStypeCode",
-        "display": "Pathologiebefundberichte"
-      },
-      {
-        "code": "PT130102",
         "system": "http://dvmd.de/fhir/CodeSystem/kdl",
+        "code": "PT130102",
         "display": "Molekularpathologiebefund"
       }
     ]
   },
+  "masterIdentifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
+  },
+  "status": "current",
   "subject": {
     "reference": "Patient/example"
   },
@@ -87,8 +65,13 @@
         }
       ]
     },
-    "sourcePatientInfo": {
-      "reference": "Patient/ex-patient"
+    "practiceSetting": {
+      "coding": [
+        {
+          "code": "408467006",
+          "system": "http://snomed.info/sct"
+        }
+      ]
     },
     "event": [
       {

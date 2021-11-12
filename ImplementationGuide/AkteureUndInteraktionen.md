@@ -29,7 +29,7 @@ Der Fokus dieser Spezifikation liegt auf den Festlegungen zum Datenaustausch inn
 
 #### Dokumentenaustausch via KIM
 
-### Dokumentenaustausch mit einem externen IHE-XDS/MHD Repository
+#### Dokumentenaustausch mit einem externen IHE-XDS/MHD Repository
 
 ### Abgrenzung zu ISiK Stufe 2 (Basis) bei der Kommunikation strukturierter Dokumente (FHIR-Document-Bundle)
 

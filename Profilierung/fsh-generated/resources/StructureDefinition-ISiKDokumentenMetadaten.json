@@ -75,8 +75,7 @@
       {
         "id": "DocumentReference.identifier",
         "path": "DocumentReference.identifier",
-        "min": 1,
-        "mustSupport": true
+        "comment": "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.\r\nEin solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]"
       },
       {
         "id": "DocumentReference.status",
@@ -87,6 +86,11 @@
         "id": "DocumentReference.docStatus",
         "path": "DocumentReference.docStatus",
         "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
+      },
+      {
+        "id": "DocumentReference.type",
+        "path": "DocumentReference.type",
+        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]"
       },
       {
         "id": "DocumentReference.type.coding",
@@ -108,9 +112,8 @@
         "path": "DocumentReference.type.coding",
         "sliceName": "XDS",
         "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
-        "min": 1,
+        "min": 0,
         "max": "1",
-        "mustSupport": true,
         "binding": {
           "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDStypeCode"
@@ -132,7 +135,7 @@
         "id": "DocumentReference.type.coding:KDL",
         "path": "DocumentReference.type.coding",
         "sliceName": "KDL",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true,
         "binding": {
@@ -157,9 +160,7 @@
         "id": "DocumentReference.category",
         "path": "DocumentReference.category",
         "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
-        "min": 1,
         "max": "1",
-        "mustSupport": true,
         "binding": {
           "strength": "preferred",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDSclassCode"
@@ -180,6 +181,11 @@
         "mustSupport": true
       },
       {
+        "id": "DocumentReference.date",
+        "path": "DocumentReference.date",
+        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend. \r\nDie Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. \r\nEin entsprechender Change Request zur Harmonisierung wurde eingereicht."
+      },
+      {
         "id": "DocumentReference.author",
         "path": "DocumentReference.author",
         "mustSupport": true
@@ -197,11 +203,12 @@
       {
         "id": "DocumentReference.securityLabel",
         "path": "DocumentReference.securityLabel",
+        "comment": "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\r\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\r\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\r\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\r\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "min": 1,
         "mustSupport": true,
         "binding": {
-          "strength": "extensible",
-          "valueSet": "http://ihe-d.de/ValueSets/IHEXDSconfidentialityCode"
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKConfidentialityCodes"
         }
       },
       {
@@ -270,78 +277,27 @@
       {
         "id": "DocumentReference.context.event",
         "path": "DocumentReference.context.event",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "pattern",
-              "path": "$this"
-            }
-          ],
-          "rules": "open"
-        },
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.context.event:XDS",
-        "path": "DocumentReference.context.event",
-        "sliceName": "XDS",
         "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true,
         "binding": {
           "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDSeventCodeList"
         }
       },
       {
-        "id": "DocumentReference.context.event:XDS.coding",
+        "id": "DocumentReference.context.event.coding",
         "path": "DocumentReference.context.event.coding",
         "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "DocumentReference.context.event:XDS.coding.system",
+        "id": "DocumentReference.context.event.coding.system",
         "path": "DocumentReference.context.event.coding.system",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "DocumentReference.context.event:XDS.coding.code",
-        "path": "DocumentReference.context.event.coding.code",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.context.event:KDL",
-        "path": "DocumentReference.context.event",
-        "sliceName": "KDL",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true,
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://dvmd.de/fhir/ValueSet/kdl"
-        }
-      },
-      {
-        "id": "DocumentReference.context.event:KDL.coding",
-        "path": "DocumentReference.context.event.coding",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.context.event:KDL.coding.system",
-        "path": "DocumentReference.context.event.coding.system",
-        "min": 1,
-        "patternUri": "http://dvmd.de/fhir/CodeSystem/kdl",
-        "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.context.event:KDL.coding.code",
+        "id": "DocumentReference.context.event.coding.code",
         "path": "DocumentReference.context.event.coding.code",
         "min": 1,
         "mustSupport": true
@@ -376,7 +332,6 @@
       {
         "id": "DocumentReference.context.sourcePatientInfo",
         "path": "DocumentReference.context.sourcePatientInfo",
-        "min": 1,
         "mustSupport": true
       }
     ]
