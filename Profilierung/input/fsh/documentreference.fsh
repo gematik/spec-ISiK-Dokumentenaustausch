@@ -9,21 +9,19 @@ Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
 * status MS
 * docStatus 
   * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
-* type 1.. MS
+* type.coding 1.. MS
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-* type contains XDS 1..1 MS and KDL 0..1 MS
-* type[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
+* type.coding contains XDS 1..1 MS and KDL 0..1 MS
+* type.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
-  * coding 1..1 MS
-    * system 1..1 MS
-    * code 1..1 MS
-* type[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required) 
-  * coding 1..1 MS
-    * system 1..1 MS
-    * system = "http://dvmd.de/fhir/CodeSystem/kdl"
-    * code 1..1 MS
+  * system 1..1 MS
+  * code 1..1 MS
+* type.coding[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required) 
+  * system 1..1 MS
+  * system = "http://dvmd.de/fhir/CodeSystem/kdl"
+  * code 1..1 MS
 * category 1..1 MS
 * category from http://ihe-d.de/ValueSets/IHEXDSclassCode (preferred)
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"

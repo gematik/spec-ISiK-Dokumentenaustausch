@@ -89,8 +89,8 @@
         "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
       },
       {
-        "id": "DocumentReference.type",
-        "path": "DocumentReference.type",
+        "id": "DocumentReference.type.coding",
+        "path": "DocumentReference.type.coding",
         "slicing": {
           "discriminator": [
             {
@@ -104,8 +104,8 @@
         "mustSupport": true
       },
       {
-        "id": "DocumentReference.type:XDS",
-        "path": "DocumentReference.type",
+        "id": "DocumentReference.type.coding:XDS",
+        "path": "DocumentReference.type.coding",
         "sliceName": "XDS",
         "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
         "min": 1,
@@ -117,27 +117,20 @@
         }
       },
       {
-        "id": "DocumentReference.type:XDS.coding",
-        "path": "DocumentReference.type.coding",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.type:XDS.coding.system",
+        "id": "DocumentReference.type.coding:XDS.system",
         "path": "DocumentReference.type.coding.system",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "DocumentReference.type:XDS.coding.code",
+        "id": "DocumentReference.type.coding:XDS.code",
         "path": "DocumentReference.type.coding.code",
         "min": 1,
         "mustSupport": true
       },
       {
-        "id": "DocumentReference.type:KDL",
-        "path": "DocumentReference.type",
+        "id": "DocumentReference.type.coding:KDL",
+        "path": "DocumentReference.type.coding",
         "sliceName": "KDL",
         "min": 0,
         "max": "1",
@@ -148,21 +141,14 @@
         }
       },
       {
-        "id": "DocumentReference.type:KDL.coding",
-        "path": "DocumentReference.type.coding",
-        "min": 1,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.type:KDL.coding.system",
+        "id": "DocumentReference.type.coding:KDL.system",
         "path": "DocumentReference.type.coding.system",
         "min": 1,
         "patternUri": "http://dvmd.de/fhir/CodeSystem/kdl",
         "mustSupport": true
       },
       {
-        "id": "DocumentReference.type:KDL.coding.code",
+        "id": "DocumentReference.type.coding:KDL.code",
         "path": "DocumentReference.type.coding.code",
         "min": 1,
         "mustSupport": true
