@@ -9,3 +9,4 @@ Alias: $ihe-de-type = http://ihe-d.de/CodeSystem/IHEXDStypeCode
 Alias: $kdl = http://dvmd.de/fhir/CodeSystem/kdl
 Alias: $ihe-de-fac = http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung
 Alias: $ihe-de-format = http://ihe-d.de/CodeSystems/DeutscheDokumentenformate
+Alias: $ihe-format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode

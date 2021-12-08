@@ -13,7 +13,7 @@ Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
 //* identifier 1..* MS
 * identifier ^comment = "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.
 Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.
-[Konsens der Arbeitsgruppe vom 12.11.2021]"
+&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * status MS
   * ^short = "Status des Dokumentenmetadatensatzes (Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt!)"
 * docStatus 
@@ -28,7 +28,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
   * ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
 Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand
 der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
-[Konsens der Arbeitsgruppe vom 12.11.2021]"
+&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * type.coding contains  KDL 1..1 MS and XDS 0..1 
 * type.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
@@ -44,7 +44,7 @@ der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
   * ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
 Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand
 der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
-[Konsens der Arbeitsgruppe vom 12.11.2021]"
+&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * category from http://ihe-d.de/ValueSets/IHEXDSclassCode (preferred)
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
 * subject only Reference(Patient)
@@ -68,17 +68,33 @@ Ebenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und
 Die ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen
 verschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen
 N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.
-[Konsens der Arbeitsgruppe vom 12.11.2021]"
+&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * content ..1 MS
   * attachment MS
     * contentType 1.. MS
+      * ^short = "Mimetype des Dokumentes"
+      * ^comment = "Mimetype (Dateityp) des Dokumentes (z.B. &quot;application/pdf&quot;)"
     * language 1.. MS
+      * ^short = "Sprache, in der das Dokument verfasst wurde."
+      * ^comment = "Kann bei Systemen, die keine Mehrsprachigkeit unterstützen, 
+      fest auf &quotde&quot; oder &quotde-DE&quot; gesetzt werden."
     * data ..0
-    * url 1..
+      *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst 
+      nicht in die DocumentReference eingebettet werden, sondern müssen als separates Datenobjekt referenziert werden."
+    * url 1.. MS
+      * ^short = "Link zum Dokument"
+      * ^comment = "Link zum Dokument (als Binary-Ressource)"
     * creation 1.. MS
+      * ^short = "Dokumentendatum"
+      * ^comment = "Es obliegt dem erzeugenden System, zu entscheiden, 
+      welches Datum als Dokumentendatum geeignet ist, z.B. Datum der Erstellung oder Datum der letzten Änderung"
   * format 1.. MS
   * format from http://ihe-d.de/ValueSets/IHEXDSformatCodeDE (required)
-    * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"  
+    * ^short = "Format des Dokumentes"
+    * ^comment = "Sofern das Dokument nicht auf einem standardisierten, 
+    strukturierten Austauschformat (z.B. CDA) basiert, für dessen Interpretation ein konkretes Schema herangezogen werden muss,
+    genügt die Angabe des Codes 
+    &quot;urn:ihe:iti:xds:2017:mimeTypeSufficient&quot;"  
 * context 1.. MS
   * encounter ..1 MS
     * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung der Encounter-Referenz im ISiK-Kontext erlaubt."
@@ -90,6 +106,7 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
   * period MS
   * facilityType 1.. MS
   * facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (required)
+    * ^short = "Art der Einrichtung, aus der das Dokument stammt"
     * ^comment = "Kann, sofern keine abweichende Information bekannt ist auf &quot;KHS&quot; gesetzt werden."
   * practiceSetting 1.. MS
   * practiceSetting from http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (required)

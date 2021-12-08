@@ -2,15 +2,14 @@
   "resourceType": "DocumentReference",
   "id": "dok-beispiel",
   "meta": {
-    "profile": [
-      "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten",
-      "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference"
-    ],
     "security": [
       {
         "code": "HTEST",
         "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason"
       }
+    ],
+    "profile": [
+      "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
     ]
   },
   "masterIdentifier": {
@@ -45,13 +44,13 @@
       "attachment": {
         "contentType": "application/pdf",
         "language": "de",
-        "url": "http://example.com/nowhere.txt",
+        "url": "http://example.com/Binary/12345",
         "creation": "2020-12-31T23:50:50-05:00"
       },
       "format": {
-        "code": "urn:ihe-d:spec:PDF_A1:2005",
-        "system": "http://ihe-d.de/CodeSystems/DeutscheDokumentenformate",
-        "display": "PDF/A-1"
+        "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+        "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
+        "display": "mimeType Sufficient"
       }
     }
   ],

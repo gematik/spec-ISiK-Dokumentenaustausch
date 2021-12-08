@@ -86,7 +86,7 @@
       {
         "id": "DocumentReference.identifier",
         "path": "DocumentReference.identifier",
-        "comment": "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.\r\nEin solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]"
+        "comment": "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.\r\nEin solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.\r\n&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
       },
       {
         "id": "DocumentReference.status",
@@ -103,7 +103,7 @@
         "id": "DocumentReference.type",
         "path": "DocumentReference.type",
         "short": "Dokumententyp",
-        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "min": 1,
         "mustSupport": true
       },
@@ -227,7 +227,7 @@
       {
         "id": "DocumentReference.securityLabel",
         "path": "DocumentReference.securityLabel",
-        "comment": "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\r\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\r\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\r\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\r\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "comment": "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\r\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\r\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\r\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\r\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\r\n&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "min": 1,
         "mustSupport": true,
         "binding": {
@@ -249,35 +249,46 @@
       {
         "id": "DocumentReference.content.attachment.contentType",
         "path": "DocumentReference.content.attachment.contentType",
+        "short": "Mimetype des Dokumentes",
+        "comment": "Mimetype (Dateityp) des Dokumentes (z.B. &quot;application/pdf&quot;)",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "DocumentReference.content.attachment.language",
         "path": "DocumentReference.content.attachment.language",
+        "short": "Sprache, in der das Dokument verfasst wurde.",
+        "comment": "Kann bei Systemen, die keine Mehrsprachigkeit unterstützen, \r\n      fest auf &quotde&quot; oder &quotde-DE&quot; gesetzt werden.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "DocumentReference.content.attachment.data",
         "path": "DocumentReference.content.attachment.data",
+        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst \r\n      nicht in die DocumentReference eingebettet werden, sondern müssen als separates Datenobjekt referenziert werden.",
         "max": "0"
       },
       {
         "id": "DocumentReference.content.attachment.url",
         "path": "DocumentReference.content.attachment.url",
-        "min": 1
+        "short": "Link zum Dokument",
+        "comment": "Link zum Dokument (als Binary-Ressource)",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.content.attachment.creation",
         "path": "DocumentReference.content.attachment.creation",
+        "short": "Dokumentendatum",
+        "comment": "Es obliegt dem erzeugenden System, zu entscheiden, \r\n      welches Datum als Dokumentendatum geeignet ist, z.B. Datum der Erstellung oder Datum der letzten Änderung",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "DocumentReference.content.format",
         "path": "DocumentReference.content.format",
-        "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
+        "short": "Format des Dokumentes",
+        "comment": "Sofern das Dokument nicht auf einem standardisierten, \r\n    strukturierten Austauschformat (z.B. CDA) basiert, für dessen Interpretation ein konkretes Schema herangezogen werden muss,\r\n    genügt die Angabe des Codes \r\n    &quot;urn:ihe:iti:xds:2017:mimeTypeSufficient&quot;",
         "min": 1,
         "mustSupport": true,
         "binding": {
@@ -331,6 +342,7 @@
       {
         "id": "DocumentReference.context.facilityType",
         "path": "DocumentReference.context.facilityType",
+        "short": "Art der Einrichtung, aus der das Dokument stammt",
         "comment": "Kann, sofern keine abweichende Information bekannt ist auf &quot;KHS&quot; gesetzt werden.",
         "min": 1,
         "mustSupport": true,
