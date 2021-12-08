@@ -13,3 +13,44 @@ Title: "Suchergebnisse einer Dokumentensuche"
 * entry[DocumentReference] ^short = "DocumentReference"
 * entry[DocumentReference].resource 1..
 * entry[DocumentReference].resource only ISiKDokumentenMetadaten
+
+Profile: ISiKDokumentenBereitstellung
+Parent: Bundle
+Id: ISiKDokumentenBereitstellung
+Title: "Bereitstellung von Dokumenten"
+* type = #transaction
+* entry MS
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
+* entry ^slicing.rules = #closed
+* entry.resource MS
+* entry contains
+    DocumentRefs 1..* and
+    Binary 1..* and
+    Patient 0..1
+* entry[DocumentRefs] ^short = "Die Dokumentenmetadaten"
+* entry[DocumentRefs] ^definition = "Metadaten des Dokumentes als DocumentReference-Ressource"
+* entry[DocumentRefs].resource 1..
+* entry[DocumentRefs].resource only ISiKDokumentenMetadaten
+* entry[DocumentRefs].request 1..
+* entry[DocumentRefs].request.method = #POST
+* entry[Binary] ^short = "Das Dokument (PDF/Doc/JPEG/TIFF...)"
+* entry[Binary] ^definition = "Base64-codierte Repäsentation des Dokumentes"
+* entry[Binary].resource 1..
+* entry[Binary].resource only ISiKBinary
+* entry[Binary].request 1..
+* entry[Binary].request.method = #POST
+* entry[Patient] ^short = "der Patient"
+* entry[Patient] ^definition = "Stammdaten des Patienten"
+* entry[Patient].resource 1..
+* entry[Patient].resource only Patient
+//
+
+Profile: ISiKBinary
+Parent: Binary
+Id: ISiKBinary
+Title: "ISiKBinary"
+Description: "Base63-codiertes Dokument"
+* contentType 1..1 MS
+* data 1..1 MS

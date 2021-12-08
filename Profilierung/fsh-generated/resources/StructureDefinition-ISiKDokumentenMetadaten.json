@@ -191,7 +191,7 @@
       {
         "id": "DocumentReference.date",
         "path": "DocumentReference.date",
-        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend. \r\nDie Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. \r\nEin entsprechender Change Request zur Harmonisierung wurde eingereicht."
+        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend. \r\nDie Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. \r\nEin entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt."
       },
       {
         "id": "DocumentReference.author",
@@ -265,7 +265,7 @@
         "min": 1,
         "mustSupport": true,
         "binding": {
-          "strength": "preferred",
+          "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDSformatCodeDE"
         }
       },
@@ -315,11 +315,11 @@
       {
         "id": "DocumentReference.context.facilityType",
         "path": "DocumentReference.context.facilityType",
-        "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
+        "comment": "Kann, sofern keine abweichende Information bekannt ist auf &quot;KHS&quot; gesetzt werden.",
         "min": 1,
         "mustSupport": true,
         "binding": {
-          "strength": "preferred",
+          "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode"
         }
       },
@@ -330,14 +330,9 @@
         "min": 1,
         "mustSupport": true,
         "binding": {
-          "strength": "preferred",
+          "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode"
         }
-      },
-      {
-        "id": "DocumentReference.context.sourcePatientInfo",
-        "path": "DocumentReference.context.sourcePatientInfo",
-        "mustSupport": true
       }
     ]
   }

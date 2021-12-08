@@ -37,21 +37,12 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 	
 	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](http://hl7.org/fhir/search.html#chaining).
 
-1. Der Suchparameter "category" MUSS unterstützt werden:
-
-    Beispiele
-
-    ```GET [base]/DocumentReference.category=http://ihe-d.de/CodeSystems/IHEXDSclassCode|ADM```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
-
-    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils verpflichend.
 	
 1. Der Suchparameter "type" MUSS unterstützt werden:
 
     Beispiele
 
-    ```GET [base]/DocumentReference.type=http://ihe-d.de/CodeSystems/IHEXDStypeCode|AUFN```
+    ```GET [base]/DocumentReference.type=http://dvmd.de/fhir/CodeSystem/kdl|AD010101```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
@@ -68,16 +59,6 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 	Dieser Suchparameter ist nicht Bestandteil der FHIR-Kernspezifikation und wurde [von IHE im Rahmen der MHD-Spezifikation definiert](https://profiles.ihe.net/ITI/MHD/SearchParameter-DocumentReference-Creation.html).
 
     Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils verpflichend.
-
-1. Der Suchparameter "event" MUSS unterstützt werden:
-
-    Beispiele
-
-    ```GET [base]/DocumentReference.event=http://dvmd.de/fhir/CodeSystem/kdl|AD010101```
-
-    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
-	
-	Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils verpflichend.
 
 
 1. Der Suchparameter "encounter" MUSS unterstützt werden:

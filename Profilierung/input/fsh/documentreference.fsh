@@ -43,7 +43,7 @@ der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
 //* date MS 
 * date ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend. 
 Die Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. 
-Ein entsprechender Change Request zur Harmonisierung wurde eingereicht."
+Ein entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt."
 * author MS
 * custodian ..0
 * relatesTo MS
@@ -66,7 +66,7 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
     * url 1..
     * creation 1.. MS
   * format 1.. MS
-  * format from http://ihe-d.de/ValueSets/IHEXDSformatCodeDE (preferred)
+  * format from http://ihe-d.de/ValueSets/IHEXDSformatCodeDE (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"  
 * context 1.. MS
   * encounter ..1 MS
@@ -78,11 +78,11 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
       * code 1..1 
   * period MS
   * facilityType 1.. MS
-  * facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (preferred)
-    * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
+  * facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (required)
+    * ^comment = "Kann, sofern keine abweichende Information bekannt ist auf &quot;KHS&quot; gesetzt werden."
   * practiceSetting 1.. MS
-  * practiceSetting from http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (preferred)
+  * practiceSetting from http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
-  * sourcePatientInfo 0.. MS
+
 
 

@@ -72,17 +72,6 @@
           "system": "http://snomed.info/sct"
         }
       ]
-    },
-    "event": [
-      {
-        "coding": [
-          {
-            "code": "PT130102",
-            "system": "http://dvmd.de/fhir/CodeSystem/kdl",
-            "display": "Molekularpathologiebefund"
-          }
-        ]
-      }
-    ]
+    }
   }
 }
