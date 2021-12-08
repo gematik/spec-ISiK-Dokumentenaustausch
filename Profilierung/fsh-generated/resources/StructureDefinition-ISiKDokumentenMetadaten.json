@@ -62,13 +62,24 @@
   "differential": {
     "element": [
       {
-        "id": "DocumentReference.modifierExtension",
-        "path": "DocumentReference.modifierExtension",
-        "max": "0"
-      },
-      {
         "id": "DocumentReference.masterIdentifier",
         "path": "DocumentReference.masterIdentifier",
+        "short": "Versionsspezifische OID des Dokumentes",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.masterIdentifier.system",
+        "path": "DocumentReference.masterIdentifier.system",
+        "min": 1,
+        "patternUri": "urn:ietf:rfc:3986",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.masterIdentifier.value",
+        "path": "DocumentReference.masterIdentifier.value",
+        "short": "Die OID",
+        "comment": "OID mit URI-Präfix &quot;urn:oid:&quot;",
         "min": 1,
         "mustSupport": true
       },
@@ -80,6 +91,7 @@
       {
         "id": "DocumentReference.status",
         "path": "DocumentReference.status",
+        "short": "Status des Dokumentenmetadatensatzes (Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt!)",
         "mustSupport": true
       },
       {
@@ -90,6 +102,7 @@
       {
         "id": "DocumentReference.type",
         "path": "DocumentReference.type",
+        "short": "Dokumententyp",
         "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "min": 1,
         "mustSupport": true
@@ -167,6 +180,7 @@
       {
         "id": "DocumentReference.category",
         "path": "DocumentReference.category",
+        "short": "Dokumentklasse oder -Kategorie",
         "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
         "max": "1",
         "binding": {
@@ -177,6 +191,8 @@
       {
         "id": "DocumentReference.subject",
         "path": "DocumentReference.subject",
+        "short": "Patientenbezug des Dokumentes",
+        "comment": "Siehe Beschreibung in der [FHIR Kernspezifikation](http://hl7.org/fhir/documentreference-definitions.html#DocumentReference.subject)",
         "min": 1,
         "type": [
           {

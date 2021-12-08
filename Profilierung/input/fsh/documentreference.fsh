@@ -3,13 +3,19 @@ Profile: ISiKDokumentenMetadaten
 Parent: DocumentReference
 Id: ISiKDokumentenMetadaten
 Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
-* modifierExtension ..0
 * masterIdentifier 1.. MS
+  * ^short = "Versionsspezifische OID des Dokumentes"
+  * system 1..1 MS
+  * system = "urn:ietf:rfc:3986"
+  * value 1..1 MS
+    * ^short = "Die OID"
+    * ^comment = "OID mit URI-Präfix &quot;urn:oid:&quot;"
 //* identifier 1..* MS
 * identifier ^comment = "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.
 Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.
 [Konsens der Arbeitsgruppe vom 12.11.2021]"
 * status MS
+  * ^short = "Status des Dokumentenmetadatensatzes (Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt!)"
 * docStatus 
   * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
 * type 1.. MS
@@ -17,7 +23,9 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-* type ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
+* type 
+  * ^short = "Dokumententyp"
+  * ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
 Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand
 der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
 [Konsens der Arbeitsgruppe vom 12.11.2021]"
@@ -32,7 +40,8 @@ der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
   * code 1..1 MS
   * display 1..1 MS
 * category 0..1 
-* category ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
+  * ^short = "Dokumentklasse oder -Kategorie"
+  * ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
 Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand
 der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
 [Konsens der Arbeitsgruppe vom 12.11.2021]"
@@ -40,6 +49,8 @@ der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
   * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
 * subject only Reference(Patient)
 * subject 1..1 MS
+  * ^short = "Patientenbezug des Dokumentes"
+  * ^comment = "Siehe Beschreibung in der [FHIR Kernspezifikation](http://hl7.org/fhir/documentreference-definitions.html#DocumentReference.subject)"
 //* date MS 
 * date ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend. 
 Die Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. 
