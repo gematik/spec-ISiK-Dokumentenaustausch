@@ -26,15 +26,15 @@ Title: "Bereitstellung von Dokumenten"
 * entry ^slicing.rules = #closed
 * entry.resource MS
 * entry contains
-    DocumentRefs 1..* and
+    DocumentReference 1..* and
     Binary 1..* and
     Patient 0..1
-* entry[DocumentRefs] ^short = "Die Dokumentenmetadaten"
-* entry[DocumentRefs] ^definition = "Metadaten des Dokumentes als DocumentReference-Ressource"
-* entry[DocumentRefs].resource 1..
-* entry[DocumentRefs].resource only ISiKDokumentenMetadaten
-* entry[DocumentRefs].request 1..
-* entry[DocumentRefs].request.method = #POST
+* entry[DocumentReference] ^short = "Die Dokumentenmetadaten"
+* entry[DocumentReference] ^definition = "Metadaten des Dokumentes als DocumentReference-Ressource"
+* entry[DocumentReference].resource 1..
+* entry[DocumentReference].resource only ISiKDokumentenMetadaten
+* entry[DocumentReference].request 1..
+* entry[DocumentReference].request.method = #POST
 * entry[Binary] ^short = "Das Dokument (PDF/Doc/JPEG/TIFF...)"
 * entry[Binary] ^definition = "Base64-codierte Repäsentation des Dokumentes"
 * entry[Binary].resource 1..

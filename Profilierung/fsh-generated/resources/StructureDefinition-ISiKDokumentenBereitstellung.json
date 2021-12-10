@@ -73,16 +73,16 @@
         "mustSupport": true
       },
       {
-        "id": "Bundle.entry:DocumentRefs",
+        "id": "Bundle.entry:DocumentReference",
         "path": "Bundle.entry",
-        "sliceName": "DocumentRefs",
+        "sliceName": "DocumentReference",
         "short": "Die Dokumentenmetadaten",
         "definition": "Metadaten des Dokumentes als DocumentReference-Ressource",
         "min": 1,
         "max": "*"
       },
       {
-        "id": "Bundle.entry:DocumentRefs.resource",
+        "id": "Bundle.entry:DocumentReference.resource",
         "path": "Bundle.entry.resource",
         "min": 1,
         "type": [
@@ -95,12 +95,12 @@
         ]
       },
       {
-        "id": "Bundle.entry:DocumentRefs.request",
+        "id": "Bundle.entry:DocumentReference.request",
         "path": "Bundle.entry.request",
         "min": 1
       },
       {
-        "id": "Bundle.entry:DocumentRefs.request.method",
+        "id": "Bundle.entry:DocumentReference.request.method",
         "path": "Bundle.entry.request.method",
         "patternCode": "POST"
       },

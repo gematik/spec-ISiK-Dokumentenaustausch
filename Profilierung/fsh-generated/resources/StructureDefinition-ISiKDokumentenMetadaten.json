@@ -86,7 +86,7 @@
       {
         "id": "DocumentReference.identifier",
         "path": "DocumentReference.identifier",
-        "comment": "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.\r\nEin solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.\r\n&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
+        "comment": "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.\r\nEin solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.\r\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]"
       },
       {
         "id": "DocumentReference.status",
@@ -97,13 +97,15 @@
       {
         "id": "DocumentReference.docStatus",
         "path": "DocumentReference.docStatus",
-        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
+        "short": "Bearbeitungsstatus des Dokumentes",
+        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt. Doe Verwendung von docStatus bleibt jedoch optional, \r\n  da nicht alle Dokumentenerzeugende Systeme einen expliziten Freigabe-Workflow haben. Dekomentenserver müssen jedoch in der Lage sein, den Dokumentenstatus \r\n  - sofern vorhanden - zu persistieren, anzuzeigen und zu reproduzieren.\r\n  &#13;[Konsens der Arbeitsgruppe vom 10.12.2021]",
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.type",
         "path": "DocumentReference.type",
         "short": "Dokumententyp",
-        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "min": 1,
         "mustSupport": true
       },
@@ -119,13 +121,13 @@
           ],
           "rules": "open"
         },
-        "min": 1,
-        "mustSupport": true
+        "min": 1
       },
       {
         "id": "DocumentReference.type.coding:KDL",
         "path": "DocumentReference.type.coding",
         "sliceName": "KDL",
+        "short": "Dokumenttyp gem. KDL-Terminologie",
         "min": 1,
         "max": "1",
         "mustSupport": true,
@@ -137,6 +139,7 @@
       {
         "id": "DocumentReference.type.coding:KDL.system",
         "path": "DocumentReference.type.coding.system",
+        "comment": "fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;",
         "min": 1,
         "patternUri": "http://dvmd.de/fhir/CodeSystem/kdl",
         "mustSupport": true
@@ -144,12 +147,14 @@
       {
         "id": "DocumentReference.type.coding:KDL.code",
         "path": "DocumentReference.type.coding.code",
+        "short": "Der KDL-Code",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "DocumentReference.type.coding:KDL.display",
         "path": "DocumentReference.type.coding.display",
+        "short": "Der Anzeigetext zum KDL-Code",
         "min": 1,
         "mustSupport": true
       },
@@ -157,7 +162,8 @@
         "id": "DocumentReference.type.coding:XDS",
         "path": "DocumentReference.type.coding",
         "sliceName": "XDS",
-        "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
+        "short": "Dokumenttyp gem. IHE-De-Terminologie",
+        "comment": "Die Angabe des XDS-Type-Codes ist im ISiK Kontext optional und \r\n  kann ggf. über die im Rahmen der KDL-Spezifikation publizierten ConceptMaps aus dem KDL-Code ermittelt werden",
         "min": 0,
         "max": "1",
         "binding": {
@@ -166,22 +172,10 @@
         }
       },
       {
-        "id": "DocumentReference.type.coding:XDS.system",
-        "path": "DocumentReference.type.coding.system",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.type.coding:XDS.code",
-        "path": "DocumentReference.type.coding.code",
-        "min": 1,
-        "mustSupport": true
-      },
-      {
         "id": "DocumentReference.category",
         "path": "DocumentReference.category",
         "short": "Dokumentklasse oder -Kategorie",
-        "comment": "Binding auf IHE-DE Terminologie hinzugefügt",
+        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "max": "1",
         "binding": {
           "strength": "preferred",
@@ -227,7 +221,8 @@
       {
         "id": "DocumentReference.securityLabel",
         "path": "DocumentReference.securityLabel",
-        "comment": "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\r\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\r\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\r\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\r\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\r\n&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "short": "Vertraulichkeit",
+        "comment": "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\r\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\r\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\r\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\r\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\r\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "min": 1,
         "mustSupport": true,
         "binding": {
@@ -238,12 +233,14 @@
       {
         "id": "DocumentReference.content",
         "path": "DocumentReference.content",
+        "short": "Beschreibung des Dokumenteninhaltes",
         "max": "1",
         "mustSupport": true
       },
       {
         "id": "DocumentReference.content.attachment",
         "path": "DocumentReference.content.attachment",
+        "short": "Anhang",
         "mustSupport": true
       },
       {

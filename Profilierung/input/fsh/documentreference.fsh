@@ -13,17 +13,21 @@ Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
 //* identifier 1..* MS
 * identifier ^comment = "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.
 Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.
-&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
+&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * status MS
   * ^short = "Status des Dokumentenmetadatensatzes (Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt!)"
-* docStatus 
-  * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
+* docStatus 0..1 MS
+  * ^short = "Bearbeitungsstatus des Dokumentes"
+  * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt. Doe Verwendung von docStatus bleibt jedoch optional, 
+  da nicht alle Dokumentenerzeugende Systeme einen expliziten Freigabe-Workflow haben. Dekomentenserver müssen jedoch in der Lage sein, den Dokumentenstatus 
+  - sofern vorhanden - zu persistieren, anzuzeigen und zu reproduzieren.
+  &#13;[Konsens der Arbeitsgruppe vom 10.12.2021]"
 * type 1.. MS
   * ^short = "Dokumententyp"
   * ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
 Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand
 der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
-&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
+&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * type.coding 1.. 
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -47,7 +51,7 @@ der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
   * ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
 Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand
 der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
-&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
+&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * category from http://ihe-d.de/ValueSets/IHEXDSclassCode (preferred)
 * subject only Reference(Patient)
 * subject 1..1 MS
@@ -67,7 +71,7 @@ Ebenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und
 Die ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen
 verschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen
 N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.
-&lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
+&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * content ..1 MS
   * ^short = "Beschreibung des Dokumenteninhaltes"
   * attachment MS
