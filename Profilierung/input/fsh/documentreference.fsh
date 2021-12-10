@@ -19,26 +19,29 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 * docStatus 
   * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt."
 * type 1.. MS
-* type.coding 1.. MS
-  * ^slicing.discriminator.type = #pattern
-  * ^slicing.discriminator.path = "$this"
-  * ^slicing.rules = #open
-* type 
   * ^short = "Dokumententyp"
   * ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
 Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand
 der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
 &lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
+* type.coding 1.. 
+  * ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
+  * ^slicing.rules = #open
 * type.coding contains  KDL 1..1 MS and XDS 0..1 
 * type.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
-  * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
-  * system 1..1 MS
-  * code 1..1 MS
-* type.coding[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required) 
+  * ^short = "Dokumenttyp gem. IHE-De-Terminologie"
+  * ^comment = "Die Angabe des XDS-Type-Codes ist im ISiK Kontext optional und 
+  kann ggf. über die im Rahmen der KDL-Spezifikation publizierten ConceptMaps aus dem KDL-Code ermittelt werden"
+* type.coding[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required)  
+  * ^short = "Dokumenttyp gem. KDL-Terminologie"
   * system 1..1 MS
   * system = "http://dvmd.de/fhir/CodeSystem/kdl"
+    * ^comment = "fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;"
   * code 1..1 MS
+    * ^short = "Der KDL-Code"
   * display 1..1 MS
+    * ^short = "Der Anzeigetext zum KDL-Code"
 * category 0..1 
   * ^short = "Dokumentklasse oder -Kategorie"
   * ^comment = "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.
@@ -46,23 +49,19 @@ Dadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz
 der in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.
 &lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * category from http://ihe-d.de/ValueSets/IHEXDSclassCode (preferred)
-  * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
 * subject only Reference(Patient)
 * subject 1..1 MS
   * ^short = "Patientenbezug des Dokumentes"
   * ^comment = "Siehe Beschreibung in der [FHIR Kernspezifikation](http://hl7.org/fhir/documentreference-definitions.html#DocumentReference.subject)"
-//* date MS 
 * date ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend. 
 Die Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. 
 Ein entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt."
 * author MS
 * custodian ..0
 * relatesTo MS
-// Beschreibung was "MS" hier konkret bedeutet erforderlich: 
-// im Rahmen des Bestätigungverfahrens: speichern und wieder zurückliefern, ggf. auch dem Benutzer anzeigen
-// Binding reduzieren auf R|N|V (required)
 * securityLabel 1.. MS
 * securityLabel from ISiKConfidentialityCodes (required)
+  * ^short = "Vertraulichkeit"
   * ^comment = "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.
 Ebenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.
 Die ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen
@@ -70,7 +69,9 @@ verschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angab
 N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.
 &lt;[Konsens der Arbeitsgruppe vom 12.11.2021]"
 * content ..1 MS
+  * ^short = "Beschreibung des Dokumenteninhaltes"
   * attachment MS
+    * ^short = "Anhang"
     * contentType 1.. MS
       * ^short = "Mimetype des Dokumentes"
       * ^comment = "Mimetype (Dateityp) des Dokumentes (z.B. &quot;application/pdf&quot;)"

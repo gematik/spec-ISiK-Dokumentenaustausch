@@ -7,5 +7,5 @@ where
 for differential.element
 where mustSupport = true
 select
-	Feldname: path, Kurzbeschreibung: short, Hinweise: comment
+	Feldname: id, Kurzbeschreibung: short, Hinweise: comment
 ```

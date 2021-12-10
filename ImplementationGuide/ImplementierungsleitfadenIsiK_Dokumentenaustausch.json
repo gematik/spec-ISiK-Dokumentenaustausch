@@ -89,7 +89,7 @@
             },
             {
               "nameUrl": "ImplementationGuide/Datenobjekte_DocumentReference.md",
-              "title": "Documentenmetadaten (DocumentReference)",
+              "title": "Dokumentenmetadaten (DocumentReference)",
               "generation": "markdown",
               "page": [
                 {
@@ -124,6 +124,33 @@
                 }
               ]
             },
+            {
+              "nameUrl": "ImplementationGuide/Datenobjekte_Bundle.md",
+              "title": "Aggregation (Bundle)",
+              "generation": "markdown",
+              "page": [
+                {
+                  "nameUrl": "ImplementationGuide/Bundle_Profile.md",
+                  "title": "Profile",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/Bundle_AnmerkungenZuDenMustSupportFeldern.md",
+                  "title": "Anmerkungen zu den Must-Support Feldern",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/Bundle_Interaktionen.md",
+                  "title": "Interaktionen",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/Bundle_Beispiele.md",
+                  "title": "Beispiele",
+                  "generation": "markdown"
+                }
+              ]
+            }
           ]
         }
       ]
