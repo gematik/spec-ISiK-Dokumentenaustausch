@@ -16,12 +16,15 @@ Sowohl die Implementierung der Interaktion "Dokumentenabfrage" als auch "Dokumen
 
 ### Interaktionen
 #### Dokumentenabfrage
-Ein (webbasierter/mobiler) Client möchte Dokumente anhand definierter Kriterien abfragen.
+**UseCase:** Ein (webbasierter/mobiler) Client möchte Dokumente anhand definierter Kriterien abfragen.
+Zur Dokumenten(-Metadaten)abfrage nutzt diese Spezifikation die SEARCH-Interaktionen auf der DocumentReferenc-Ressource gemäß der FHIR-Spezifikation.
+Dabei müssen ausgewählte Suchparameter von Dokumentenservern verpflichtend unterstützt werden. Die Selektion erfolgt anhand der Relevanz der Parameter für die identifizierten UseCases.
+Der Zugriff auf die von den DocumentReferences verlinkten Dokumente (z.B. im PDF-Format), erfolgt per READ-Interaktion auf der Binary-Ressource gemäß FHIR-Spezifikation.
 
 #### Dokumentenbereitstellung
-Ein (webbasierter/mobiler) Client möchte neu erstellte, geänderte oder erweiterte Dokumente an einen Dokumentenserver übermitteln.
+**UseCase:** Ein (webbasierter/mobiler) Client möchte neu erstellte, geänderte oder erweiterte Dokumente an einen Dokumentenserver übermitteln.
 
-#### Herstellung von Patient- und Encounterkontext
+##### Herstellung von Patient- und Encounterkontext
 Vor der Bereitstellung von Dokumenten muss ein Client einen Patienten- und Encounterkontext herstellen, damit das Dokument serverseitig anhand der Patient- und Encoutner-Verlinkungen in der DocumentReference korrekt zugeordnet werden kann.
 Zur Herstellung des Kontextes sind folgende Verfahren möglich:
 
@@ -30,17 +33,27 @@ Zur Herstellung des Kontextes sind folgende Verfahren möglich:
 3. **Arbeitsliste**: Der Client ruft auf dem Server eine Arbeitsliste ab (z.B. Liste aller Encounter, die aktuelle auf einer bestimmten Station/Ambulanz stattfinden, Liste aller ServiceRequests/Tasks, die durch den Client abgearbeitet werden müssen (aktuell noch nicht im Scope der ISiK-Spezifikationen!!) und etabliert den Kontext nachdem der Benutzer einen Eintrag der Liste ausgewählt hat.
 4. **manuelle Auswahl**. Nach dem Start des Clients verwendet der Benutzer eine Suchmaske, in der anhand von Patientennummer oder anderer demografischer Daten gesucht werden kann. Der Client verwendet die [Patient-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/isik-basismodul-stufe2/PatientPatient#PatientInteraktionen), um auf dem Server nach zutreffenden Patienten zu suchen. Der Anwender wählt den gesuchten Patienten aus der Liste der Suchtreffer aus. Im Anschluss listet der Client mit Hilfe der [Encounter-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/isik-basismodul-stufe2/KontaktFallEncounter#Interaktionen) die relevanten Besuche des ausgewählten Patienten auf. (Anm.: Welche Besuche als "relevant" erachtet werden, liegt im Ermessen des Clients. Es könnte z.B. anhand eines Zeitfensters, der Fallart oder der Encounter-Ebene (Einrichtungskontakt oder Abteilungskontakt) gefiltert werden.) Der Anwender wählt den zutreffenden Encounter aus.
 
+##### Übermittlung
+Die Übermittlung des Dokumentes vom Client an den Server erfolgt mit Hilfe der `$submit-document` Operation.
+Hinweis: Der zum Zeitpunkt der Erstellung dieser Spezifikation vorliegende IHE-MHD-Implementierungsleitfaden sieht für die Dokumentenbereitstellung ein Transaction-Bundle mit POST-Interaktionen vor. Aus Gründen, die [in der diesbezüglichen Diskussion im internationalen FHIR-Chat](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/MHD.20update.20and.20status) nachzulesen sind, ist dieses Vorgehen jedoch zu hinterfragen und wird seitens IHE voraussichtlich in künftigen MHD-Versionen geändert.
+
+Um den hier erarbeiteten Vorschlag einer Dokumentenübermittlung mittels Operations der internationalen FHIR-Community im allgemeinen und  IHE im besonderen vorstellen zu können, in der Hoffnung und Erwartung, dass diese dem Vorgehen folgen, wird dieser Teil der ISiK-Spezifikation ausnahmsweise auf Englisch spezifiziert.
+
+{{render: ISiK-Dokumentenaustausch/submit-document}}
 
 ### erweiterte Interaktionen
 Der Fokus dieser Spezifikation liegt auf den Festlegungen zum Datenaustausch innerhalb einer Einrichtung, umfasst jedoch auch Best Practice-Empfehlungen zur Einstellung von Dokumenten in die EPA eines Patienten, der Weiterleitung an andere Leistungserbringer via KIM oder dem einrichtungsübergreifenden Dokumentenaustausch via MHD/XDS.
 {{render:isikkontextunderwscope}}
 #### Dokumentenaustausch mit der ePA
+**ToDo**
 
 #### Dokumentenaustausch via KIM
+**ToDo**
 
 #### Dokumentenaustausch mit einem externen IHE-XDS/MHD Repository
+**ToDo**
 
-### Abgrenzung zu ISiK Stufe 2 (Basis) bei der Kommunikation strukturierter Dokumente (FHIR-Document-Bundle)
+### Abgrenzung zu ISiK Stufe 2 (Basis) bei der Kommunikation *strukturierter* Dokumente (FHIR-Document-Bundle)
 
 #### Interaktion ISiK Stufe 2 (Basis): Bericht aus Subsystem
 * HTTP-verb: POST auf [base]
