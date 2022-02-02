@@ -5,10 +5,10 @@
   "status": "draft",
   "kind": "operation",
   "name": "submit-document",
-  "description": "Submits a new document with metadata to a server for storage.",
-  "purpose": "Using Operations instead of transaction Bundles allows for refined server side \r\n    logic to happen and simplifies client control",
+  "description": "Submit document metadata and payload to a server for storage/persistence.",
+  "purpose": "Using Operations instead of transaction Bundles allows for refined server side \r\n    logic beyond create/update to occur and simplifies client control",
   "code": "submit-document",
-  "comment": "Servers are expected to verify the uniqueness of DocumentReference.identifier on the server\r\n    and check referntial integrity of metadata and attachment as submitted by the client.\r\n    Servers should return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique\r\n    Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url is not resolveable within the submitted Parameters resource",
+  "comment": "\r\n    Expected Server behaviour:\r\n    **mode 'create':**\r\n    Servers are expected to store the submitted binary with the associated metadata and make it available through the FHIR API\r\n\r\n    Servers SHALL return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique on the server (already associated with another document)\r\n\r\n    Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url is not resolveable within the submitted Parameters resource\r\n    \r\n    **mode 'update':**\r\n\r\n    Servers are expected to either replace the previous version of the DocumentReference **or** create a new version and deprecate the old version by updateing it's 'status' to 'superseded'.\r\n    If Servers chose to deprecate an older version of the same document\r\n    Clients SHALL submit a DocumentReference which includes a 'relatesTo'-Element with 'relatesTo.code' set to 'replaces' and 'relatesTo.target' referencing the superseded DocumentReference on the server.\r\n\r\n    Servers SHALL check, if the DocumentReference.identifier of the submitted DocumentReference and the referenced DocumentReference are identical\r\n\r\n    Servers SHALL either return HTTP 412 (precondition failed) **or** treat the update as a create if the referenced DocumentReference does not exist on the server.\r\n    If the server decides to perform a create instead of an update, the invalid relatesTo-Element MAY be removed from the DocumentReference in order to maintain referential integrity.\r\n\r\n    **metadata update only:**\r\n\r\n    On update, Clients MAY submit DocumentReference Resources without a Binary, if the Document content is unchanged.\r\n    \r\n    Servers SHALL return HTTP 412 (precondition failed) if the Binary referenced in DocumentReference.attachment.url does not exist on the server.\r\n\r\n    Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url in the submitted DocumentReference and the superseded DocumentReference do not match. \r\n    ",
   "system": true,
   "type": false,
   "instance": false,
@@ -39,7 +39,7 @@
       "use": "in",
       "min": 0,
       "max": "1",
-      "documentation": "document payload, optional on update mode",
+      "documentation": "Binary containing document payload, optional on update mode",
       "type": "Binary"
     }
   ]
