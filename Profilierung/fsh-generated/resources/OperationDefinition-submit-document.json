@@ -1,0 +1,46 @@
+{
+  "resourceType": "OperationDefinition",
+  "id": "submit-document",
+  "title": "Submission of new document",
+  "status": "draft",
+  "kind": "operation",
+  "name": "submit-document",
+  "description": "Submits a new document with metadata to a server for storage.",
+  "purpose": "Using Operations instead of transaction Bundles allows for refined server side \r\n    logic to happen and simplifies client control",
+  "code": "submit-document",
+  "comment": "Servers are expected to verify the uniqueness of DocumentReference.identifier on the server\r\n    and check referntial integrity of metadata and attachment as submitted by the client.\r\n    Servers should return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique\r\n    Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url is not resolveable within the submitted Parameters resource",
+  "system": true,
+  "type": false,
+  "instance": false,
+  "inputProfile": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput",
+  "parameter": [
+    {
+      "name": "mode",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "documentation": "determines the mode (create/update) in which the server processes the document",
+      "type": "code",
+      "binding": {
+        "strength": "required",
+        "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/SubmitDocumentModes"
+      }
+    },
+    {
+      "name": "metadata",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "documentation": "DocumentReference containing document metadata",
+      "type": "DocumentReference"
+    },
+    {
+      "name": "payload",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "documentation": "document payload, optional on update mode",
+      "type": "Binary"
+    }
+  ]
+}

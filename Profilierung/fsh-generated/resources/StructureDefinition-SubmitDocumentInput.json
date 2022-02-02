@@ -1,0 +1,141 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "SubmitDocumentInput",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    }
+  ],
+  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput",
+  "version": "0.1.0",
+  "name": "SubmitDocumentInput",
+  "title": "SubmitDocumentInput",
+  "status": "active",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Parameters",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Parameters",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Parameters.parameter",
+        "path": "Parameters.parameter",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "name"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:mode",
+        "path": "Parameters.parameter",
+        "sliceName": "mode",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:mode.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "mode"
+      },
+      {
+        "id": "Parameters.parameter:mode.value[x]",
+        "path": "Parameters.parameter.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter:mode.valueCode",
+        "path": "Parameters.parameter.valueCode",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/SubmitDocumentModes"
+        }
+      },
+      {
+        "id": "Parameters.parameter:metadata",
+        "path": "Parameters.parameter",
+        "sliceName": "metadata",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:metadata.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "metadata"
+      },
+      {
+        "id": "Parameters.parameter:metadata.resource",
+        "path": "Parameters.parameter.resource",
+        "type": [
+          {
+            "code": "DocumentReference",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter:payload",
+        "path": "Parameters.parameter",
+        "sliceName": "payload",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:payload.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "payxload"
+      },
+      {
+        "id": "Parameters.parameter:payload.resource",
+        "path": "Parameters.parameter.resource",
+        "type": [
+          {
+            "code": "Binary"
+          }
+        ]
+      }
+    ]
+  }
+}

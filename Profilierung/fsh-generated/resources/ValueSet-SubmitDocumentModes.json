@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SubmitDocumentModes",
+  "id": "SubmitDocumentModes",
+  "title": "SubmitDocumentModes",
+  "version": "0.1.0",
+  "url": "https://gematik.de/fhir/ISiK/v2/ValueSet/SubmitDocumentModes",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/restful-interaction",
+        "concept": [
+          {
+            "code": "create",
+            "display": "create"
+          },
+          {
+            "code": "update",
+            "display": "update"
+          }
+        ]
+      }
+    ]
+  }
+}
