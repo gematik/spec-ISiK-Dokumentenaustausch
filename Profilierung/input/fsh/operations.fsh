@@ -12,33 +12,26 @@ Description: ""
     logic beyond create/update to occur and simplifies client control"
 * code = #submit-document
 * comment = "
-    Expected Server behaviour:
-    **mode 'create':**
-    Servers are expected to store the submitted binary with the associated metadata and make it available through the FHIR API
+    Expected behaviour:
 
-    Servers SHALL return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique on the server (already associated with another document)
-
-    Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url is not resolveable within the submitted Parameters resource
+**mode `create`:**
+* Servers are expected to store the submitted binary with the associated metadata and make it available through the FHIR API
+* Servers SHALL return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique on the server (already associated with another document)
+* Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url is not resolveable within the submitted Parameters resource
     
-    **mode 'update':**
+**mode `update`:**
 
-    Servers are expected to either replace the previous version of the DocumentReference **or** create a new version and deprecate the old version by updateing it's 'status' to 'superseded'.
-    If Servers chose to deprecate an older version of the same document
-    Clients SHALL submit a DocumentReference which includes a 'relatesTo'-Element with 'relatesTo.code' set to 'replaces' and 'relatesTo.target' referencing the superseded DocumentReference on the server.
+* Clients SHALL submit a DocumentReference which includes a `relatesTo`-Element with `relatesTo.code` set to `replaces` and `relatesTo.target` referencing the superseded DocumentReference on the server.
+* Servers are expected to either replace the previous version of the DocumentReference **or** create a new version and deprecate the old version by updateing it`s `status` to `superseded`.
+* Servers SHALL check, if the DocumentReference.identifier of the submitted DocumentReference and the referenced DocumentReference are identical
+* Servers SHALL either return HTTP 412 (precondition failed) **or** treat the update as a create if the referenced DocumentReference does not exist on the server.
+If the server decides to perform a create instead of an update, the invalid relatesTo-Element MAY be removed from the DocumentReference in order to maintain referential integrity.
 
-    Servers SHALL check, if the DocumentReference.identifier of the submitted DocumentReference and the referenced DocumentReference are identical
-
-    Servers SHALL either return HTTP 412 (precondition failed) **or** treat the update as a create if the referenced DocumentReference does not exist on the server.
-    If the server decides to perform a create instead of an update, the invalid relatesTo-Element MAY be removed from the DocumentReference in order to maintain referential integrity.
-
-    **metadata update only:**
-
-    On update, Clients MAY submit DocumentReference Resources without a Binary, if the Document content is unchanged.
-    
-    Servers SHALL return HTTP 412 (precondition failed) if the Binary referenced in DocumentReference.attachment.url does not exist on the server.
-
-    Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url in the submitted DocumentReference and the superseded DocumentReference do not match. 
-    "
+**metadata update only:**
+* On update, Clients MAY submit DocumentReference Resources without a Binary, if the Document content is unchanged.
+* Servers SHALL return HTTP 412 (precondition failed) if the Binary referenced in DocumentReference.attachment.url does not exist on the server.
+* Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url in the submitted DocumentReference and the superseded DocumentReference do not match. 
+"
 //* resource = DocumentReference
 * system = true
 * type = false
