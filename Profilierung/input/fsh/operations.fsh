@@ -19,18 +19,13 @@ Description: ""
 * Servers SHALL return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique on the server (already associated with another document)
 * Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url is not resolveable within the submitted Parameters resource
     
-**mode `update`:**
+**mode `replaces`:**
 
 * Clients SHALL submit a DocumentReference which includes a `relatesTo`-Element with `relatesTo.code` set to `replaces` and `relatesTo.target` referencing the superseded DocumentReference on the server.
-* Servers are expected to either replace the previous version of the DocumentReference **or** create a new version and deprecate the old version by updateing it's `status` to `superseded`.
+* Servers are expected to either replace the previous version of the DocumentReference **or** create a new version and deprecate the old version by updating it's `status` to `superseded`.
 * Servers SHALL check, if the DocumentReference.identifier of the submitted DocumentReference and the referenced DocumentReference are identical
-* Servers SHALL either return HTTP 412 (precondition failed) **or** treat the update as a create if the referenced DocumentReference does not exist on the server.
+* Servers SHALL either return HTTP 412 (precondition failed) **or** treat the update as a create if the referenced DocumentReference does not yet exist on the server.
 If the server decides to perform a create instead of an update, the invalid relatesTo-Element MAY be removed from the DocumentReference in order to maintain referential integrity.
-
-**mode `update` (metadata only):**
-* On update, Clients MAY submit DocumentReference Resources without a Binary, if the Document content is unchanged.
-* Servers SHALL return HTTP 412 (precondition failed) if the Binary referenced in DocumentReference.attachment.url does not exist on the server.
-* Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url in the submitted DocumentReference and the superseded DocumentReference do not match. 
 "
 //* resource = DocumentReference
 * system = true
@@ -58,12 +53,10 @@ If the server decides to perform a create instead of an update, the invalid rela
 * parameter[+]
   * name = #payload
   * use = #in 
-  * min = 0
+  * min = 1
   * max = "1"
-  * documentation = "Binary containing document payload, optional on update mode"
+  * documentation = "Binary containing document payload"
   * type = #Binary
-
-
 
 
 Profile: SubmitDocumentInput
@@ -84,7 +77,7 @@ Description: ""
   * name = "metadata"
   * resource only ISiKDokumentenMetadaten
 * parameter[payload]
-  * name = "payxload"
+  * name = "payload"
   * resource only Binary
 
 
@@ -94,8 +87,40 @@ Id: SubmitDocumentModes
 Title: "SubmitDocumentModes"
 Description: ""
 * http://hl7.org/fhir/restful-interaction#create "create"
-* http://hl7.org/fhir/restful-interaction#update "update"
+* http://hl7.org/fhir/document-relationship-type#replaces "replaces"
+//* http://hl7.org/fhir/restful-interaction#update "update"
 
 
 
 
+Instance: update-metadata
+InstanceOf: OperationDefinition
+Usage: #example
+Title: "update-metadata"
+Description: ""
+* title = "Update document metadata"
+* status = #draft
+* kind = #operation
+* name = "update-metadata"
+* description = "Update selected, uncritical document metadata in a save and controlled manner without having to replace the whole document"
+* code = #update-metadata
+* comment = "
+    Expected behaviour:
+Servers are expected to update the DocumentReference element(s) with the submitted values(s)
+"
+* resource = #DocumentReference
+* system = false
+* type = false
+* instance = true
+//* inputProfile = Canonical(UpdateMetadata)
+//* outputProfile = Canonical(SubmitDocumentOutput)
+* parameter[+]
+  * name = #docStatus
+  * use = #in
+  * min = 1
+  * max = "1"
+  * documentation = "new value for element `docStatus`"
+  * type = #code
+  * binding 
+    * strength = #required 
+    * valueSet = "http://hl7.org/fhir/ValueSet/composition-status"

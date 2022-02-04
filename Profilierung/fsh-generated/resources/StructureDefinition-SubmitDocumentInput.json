@@ -125,7 +125,7 @@
       {
         "id": "Parameters.parameter:payload.name",
         "path": "Parameters.parameter.name",
-        "patternString": "payxload"
+        "patternString": "payload"
       },
       {
         "id": "Parameters.parameter:payload.resource",

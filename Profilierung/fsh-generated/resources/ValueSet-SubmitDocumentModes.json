@@ -14,10 +14,15 @@
           {
             "code": "create",
             "display": "create"
-          },
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/document-relationship-type",
+        "concept": [
           {
-            "code": "update",
-            "display": "update"
+            "code": "replaces",
+            "display": "replaces"
           }
         ]
       }
