@@ -1,18 +1,18 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "SubmitDocumentInput",
+  "id": "SubmitDocumentOutput",
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
       "valueString": "Foundation.Other"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput",
+  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentOutput",
   "version": "0.1.0",
-  "name": "SubmitDocumentInput",
-  "title": "SubmitDocumentInput",
+  "name": "SubmitDocumentOutput",
+  "title": "SubmitDocumentOutput",
   "status": "active",
-  "description": "Profil zur Validierung der Input-Parameter für $submit-document",
+  "description": "Profil zur Validierung der Output-Parameter für $submit-document",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -46,12 +46,14 @@
           "rules": "open"
         },
         "min": 2,
+        "max": "2",
         "mustSupport": true
       },
       {
         "id": "Parameters.parameter:mode",
         "path": "Parameters.parameter",
         "sliceName": "mode",
+        "short": "Verarbeitungsmodus der vom Server verwendet wurde",
         "min": 1,
         "max": "1",
         "mustSupport": true
@@ -94,9 +96,9 @@
         "id": "Parameters.parameter:metadata",
         "path": "Parameters.parameter",
         "sliceName": "metadata",
-        "short": "Dokumentenmetadaten in Form einer DocumentReference-Ressource",
+        "short": "Dokumentenmetadaten wie sie vom Server verstanden/erzeugt/persistiert wurden",
         "comment": "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.\r\n    In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "mustSupport": true
       },
@@ -118,57 +120,10 @@
         ]
       },
       {
-        "id": "Parameters.parameter:payloadBinary",
-        "path": "Parameters.parameter",
-        "sliceName": "payloadBinary",
-        "short": "unstrukturiertes oder nicht FHIR-basiertes Dokument",
-        "definition": "Wenn ein unstrukturiertes oder nicht FHIR-basiertes Dokument (z.B. PDF, Word, CDA) übermittelt werden soll, dann muss dieses im Parameter `payloadBundle` übermittelt werden",
-        "min": 0,
-        "max": "1",
+        "id": "Parameters.parameter:metadata.resource.id",
+        "path": "Parameters.parameter.resource.id",
+        "min": 1,
         "mustSupport": true
-      },
-      {
-        "id": "Parameters.parameter:payloadBinary.name",
-        "path": "Parameters.parameter.name",
-        "patternString": "payloadBinary"
-      },
-      {
-        "id": "Parameters.parameter:payloadBinary.resource",
-        "path": "Parameters.parameter.resource",
-        "type": [
-          {
-            "code": "Binary"
-          }
-        ]
-      },
-      {
-        "id": "Parameters.parameter:payloadBundle",
-        "path": "Parameters.parameter",
-        "sliceName": "payloadBundle",
-        "short": "strukturiertes, FHIR-basiertes Dokument",
-        "definition": "Wenn ein strukturiertes, FHIR-basiertes Dokument (Bundle vom Typ `document`) übermittelt werden soll, dann muss dieses im Parameter `payloadBundle` übermittelt werden",
-        "min": 0,
-        "max": "1",
-        "mustSupport": true
-      },
-      {
-        "id": "Parameters.parameter:payloadBundle.name",
-        "path": "Parameters.parameter.name",
-        "patternString": "payloadBundle"
-      },
-      {
-        "id": "Parameters.parameter:payloadBundle.resource",
-        "path": "Parameters.parameter.resource",
-        "type": [
-          {
-            "code": "Bundle"
-          }
-        ]
-      },
-      {
-        "id": "Parameters.parameter:payloadBundle.resource.type",
-        "path": "Parameters.parameter.resource.type",
-        "patternCode": "document"
       }
     ]
   }

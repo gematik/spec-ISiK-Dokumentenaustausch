@@ -29,18 +29,26 @@
     {
       "name": "metadata",
       "use": "in",
-      "min": 1,
+      "min": 0,
       "max": "1",
       "documentation": "DocumentReference containing document metadata",
       "type": "DocumentReference"
     },
     {
-      "name": "payload",
+      "name": "payloadBinary",
       "use": "in",
-      "min": 1,
+      "min": 0,
       "max": "1",
       "documentation": "Binary containing document payload",
       "type": "Binary"
+    },
+    {
+      "name": "payloadBundle",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "documentation": "Bundle containing FHIR document",
+      "type": "Bundle"
     }
   ]
 }
