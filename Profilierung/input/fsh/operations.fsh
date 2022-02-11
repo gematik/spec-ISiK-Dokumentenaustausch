@@ -46,39 +46,83 @@ If the server decides to perform a create instead of an update, the invalid rela
 * parameter[+]
   * name = #metadata
   * use = #in 
-  * min = 1
+  * min = 0
   * max = "1"
   * documentation = "DocumentReference containing document metadata"
   * type = #DocumentReference
 * parameter[+]
-  * name = #payload
+  * name = #payloadBinary
   * use = #in 
-  * min = 1
+  * min = 0
   * max = "1"
   * documentation = "Binary containing document payload"
   * type = #Binary
-
+* parameter[+]
+  * name = #payloadBundle
+  * use = #in 
+  * min = 0
+  * max = "1"
+  * documentation = "Bundle containing FHIR document"
+  * type = #Bundle
 
 Profile: SubmitDocumentInput
 Parent: Parameters
 Id: SubmitDocumentInput
 Title: "SubmitDocumentInput"
-Description: ""
+Description: "Profil zur Validierung der Input-Parameter für $submit-document"
 * parameter 2..* MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
   * ^slicing.rules = #open
-* parameter contains mode 1..1 MS and metadata 1..1 MS and payload 0..1 MS
+* parameter contains mode 1..1 MS 
+    and metadata 0..1 MS 
+    and payloadBinary 0..1 MS
+    and payloadBundle 0..1 MS
 * parameter[mode]
   * name = "mode"
   * value[x] only code
   * valueCode from SubmitDocumentModes
 * parameter[metadata]
+  * ^short = "Dokumentenmetadaten in Form einer DocumentReference-Ressource"
+  * ^comment = "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.
+    In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren."
   * name = "metadata"
   * resource only ISiKDokumentenMetadaten
-* parameter[payload]
-  * name = "payload"
+* parameter[payloadBinary]
+  * ^short = "unstrukturiertes oder nicht FHIR-basiertes Dokument"
+  * ^definition = "Wenn ein unstrukturiertes oder nicht FHIR-basiertes Dokument (z.B. PDF, Word, CDA) übermittelt werden soll, dann muss dieses im Parameter `payloadBundle` übermittelt werden"
+  * name = "payloadBinary"
   * resource only Binary
+* parameter[payloadBundle]
+  * ^short = "strukturiertes, FHIR-basiertes Dokument"
+  * ^definition = "Wenn ein strukturiertes, FHIR-basiertes Dokument (Bundle vom Typ `document`) übermittelt werden soll, dann muss dieses im Parameter `payloadBundle` übermittelt werden"
+  * name = "payloadBundle"
+  * resource only Bundle
+  * resource.type = #document
+
+Profile: SubmitDocumentOutput
+Parent: Parameters
+Id: SubmitDocumentOutput
+Title: "SubmitDocumentOutput"
+Description: "Profil zur Validierung der Output-Parameter für $submit-document"
+* parameter 2..2 MS
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "name"
+  * ^slicing.rules = #open
+* parameter contains mode 1..1 MS 
+    and metadata 1..1 MS 
+* parameter[mode]
+  * ^short = "Verarbeitungsmodus der vom Server verwendet wurde"
+  * name = "mode"
+  * value[x] only code
+  * valueCode from SubmitDocumentModes
+* parameter[metadata]
+  * ^short = "Dokumentenmetadaten wie sie vom Server verstanden/erzeugt/persistiert wurden"
+  * ^comment = "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.
+    In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren."
+  * name = "metadata"
+  * resource only ISiKDokumentenMetadaten
+  * resource.id 1..1 MS
 
 
 
