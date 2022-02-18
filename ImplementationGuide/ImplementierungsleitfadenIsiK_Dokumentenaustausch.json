@@ -74,6 +74,33 @@
               "nameUrl": "ImplementationGuide/AkteureUndInteraktionen.md",
               "title": "Interaktionen",
               "generation": "markdown"
+              "page": [ 
+                {
+                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Akteure.md",
+                 "title": "Akteure",
+                 "generation": "markdown"
+                },
+                {
+                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Interaktionen.md",
+                 "title": "Interaktionen",
+                 "generation": "markdown"
+                },   
+                {
+                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md",
+                 "title": "Interaktion: Dokumentenbereitstellung",
+                 "generation": "markdown"
+                },
+                {
+                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Dokumentenabfrage.md",
+                 "title": "Interaktion: Dokumentenabfrage und -Zugriff",
+                 "generation": "markdown"
+                },    
+                {
+                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-erweiterteInteraktionen.md",
+                 "title": "erweiterte Interaktionen",
+                 "generation": "markdown"
+                }
+              ]
             }
           ]
         },
