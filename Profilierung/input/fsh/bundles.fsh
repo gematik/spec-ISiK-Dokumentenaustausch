@@ -14,7 +14,7 @@ Title: "Suchergebnisse einer Dokumentensuche"
 * entry[DocumentReference].resource 1..
 * entry[DocumentReference].resource only ISiKDokumentenMetadaten
 
-Profile: ISiKDokumentenBereitstellung
+/* Profile: ISiKDokumentenBereitstellung
 Parent: Bundle
 Id: ISiKDokumentenBereitstellung
 Title: "Bereitstellung von Dokumenten"
@@ -45,7 +45,7 @@ Title: "Bereitstellung von Dokumenten"
 * entry[Patient] ^definition = "Stammdaten des Patienten"
 * entry[Patient].resource 1..
 * entry[Patient].resource only Patient
-//
+// */
 
 Profile: ISiKBinary
 Parent: Binary
