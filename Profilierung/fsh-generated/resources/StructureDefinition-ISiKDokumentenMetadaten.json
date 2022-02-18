@@ -55,7 +55,7 @@
     },
     {
       "identity": "CompositionDocumentReferenceMapping",
-      "name": "Maping der Metadaten von Composition auf DocumentReference",
+      "name": "Metadaten eines strukturieren Dokumentes (Document-Bundle)",
       "uri": "http://hl7.org/fhir/StructureDefinition/Composition"
     }
   ],
@@ -66,16 +66,6 @@
   "derivation": "constraint",
   "differential": {
     "element": [
-      {
-        "id": "DocumentReference",
-        "path": "DocumentReference",
-        "mapping": [
-          {
-            "identity": "CompositionDocumentReferenceMapping",
-            "map": "Dokument-Bundle"
-          }
-        ]
-      },
       {
         "id": "DocumentReference.masterIdentifier",
         "path": "DocumentReference.masterIdentifier",

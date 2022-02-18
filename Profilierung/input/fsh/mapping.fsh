@@ -2,12 +2,12 @@ Mapping:  CompositionDocumentReferenceMapping
 Source:   ISiKDokumentenMetadaten 
 Target:   "http://hl7.org/fhir/StructureDefinition/Composition"
 Id:       CompositionDocumentReferenceMapping
-Title:    "Maping der Metadaten von Composition auf DocumentReference"
+Title:    "Metadaten eines strukturieren Dokumentes (Document-Bundle)"
 //Syntax:
 //* -> "{map string}" "{comment string}" #{mime-type code}
 //* <element> -> "{map string}" "{comment string}" #{mime-type code}
 
-* -> "Dokument-Bundle"
+//* -> "Dokument-Bundle"
 * masterIdentifier -> "Bundle.identifier" 
 * identifier -> "Composition.identifier"
 * status -> "=current"
