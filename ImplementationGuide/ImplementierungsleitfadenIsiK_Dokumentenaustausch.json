@@ -72,8 +72,8 @@
             },
             {
               "nameUrl": "ImplementationGuide/AkteureUndInteraktionen.md",
-              "title": "Interaktionen",
-              "generation": "markdown"
+              "title": "Akteure und Interaktionen",
+              "generation": "markdown",
               "page": [ 
                 {
                  "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Akteure.md",
