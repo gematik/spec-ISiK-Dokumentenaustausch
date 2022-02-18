@@ -71,6 +71,8 @@
       {
         "id": "DocumentReference.masterIdentifier.system",
         "path": "DocumentReference.masterIdentifier.system",
+        "short": "Namensraum des Identifiers",
+        "comment": "Fix: `urn:ietf:rfc:3986`",
         "min": 1,
         "patternUri": "urn:ietf:rfc:3986",
         "mustSupport": true
@@ -78,7 +80,7 @@
       {
         "id": "DocumentReference.masterIdentifier.value",
         "path": "DocumentReference.masterIdentifier.value",
-        "short": "Die OID",
+        "short": "Wert des Identifiers",
         "comment": "OID mit URI-Präfix &quot;urn:oid:&quot;",
         "min": 1,
         "mustSupport": true
@@ -91,7 +93,8 @@
       {
         "id": "DocumentReference.status",
         "path": "DocumentReference.status",
-        "short": "Status des Dokumentenmetadatensatzes (Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt!)",
+        "short": "Status des Dokumentenmetadatensatzes",
+        "comment": "Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt!",
         "mustSupport": true
       },
       {
@@ -105,7 +108,7 @@
         "id": "DocumentReference.type",
         "path": "DocumentReference.type",
         "short": "Dokumententyp",
-        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "comment": "Im ISiK-Kontext ist die Typisierung eines Dokumentes mit Hilfe eines KDL-Codes *und* des IHE-XDS-Type-Codes erforderlich. \r\n  Während ersterer eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen udn Administrativen Dokumenten ermöglicht, \r\n  ist letzterer für den einrichtungsübergreifenden Dokumentenautausch maßgeblich.\r\n  Der XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)\r\n  aus dem KDL-Code ermittelt werden. Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt.\r\n\r\n  [Konsens der Arbeitgruppe vom 18.02.2022]",
         "min": 1,
         "mustSupport": true
       },
@@ -121,7 +124,7 @@
           ],
           "rules": "open"
         },
-        "min": 1
+        "min": 2
       },
       {
         "id": "DocumentReference.type.coding:KDL",
@@ -139,7 +142,8 @@
       {
         "id": "DocumentReference.type.coding:KDL.system",
         "path": "DocumentReference.type.coding.system",
-        "comment": "fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;",
+        "short": "Kodiersystem",
+        "comment": "Fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;",
         "min": 1,
         "patternUri": "http://dvmd.de/fhir/CodeSystem/kdl",
         "mustSupport": true
@@ -147,14 +151,16 @@
       {
         "id": "DocumentReference.type.coding:KDL.code",
         "path": "DocumentReference.type.coding.code",
-        "short": "Der KDL-Code",
+        "short": "Code",
+        "comment": "Der KDL-Code",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "DocumentReference.type.coding:KDL.display",
         "path": "DocumentReference.type.coding.display",
-        "short": "Der Anzeigetext zum KDL-Code",
+        "short": "Anzeigetext",
+        "comment": "Der Anzeigetext zum KDL-Code",
         "min": 1,
         "mustSupport": true
       },
@@ -163,8 +169,8 @@
         "path": "DocumentReference.type.coding",
         "sliceName": "XDS",
         "short": "Dokumenttyp gem. IHE-De-Terminologie",
-        "comment": "Die Angabe des XDS-Type-Codes ist im ISiK Kontext optional und \r\n  kann ggf. über die im Rahmen der KDL-Spezifikation publizierten ConceptMaps aus dem KDL-Code ermittelt werden",
-        "min": 0,
+        "comment": "Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten \r\n  [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden",
+        "min": 1,
         "max": "1",
         "binding": {
           "strength": "required",
@@ -174,13 +180,59 @@
       {
         "id": "DocumentReference.category",
         "path": "DocumentReference.category",
-        "short": "Dokumentklasse oder -Kategorie",
-        "comment": "Im ISiK-Kontext ist die Klassifikation eines Dokumentes mit Hilfe eines KDL-Codes erforderlich.\r\nDadurch entfällt die Notwendigkeit, den XDS-Class- und Type-Code in der Instanz mitzuführen, da dieser bei Bedarf anhand\r\nder in der KDL-Spezifikation vorhandenen Mappingtabellen ermittelt werden kann.\r\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "short": "Dokumentklasse/-Kategorie",
+        "comment": "Die Kategorisierung von Dokumenten erfolgt mittels der von IHE Deutschland publizierten XDS-Class-Codes.\r\n  Der XDS-Class-Code kann mit Hilfe der bereitgestellten [ConceptMap](https://simplifier.net/kdl/~resources?category=ConceptMap)\r\n  aus dem KDL-Code ermittelt werden.",
+        "min": 1,
         "max": "1",
         "binding": {
-          "strength": "preferred",
+          "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDSclassCode"
         }
+      },
+      {
+        "id": "DocumentReference.category.coding",
+        "path": "DocumentReference.category.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "DocumentReference.category.coding:XDS",
+        "path": "DocumentReference.category.coding",
+        "sliceName": "XDS",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.category.coding:XDS.system",
+        "path": "DocumentReference.category.coding.system",
+        "short": "Kodiersystem",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.category.coding:XDS.code",
+        "path": "DocumentReference.category.coding.code",
+        "short": "Code",
+        "comment": "Der XDS-Class-Code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.category.coding:XDS.display",
+        "path": "DocumentReference.category.coding.display",
+        "short": "Anzeigetext",
+        "comment": "Der Anzeigetext zum XDS-Class-Code",
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.subject",
@@ -199,6 +251,14 @@
         "mustSupport": true
       },
       {
+        "id": "DocumentReference.subject.reference",
+        "path": "DocumentReference.subject.reference",
+        "short": "Absolute oder relative URL des Patienten auf dem Server",
+        "comment": "Absolute oder relative URL des Patienten auf dem Server",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
         "id": "DocumentReference.date",
         "path": "DocumentReference.date",
         "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend. \r\nDie Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. \r\nEin entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt."
@@ -211,6 +271,7 @@
       {
         "id": "DocumentReference.custodian",
         "path": "DocumentReference.custodian",
+        "comment": "Einschränkung der Kardinalität analog MHD V4.0.1",
         "max": "0"
       },
       {
@@ -219,10 +280,17 @@
         "mustSupport": true
       },
       {
+        "id": "DocumentReference.description",
+        "path": "DocumentReference.description",
+        "comment": "Genaue menschenlesbare Beschreibung des Dokumentes, z.B. &quot;Lungenfunktionstest vom 18.02.2022&quot;",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
         "id": "DocumentReference.securityLabel",
         "path": "DocumentReference.securityLabel",
         "short": "Vertraulichkeit",
-        "comment": "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\r\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\r\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\r\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\r\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\r\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "comment": "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\r\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\r\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\r\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\r\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\r\n&#13; \r\n\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "min": 1,
         "mustSupport": true,
         "binding": {
@@ -330,11 +398,6 @@
         "id": "DocumentReference.context.event.coding.code",
         "path": "DocumentReference.context.event.coding.code",
         "min": 1
-      },
-      {
-        "id": "DocumentReference.context.period",
-        "path": "DocumentReference.context.period",
-        "mustSupport": true
       },
       {
         "id": "DocumentReference.context.facilityType",

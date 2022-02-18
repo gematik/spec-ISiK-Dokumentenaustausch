@@ -34,6 +34,26 @@
   "differential": {
     "element": [
       {
+        "id": "Parameters",
+        "path": "Parameters",
+        "constraint": [
+          {
+            "key": "sub-in-1",
+            "severity": "error",
+            "human": "Bei Payload vom Typ `Binary` muss zusätzlich der Parameter `metadata` übermittelt werden!",
+            "expression": "parameter[metadata].exists() or parameter[payloadBundle].exists()",
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput"
+          },
+          {
+            "key": "sub-in-2",
+            "severity": "error",
+            "human": "Es muss entweder ein Payload vom Typ Binary oder vom Typ Bundle übermittelt werden!",
+            "expression": "parameter[payloadBinary].exists() or parameter[payloadBundle].exists()",
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput"
+          }
+        ]
+      },
+      {
         "id": "Parameters.parameter",
         "path": "Parameters.parameter",
         "slicing": {

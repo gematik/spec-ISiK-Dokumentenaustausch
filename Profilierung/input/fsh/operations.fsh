@@ -70,6 +70,8 @@ Parent: Parameters
 Id: SubmitDocumentInput
 Title: "SubmitDocumentInput"
 Description: "Profil zur Validierung der Input-Parameter für $submit-document"
+* obeys sub-in-1
+* obeys sub-in-2
 * parameter 2..* MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
@@ -105,6 +107,7 @@ Parent: Parameters
 Id: SubmitDocumentOutput
 Title: "SubmitDocumentOutput"
 Description: "Profil zur Validierung der Output-Parameter für $submit-document"
+
 * parameter 2..2 MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
@@ -123,6 +126,19 @@ Description: "Profil zur Validierung der Output-Parameter für $submit-document"
   * name = "metadata"
   * resource only ISiKDokumentenMetadaten
   * resource.id 1..1 MS
+
+Invariant: sub-in-1
+Description: "Bei Payload vom Typ `Binary` muss zusätzlich der Parameter `metadata` übermittelt werden!"
+Expression: "parameter[metadata].exists() or parameter[payloadBundle].exists()"
+Severity: #error
+
+Invariant: sub-in-2
+Description: "Es muss entweder ein Payload vom Typ Binary oder vom Typ Bundle übermittelt werden!"
+Expression: "parameter[payloadBinary].exists() or parameter[payloadBundle].exists()"
+Severity: #error
+
+
+
 
 
 
@@ -168,3 +184,4 @@ Servers are expected to update the DocumentReference element(s) with the submitt
   * binding 
     * strength = #required 
     * valueSet = "http://hl7.org/fhir/ValueSet/composition-status"
+
