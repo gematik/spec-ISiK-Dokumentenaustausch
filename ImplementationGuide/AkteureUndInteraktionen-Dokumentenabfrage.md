@@ -8,7 +8,7 @@ mit `MUSS` gekennzeichneten Suchparameter unterstützt werden. Einzelnen Systeme
 Es gelten die allgemeinen Festlegunen zu Suchparametern gemäß [ISiK Basisprofil Stufe 2](https://simplifier.net/guide/isik-basismodul-stufe2/UebergreifendeFestlegungenSuchparameter)
 
 Die Ergebnisse einer Suchanfrage werden in Form eines Bundles zurückgegeben:
-{{tree: https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenSuchergebnisse, hybrid}}
+{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenSuchergebnisse, hybrid}}
 
 ### Dokumentenzugriff
 
