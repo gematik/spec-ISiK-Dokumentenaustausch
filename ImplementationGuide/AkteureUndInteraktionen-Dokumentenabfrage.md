@@ -1,4 +1,6 @@
 ## Dokumentenabfrage und -Zugriff
+Für alle Interaktionen gelten die Vereinbarungen zu REST-API aus dem [ISiK Basismodul Stufe 2](https://simplifier.net/guide/ImplementierungsleitfadenISiK-Basismodul/UebergreifendeFestlegungenRest)
+
 ### Dokumentenabfrage
 Dokumente können anhand ihrer Metadaten gesucht werden. Im Rahmen der ISiK-Spezifikation müssen mindestens die im Kapitel {{pagelink:DocumentReferenceInteraktionen}}
 mit `MUSS` gekennzeichneten Suchparameter unterstützt werden. Einzelnen Systemen steht es frei, darüber hinaus weitere Suchparameter zu implementieren.
@@ -6,7 +8,7 @@ mit `MUSS` gekennzeichneten Suchparameter unterstützt werden. Einzelnen Systeme
 Es gelten die allgemeinen Festlegunen zu Suchparametern gemäß [ISiK Basisprofil Stufe 2](https://simplifier.net/guide/isik-basismodul-stufe2/UebergreifendeFestlegungenSuchparameter)
 
 Die Ergebnisse einer Suchanfrage werden in Form eines Bundles zurückgegeben:
-{{tree: https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenBereitstellung, hybrid}}
+{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenSuchergebnisse, hybrid}}
 
 ### Dokumentenzugriff
 
