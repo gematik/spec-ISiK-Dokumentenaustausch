@@ -1,4 +1,4 @@
-<img src="https://www.gematik.de/fileadmin/user_upload/MediaUploads/Gematik_Logo_Flag.jpg" alt="gematik logo" width="400"/>
+<img src="https://raw.githubusercontent.com/gematik/api-kim/master/images/gematik_logo.jpg" alt="gematik logo" width="400"/>
 
 ----
 Version: -
