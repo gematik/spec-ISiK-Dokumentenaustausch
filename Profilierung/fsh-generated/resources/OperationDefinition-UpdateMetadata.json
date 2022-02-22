@@ -1,11 +1,12 @@
 {
   "resourceType": "OperationDefinition",
-  "id": "update-metadata",
+  "id": "UpdateMetadata",
   "status": "draft",
   "experimental": false,
   "version": "2.0.0",
   "publisher": "gematik GmbH",
   "date": "2021-11-12",
+  "url": "https://gematik.de/fhir/ISiK/v2/OperationDefinition/UpdateMetadata",
   "title": "Update document metadata",
   "kind": "operation",
   "name": "update-metadata",

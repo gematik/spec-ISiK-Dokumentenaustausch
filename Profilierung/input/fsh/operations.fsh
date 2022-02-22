@@ -1,9 +1,10 @@
-Instance: submit-document
+Instance: SubmitDocument
 InstanceOf: OperationDefinition
 Usage: #example
 Title: "submit-document"
 Description: ""
 * insert Meta-Inst
+* url = "https://gematik.de/fhir/ISiK/v2/OperationDefinition/SubmitDocument"
 * title = "Submission of new document"
 //* status = #draft
 * kind = #operation
@@ -140,12 +141,13 @@ Expression: "parameter[payloadBinary].exists() or parameter[payloadBundle].exist
 Severity: #error
 
 
-Instance: update-metadata
+Instance: UpdateMetadata
 InstanceOf: OperationDefinition
 Usage: #example
 Title: "update-metadata"
 Description: ""
 * insert Meta-Inst
+* url = "https://gematik.de/fhir/ISiK/v2/OperationDefinition/UpdateMetadata"
 * title = "Update document metadata"
 //* status = #draft
 * kind = #operation

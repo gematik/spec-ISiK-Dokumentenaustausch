@@ -1,11 +1,12 @@
 {
   "resourceType": "OperationDefinition",
-  "id": "submit-document",
+  "id": "SubmitDocument",
   "status": "draft",
   "experimental": false,
   "version": "2.0.0",
   "publisher": "gematik GmbH",
   "date": "2021-11-12",
+  "url": "https://gematik.de/fhir/ISiK/v2/OperationDefinition/SubmitDocument",
   "title": "Submission of new document",
   "kind": "operation",
   "name": "submit-document",
