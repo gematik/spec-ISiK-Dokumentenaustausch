@@ -60,3 +60,12 @@ Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammen
 
 Auch wenn in der aktuellen Stufe nur die Übernahme der menschenlesbaren Repräsentation erforderlich ist, empfiehlt es sich dennoch, das vollständige Bundle samt der strukturierten Anteile zu einem Dokument als ein weiteres Attachment zur DocumentReference zu persistieren, so dass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner Daten möglich ist, diese auch rückwirkend erfolgen kann.
 
+#### Mapping Composition -> DocumentReference
+ @```
+      from StructureDefinition
+      where url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten'
+      for differential.element
+      select
+        Path: id,
+        join mapping.where(identity = 'CompositionDocumentReferenceMapping') { map, comment }
+      ```
