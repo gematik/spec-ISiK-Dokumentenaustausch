@@ -21,7 +21,7 @@ ausnahmsweise auf Englisch spezifiziert.
 
 #### OperationDefinition `$submit-document`
 
-{{render: ISiK-Dokumentenaustausch/submit-document}}
+{{render: ISiK-Dokumentenaustausch/SubmitDocument}}
 
 #### In-Parameters
 
