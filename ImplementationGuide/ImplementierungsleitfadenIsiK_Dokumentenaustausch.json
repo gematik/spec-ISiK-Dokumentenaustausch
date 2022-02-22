@@ -177,6 +177,38 @@
                   "generation": "markdown"
                 }
               ]
+            },
+            {
+              "nameUrl": "ImplementationGuide/Composition.md",
+              "title": "StrukturiertesDokument (Composition)",
+              "generation": "markdown",
+              "page": [
+               {
+                  "nameUrl": "ImplementationGuide/StrukturiertesDokument/Motivation.md",
+                  "title": "Motivation",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/StrukturiertesDokument/Profil.md",
+                  "title": "Profile",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/StrukturiertesDokument/AnmerkungenMustSupport.md",
+                  "title": "Anmerkungen zu den Must-Support Feldern",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/StrukturiertesDokument/Interaktionen.md",
+                  "title": "Interaktionen",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/StrukturiertesDokument/Beispiele.md",
+                  "title": "Beispiele",
+                  "generation": "markdown"
+                }
+              ]
             }
           ]
         }
