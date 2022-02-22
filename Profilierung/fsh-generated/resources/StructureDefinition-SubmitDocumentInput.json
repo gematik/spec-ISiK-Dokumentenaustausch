@@ -8,10 +8,13 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "name": "SubmitDocumentInput",
   "title": "SubmitDocumentInput",
-  "status": "active",
+  "status": "draft",
+  "experimental": false,
+  "date": "2021-11-12",
+  "publisher": "gematik GmbH",
   "description": "Profil zur Validierung der Input-Parameter für $submit-document",
   "fhirVersion": "4.0.1",
   "mapping": [

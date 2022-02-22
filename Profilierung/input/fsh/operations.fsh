@@ -3,8 +3,9 @@ InstanceOf: OperationDefinition
 Usage: #example
 Title: "submit-document"
 Description: ""
+* insert Meta-Inst
 * title = "Submission of new document"
-* status = #draft
+//* status = #draft
 * kind = #operation
 * name = "submit-document"
 * description = "Submit document metadata and payload to a server for storage/persistence."
@@ -70,6 +71,7 @@ Parent: Parameters
 Id: SubmitDocumentInput
 Title: "SubmitDocumentInput"
 Description: "Profil zur Validierung der Input-Parameter für $submit-document"
+* insert Meta
 * obeys sub-in-1
 * obeys sub-in-2
 * parameter 2..* MS
@@ -107,7 +109,7 @@ Parent: Parameters
 Id: SubmitDocumentOutput
 Title: "SubmitDocumentOutput"
 Description: "Profil zur Validierung der Output-Parameter für $submit-document"
-
+* insert Meta
 * parameter 2..2 MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
@@ -138,28 +140,14 @@ Expression: "parameter[payloadBinary].exists() or parameter[payloadBundle].exist
 Severity: #error
 
 
-
-
-
-
-ValueSet: SubmitDocumentModes
-Id: SubmitDocumentModes
-Title: "SubmitDocumentModes"
-Description: ""
-* http://hl7.org/fhir/restful-interaction#create "create"
-* http://hl7.org/fhir/document-relationship-type#replaces "replaces"
-//* http://hl7.org/fhir/restful-interaction#update "update"
-
-
-
-
 Instance: update-metadata
 InstanceOf: OperationDefinition
 Usage: #example
 Title: "update-metadata"
 Description: ""
+* insert Meta-Inst
 * title = "Update document metadata"
-* status = #draft
+//* status = #draft
 * kind = #operation
 * name = "update-metadata"
 * description = "Update selected, uncritical document metadata in a save and controlled manner without having to replace the whole document"

@@ -3,6 +3,7 @@ Profile: ISiKDokumentenMetadaten
 Parent: DocumentReference
 Id: ISiKDokumentenMetadaten
 Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
+* insert Meta
 * masterIdentifier 1.. MS
   * ^short = "Versionsspezifische OID des Dokumentes"
   * system 1..1 MS

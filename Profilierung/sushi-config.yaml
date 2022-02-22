@@ -17,6 +17,9 @@ dependencies:
         version: 1.0.0-rc4
     ihe.mhd.fhir:
         version: 4.0.1
+    de.gematik.isik-basismodul:
+        uri: https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-basismodul
+        version: 1.0.3
 FSHOnly: true
 
 

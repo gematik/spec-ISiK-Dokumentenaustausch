@@ -3,6 +3,7 @@ Profile: ISiKDokumentenSuchergebnisse
 Parent: Bundle
 Id: ISiKDokumentenSuchergebnisse
 Title: "Suchergebnisse einer Dokumentensuche"
+* insert Meta
 * type = #searchset (exactly)
 * total 1..
 * entry ^slicing.discriminator[0].type = #profile
@@ -35,7 +36,7 @@ Description: "A document style representation of the receipt (complete, self-con
   * ^slicing.discriminator.path = "resource.type.coding.code"
   * ^slicing.rules = #open
 * entry contains Composition 1..1 MS
-* entry[Composition].resource only ISiKBerichtSubSysteme
+* entry[Composition].resource only ISiKStrukturiertesDokument
 
 Invariant: ISiK-docBundle-1
 Description: "All referenced Resources must be contained in the Bundle"
@@ -75,10 +76,3 @@ Title: "Bereitstellung von Dokumenten"
 * entry[Patient].resource only Patient
 // */
 
-Profile: ISiKBinary
-Parent: Binary
-Id: ISiKBinary
-Title: "ISiKBinary"
-Description: "Base63-codiertes Dokument"
-* contentType 1..1 MS
-* data 1..1 MS

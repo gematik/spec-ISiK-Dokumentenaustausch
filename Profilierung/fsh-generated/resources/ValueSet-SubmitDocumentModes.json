@@ -1,11 +1,14 @@
 {
   "resourceType": "ValueSet",
-  "status": "active",
+  "status": "draft",
   "name": "SubmitDocumentModes",
   "id": "SubmitDocumentModes",
   "title": "SubmitDocumentModes",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "url": "https://gematik.de/fhir/ISiK/v2/ValueSet/SubmitDocumentModes",
+  "experimental": false,
+  "publisher": "gematik GmbH",
+  "date": "2021-11-12",
   "compose": {
     "include": [
       {

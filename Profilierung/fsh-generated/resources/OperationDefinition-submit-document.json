@@ -1,8 +1,12 @@
 {
   "resourceType": "OperationDefinition",
   "id": "submit-document",
-  "title": "Submission of new document",
   "status": "draft",
+  "experimental": false,
+  "version": "2.0.0",
+  "publisher": "gematik GmbH",
+  "date": "2021-11-12",
+  "title": "Submission of new document",
   "kind": "operation",
   "name": "submit-document",
   "description": "Submit document metadata and payload to a server for storage/persistence.",
