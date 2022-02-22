@@ -53,21 +53,21 @@
         "mustSupport": true
       },
       {
-        "id": "Parameters.parameter:mode",
+        "id": "Parameters.parameter:output-mode",
         "path": "Parameters.parameter",
-        "sliceName": "mode",
+        "sliceName": "output-mode",
         "short": "Verarbeitungsmodus der vom Server verwendet wurde",
         "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Parameters.parameter:mode.name",
+        "id": "Parameters.parameter:output-mode.name",
         "path": "Parameters.parameter.name",
-        "patternString": "mode"
+        "patternString": "output-mode"
       },
       {
-        "id": "Parameters.parameter:mode.value[x]",
+        "id": "Parameters.parameter:output-mode.value[x]",
         "path": "Parameters.parameter.value[x]",
         "slicing": {
           "discriminator": [
@@ -86,7 +86,7 @@
         ]
       },
       {
-        "id": "Parameters.parameter:mode.valueCode",
+        "id": "Parameters.parameter:output-mode.valueCode",
         "path": "Parameters.parameter.valueCode",
         "min": 0,
         "max": "1",
@@ -96,9 +96,9 @@
         }
       },
       {
-        "id": "Parameters.parameter:metadata",
+        "id": "Parameters.parameter:output-metadata",
         "path": "Parameters.parameter",
-        "sliceName": "metadata",
+        "sliceName": "output-metadata",
         "short": "Dokumentenmetadaten wie sie vom Server verstanden/erzeugt/persistiert wurden",
         "comment": "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.\r\n    In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren.",
         "min": 1,
@@ -106,12 +106,12 @@
         "mustSupport": true
       },
       {
-        "id": "Parameters.parameter:metadata.name",
+        "id": "Parameters.parameter:output-metadata.name",
         "path": "Parameters.parameter.name",
-        "patternString": "metadata"
+        "patternString": "output-metadata"
       },
       {
-        "id": "Parameters.parameter:metadata.resource",
+        "id": "Parameters.parameter:output-metadata.resource",
         "path": "Parameters.parameter.resource",
         "type": [
           {
@@ -123,7 +123,7 @@
         ]
       },
       {
-        "id": "Parameters.parameter:metadata.resource.id",
+        "id": "Parameters.parameter:output-metadata.resource.id",
         "path": "Parameters.parameter.resource.id",
         "min": 1,
         "mustSupport": true

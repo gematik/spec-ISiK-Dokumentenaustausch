@@ -34,19 +34,19 @@ If the server decides to perform a create instead of an update, the invalid rela
 * type = false
 * instance = false
 * inputProfile = Canonical(SubmitDocumentInput)
-//* outputProfile = Canonical(SubmitDocumentOutput)
+* outputProfile = Canonical(SubmitDocumentOutput)
 * parameter[+]
-  * name = #mode
+  * name = #input-mode
   * use = #in
   * min = 1
   * max = "1"
-  * documentation = "determines the mode (create/update) in which the server processes the document"
+  * documentation = "determines the mode (create/update) in which the client wants the server to processes the document"
   * type = #code
   * binding 
     * strength = #required 
     * valueSet = Canonical(SubmitDocumentModes)
 * parameter[+]
-  * name = #metadata
+  * name = #input-metadata
   * use = #in 
   * min = 0
   * max = "1"
@@ -66,6 +66,23 @@ If the server decides to perform a create instead of an update, the invalid rela
   * max = "1"
   * documentation = "Bundle containing FHIR document"
   * type = #Bundle
+* parameter[+]
+  * name = #output-mode
+  * use = #out
+  * min = 1
+  * max = "1"
+  * documentation = "determines the mode (create/update) in which the server actually processed the document"
+  * type = #code
+  * binding 
+    * strength = #required 
+    * valueSet = Canonical(SubmitDocumentModes)
+* parameter[+]
+  * name = #output-metadata
+  * use = #out
+  * min = 0
+  * max = "1"
+  * documentation = "DocumentReference as persisted by the server"
+  * type = #DocumentReference
 
 Profile: SubmitDocumentInput
 Parent: Parameters
@@ -79,19 +96,19 @@ Description: "Profil zur Validierung der Input-Parameter für $submit-document"
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
   * ^slicing.rules = #open
-* parameter contains mode 1..1 MS 
-    and metadata 0..1 MS 
+* parameter contains input-mode 0..1 MS 
+    and input-metadata 0..1 MS 
     and payloadBinary 0..1 MS
     and payloadBundle 0..1 MS
-* parameter[mode]
-  * name = "mode"
+* parameter[input-mode]
+  * name = "input-mode"
   * value[x] only code
   * valueCode from SubmitDocumentModes
-* parameter[metadata]
+* parameter[input-metadata]
   * ^short = "Dokumentenmetadaten in Form einer DocumentReference-Ressource"
   * ^comment = "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.
     In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren."
-  * name = "metadata"
+  * name = "input-metadata"
   * resource only ISiKDokumentenMetadaten
 * parameter[payloadBinary]
   * ^short = "unstrukturiertes oder nicht FHIR-basiertes Dokument"
@@ -105,6 +122,8 @@ Description: "Profil zur Validierung der Input-Parameter für $submit-document"
   * resource only Bundle
   * resource.type = #document
 
+
+
 Profile: SubmitDocumentOutput
 Parent: Parameters
 Id: SubmitDocumentOutput
@@ -115,18 +134,18 @@ Description: "Profil zur Validierung der Output-Parameter für $submit-document"
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
   * ^slicing.rules = #open
-* parameter contains mode 1..1 MS 
-    and metadata 1..1 MS 
-* parameter[mode]
+* parameter contains output-mode 1..1 MS 
+    and output-metadata 1..1 MS 
+* parameter[output-mode]
   * ^short = "Verarbeitungsmodus der vom Server verwendet wurde"
-  * name = "mode"
+  * name = "output-mode"
   * value[x] only code
   * valueCode from SubmitDocumentModes
-* parameter[metadata]
+* parameter[output-metadata]
   * ^short = "Dokumentenmetadaten wie sie vom Server verstanden/erzeugt/persistiert wurden"
   * ^comment = "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.
     In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren."
-  * name = "metadata"
+  * name = "output-metadata"
   * resource only ISiKDokumentenMetadaten
   * resource.id 1..1 MS
 

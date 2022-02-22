@@ -3,7 +3,6 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-Inst
 * url = "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/dokumentenaustausch-server"
-* version = "2.0.0"
 * name = "ISiKCapabilityStatementDokumentenaustauschServer"
 * title = "ISiK CapabilityStatement Dokumentenaustausch Server"
 * description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls &quot;Dokumentenaustausch&quot; zu bestehen."
@@ -77,9 +76,13 @@ Usage: #definition
   * type = #Bundle
   * supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKStrukturiertesDokumentBundle"
 * rest.operation[+]
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
   * name = #submit-document
   * definition = Canonical(SubmitDocument)
 * rest.operation[+]
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #MAY
   * name = #update-metadata
   * definition = Canonical(UpdateMetadata)
 

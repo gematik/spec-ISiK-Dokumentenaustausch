@@ -173,10 +173,22 @@
       ],
       "operation": [
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
           "name": "submit-document",
           "definition": "https://gematik.de/fhir/ISiK/v2/OperationDefinition/SubmitDocument"
         },
         {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "MAY"
+            }
+          ],
           "name": "update-metadata",
           "definition": "https://gematik.de/fhir/ISiK/v2/OperationDefinition/UpdateMetadata"
         }

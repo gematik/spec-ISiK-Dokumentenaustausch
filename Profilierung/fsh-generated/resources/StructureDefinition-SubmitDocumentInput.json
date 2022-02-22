@@ -72,20 +72,20 @@
         "mustSupport": true
       },
       {
-        "id": "Parameters.parameter:mode",
+        "id": "Parameters.parameter:input-mode",
         "path": "Parameters.parameter",
-        "sliceName": "mode",
-        "min": 1,
+        "sliceName": "input-mode",
+        "min": 0,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Parameters.parameter:mode.name",
+        "id": "Parameters.parameter:input-mode.name",
         "path": "Parameters.parameter.name",
-        "patternString": "mode"
+        "patternString": "input-mode"
       },
       {
-        "id": "Parameters.parameter:mode.value[x]",
+        "id": "Parameters.parameter:input-mode.value[x]",
         "path": "Parameters.parameter.value[x]",
         "slicing": {
           "discriminator": [
@@ -104,7 +104,7 @@
         ]
       },
       {
-        "id": "Parameters.parameter:mode.valueCode",
+        "id": "Parameters.parameter:input-mode.valueCode",
         "path": "Parameters.parameter.valueCode",
         "min": 0,
         "max": "1",
@@ -114,9 +114,9 @@
         }
       },
       {
-        "id": "Parameters.parameter:metadata",
+        "id": "Parameters.parameter:input-metadata",
         "path": "Parameters.parameter",
-        "sliceName": "metadata",
+        "sliceName": "input-metadata",
         "short": "Dokumentenmetadaten in Form einer DocumentReference-Ressource",
         "comment": "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.\r\n    In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren.",
         "min": 0,
@@ -124,12 +124,12 @@
         "mustSupport": true
       },
       {
-        "id": "Parameters.parameter:metadata.name",
+        "id": "Parameters.parameter:input-metadata.name",
         "path": "Parameters.parameter.name",
-        "patternString": "metadata"
+        "patternString": "input-metadata"
       },
       {
-        "id": "Parameters.parameter:metadata.resource",
+        "id": "Parameters.parameter:input-metadata.resource",
         "path": "Parameters.parameter.resource",
         "type": [
           {

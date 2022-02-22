@@ -18,13 +18,14 @@
   "type": false,
   "instance": false,
   "inputProfile": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput",
+  "outputProfile": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentOutput",
   "parameter": [
     {
-      "name": "mode",
+      "name": "input-mode",
       "use": "in",
       "min": 1,
       "max": "1",
-      "documentation": "determines the mode (create/update) in which the server processes the document",
+      "documentation": "determines the mode (create/update) in which the client wants the server to processes the document",
       "type": "code",
       "binding": {
         "strength": "required",
@@ -32,7 +33,7 @@
       }
     },
     {
-      "name": "metadata",
+      "name": "input-metadata",
       "use": "in",
       "min": 0,
       "max": "1",
@@ -54,6 +55,26 @@
       "max": "1",
       "documentation": "Bundle containing FHIR document",
       "type": "Bundle"
+    },
+    {
+      "name": "output-mode",
+      "use": "out",
+      "min": 1,
+      "max": "1",
+      "documentation": "determines the mode (create/update) in which the server actually processed the document",
+      "type": "code",
+      "binding": {
+        "strength": "required",
+        "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/SubmitDocumentModes"
+      }
+    },
+    {
+      "name": "output-metadata",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "documentation": "DocumentReference as persisted by the server",
+      "type": "DocumentReference"
     }
   ]
 }
