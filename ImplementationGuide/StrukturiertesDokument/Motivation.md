@@ -20,3 +20,5 @@ Die Berichte werden, wie von der [FHIR Spezifikation für die Composition Ressou
 
 Das Bundle muss folgendem Profil entsprechen:
 {{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle, hybrid}}
+
+Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumentes sind. Dabei ist die erste Ressource im Bundle (Bundle.entry.resource) stets eine Composition, alle weiteren entries enthalten zusätzliche Ressourcen, auf die die Composition verweist.
