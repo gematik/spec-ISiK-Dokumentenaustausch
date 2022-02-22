@@ -19,8 +19,21 @@ Um den hier erarbeiteten Vorschlag einer Dokumentenübermittlung mittels Operati
 IHE im besonderen vorstellen zu können, in der Hoffnung und Erwartung, dass diese dem Vorgehen folgen, wird dieser Teil der ISiK-Spezifikation 
 ausnahmsweise auf Englisch spezifiziert.
 
+#### OperationDefinition `$submit-document`
+
 {{render: ISiK-Dokumentenaustausch/submit-document}}
+
+#### In-Parameters
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentinput}}
 
+#### Out-Parameters
+
 {{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
+
+### Hinweis zum Umgang mit strukturierten FHIR-basierten Dokumenten
+Wenn es sich bei dem bereitgestellten Dokument nicht um Binärdaten (PDF, DOC, JPEG...) sondern um ein strukturiertes, FHIR-basiertes Dokument (Bundle) handelt, so ist die Bereitstellung des metadata-Parameters durch den Client optional.
+Server müssen die fehlenden Metadaten aus dem Dokumentenheader (Composition-Ressource) anhand des [vorgegebenen Mappings](https://simplifier.net/ISiK-Dokumentenaustausch/ISiKDokumentenMetadaten/~mappings) ermitteln.
+Für das Bestätigungsverfahren in ISiK ist dabei das Patienten- und Encounter-Matching ausschließlich anhand von Patienten- und Fallnummer erforderlich.
+Komplexere Matchingverfahren *können* implementiert werden, sind jedoch *nicht* Bestandteil des Testverfahrens.
+
