@@ -19,6 +19,6 @@ Es obliegt dabei dem Ermessen des Herstellers, ob die Übernahme strukturierter 
 Die Berichte werden, wie von der [FHIR Spezifikation für die Composition Ressource vorgesehen](https://www.hl7.org/fhir/composition.html), in einem FHIR-Bundle versendet.
 
 Das Bundle muss folgendem Profil entsprechen:
-{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle, hybrid}}
+{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKStrukturiertesDokumentBundle, hybrid}}
 
 Das Bundle dient der Aggregation aller Ressourcen, die Bestandteil des Dokumentes sind. Dabei ist die erste Ressource im Bundle (Bundle.entry.resource) stets eine Composition, alle weiteren entries enthalten zusätzliche Ressourcen, auf die die Composition verweist.
