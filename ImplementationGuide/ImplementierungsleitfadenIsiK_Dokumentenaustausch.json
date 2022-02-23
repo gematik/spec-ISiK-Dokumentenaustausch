@@ -204,6 +204,38 @@
                   "generation": "markdown"
                 }
               ]
+            },
+            {
+              "nameUrl": "ImplementationGuide/Binary.md",
+              "title": "Binärdaten (Binary)",
+              "generation": "markdown",
+              "page": [
+               {
+                  "nameUrl": "ImplementationGuide/Binary/Motivation.md",
+                  "title": "Motivation",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/Binary/Profil.md",
+                  "title": "Profile",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/Binary/AnmerkungenMustSupport.md",
+                  "title": "Anmerkungen zu den Must-Support Feldern",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/Binary/Interaktionen.md",
+                  "title": "Interaktionen",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "ImplementationGuide/Binary/Beispiele.md",
+                  "title": "Beispiele",
+                  "generation": "markdown"
+                }
+              ]
             }
           ]
         }
