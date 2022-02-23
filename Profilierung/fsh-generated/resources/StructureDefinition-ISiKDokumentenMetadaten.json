@@ -325,6 +325,8 @@
       {
         "id": "DocumentReference.author",
         "path": "DocumentReference.author",
+        "short": "Autor des Dokumentes",
+        "comment": "In dieser Ausbaustufe ist die Nennung des Namens oder Kürzels des Autors ausreichend. \r\n  Eine darüber hinaus gehende Verlinkung auf einen Pracitioner (auflösbar auf dem Server) ist möglich aber nicht erforderlich.",
         "mustSupport": true,
         "mapping": [
           {
@@ -332,6 +334,11 @@
             "map": "Composition.author"
           }
         ]
+      },
+      {
+        "id": "DocumentReference.author.display",
+        "path": "DocumentReference.author.display",
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.custodian",

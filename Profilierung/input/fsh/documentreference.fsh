@@ -88,6 +88,10 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 Die Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. 
 Ein entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt."
 * author MS
+  * ^short = "Autor des Dokumentes"
+  * ^comment = "In dieser Ausbaustufe ist die Nennung des Namens oder Kürzels des Autors ausreichend. 
+  Eine darüber hinaus gehende Verlinkung auf einen Pracitioner (auflösbar auf dem Server) ist möglich aber nicht erforderlich."
+  * display MS
 * custodian ..0
   * ^comment = "Einschränkung der Kardinalität analog MHD V4.0.1"
 * description 1..1 MS
