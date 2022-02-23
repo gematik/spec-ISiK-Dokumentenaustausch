@@ -1,5 +1,4 @@
 ### Interaktionen
 
-1. Dokumentenabfrage {{pagelink:ImplementationGuide/AkteureUndInteraktionen-Dokumentenabfrage.md}}
+Auf der Ressource `Compositon` sind keine Interaktionen definiert.
 
-2. Dokumentenbereitstellung {{pagelink:ImplementationGuide/AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md}}
