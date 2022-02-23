@@ -31,11 +31,6 @@
           "generation": "markdown",
           "page": [
             {
-              "nameUrl": "ImplementationGuide/Methodik.md",
-              "title": "Methodik",
-              "generation": "markdown"
-            },
-            {
               "nameUrl": "ImplementationGuide/BestaetigungsrelevanteSysteme.md",
               "title": "Bestätigungsrelevante Systeme",
               "generation": "markdown"
@@ -44,27 +39,7 @@
               "nameUrl": "ImplementationGuide/Kompatibilitaet.md",
               "title": "Kompatibilität",
               "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide/MustSupportFlags.md",
-              "title": "Must-Support-Flags",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide/Repraesentationsformate.md",
-              "title": "Repräsentationsformate",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide/Suchparameter.md",
-              "title": "Suchparameter",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "ImplementationGuide/RestApi.md",
-              "title": "REST-API",
-              "generation": "markdown"
-            },
+            },           
             {
               "nameUrl": "ImplementationGuide/AkteureUndInteraktionen.md",
               "title": "Akteure und Interaktionen",
