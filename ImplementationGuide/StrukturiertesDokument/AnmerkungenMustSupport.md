@@ -1,7 +1,5 @@
 ### Anmerkungen zu den Must-Support-Feldern
 
-### Anmerkungen zu Must-Support-Feldern
-
 @```from
 	StructureDefinition
 where 
