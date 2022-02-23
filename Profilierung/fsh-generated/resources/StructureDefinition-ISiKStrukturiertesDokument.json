@@ -57,11 +57,14 @@
       {
         "id": "Composition.id",
         "path": "Composition.id",
+        "short": "System-interne Datensatz-ID",
         "min": 1
       },
       {
         "id": "Composition.text",
         "path": "Composition.text",
+        "short": "menschenlesbare Repräsentation des Dokumentenkopfes (Metadaten)",
+        "comment": "Die Mindestanforderungen an den Inhalt der menschenlesbaren Repräsentation umfasst folgende Informationen:\n      * Composition.subject:Patient.name.family\n      * Composition.subject:Patient.birthDate\n      * Composition.subject:Patient.identifier:pid\n      * Composition.status\n      * Composition.type.text\n      * Composition.date\n      * Composition.title\n      * Composition.author.display",
         "min": 1,
         "mustSupport": true
       },
@@ -79,22 +82,33 @@
       {
         "id": "Composition.identifier",
         "path": "Composition.identifier",
+        "short": "versionsunabhängiger weltweit eindeutiger Identifier des Dokumentes",
+        "comment": "Vom Dokumenten-erzeugenden system zugewiesener Identifier des Dokumentes mit Angabe der URL des vom Subsystem verwendeten Namensraumes",
         "min": 1
       },
       {
         "id": "Composition.identifier.system",
         "path": "Composition.identifier.system",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Composition.identifier.value",
         "path": "Composition.identifier.value",
-        "min": 1
+        "min": 1,
+        "mustSupport": true
       },
       {
         "id": "Composition.status",
         "path": "Composition.status",
+        "short": "Status des Dokumentes",
         "fixedCode": "final"
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "short": "Dokumenttyp",
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding",
@@ -118,17 +132,23 @@
         "max": "1",
         "patternCoding": {
           "system": "http://dvmd.de/fhir/CodeSystem/kdl"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding:KDL.system",
         "path": "Composition.type.coding.system",
+        "short": "Namensraum des Codes",
+        "comment": "Fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;",
         "min": 1,
-        "fixedUri": "http://dvmd.de/fhir/CodeSystem/kdl"
+        "fixedUri": "http://dvmd.de/fhir/CodeSystem/kdl",
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding:KDL.code",
         "path": "Composition.type.coding.code",
+        "short": "Der KDL-Code",
+        "comment": "Es sind aussschließlich achtstellige KDL-Codes erlaubt",
         "min": 1,
         "constraint": [
           {
@@ -138,7 +158,8 @@
             "expression": "matches('[A-Z]{2}[0-9]{6}')",
             "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKStrukturiertesDokument"
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding:XDS",
@@ -148,7 +169,8 @@
         "max": "1",
         "patternCoding": {
           "system": "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
-        }
+        },
+        "mustSupport": true
       },
       {
         "id": "Composition.type.coding:XDS.system",
@@ -184,6 +206,13 @@
         "min": 1
       },
       {
+        "id": "Composition.category",
+        "path": "Composition.category",
+        "short": "Dokumentenkategorie",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
         "id": "Composition.category.coding",
         "path": "Composition.category.coding",
         "slicing": {
@@ -201,18 +230,23 @@
         "id": "Composition.category.coding:XDS",
         "path": "Composition.category.coding",
         "sliceName": "XDS",
+        "short": "Dokumentenklasse nach IHE-XDS(DE)",
         "min": 1,
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "Composition.category.coding:XDS.system",
         "path": "Composition.category.coding.system",
+        "short": "Namensraum des Codes",
         "min": 1,
-        "fixedUri": "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+        "fixedUri": "http://ihe-d.de/CodeSystems/IHEXDSclassCode",
+        "mustSupport": true
       },
       {
         "id": "Composition.category.coding:XDS.code",
         "path": "Composition.category.coding.code",
+        "short": "Der XDS-Code",
         "min": 1
       },
       {
@@ -236,6 +270,7 @@
       {
         "id": "Composition.subject",
         "path": "Composition.subject",
+        "short": "Patientenbezug des Dokumentes",
         "min": 1,
         "type": [
           {
@@ -256,6 +291,7 @@
       {
         "id": "Composition.encounter",
         "path": "Composition.encounter",
+        "short": "Fallbezug des Dokumentes",
         "min": 1,
         "type": [
           {
@@ -276,11 +312,13 @@
       {
         "id": "Composition.date",
         "path": "Composition.date",
+        "short": "Datum der letzten Änderung am Dokument",
         "mustSupport": true
       },
       {
         "id": "Composition.author",
         "path": "Composition.author",
+        "short": "In der aktuellen Ausbaustufe von ISiK ist die Verwendung der textuellen Repräsentation (display) von Autor und Subsystem ausreichend. Die darüber hinaus gehende Verlinkung auf Practitioner bzw. Device-Ressourcen KANN implementiert werden.",
         "type": [
           {
             "code": "Reference",
@@ -304,29 +342,36 @@
       {
         "id": "Composition.title",
         "path": "Composition.title",
+        "short": "Dokumentenbezeichnung",
+        "comment": "Die Dokumentenbezeichnung dient der Darstellung des Dokumentes in einer Übersicht, z.B. in einer Patientenakte, und KANN der schnellen Auffindbarkeit eines gesuchten Dokumentes dienen. Geeignete Bezeichnungen sind zum Beispiel\n&quot;Kleines Blutbild vom 13.10.2020&quot;\n&quot;Pathologiebefund (Abstrich) vom 13.10.2020&quot;\n&quot;Blutgasmessung vom 13.10.2020 14:14h&quot;",
         "mustSupport": true
       },
       {
         "id": "Composition.section",
         "path": "Composition.section",
+        "short": "Inhalt des Dokumentes unterteilt in Kapitel",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Composition.section.title",
         "path": "Composition.section.title",
+        "short": "Kapitelüberschrift",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Composition.section.text",
         "path": "Composition.section.text",
+        "short": "menschenlesbare Repräsentation des Inhalts eines Kapitels",
+        "comment": "Für Aggregation einer vollständigen menschenlesbaren Repräsentation MÜSSEN die Repräsentationen der einzelnen Kapitel an die Repräsentation der Metadaten (Composition.text) angehängt werden. Für die Separierung KÖNNEN einfache <div>-Tags verwendet werden. Es ist zu beachten, dass Kapitel auch Unterkapitel enthalten KÖNNEN (Composition.section.section), die bei der Aggregation entsprechend berücksichtigt werden MÜSSEN.\n\n          Die Mindestanforderungen an den Inhalt der menschenlesbaren Repräsentation umfasst folgende Informationen:\n\n          section.title + Freitext oder\n          section.title + Resource.text der referenzierten Ressource oder\n          section.title + eine aggregierte Repräsentation von Resource.text wenn in einer Section mehrere Ressourcen referenziert werden.",
         "min": 1,
         "mustSupport": true
       },
       {
         "id": "Composition.section.section",
         "path": "Composition.section.section",
+        "short": "Unterkapitel",
         "mustSupport": true
       }
     ]
