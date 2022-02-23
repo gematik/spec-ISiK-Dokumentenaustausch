@@ -19,6 +19,7 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
   * status = #extensions (exactly)
   * status MS
   * div MS
+    * ^short = "XHTML-codierter Narrativ"
 * identifier 1..
   * ^short = "versionsunabhängiger weltweit eindeutiger Identifier des Dokumentes"
   * ^comment = "Vom Dokumenten-erzeugenden system zugewiesener Identifier des Dokumentes mit Angabe der URL des vom Subsystem verwendeten Namensraumes"
