@@ -91,13 +91,12 @@ Title: "SubmitDocumentInput"
 Description: "Profil zur Validierung der Input-Parameter für $submit-document"
 * insert Meta
 * obeys sub-in-1
-* obeys sub-in-2
 * parameter 2..* MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
   * ^slicing.rules = #open
 * parameter contains input-mode 0..1 MS 
-    and input-metadata 0..1 MS 
+    and input-metadata 1..1 MS 
     and payloadBinary 0..1 MS
     and payloadBundle 0..1 MS
 * parameter[input-mode]
@@ -106,8 +105,7 @@ Description: "Profil zur Validierung der Input-Parameter für $submit-document"
   * valueCode from SubmitDocumentModes
 * parameter[input-metadata]
   * ^short = "Dokumentenmetadaten in Form einer DocumentReference-Ressource"
-  * ^comment = "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.
-    In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren."
+  * ^comment = "..."
   * name = "input-metadata"
   * resource only ISiKDokumentenMetadaten
 * parameter[payloadBinary]
@@ -121,7 +119,6 @@ Description: "Profil zur Validierung der Input-Parameter für $submit-document"
   * name = "payloadBundle"
   * resource only Bundle
   * resource.type = #document
-
 
 
 Profile: SubmitDocumentOutput
@@ -142,55 +139,15 @@ Description: "Profil zur Validierung der Output-Parameter für $submit-document"
   * value[x] only code
   * valueCode from SubmitDocumentModes
 * parameter[output-metadata]
-  * ^short = "Dokumentenmetadaten wie sie vom Server verstanden/erzeugt/persistiert wurden"
-  * ^comment = "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.
-    In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren."
+  * ^short = "Dokumentenmetadaten wie sie vom Server verstanden/persistiert wurden"
+  * ^comment = "..."
   * name = "output-metadata"
   * resource only ISiKDokumentenMetadaten
   * resource.id 1..1 MS
 
+
 Invariant: sub-in-1
-Description: "Bei Payload vom Typ `Binary` muss zusätzlich der Parameter `metadata` übermittelt werden!"
-Expression: "parameter[metadata].exists() or parameter[payloadBundle].exists()"
-Severity: #error
-
-Invariant: sub-in-2
 Description: "Es muss entweder ein Payload vom Typ Binary oder vom Typ Bundle übermittelt werden!"
-Expression: "parameter[payloadBinary].exists() or parameter[payloadBundle].exists()"
+Expression: "parameter.where(name= 'payloadBinary').exists() xor parameter.ahere(name='payloadBundle').exists()"
 Severity: #error
-
-
-Instance: UpdateMetadata
-InstanceOf: OperationDefinition
-Usage: #example
-Title: "update-metadata"
-Description: ""
-* insert Meta-Inst
-* url = "https://gematik.de/fhir/ISiK/v2/OperationDefinition/UpdateMetadata"
-* title = "Update document metadata"
-//* status = #draft
-* kind = #operation
-* name = "update-metadata"
-* description = "Update selected, uncritical document metadata in a save and controlled manner without having to replace the whole document"
-* code = #update-metadata
-* comment = "
-    Expected behaviour:
-Servers are expected to update the DocumentReference element(s) with the submitted values(s)
-"
-* resource = #DocumentReference
-* system = false
-* type = false
-* instance = true
-//* inputProfile = Canonical(UpdateMetadata)
-//* outputProfile = Canonical(SubmitDocumentOutput)
-* parameter[+]
-  * name = #docStatus
-  * use = #in
-  * min = 1
-  * max = "1"
-  * documentation = "new value for element `docStatus`"
-  * type = #code
-  * binding 
-    * strength = #required 
-    * valueSet = "http://hl7.org/fhir/ValueSet/composition-status"
 

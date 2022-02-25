@@ -98,13 +98,19 @@ Description: "Dieses Profil ermöglicht die Krankenhaus-interne Übermittlung ei
     * ^short = "Kapitelüberschrift"
   * text 1.. MS
     * ^short = "menschenlesbare Repräsentation des Inhalts eines Kapitels"
-    * ^comment = "Für Aggregation einer vollständigen menschenlesbaren Repräsentation MÜSSEN die Repräsentationen der einzelnen Kapitel an die Repräsentation der Metadaten (Composition.text) angehängt werden. Für die Separierung KÖNNEN einfache <div>-Tags verwendet werden. Es ist zu beachten, dass Kapitel auch Unterkapitel enthalten KÖNNEN (Composition.section.section), die bei der Aggregation entsprechend berücksichtigt werden MÜSSEN.
+    * ^comment = "Für Aggregation einer vollständigen menschenlesbaren Repräsentation 
+    MÜSSEN die Repräsentationen der einzelnen Kapitel an die Repräsentation der Metadaten 
+    (Composition.text) angehängt werden. 
+    Für die Separierung KÖNNEN einfache &lt;div&gt;-Tags verwendet werden. 
+    Es ist zu beachten, dass Kapitel auch Unterkapitel enthalten KÖNNEN 
+    (Composition.section.section), die bei der Aggregation entsprechend berücksichtigt 
+    werden MÜSSEN.
 
-          Die Mindestanforderungen an den Inhalt der menschenlesbaren Repräsentation umfasst folgende Informationen:
+    Die Mindestanforderungen an den Inhalt der menschenlesbaren Repräsentation umfasst folgende Informationen:
 
-          section.title + Freitext oder
-          section.title + Resource.text der referenzierten Ressource oder
-          section.title + eine aggregierte Repräsentation von Resource.text wenn in einer Section mehrere Ressourcen referenziert werden."
+    section.title + Freitext oder
+    section.title + Resource.text der referenzierten Ressource oder
+    section.title + eine aggregierte Repräsentation von Resource.text wenn in einer Section mehrere Ressourcen referenziert werden."
   * section MS
     * ^short = "Unterkapitel"
 

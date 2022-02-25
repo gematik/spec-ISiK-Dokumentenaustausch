@@ -99,8 +99,8 @@
         "id": "Parameters.parameter:output-metadata",
         "path": "Parameters.parameter",
         "sliceName": "output-metadata",
-        "short": "Dokumentenmetadaten wie sie vom Server verstanden/erzeugt/persistiert wurden",
-        "comment": "Die Metadaten können weggelassen werden, wenn es sich bei dem übermittelten Dokument um ein strukturiertes, FHIR-basiertes Dokument handelt.\r\n    In diesem Fall kann der Server die Metadaten aus der Composition-Ressource im Bundle extrahieren.",
+        "short": "Dokumentenmetadaten wie sie vom Server verstanden/persistiert wurden",
+        "comment": "...",
         "min": 1,
         "max": "1",
         "mustSupport": true

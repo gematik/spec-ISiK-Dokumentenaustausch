@@ -1,0 +1,173 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "GenerateMetadataInput",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    }
+  ],
+  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/GenerateMetadataInput",
+  "version": "2.0.0",
+  "name": "GenerateMetadatatInput",
+  "title": "GenerateMetadataInput",
+  "status": "draft",
+  "experimental": false,
+  "date": "2021-11-12",
+  "publisher": "gematik GmbH",
+  "description": "Profil zur Validierung der Input-Parameter für $generate-metadata",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Parameters",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Parameters",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Parameters",
+        "path": "Parameters",
+        "constraint": [
+          {
+            "key": "gen-in-1",
+            "severity": "error",
+            "human": "Es muss entweder der Parameter `fhir-document` oder der parameter `non-fhir-document` übermittelt werden!",
+            "expression": "parameter.where(name = 'fhir-document').exists() xor parameter.where(name='non-fhir-document').exists()",
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/GenerateMetadataInput"
+          },
+          {
+            "key": "gen-in-2",
+            "severity": "error",
+            "human": "Wenn der Parameter `non-fhir-document` übermittelt wird, muss auch `non-fhir-document-type` übermittelt werden. `non-fhir-document-type` darf nicht in Verbindung mit `fhir-document` übermittelt werden.",
+            "expression": "parameter.where(name = 'non-fhir-document').exists().not() xor parameter.where(name = 'non-fhir-document-type').exists()",
+            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/GenerateMetadataInput"
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter",
+        "path": "Parameters.parameter",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "name"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:fhir-document",
+        "path": "Parameters.parameter",
+        "sliceName": "fhir-document",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:fhir-document.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "fhir-document"
+      },
+      {
+        "id": "Parameters.parameter:fhir-document.resource",
+        "path": "Parameters.parameter.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Bundle",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKStrukturiertesDokumentBundle"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:non-fhir-document",
+        "path": "Parameters.parameter",
+        "sliceName": "non-fhir-document",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Parameters.parameter:non-fhir-document.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "non-fhir-document"
+      },
+      {
+        "id": "Parameters.parameter:non-fhir-document.resource",
+        "path": "Parameters.parameter.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Binary",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:non-fhir-document-type",
+        "path": "Parameters.parameter",
+        "sliceName": "non-fhir-document-type",
+        "short": "genauer Typ der Dokumenttyp der Binärdaten",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Parameters.parameter:non-fhir-document-type.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "non-fhir-document-type"
+      },
+      {
+        "id": "Parameters.parameter:non-fhir-document-type.value[x]",
+        "path": "Parameters.parameter.value[x]",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter:target-endpoint",
+        "path": "Parameters.parameter",
+        "sliceName": "target-endpoint",
+        "short": "Server-Endpunkt auf dem passende Patient-/Encounter-Referenzen gesucht werden sollen. \r\n  Wenn der Parameter nicht gesetzt wird, verwendet der Server, der die Operation ausführt, per default den eigenen Endpunkt",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Parameters.parameter:target-endpoint.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "target-endpoint"
+      },
+      {
+        "id": "Parameters.parameter:target-endpoint.value[x]",
+        "path": "Parameters.parameter.value[x]",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ]
+      }
+    ]
+  }
+}
