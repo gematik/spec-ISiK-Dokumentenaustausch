@@ -16,18 +16,18 @@ Description: ""
 * comment = "
     Expected behaviour:
 
-**mode `create`:**
-* Servers are expected to store the submitted binary with the associated metadata and make it available through the FHIR API
+* Servers SHALL store the submitted binary with the associated metadata and make it available through the FHIR API
+* If the submission contains a structured FHIR document-Bundle, Servers MAY chose to store additional representations of the document,
+e.g. native FHIR (XML and/or JSON) for FHIR aware Clients and/or HTML to allow easy read access for FHIR agnostic Clients. 
+The Binary representation mostly serves the purpose of Archiving an immutable version of the document, rather than making it available to other consumers!
+If Servers can provide multiple representations of the same documente, this SHOULD be reflected in multiple `content`-elements in the DocumentReference
 * Servers SHALL return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique on the server (already associated with another document)
-* Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url is not resolveable within the submitted Parameters resource
-    
-**mode `replaces`:**
-
-* Clients SHALL submit a DocumentReference which includes a `relatesTo`-Element with `relatesTo.code` set to `replaces` and `relatesTo.target` referencing the superseded DocumentReference on the server.
-* Servers are expected to either replace the previous version of the DocumentReference **or** create a new version and deprecate the old version by updating it's `status` to `superseded`.
-* Servers SHALL check, if the DocumentReference.identifier of the submitted DocumentReference and the referenced DocumentReference are identical
-* Servers SHALL either return HTTP 412 (precondition failed) **or** treat the update as a create if the referenced DocumentReference does not yet exist on the server.
-If the server decides to perform a create instead of an update, the invalid relatesTo-Element MAY be removed from the DocumentReference in order to maintain referential integrity.
+* If a Client submits a DocumentReference which includes a `relatesTo`-Element, the Server SHALL process the submission in accordance with `relatesTo.code` as either a 
+replacement, transformation, appendix or a signature of the document referenced in `relatesTo.target`. If the submission is successful, Servers SHALL update 
+the `status` of the related DocumentReference to `superseded`. 
+* Servers SHALL return HTTP 412 (precondition failed) the `relatesTo.target` reference does not resolve on the server.
+* Servers SHALL ignore any information submitted by the Client in `DocumentReference.content` and assume the content to be the Binary submitted with the `payload`parameter.
+* Servers SHALL set the `content`-element to reflect how and where the document has been stored by the server.
 "
 //* resource = DocumentReference
 * system = true
@@ -36,50 +36,23 @@ If the server decides to perform a create instead of an update, the invalid rela
 * inputProfile = Canonical(SubmitDocumentInput)
 * outputProfile = Canonical(SubmitDocumentOutput)
 * parameter[+]
-  * name = #input-mode
-  * use = #in
-  * min = 1
-  * max = "1"
-  * documentation = "determines the mode (create/update) in which the client wants the server to processes the document"
-  * type = #code
-  * binding 
-    * strength = #required 
-    * valueSet = Canonical(SubmitDocumentModes)
-* parameter[+]
-  * name = #input-metadata
+  * name = #metadata
   * use = #in 
-  * min = 0
+  * min = 1
   * max = "1"
   * documentation = "DocumentReference containing document metadata"
   * type = #DocumentReference
 * parameter[+]
-  * name = #payloadBinary
+  * name = #payload
   * use = #in 
-  * min = 0
+  * min = 1
   * max = "1"
   * documentation = "Binary containing document payload"
   * type = #Binary
 * parameter[+]
-  * name = #payloadBundle
-  * use = #in 
-  * min = 0
-  * max = "1"
-  * documentation = "Bundle containing FHIR document"
-  * type = #Bundle
-* parameter[+]
-  * name = #output-mode
-  * use = #out
-  * min = 1
-  * max = "1"
-  * documentation = "determines the mode (create/update) in which the server actually processed the document"
-  * type = #code
-  * binding 
-    * strength = #required 
-    * valueSet = Canonical(SubmitDocumentModes)
-* parameter[+]
   * name = #output-metadata
   * use = #out
-  * min = 0
+  * min = 1
   * max = "1"
   * documentation = "DocumentReference as persisted by the server"
   * type = #DocumentReference
@@ -90,35 +63,23 @@ Id: SubmitDocumentInput
 Title: "SubmitDocumentInput"
 Description: "Profil zur Validierung der Input-Parameter für $submit-document"
 * insert Meta
-* obeys sub-in-1
 * parameter 2..* MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
   * ^slicing.rules = #open
-* parameter contains input-mode 0..1 MS 
-    and input-metadata 1..1 MS 
-    and payloadBinary 0..1 MS
-    and payloadBundle 0..1 MS
-* parameter[input-mode]
-  * name = "input-mode"
-  * value[x] only code
-  * valueCode from SubmitDocumentModes
-* parameter[input-metadata]
+* parameter contains metadata 1..1 MS 
+    and payload 1..1 MS
+* parameter[metadata]
   * ^short = "Dokumentenmetadaten in Form einer DocumentReference-Ressource"
   * ^comment = "..."
-  * name = "input-metadata"
+  * name = "metadata"
   * resource only ISiKDokumentenMetadaten
-* parameter[payloadBinary]
-  * ^short = "unstrukturiertes oder nicht FHIR-basiertes Dokument"
-  * ^definition = "Wenn ein unstrukturiertes oder nicht FHIR-basiertes Dokument (z.B. PDF, Word, CDA) übermittelt werden soll, dann muss dieses im Parameter `payloadBundle` übermittelt werden"
-  * name = "payloadBinary"
-  * resource only Binary
-* parameter[payloadBundle]
-  * ^short = "strukturiertes, FHIR-basiertes Dokument"
-  * ^definition = "Wenn ein strukturiertes, FHIR-basiertes Dokument (Bundle vom Typ `document`) übermittelt werden soll, dann muss dieses im Parameter `payloadBundle` übermittelt werden"
-  * name = "payloadBundle"
-  * resource only Bundle
-  * resource.type = #document
+* parameter[payload]
+  * ^short = "das Dokument"
+  * ^definition = "Das Dokument (z.B. PDF, DOC, JPEG etc.) base64-codiert eingebettet in eine Binary-Ressource"
+  * name = "payload"
+  * resource only ISiKBinary
+
 
 
 Profile: SubmitDocumentOutput
@@ -127,27 +88,22 @@ Id: SubmitDocumentOutput
 Title: "SubmitDocumentOutput"
 Description: "Profil zur Validierung der Output-Parameter für $submit-document"
 * insert Meta
-* parameter 2..2 MS
+* parameter 1..* MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
   * ^slicing.rules = #open
-* parameter contains output-mode 1..1 MS 
-    and output-metadata 1..1 MS 
-* parameter[output-mode]
-  * ^short = "Verarbeitungsmodus der vom Server verwendet wurde"
-  * name = "output-mode"
-  * value[x] only code
-  * valueCode from SubmitDocumentModes
+* parameter contains output-metadata 1..1 MS and information 0..1  
 * parameter[output-metadata]
   * ^short = "Dokumentenmetadaten wie sie vom Server verstanden/persistiert wurden"
   * ^comment = "..."
   * name = "output-metadata"
   * resource only ISiKDokumentenMetadaten
   * resource.id 1..1 MS
+* parameter[information]
+  * ^short = "Informationen/Hinweise zum Ergebnis der Operation"
+  * ^comment = "..."
+  * name = "information"
+  * resource only OperationOutcome
 
 
-Invariant: sub-in-1
-Description: "Es muss entweder ein Payload vom Typ Binary oder vom Typ Bundle übermittelt werden!"
-Expression: "parameter.where(name= 'payloadBinary').exists() xor parameter.ahere(name='payloadBundle').exists()"
-Severity: #error
 
