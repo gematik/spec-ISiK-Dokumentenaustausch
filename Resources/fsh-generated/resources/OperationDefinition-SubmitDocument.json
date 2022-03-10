@@ -13,7 +13,7 @@
   "description": "Submit document metadata and payload to a server for storage/persistence.",
   "purpose": "Using Operations instead of transaction Bundles allows for refined server side \r\n    logic beyond create/update to occur and simplifies client control",
   "code": "submit-document",
-  "comment": "\r\n    Expected behaviour:\r\n\r\n**mode `create`:**\r\n* Servers are expected to store the submitted binary with the associated metadata and make it available through the FHIR API\r\n* Servers SHALL return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique on the server (already associated with another document)\r\n* Servers SHALL return HTTP 412 (precondition failed) if the DocumentReference.attachment.url is not resolveable within the submitted Parameters resource\r\n    \r\n**mode `replaces`:**\r\n\r\n* Clients SHALL submit a DocumentReference which includes a `relatesTo`-Element with `relatesTo.code` set to `replaces` and `relatesTo.target` referencing the superseded DocumentReference on the server.\r\n* Servers are expected to either replace the previous version of the DocumentReference **or** create a new version and deprecate the old version by updating it's `status` to `superseded`.\r\n* Servers SHALL check, if the DocumentReference.identifier of the submitted DocumentReference and the referenced DocumentReference are identical\r\n* Servers SHALL either return HTTP 412 (precondition failed) **or** treat the update as a create if the referenced DocumentReference does not yet exist on the server.\r\nIf the server decides to perform a create instead of an update, the invalid relatesTo-Element MAY be removed from the DocumentReference in order to maintain referential integrity.\r\n",
+  "comment": "\r\n    Expected behaviour:\r\n\r\n* Servers SHALL store the submitted binary with the associated metadata and make it available through the FHIR API\r\n* If the submission contains a structured FHIR document-Bundle, Servers MAY chose to store additional representations of the document,\r\ne.g. native FHIR (XML and/or JSON) for FHIR aware Clients and/or HTML to allow easy read access for FHIR agnostic Clients. \r\nThe Binary representation mostly serves the purpose of Archiving an immutable version of the document, rather than making it available to other consumers!\r\nIf Servers can provide multiple representations of the same documente, this SHOULD be reflected in multiple `content`-elements in the DocumentReference\r\n* Servers SHALL return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique on the server (already associated with another document)\r\n* If a Client submits a DocumentReference which includes a `relatesTo`-Element, the Server SHALL process the submission in accordance with `relatesTo.code` as either a \r\nreplacement, transformation, appendix or a signature of the document referenced in `relatesTo.target`. If the submission is successful, Servers SHALL update \r\nthe `status` of the related DocumentReference to `superseded`. \r\n* Servers SHALL return HTTP 412 (precondition failed) the `relatesTo.target` reference does not resolve on the server.\r\n* Servers SHALL ignore any information submitted by the Client in `DocumentReference.content` and assume the content to be the Binary submitted with the `payload`parameter.\r\n* Servers SHALL set the `content`-element to reflect how and where the document has been stored by the server.\r\n",
   "system": true,
   "type": false,
   "instance": false,
@@ -21,57 +21,25 @@
   "outputProfile": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentOutput",
   "parameter": [
     {
-      "name": "input-mode",
+      "name": "metadata",
       "use": "in",
       "min": 1,
-      "max": "1",
-      "documentation": "determines the mode (create/update) in which the client wants the server to processes the document",
-      "type": "code",
-      "binding": {
-        "strength": "required",
-        "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/SubmitDocumentModes"
-      }
-    },
-    {
-      "name": "input-metadata",
-      "use": "in",
-      "min": 0,
       "max": "1",
       "documentation": "DocumentReference containing document metadata",
       "type": "DocumentReference"
     },
     {
-      "name": "payloadBinary",
+      "name": "payload",
       "use": "in",
-      "min": 0,
+      "min": 1,
       "max": "1",
       "documentation": "Binary containing document payload",
       "type": "Binary"
     },
     {
-      "name": "payloadBundle",
-      "use": "in",
-      "min": 0,
-      "max": "1",
-      "documentation": "Bundle containing FHIR document",
-      "type": "Bundle"
-    },
-    {
-      "name": "output-mode",
-      "use": "out",
-      "min": 1,
-      "max": "1",
-      "documentation": "determines the mode (create/update) in which the server actually processed the document",
-      "type": "code",
-      "binding": {
-        "strength": "required",
-        "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/SubmitDocumentModes"
-      }
-    },
-    {
       "name": "output-metadata",
       "use": "out",
-      "min": 0,
+      "min": 1,
       "max": "1",
       "documentation": "DocumentReference as persisted by the server",
       "type": "DocumentReference"

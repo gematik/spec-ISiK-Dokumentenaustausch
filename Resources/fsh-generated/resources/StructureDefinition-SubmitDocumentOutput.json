@@ -48,52 +48,8 @@
           ],
           "rules": "open"
         },
-        "min": 2,
-        "max": "2",
-        "mustSupport": true
-      },
-      {
-        "id": "Parameters.parameter:output-mode",
-        "path": "Parameters.parameter",
-        "sliceName": "output-mode",
-        "short": "Verarbeitungsmodus der vom Server verwendet wurde",
         "min": 1,
-        "max": "1",
         "mustSupport": true
-      },
-      {
-        "id": "Parameters.parameter:output-mode.name",
-        "path": "Parameters.parameter.name",
-        "patternString": "output-mode"
-      },
-      {
-        "id": "Parameters.parameter:output-mode.value[x]",
-        "path": "Parameters.parameter.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
-      },
-      {
-        "id": "Parameters.parameter:output-mode.valueCode",
-        "path": "Parameters.parameter.valueCode",
-        "min": 0,
-        "max": "1",
-        "binding": {
-          "strength": "required",
-          "valueSet": "https://gematik.de/fhir/ISiK/v2/ValueSet/SubmitDocumentModes"
-        }
       },
       {
         "id": "Parameters.parameter:output-metadata",
@@ -127,6 +83,29 @@
         "path": "Parameters.parameter.resource.id",
         "min": 1,
         "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:information",
+        "path": "Parameters.parameter",
+        "sliceName": "information",
+        "short": "Informationen/Hinweise zum Ergebnis der Operation",
+        "comment": "...",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Parameters.parameter:information.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "information"
+      },
+      {
+        "id": "Parameters.parameter:information.resource",
+        "path": "Parameters.parameter.resource",
+        "type": [
+          {
+            "code": "OperationOutcome"
+          }
+        ]
       }
     ]
   }
