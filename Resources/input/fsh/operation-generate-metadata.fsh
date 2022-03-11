@@ -93,7 +93,7 @@ Description: "Profil zur Validierung der Input-Parameter für $generate-metadata
 * parameter[fhir-document]
   * name = "fhir-document"
   * resource 1..1 MS
-  * resource only ISiKStrukturiertesDokumentBundle
+  * resource only https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle
 * parameter[non-fhir-document]
   * name = "non-fhir-document"
   * resource 1..1 MS

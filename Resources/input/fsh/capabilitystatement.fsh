@@ -221,18 +221,8 @@ Usage: #definition
   * supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #SHALL
+    * extension.valueCode = #MAY
     * code = #read   
-* rest.resource[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-  * extension.valueCode = #SHALL
-  * type = #Composition
-  * supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKStrukturiertesDokument"
-* rest.resource[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-  * extension.valueCode = #SHALL
-  * type = #Bundle
-  * supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKStrukturiertesDokumentBundle"
 * rest.operation[+]
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
@@ -243,4 +233,8 @@ Usage: #definition
   * extension.valueCode = #MAY
   * name = #update-metadata
   * definition = Canonical(UpdateMetadata)
-
+* rest.operation[+]
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #MAY
+  * name = #generate-metadata
+  * definition = Canonical(GenerateMetadata)
