@@ -64,11 +64,6 @@
                  "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Dokumentenabfrage.md",
                  "title": "Interaktion: Dokumentenabfrage und -Zugriff",
                  "generation": "markdown"
-                },    
-                {
-                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-erweiterteInteraktionen.md",
-                 "title": "erweiterte Interaktionen",
-                 "generation": "markdown"
                 }
               ]
             }

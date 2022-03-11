@@ -24,5 +24,6 @@ Description: ""
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = $sct#408467006
+* context.encounter = Reference(Encounter/example)
 //* context.sourcePatientInfo = Reference(Patient/ex-patient)
 //* context.event.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
