@@ -1,0 +1,9 @@
+{
+  "resourceType": "Encounter",
+  "id": "EncounterExample",
+  "status": "finished",
+  "class": {
+    "code": "amb",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+  }
+}

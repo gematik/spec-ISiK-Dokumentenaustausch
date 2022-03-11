@@ -10,3 +10,4 @@ Alias: $kdl = http://dvmd.de/fhir/CodeSystem/kdl
 Alias: $ihe-de-fac = http://ihe-d.de/CodeSystems/PatientBezogenenGesundheitsversorgung
 Alias: $ihe-de-format = http://ihe-d.de/CodeSystems/DeutscheDokumentenformate
 Alias: $ihe-format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
+Alias: $act-encounter-code = http://terminology.hl7.org/CodeSystem/v3-ActCode

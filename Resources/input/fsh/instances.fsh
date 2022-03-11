@@ -10,3 +10,9 @@ Usage: #example
 * name[=].given = "Erika"
 * gender = #female
 * birthDate = "1964-08-12"
+
+Instance: EncounterExample
+InstanceOf: Encounter
+Usage: #example
+* status = #finished
+* class = $act-encounter-code#amb
