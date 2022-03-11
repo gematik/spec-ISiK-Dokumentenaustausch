@@ -20,6 +20,9 @@ dependencies:
     de.gematik.isik-basismodul:
         uri: https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-basismodul
         version: 1.0.3
+    dvmd.kdl.r4.2021:
+        uri: https://simplifier.net/KDL/~guides
+        version: 2021.1.1
 FSHOnly: true
 
 
