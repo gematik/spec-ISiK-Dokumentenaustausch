@@ -44,7 +44,7 @@
   ],
   "description": "Molekularpathologiebefund vom 31.12.21",
   "subject": {
-    "reference": "Patient/example"
+    "reference": "Patient/PatientinMusterfrau"
   },
   "securityLabel": [
     {

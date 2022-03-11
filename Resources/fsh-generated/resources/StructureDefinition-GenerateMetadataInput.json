@@ -88,14 +88,6 @@
         "id": "Parameters.parameter:fhir-document.resource",
         "path": "Parameters.parameter.resource",
         "min": 1,
-        "type": [
-          {
-            "code": "Bundle",
-            "profile": [
-              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKStrukturiertesDokumentBundle"
-            ]
-          }
-        ],
         "mustSupport": true
       },
       {

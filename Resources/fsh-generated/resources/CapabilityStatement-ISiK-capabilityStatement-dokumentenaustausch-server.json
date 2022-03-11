@@ -449,35 +449,11 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHALL"
+                  "valueCode": "MAY"
                 }
               ],
               "code": "read"
             }
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "type": "Composition",
-          "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKStrukturiertesDokument"
-          ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "type": "Bundle",
-          "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKStrukturiertesDokumentBundle"
           ]
         }
       ],
@@ -501,6 +477,16 @@
           ],
           "name": "update-metadata",
           "definition": "https://gematik.de/fhir/ISiK/v2/OperationDefinition/UpdateMetadata"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "MAY"
+            }
+          ],
+          "name": "generate-metadata",
+          "definition": "https://gematik.de/fhir/ISiK/v2/OperationDefinition/GenerateMetadata"
         }
       ]
     }

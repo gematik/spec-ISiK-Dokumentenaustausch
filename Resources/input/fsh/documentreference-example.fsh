@@ -14,7 +14,7 @@ Description: ""
 * type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
-* subject = Reference(Patient/example)
+* subject = Reference(PatientinMusterfrau)
 //* date = "2020-12-31T23:50:50-05:00"
 * securityLabel = $v3-Confidentiality#N
 * content.attachment.contentType = #application/pdf
@@ -24,5 +24,5 @@ Description: ""
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = $sct#408467006
-//* context.sourcePatientInfo = Reference(Patient/ex-patient)
+//* context.sourcePatientInfo = Reference(PatientinMusterfrau)
 //* context.event.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
