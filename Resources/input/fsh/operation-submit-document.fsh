@@ -74,6 +74,7 @@ Description: "Profil zur Validierung der Input-Parameter für $submit-document"
   * ^comment = "..."
   * name = "metadata"
   * resource only ISiKDokumentenMetadaten
+    * content ..1
 * parameter[payload]
   * ^short = "das Dokument"
   * ^definition = "Das Dokument (z.B. PDF, DOC, JPEG etc.) base64-codiert eingebettet in eine Binary-Ressource"
