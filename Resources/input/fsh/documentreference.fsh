@@ -108,7 +108,7 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
 &#13; 
 
 [Konsens der Arbeitsgruppe vom 12.11.2021]"
-* content ..1 MS
+* content MS
   * ^short = "Beschreibung des Dokumenteninhaltes"
   * attachment MS
     * ^short = "Anhang"

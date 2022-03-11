@@ -15,6 +15,7 @@ Title: "Suchergebnisse einer Dokumentensuche"
 * entry[DocumentReference].resource 1..
 * entry[DocumentReference].resource only ISiKDokumentenMetadaten
 
+
 Invariant: ISiK-docBundle-1
 Description: "All referenced Resources must be contained in the Bundle"
 Severity: #error
