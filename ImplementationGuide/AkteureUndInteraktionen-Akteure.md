@@ -3,6 +3,7 @@
 Das bestätigungsrelevante System nimmt die Rolle des Dokumentenservers ein. Ein Dokumentenserver nimmt Dokumente von Clients zur Speicherung/Archivierung/Verwaltung entgegen und erlaubt Clients die Suche nach und den Abruf von Dokumenten.
 Dieses ISiK-Modul legt fest, welche Suchkriterien mindestens implementiert werden müssen und welche Kriterien darüber hinaus optional bereitgestellt werden können.
 Dokumentenserver müssen mindestens die Interaktion "Dokumentenabfrage" implementieren. Die Umsetzung der Dokumentenbereitstellung ist optional.
+Um Clients die Herstellung von Patienten- und Encounterkontext zu ermöglichen, müssen weiterhin die im Basismodul Stufe 2 festgelegten Interkationen auf den Datenobjekten ["Patient"](https://simplifier.net/guide/isik-basismodul-stufe2/PatientPatient#PatientInteraktionen) und ["Kontakt/Fall (Encounter)"](https://simplifier.net/guide/isik-basismodul-stufe2/KontaktFallEncounter#KontaktInteraktionen) implementiert werden.
 
 ### (webbasierter/mobiler) Client
 Clients können Dokumente von einem Dokumentenserver abfragen um sie z.B. einem Anwender anzuzeigen. Dabei können Sie die für die Server verpflichtend festgelegten Suchkriterien beliebig kombinieren.
