@@ -15,14 +15,11 @@ Die Verwendung der [CapabilityStatement-Expectation](http://hl7.org/fhir/extensi
 
 ## CapabilityStatement (Requirement) ISiK-Dokumentenaustausch
 
-Die Bereitstellung des CapabilityStatments für das Modul "Dokumentenaustausch" erfolgt zusammen mit der Festlegung der bestätigungsrelevanten Systeme in Stufe 2
 
-Für Systeme, die das Modul "Dokumentenaustausch" implementieren, ist außerdem die Erfüllung der Mindestanforderungen des [Moduls "Basis"](https://simplifier.net/guide/ImplementierungsleitfadenISiK-Basismodul/Einfuehrung) erfoderlich:
+Canonical: https://gematik.de/fhir/ISiK/v2/CapabilityStatement/dokumentenaustausch-server
 
-Canonical: https://gematik.de/fhir/ISiK/CapabilityStatement/core-server
+[Link Simplifier Profil Übersicht](https://simplifier.net/isik-dokumentenaustausch/isik-capabilitystatement-dokumentenaustausch-server)
 
-[Link Simplifier Profil Übersicht](https://simplifier.net/isik/isik-capabilitystatement-dokumentenaustausch-server)
-
-{{render:https://gematik.de/fhir/ISiK/CapabilityStatement/dokumentenaustausch-server}}
+{{render:https://gematik.de/fhir/ISiK/v2/CapabilityStatement/dokumentenaustausch-server}}
 
 
