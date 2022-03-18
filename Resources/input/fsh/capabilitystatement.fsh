@@ -62,48 +62,6 @@ Usage: #definition
     * name = "gender"
     * definition = "hhttp://hl7.org/fhir/SearchParameter/individual-gender"
     * type = #token
-  * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #MAY
-    * name = "name"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/Patient-name"
-    * type = #string
-  * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #MAY
-    * name = "address"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/individual-address"
-    * type = #string
-  * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #MAY
-    * name = "address-city"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/individual-address-city"
-    * type = #string
-  * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #MAY
-    * name = "address-postalcode"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/individual-address-postalcode"
-    * type = #string
-  * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #MAY
-    * name = "address-country"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/individual-address-country"
-    * type = #string
-  * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #MAY
-    * name = "active"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/Patient-active"
-    * type = #token
-  * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #MAY
-    * name = "telecom"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/individual-telecom"
-    * type = #token
 * rest.resource[+]
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
@@ -165,12 +123,6 @@ Usage: #definition
     * name = "date"
     * definition = "http://hl7.org/fhir/SearchParameter/Encounter-date"
     * type = #date
-  * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #MAY
-    * name = "location"
-    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-location"
-    * type = #reference
 * rest.resource[+]
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
