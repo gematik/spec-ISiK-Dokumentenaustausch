@@ -64,6 +64,11 @@
                  "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Dokumentenabfrage.md",
                  "title": "Interaktion: Dokumentenabfrage und -Zugriff",
                  "generation": "markdown"
+                },
+                {
+                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-AbgrenzungBasis.md",
+                 "title": "Abgrenzung zur Interaktion 'Befund aus Subsystem' im Basismodul",
+                 "generation": "markdown"
                 }
               ]
             }
