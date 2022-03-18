@@ -38,9 +38,9 @@ ausnahmsweise auf Englisch spezifiziert.
 #### Beispiel:
 ##### Request
 `POST [base]/$submit-document`
-{{render: submit-document-in-params}}
+{{render: ISiK-Dokumentenaustausch/parameters-example}}
 ##### Response
-
+{{render: ISiK-Dokumentenaustausch/parameters-example-out}}
 
 ### Hinweis zum Umgang mit strukturierten FHIR-basierten Dokumenten
 Wenn es sich bei dem bereitgestellten Dokument nicht um Binärdaten (PDF, DOC, JPEG...) sondern um ein strukturiertes, FHIR-basiertes Dokument (Bundle) handelt, so ist die Bereitstellung des metadata-Parameters durch den Client optional.
