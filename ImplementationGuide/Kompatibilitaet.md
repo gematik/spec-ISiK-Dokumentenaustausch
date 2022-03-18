@@ -27,7 +27,7 @@ Die Implementierung von IHE-MHD ist unproblematisch, so lange sie die einzige Tr
 
 Sobald ein Server jedoch weitere Transaktionen implementieren möchte, kommt es zu Problemen, da der generische Ansatz nicht mehr möglich ist. Die verschiedenen Transaktionen sind für Client sowie Server nicht mehr unterscheidbar/identifizierbar. 
 
-Die Problematik wird in der internationalen FHIR-Community diskutiert und IHE prüft derzeit, ob eine Anpassung der Spezifikation verfolgt werden soll.
+Die Problematik wird in der internationalen FHIR-Community diskutiert und [IHE prüft derzeit](https://github.com/IHE/ITI.MHD/issues/100), ob eine Anpassung der Spezifikation verfolgt werden soll.
 
 Für dieses ISiK-Modul kommt aufgrund der beschriebenen Problematik anstelle der Transaktion eine Operation zum Einsatz. Dies bietet folgende Vorteile:
 1. Operations sind *benannte* Interaktionen. Jede Operation kann eindeutig mit einer Definition der erlaubten/benötigten Parameter und der zu implementierenden Business-Logik in Verbindung gebracht werden.
@@ -39,10 +39,10 @@ Für dieses ISiK-Modul kommt aufgrund der beschriebenen Problematik anstelle der
 #### Fallkontext
 In IHE-MHD bzw. XDS ist keine Fallkontext für Dokumente vorgesehen. Bestenfalls kann die Fallnummer (ein Identifier!) als zusätzlicher Code in der EventCodeList verwahrt werden. In der FHIR-Architektur (und in allen weiteren ISiK-Modulen) wir Fallkontext jedoch durch die Verlinkung auf einen Encounter etabliert.
 In dieser ISiK-Spezifikation kommt ebenfalls die Verlinkung zum Einsatz, da der Wunsch nach eine Harmonisierung mit der FHIR-Kernspezifikation und allen anderen ISiK-Modulen dem Wunsch nach Harmonisierung mit IHE-XDS überwiegt.
-Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren wurde der Änderungswunsch an IHE herangetragen, den Constraint, der die Encounter-Verlinkung verbietet, zu lockern.
+Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren [wurde der Änderungswunsch an IHE herangetragen](https://github.com/IHE/ITI.MHD/issues/88), den Constraint, der die Encounter-Verlinkung verbietet, zu lockern.
 
 #### Dokumentenstatus
 Vor dem Hintergrund des einrichtungsübergreifenden Dokumentenaustausches, geht IHE-MHD davon aus, dass alle kommunizierten Dokumente einen finalen Status haben.
 Dies ist jedoch bei der einrichtunginternen Kommunikation, wie sie von ISiK spezifiziert wird, nicht gegeben. Im Gegenteil: die Suche und Filterung von Dokumenten anhand des Fertigstellungsstatus war ein häufig geäußerter Wunsch bei der Sammlung potentieller UseCases.
 Daher wird ist Verwendung des Feldes `docStatus` in ISiK explizit erlaubt.
-Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren wurde der Änderungswunsch an IHE herangetragen, den Constraint, der die Verwendung von `docStatus` verbietet, zu lockern.
+Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren [wurde der Änderungswunsch an IHE herangetragen](https://github.com/IHE/ITI.MHD/issues/96), den Constraint, der die Verwendung von `docStatus` verbietet, zu lockern.
