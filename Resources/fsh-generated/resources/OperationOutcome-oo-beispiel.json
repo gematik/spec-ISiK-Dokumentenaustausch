@@ -1,0 +1,11 @@
+{
+  "resourceType": "OperationOutcome",
+  "id": "oo-beispiel",
+  "issue": [
+    {
+      "severity": "information",
+      "code": "informational",
+      "diagnostics": "Well done!"
+    }
+  ]
+}
