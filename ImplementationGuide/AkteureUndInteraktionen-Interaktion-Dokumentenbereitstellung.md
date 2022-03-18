@@ -35,6 +35,13 @@ ausnahmsweise auf Englisch spezifiziert.
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
 
+#### Beispiel:
+##### Request
+`POST [base]/$submit-document`
+{{render: submit-document-in-params}}
+##### Response
+
+
 ### Hinweis zum Umgang mit strukturierten FHIR-basierten Dokumenten
 Wenn es sich bei dem bereitgestellten Dokument nicht um Binärdaten (PDF, DOC, JPEG...) sondern um ein strukturiertes, FHIR-basiertes Dokument (Bundle) handelt, so ist die Bereitstellung des metadata-Parameters durch den Client optional.
 Server müssen die fehlenden Metadaten aus dem Dokumentenheader (Composition-Ressource) anhand des [vorgegebenen Mappings](https://simplifier.net/ISiK-Dokumentenaustausch/ISiKDokumentenMetadaten/~mappings) ermitteln.
