@@ -42,34 +42,13 @@ ausnahmsweise auf Englisch spezifiziert.
 ##### Response
 {{xml: ISiK-Dokumentenaustausch/parameters-example-out}}
 
-### Hinweis zum Umgang mit strukturierten FHIR-basierten Dokumenten
-Wenn es sich bei dem bereitgestellten Dokument nicht um Binärdaten (PDF, DOC, JPEG...) sondern um ein strukturiertes, FHIR-basiertes Dokument (Bundle) handelt, so ist die Bereitstellung des metadata-Parameters durch den Client optional.
-Server müssen die fehlenden Metadaten aus dem Dokumentenheader (Composition-Ressource) anhand des [vorgegebenen Mappings](https://simplifier.net/ISiK-Dokumentenaustausch/ISiKDokumentenMetadaten/~mappings) ermitteln.
-Für das Bestätigungsverfahren in ISiK ist dabei das Patienten- und Encounter-Matching ausschließlich anhand von Patienten- und Fallnummer erforderlich.
-Komplexere Matchingverfahren *können* implementiert werden, sind jedoch *nicht* Bestandteil des Testverfahrens.
 
+#### Hinweise zur Extraktion des HTML-Narratives
 
-#### Verarbeitung des Dokumentes
-
-In der aktuellen Ausbaustufe von ISiK MUSS ein empfangenes Fhir-basiertes, strukturiertes Dokument in folgenden Schritten verarbeitet werden:
-
-1. Extraktion der Patient-Ressource aus dem Bundle und Herstellung des Patientenbezuges anhand der Aufnahmenummer ('Patient.identifier')
-2. Extraktion der Encounter.Ressource aus dem Bundle und Herstellung des Fallbezuges anhand der Aufnahmenummer ('Encounter.identifier')
-3. Extraktion der Meta-Daten in eine DocumentReference-Ressource, sowie der menschenlesbaren Repräsentation des Dokumentes ('Composition.text' + 'Composition.section.text' in eine Binary-Ressource mit HTML-Content)
-4. Hinzufügen des Dokumentes und seiner Metadaten zur Fallakte des Patienten 
-5. Visualisierung des Dokumentes und seiner Metadaten in der Fallakte des Patienten
-
-{{render:ImplementationGuide/Images/Composition-Bundle.png}}
-*Die Grafik zeigt an einem vereinfachten Beispiel die Zuordnung des HTML-Dokumentes zu Patient und Kontakt in der aktuellen Ausbaustufe von ISiK (schwarze Pfeile). Die grauen Pfeile deuten die Übernahme strukturierter Daten, wie sie in weiteren Ausbaustufen erforderlich wird.*
-
-#### Hinweise zum Umgang mit der menschenlesbaren Repräsentation
-
-Die menschenlesbare Repräsentation ("Narrative") eines Dokumentes setzt sich zusammen aus dem Inhalt von 'Composition.text', einer Repräsentation der Metadaten (z.B. Dokumenttyp, Patientenname, Patientennummer, Aufnahmenummer, datum) sowie der Aggregation der Inhalte von 'Composition.section', wobei zu beachten ist, dass ein Dokument beliebig viele Sections haben kann.
+Die menschenlesbare Repräsentation ("Narrative") eines Dokumentes setzt sich zusammen aus dem Inhalt von 'Composition.text', einer Repräsentation der Metadaten (z.B. Dokumenttyp, Patientenname, Patientennummer, Aufnahmenummer, datum) sowie der Aggregation der Inhalte von 'Composition.section', wobei zu beachten ist, dass ein Dokument beliebig viele Sections und Sub-Sections haben kann.
 Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammengefügt werden.
 
-#### Hinweise zum Umgang mit strukturierten Daten
 
-Auch wenn in der aktuellen Stufe nur die Übernahme der menschenlesbaren Repräsentation erforderlich ist, empfiehlt es sich dennoch, das vollständige Bundle samt der strukturierten Anteile zu einem Dokument als ein weiteres Attachment zur DocumentReference zu persistieren, so dass zu einem späteren Zeitpunkt, wenn eine Übernahme einzelner Daten möglich ist, diese auch rückwirkend erfolgen kann.
 
 #### Mapping Composition -> DocumentReference
  @```
