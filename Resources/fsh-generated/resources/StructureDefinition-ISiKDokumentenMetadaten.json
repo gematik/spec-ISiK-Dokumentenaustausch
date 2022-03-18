@@ -401,7 +401,6 @@
         "id": "DocumentReference.content",
         "path": "DocumentReference.content",
         "short": "Beschreibung des Dokumenteninhaltes",
-        "max": "1",
         "mustSupport": true
       },
       {

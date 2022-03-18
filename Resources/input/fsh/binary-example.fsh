@@ -1,3 +1,18 @@
+Instance: Binary-JPEG-Example-short
+InstanceOf: Binary
+Usage: #example
+* contentType = #image/jpeg
+* data = "4AAQSkZJRgABAQEB"
+
+Instance: Binary-PDF-Example-short
+InstanceOf: Binary
+Usage: #example
+* contentType = #application/pdf
+* securityContext = Reference(DocumentReference/example)
+* data = "JVBERi0xLjUNJeLjz9MNCjEw"
+
+
+
 Instance: Binary-JPEG-Example
 InstanceOf: Binary
 Usage: #example

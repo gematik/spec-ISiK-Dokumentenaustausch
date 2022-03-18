@@ -88,6 +88,11 @@
           "system": "http://snomed.info/sct"
         }
       ]
-    }
+    },
+    "encounter": [
+      {
+        "reference": "Encounter/example"
+      }
+    ]
   }
 }

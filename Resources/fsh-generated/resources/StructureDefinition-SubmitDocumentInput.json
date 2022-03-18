@@ -79,6 +79,11 @@
         ]
       },
       {
+        "id": "Parameters.parameter:metadata.resource.content",
+        "path": "Parameters.parameter.resource.content",
+        "max": "1"
+      },
+      {
         "id": "Parameters.parameter:payload",
         "path": "Parameters.parameter",
         "sliceName": "payload",
