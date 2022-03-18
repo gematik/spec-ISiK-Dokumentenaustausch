@@ -27,20 +27,20 @@ ausnahmsweise auf Englisch spezifiziert.
 
 {{render: ISiK-Dokumentenaustausch/submit-document}}
 
-#### In-Parameters
+#### In-Parameters Definition
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentinput}}
 
-#### Out-Parameters
+#### Out-Parameters Definition
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
 
 #### Beispiel:
 ##### Request
 `POST [base]/$submit-document`
-{{render: ISiK-Dokumentenaustausch/parameters-example}}
+{{xml: ISiK-Dokumentenaustausch/parameters-example}}
 ##### Response
-{{render: ISiK-Dokumentenaustausch/parameters-example-out}}
+{{xml: ISiK-Dokumentenaustausch/parameters-example-out}}
 
 ### Hinweis zum Umgang mit strukturierten FHIR-basierten Dokumenten
 Wenn es sich bei dem bereitgestellten Dokument nicht um Binärdaten (PDF, DOC, JPEG...) sondern um ein strukturiertes, FHIR-basiertes Dokument (Bundle) handelt, so ist die Bereitstellung des metadata-Parameters durch den Client optional.
