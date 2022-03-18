@@ -18,16 +18,15 @@ Description: ""
 
 * Servers SHALL store the submitted binary with the associated metadata and make it available through the FHIR API
 * If the submission contains a structured FHIR document-Bundle, Servers MAY chose to store additional representations of the document,
-e.g. native FHIR (XML and/or JSON) for FHIR aware Clients and/or HTML to allow easy read access for FHIR agnostic Clients. 
-The Binary representation mostly serves the purpose of Archiving an immutable version of the document, rather than making it available to other consumers!
-If Servers can provide multiple representations of the same documente, this SHOULD be reflected in multiple `content`-elements in the DocumentReference
-* Servers SHALL return HTTP 412 (precondifion failed) if the DocumentReference.identifier is not unique on the server (already associated with another document)
+e.g. native FHIR (XML and/or JSON) for FHIR aware Clients and/or an HTML-Document representing the document's narrative to allow easy read access for FHIR agnostic clients. 
+The Binary representation mostly serves the purpose of archiving an immutable version of the document, rather than making it available to other consumers!
+If Servers can provide multiple representations of the same document, this SHOULD be reflected in multiple `content`-elements in the DocumentReference with the respective mime-type.
 * If a Client submits a DocumentReference which includes a `relatesTo`-Element, the Server SHALL process the submission in accordance with `relatesTo.code` as either a 
-replacement, transformation, appendix or a signature of the document referenced in `relatesTo.target`. If the submission is successful, Servers SHALL update 
+replacement, transformation, appendix or a signature of the document referenced in `relatesTo.target`. If applicable, Servers SHALL update 
 the `status` of the related DocumentReference to `superseded`. 
 * Servers SHALL return HTTP 412 (precondition failed) the `relatesTo.target` reference does not resolve on the server.
-* Servers SHALL ignore any information submitted by the Client in `DocumentReference.content` and assume the content to be the Binary submitted with the `payload`parameter.
-* Servers SHALL set the `content`-element to reflect how and where the document has been stored by the server.
+* Servers SHALL ignore any information submitted by the Client in `DocumentReference.content.attachment.url` and assume the content to be the Binary submitted with the `payload`parameter.
+* Servers SHALL adjust the `content`-element to reflect how and where the document has been stored by the server.
 "
 //* resource = DocumentReference
 * system = true
@@ -56,6 +55,13 @@ the `status` of the related DocumentReference to `superseded`.
   * max = "1"
   * documentation = "DocumentReference as persisted by the server"
   * type = #DocumentReference
+* parameter[+]
+  * name = "information"
+  * use #out
+  * min = 0
+  * max = *
+  * documentation = "Additional information and/or warnings  about the operation the server whishes to convey to the client"
+  * type = #OperationOutcome
 
 Profile: SubmitDocumentInput
 Parent: Parameters
