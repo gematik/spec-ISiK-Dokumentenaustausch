@@ -1,4 +1,3 @@
-
 ## Kompatibilität zu IHE-Profilen
 
 Die Festlegungen in diesem ISiK-Modul wurden auf Grundlage des [IHE MHD-Profils](http://build.fhir.org/ig/IHE/ITI.MHD/) getroffen.
@@ -12,10 +11,12 @@ Dabei ist jedoch zu beachten, dass bei der Einstellung von Dokumenten in eine IH
 
 Als Terminologien kommen bei ISiK - soweit sinnvoll und möglich - die XDS-ValueSets von IHE Deutschland zum Einsatz.
 
+---
+
 ### Abweichungen zwischen ISiK und IHE-MHD
 
 #### Dokumentenbereitstellung
-Die Bereitstellung von DOkumenten (Übermittlung von Client an den Server) ist in IHE-MHD als [Transaction](https://hl7.org/fhir/http.html#transaction) definiert.
+Die Bereitstellung von Dokumenten (Übermittlung von Client an den Server) ist in IHE-MHD als [Transaction](https://hl7.org/fhir/http.html#transaction) definiert.
 
 Dabei ist jedoch zu beachten, dass eine Transaction in FHIR definiert ist als die Ausführung mehrerer einzelner REST-Interaktionen in einem transaktionalen Kontext. Eine Transaction hat keinen Namen und außer der Verarbeitung nach dem "Ganz oder gar nicht"-Prinzip keine andere Logik als die äquivalente Sequenz der einzelnen REST-Interaktionen.
 
