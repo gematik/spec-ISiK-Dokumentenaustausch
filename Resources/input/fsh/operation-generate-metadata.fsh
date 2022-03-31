@@ -15,22 +15,22 @@ Description: ""
 * code = #generate-metadata
 * comment = "
     Expected behaviour:
-Server SHALL create DocumentReference Resources from the Bundle provided through the 'fhir.document' parameter by 
+* Servers SHALL create DocumentReference Resources from the Bundle provided through the 'fhir.document' parameter by 
  mapping the metadata fields from the Composition in the document Bundle according to the [Composition-DocumentReference.Mapping](http://hl7.org/fhir/composition-mappings.html#fhirdocumentreference)
- Additionally, the Server SHALL attempt to match the target of Composition.subject to an existing Resource on it's own endpoint
- and populate DocumentReference.subject.reference acordingly.
-If no matching target id found, the Server SHALL reply with HTTP 412 (precondition failed) and return an OperationOutcome
+* Servers SHALL attempt to match the target of Composition.subject to an existing Resource on it's own endpoint
+ and populate DocumentReference.subject.reference accordingly.
+* If no matching target id found, the Server SHALL reply with HTTP 412 (precondition failed) and return an OperationOutcome
 
-Servers MAY attempt to resolve additional references, such as Composition.author, Composition.encounter etc.
+* Servers MAY attempt to resolve additional references, such as Composition.author, Composition.encounter etc.
 
-Servers MAY allow clients to redirect any attempts to find matches to another endpoint. This is especially helpful, 
-when the $generate-metadata operation is provided by a third party other than the document's intended destination.
+* Servers MAY allow clients to redirect any attempts to find matches to another endpoint. This is especially helpful, 
+when the $generate-metadata operation is provided by a third party other than the document's intended destination server.
 
-Servers MAY offer additional mapping services for non-fhir-documents although these may need more advances business logic,
-terminology mapping services and complex patient matching. If they offer additional non-fhir mapping capabilities, 
+* Servers MAY offer additional mapping services for non-fhir-documents although these may need more advanced mapping/business logic,
+terminology mapping services and more complex patient matching. If they offer additional non-fhir mapping capabilities, 
 Servers SHOULD expose a derived OperationDefinition in their CapabilityStatment, which clearly defines the acceptable `non-fhir-document-types`.
 
-Clients SHOULD populate `non-fhir-document-type` with a code acceptable to the server, when submitting `non-fhir-document`s
+* Clients SHOULD populate `non-fhir-document-type` with a code acceptable to the server, when submitting `non-fhir-document`s
 "
 * resource = #DocumentReference
 * system = false
