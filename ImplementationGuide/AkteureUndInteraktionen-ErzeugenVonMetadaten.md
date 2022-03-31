@@ -1,18 +1,20 @@
-## Abgrenzung zu ISiK Stufe 2 (Basis) bei der Kommunikation *strukturierter* Dokumente (FHIR-Document-Bundle)
+## Erzeugen von Dokumentenmetadaten
 
-### Interaktion ISiK Modul Basis Stufe 2: Bericht aus Subsystem
+### Abgrenzung zu ISiK Stufe 2 (Basis) bei der Kommunikation *strukturierter* Dokumente (FHIR-Document-Bundle)
+
+#### Interaktion ISiK Modul Basis Stufe 2: Bericht aus Subsystem
 * UseCase: Client übermittelt diverse strukturierte Informationen in Form eines Dokumentes an einen Empfänger. Der Empfänger (oder ggf. dessen Benutzer) kann selbst entscheiden, welche Informationen übernommen und ggf. weiterverarbeitet werden können/sollen. Als Minimum muss der Narrative (die HTML-Repräsentation des gesamten Dokumentes) übernommen werden.
 * HTTP-verb: POST auf [base]
 * Content: Bundle vm Typ `document`
 * erforderliches Verhalten: der Empfänger verarbeitet den Inhalt des Dokumentes (HTML + Ressourcen soweit möglich), das Original muss nicht zwingend persitiert werden. Es besteht keine zwingende Erfordernis, dass dass das Dokument oder seine Inhalte über die API wieder bereitgestellt werden können. 
 
-### Interaktion ISiK Modul Dokumentenaustausch Stufe 2: Dokumentenbereitstellung
+#### Interaktion ISiK Modul Dokumentenaustausch Stufe 2: Dokumentenbereitstellung
 * UseCase: Client übermittelt ein strukturiertes Dokument zur inhaltsagnositsche, dauerhaften, ggf. rechtssicheren Archivierung
 * HTTP-verb: POST auf [base]/$submit-document
 * Content: Parameters (DocumentReference + Binary mit Base64-codiertem Bundle vom Typ `document`)
 * erforderliches Verhalten: das Dokument sowie seine Metadaten werden persistiert und über die API mittels der Interaktionen "Dokumentenabfrage" und "Dokumentenzugriff" bereitgestellt.
 
-### Typische Szenarien mit Koexistenz beider Interaktionen:
+#### Typische Szenarien mit Koexistenz beider Interaktionen:
 Der Empfänger eines Subsystem-Berichtes gem. Modul "Basis" möchte vor der Verarbeitung des Dokumenteninhalts das Original zur Archivierung an einen Dokumentenserver gem. Modul "Dokumentenaustausch" übermitteln und die Herkunft der extrahierten Daten aus dem Dokument nachvollziehbar machen.
 
 Empfohlenes Vorgehen:

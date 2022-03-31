@@ -66,8 +66,8 @@
                  "generation": "markdown"
                 },
                 {
-                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-AbgrenzungBasis.md",
-                 "title": "Abgrenzung zur Interaktion 'Befund aus Subsystem' im Basismodul",
+                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-AErzeugenVonMetadaten.md",
+                 "title": "Interaktion: Erzeugen von Metadaten",
                  "generation": "markdown"
                 }
               ]
