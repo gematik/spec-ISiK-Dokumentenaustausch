@@ -40,7 +40,12 @@ Empfohlenes Vorgehen:
 ### Operation $generate-metadata
 
 Die Operation `$generate-metadata` wurde spezifiziert in Anlehnung an die Operation [`$generate` im current build der FHIR-Kernspezifikation](http://build.fhir.org/documentreference-operation-generate.html), die jedoch noch nicht in implementierbarem Zustand ist. Die hier getroffenen Änderungen werden parallel als Feedback zur Verbesserung der Kernspezifikation als [ChangeRequest](https://jira.hl7.org/browse/FHIR-34043) eingereicht.
-Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die Spezifikationd er Operation in Englisch.
+Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die Spezifikation der Operation in Englisch.
+
+| Hinweis | Work in Progress!|
+|---------|---------------------|
+| {{render:Warning}} | Die hier vorliegende Definition der Operation dient als Vorschlag, der auf Basis von Implementierungserfahrungen weiterentwickelt werden soll. Kritik, Feedback und Verbesserungsvorschläge bitte im [ISiK-Community-Acht](https://chat.fhir.org/#narrow/stream/287581-german.2Fisik) diskutieren! |
+
 
 {{render: ISiK-Dokumentenaustausch/generatemetadata}}
 

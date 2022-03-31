@@ -82,7 +82,9 @@
       {
         "id": "Parameters.parameter:fhir-document.name",
         "path": "Parameters.parameter.name",
-        "patternString": "fhir-document"
+        "short": "Name des Parameters",
+        "patternString": "fhir-document",
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:fhir-document.resource",
@@ -100,7 +102,9 @@
       {
         "id": "Parameters.parameter:non-fhir-document.name",
         "path": "Parameters.parameter.name",
-        "patternString": "non-fhir-document"
+        "short": "Name des Parameters",
+        "patternString": "non-fhir-document",
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:non-fhir-document.resource",
@@ -127,16 +131,20 @@
       {
         "id": "Parameters.parameter:non-fhir-document-type.name",
         "path": "Parameters.parameter.name",
-        "patternString": "non-fhir-document-type"
+        "short": "Name des Parameters",
+        "patternString": "non-fhir-document-type",
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:non-fhir-document-type.value[x]",
         "path": "Parameters.parameter.value[x]",
+        "min": 1,
         "type": [
           {
             "code": "code"
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:target-endpoint",
@@ -149,16 +157,20 @@
       {
         "id": "Parameters.parameter:target-endpoint.name",
         "path": "Parameters.parameter.name",
-        "patternString": "target-endpoint"
+        "short": "Name des Parameters",
+        "patternString": "target-endpoint",
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:target-endpoint.value[x]",
         "path": "Parameters.parameter.value[x]",
+        "min": 1,
         "type": [
           {
             "code": "uri"
           }
-        ]
+        ],
+        "mustSupport": true
       }
     ]
   }

@@ -64,11 +64,15 @@
       {
         "id": "Parameters.parameter:metadata.name",
         "path": "Parameters.parameter.name",
-        "patternString": "metadata"
+        "short": "Name des Parameters",
+        "patternString": "metadata",
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:metadata.resource",
         "path": "Parameters.parameter.resource",
+        "short": "Dokumentenmetadaten als Document-Ressource",
+        "min": 1,
         "type": [
           {
             "code": "DocumentReference",
@@ -76,7 +80,8 @@
               "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:metadata.resource.content",
@@ -96,11 +101,15 @@
       {
         "id": "Parameters.parameter:payload.name",
         "path": "Parameters.parameter.name",
-        "patternString": "payload"
+        "short": "Name des Parameters",
+        "patternString": "payload",
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:payload.resource",
         "path": "Parameters.parameter.resource",
+        "short": "Dokument als Binary-Ressource",
+        "min": 1,
         "type": [
           {
             "code": "Binary",
@@ -108,7 +117,8 @@
               "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       }
     ]
   }

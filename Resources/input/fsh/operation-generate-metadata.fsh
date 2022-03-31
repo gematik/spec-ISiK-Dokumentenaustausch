@@ -91,21 +91,31 @@ Description: "Profil zur Validierung der Input-Parameter für $generate-metadata
     and non-fhir-document-type 0..1 
     and target-endpoint 0..1 
 * parameter[fhir-document]
+  * name MS 
+    * ^short = "Name des Parameters"
   * name = "fhir-document"
   * resource 1..1 MS
   * resource only https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle
 * parameter[non-fhir-document]
+  * name MS 
+    * ^short = "Name des Parameters"
   * name = "non-fhir-document"
   * resource 1..1 MS
   * resource only ISiKBinary
 * parameter[non-fhir-document-type]
   * ^short = "genauer Typ der Dokumenttyp der Binärdaten"
+  * name MS 
+    * ^short = "Name des Parameters"
   * name = "non-fhir-document-type"
+  * value[x] 1..1 MS
   * value[x] only code
 * parameter[target-endpoint]
   * ^short = "Server-Endpunkt auf dem passende Patient-/Encounter-Referenzen gesucht werden sollen. 
   Wenn der Parameter nicht gesetzt wird, verwendet der Server, der die Operation ausführt, per default den eigenen Endpunkt"
+  * name MS 
+    * ^short = "Name des Parameters"
   * name = "target-endpoint"
+  * value[x] 1..1 MS
   * value[x] only uri
 
 
@@ -122,7 +132,8 @@ Description: "Profil zur Validierung der Output-Parameter für $generate-metadat
 * parameter contains metadata 1..1 MS
 * parameter[metadata]
   * ^short = "erzeugte DocumentReference-Ressource"
-  * ^comment = "..."
+  * name MS 
+    * ^short = "Name des Parameters"
   * name = "metadata"
   * resource 1..1 MS
   * resource only ISiKDokumentenMetadaten

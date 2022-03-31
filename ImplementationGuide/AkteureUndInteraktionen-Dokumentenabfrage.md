@@ -24,13 +24,10 @@ Beispiele:
 Das den Metadaten zugeordnete Dokument kann jeweils unter `DocumentReference.content.attachment.url` vom Server abgerufen werden.
 Es gelten die Festlegungen gem. [IHE ITI-68: Retrieve Document](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message)
 
-<!-- FHIR-native Systeme werden das Dokument präferiert über einen [Binary-Endpunkt](http://hl7.org/fhir/binary.html) bereitstellen. Dieser verfügt über folgende Besonderheit:
+Der einzige MIME-Type, den alle Dokumentenserver verpflichtend zurückgeben können MÜSSEN ist der MIME Type, der dem `DocumentReference.content.attachment.contentType` entspricht.
+
+Dokumentenserver SOLLEN das Dokument präferiert über einen [Binary-Endpunkt](http://hl7.org/fhir/binary.html) bereitstellen. Dieser verfügt über folgende Besonderheit:
 
 * Wenn der Zugriff mit dem Accept-Header `application/fhir+xml` oder `application/fhir+json` erfolgt, müssen die Daten als Binary-Ressource im angeforderten Format zurückgegeben werden.
 * Wenn der Zugriff mit einem *anderen* Accept-Header als `application/fhir+xml` oder `application/fhir+json` erfolgt, so soll das Dokument im angeforderten Format zurückgegeben werden,
 z.B. MUSS bei Zugriffen mit Accept-Header `application/pdf` das Dokument unmittelbar als PDF zurückgegeben werden, sofern dies dem Content-Type der Binary-Ressource entspricht.
-
-Da es sich bei der Verlinkung via `DocumentReference.content.attachment.url` nicht um einen `Reference`-Datentyp im Sinne von FHIR handelt, gelten hier nicht die Gesetzmäßigkeites eines FHIR.Endpunktes. Wenn das Dokument über einen Binary-Endpunkt bereitgestellt wird udn folglich in verschiedenen Formaten (z.B. XML, JSON und nativ) abrufbar ist, so muss für jede verfügbare Repräsentation des Dokumentes ein separater DocumentReference.content-Knoten mit enstprechendem `content.attachment.contentType`-Code angelegt werden. Diese referenzieren dann jeweils auf die Binary-Ressource mit angehängtem [`_format`-Parameter](http://hl7.org/fhir/http.html#parameters).
-
-Siehe hierzu auch die [entsprechende Diskussion in der Internationalen FHIR-Community](https://chat.fhir.org/#narrow/stream/179166-implementers/topic/Attachment.2EcontentType.20for.20FHIR) -->
-

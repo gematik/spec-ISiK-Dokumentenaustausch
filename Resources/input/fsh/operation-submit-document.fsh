@@ -35,14 +35,14 @@ the `status` of the related DocumentReference to `superseded`.
 * inputProfile = Canonical(SubmitDocumentInput)
 * outputProfile = Canonical(SubmitDocumentOutput)
 * parameter[+]
-  * name = #metadata
+  * name = #metadata (exactly)
   * use = #in 
   * min = 1
   * max = "1"
   * documentation = "DocumentReference containing document metadata"
   * type = #DocumentReference
 * parameter[+]
-  * name = #payload
+  * name = #payload (exactly)
   * use = #in 
   * min = 1
   * max = "1"
@@ -56,10 +56,10 @@ the `status` of the related DocumentReference to `superseded`.
   * documentation = "DocumentReference as persisted by the server"
   * type = #DocumentReference
 * parameter[+]
-  * name = "information"
-  * use #out
+  * name = #information (exactly) 
+  * use = #out
   * min = 0
-  * max = *
+  * max = "*"
   * documentation = "Additional information and/or warnings  about the operation the server whishes to convey to the client"
   * type = #OperationOutcome
 
@@ -78,14 +78,22 @@ Description: "Profil zur Validierung der Input-Parameter für $submit-document"
 * parameter[metadata]
   * ^short = "Dokumentenmetadaten in Form einer DocumentReference-Ressource"
   * ^comment = "..."
+  * name MS 
+    * ^short = "Name des Parameters"
   * name = "metadata"
+  * resource 1..1 MS
   * resource only ISiKDokumentenMetadaten
+    * ^short = "Dokumentenmetadaten als Document-Ressource"
     * content ..1
 * parameter[payload]
   * ^short = "das Dokument"
   * ^definition = "Das Dokument (z.B. PDF, DOC, JPEG etc.) base64-codiert eingebettet in eine Binary-Ressource"
+  * name MS 
+    * ^short = "Name des Parameters"
   * name = "payload"
+  * resource 1..1 MS
   * resource only ISiKBinary
+    * ^short = "Dokument als Binary-Ressource"
 
 
 
