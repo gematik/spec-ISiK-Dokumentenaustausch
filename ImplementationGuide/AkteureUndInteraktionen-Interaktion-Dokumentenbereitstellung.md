@@ -27,11 +27,11 @@ ausnahmsweise auf Englisch spezifiziert.
 
 {{render: ISiK-Dokumentenaustausch/submit-document}}
 
-#### In-Parameters Definition
+#### In-Parameters Definition (ISiK)
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentinput}}
 
-#### Out-Parameters Definition
+#### Out-Parameters Definition (ISiK)
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
 
