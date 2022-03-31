@@ -64,7 +64,9 @@
       {
         "id": "Parameters.parameter:output-metadata.name",
         "path": "Parameters.parameter.name",
-        "patternString": "output-metadata"
+        "short": "Name des Parameters",
+        "fixedString": "output-metadata",
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:output-metadata.resource",
@@ -96,7 +98,9 @@
       {
         "id": "Parameters.parameter:information.name",
         "path": "Parameters.parameter.name",
-        "patternString": "information"
+        "short": "Name des Parameters",
+        "fixedString": "information",
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:information.resource",

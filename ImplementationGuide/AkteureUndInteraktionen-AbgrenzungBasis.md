@@ -49,13 +49,13 @@ Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die 
 
 {{render: ISiK-Dokumentenaustausch/generatemetadata}}
 
-#### In-Parameters Definition
+#### In-Parameters Definition (ISiK)
 
 {{render: ISiK-Dokumentenaustausch/generatemetadatainput}}
 
-#### Out-Parameters Definition
+#### Out-Parameters Definition (ISiK)
 
-{{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
+{{render: ISiK-Dokumentenaustausch/generatemetadataoutput}}
 
 ### Mapping Composition -> DocumentReference
  @```

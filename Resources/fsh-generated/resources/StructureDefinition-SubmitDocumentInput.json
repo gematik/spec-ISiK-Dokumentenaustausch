@@ -65,7 +65,7 @@
         "id": "Parameters.parameter:metadata.name",
         "path": "Parameters.parameter.name",
         "short": "Name des Parameters",
-        "patternString": "metadata",
+        "fixedString": "metadata",
         "mustSupport": true
       },
       {
@@ -102,7 +102,7 @@
         "id": "Parameters.parameter:payload.name",
         "path": "Parameters.parameter.name",
         "short": "Name des Parameters",
-        "patternString": "payload",
+        "fixedString": "payload",
         "mustSupport": true
       },
       {

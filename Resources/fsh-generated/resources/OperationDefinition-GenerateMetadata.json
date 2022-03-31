@@ -56,12 +56,20 @@
       "type": "uri"
     },
     {
-      "name": "metadata",
+      "name": "output-metadata",
       "use": "out",
       "min": 1,
       "max": "1",
       "documentation": "DocumentReference created based on the submitted input",
       "type": "DocumentReference"
+    },
+    {
+      "name": "information",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "documentation": "Additional information and/or warnings  about the operation the server whishes to convey to the client",
+      "type": "OperationOutcome"
     }
   ]
 }

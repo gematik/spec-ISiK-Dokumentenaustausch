@@ -67,12 +67,19 @@ Servers SHOULD expose a derived OperationDefinition in their CapabilityStatment,
   * documentation = "fhir endpoint on which matches for Patient (and other items) are searched"
   * type = #uri
 * parameter[+]
-  * name = #metadata
+  * name = #output-metadata
   * use = #out
   * min = 1
   * max = "1"
   * documentation = "DocumentReference created based on the submitted input"
   * type = #DocumentReference
+* parameter[+]
+  * name = #information (exactly) 
+  * use = #out
+  * min = 0
+  * max = "*"
+  * documentation = "Additional information and/or warnings  about the operation the server whishes to convey to the client"
+  * type = #OperationOutcome
 
 Profile: GenerateMetadatatInput
 Parent: Parameters
@@ -129,15 +136,23 @@ Description: "Profil zur Validierung der Output-Parameter für $generate-metadat
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
   * ^slicing.rules = #open
-* parameter contains metadata 1..1 MS
-* parameter[metadata]
-  * ^short = "erzeugte DocumentReference-Ressource"
+* parameter contains output-metadata 1..1 MS and information 0..1  
+* parameter[output-metadata]
+  * ^short = "Dokumentenmetadaten wie sie vom Server erzeugt/gemapped wurden"
+  * ^comment = "..."
   * name MS 
     * ^short = "Name des Parameters"
-  * name = "metadata"
-  * resource 1..1 MS
+  * name = "output-metadata" (exactly)
   * resource only ISiKDokumentenMetadaten
   * resource.id 1..1 MS
+* parameter[information]
+  * ^short = "Informationen/Hinweise zum Ergebnis der Operation"
+  * ^comment = "..."
+  * name MS 
+    * ^short = "Name des Parameters"
+  * name = "information" (exactly)
+  * resource only OperationOutcome
+
 
 Invariant: gen-in-1
 Description: "Es muss entweder der Parameter `fhir-document` oder der parameter `non-fhir-document` übermittelt werden!"

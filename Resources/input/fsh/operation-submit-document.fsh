@@ -80,7 +80,7 @@ Description: "Profil zur Validierung der Input-Parameter für $submit-document"
   * ^comment = "..."
   * name MS 
     * ^short = "Name des Parameters"
-  * name = "metadata"
+  * name = "metadata" (exactly)
   * resource 1..1 MS
   * resource only ISiKDokumentenMetadaten
     * ^short = "Dokumentenmetadaten als Document-Ressource"
@@ -90,7 +90,7 @@ Description: "Profil zur Validierung der Input-Parameter für $submit-document"
   * ^definition = "Das Dokument (z.B. PDF, DOC, JPEG etc.) base64-codiert eingebettet in eine Binary-Ressource"
   * name MS 
     * ^short = "Name des Parameters"
-  * name = "payload"
+  * name = "payload" (exactly)
   * resource 1..1 MS
   * resource only ISiKBinary
     * ^short = "Dokument als Binary-Ressource"
@@ -111,13 +111,17 @@ Description: "Profil zur Validierung der Output-Parameter für $submit-document"
 * parameter[output-metadata]
   * ^short = "Dokumentenmetadaten wie sie vom Server verstanden/persistiert wurden"
   * ^comment = "..."
-  * name = "output-metadata"
+  * name MS 
+    * ^short = "Name des Parameters"
+  * name = "output-metadata" (exactly)
   * resource only ISiKDokumentenMetadaten
   * resource.id 1..1 MS
 * parameter[information]
   * ^short = "Informationen/Hinweise zum Ergebnis der Operation"
   * ^comment = "..."
-  * name = "information"
+  * name MS 
+    * ^short = "Name des Parameters"
+  * name = "information" (exactly)
   * resource only OperationOutcome
 
 

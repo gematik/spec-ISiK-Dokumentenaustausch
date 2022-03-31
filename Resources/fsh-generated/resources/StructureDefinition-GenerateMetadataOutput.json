@@ -53,25 +53,25 @@
         "mustSupport": true
       },
       {
-        "id": "Parameters.parameter:metadata",
+        "id": "Parameters.parameter:output-metadata",
         "path": "Parameters.parameter",
-        "sliceName": "metadata",
-        "short": "erzeugte DocumentReference-Ressource",
+        "sliceName": "output-metadata",
+        "short": "Dokumentenmetadaten wie sie vom Server erzeugt/gemapped wurden",
+        "comment": "...",
         "min": 1,
         "max": "1",
         "mustSupport": true
       },
       {
-        "id": "Parameters.parameter:metadata.name",
+        "id": "Parameters.parameter:output-metadata.name",
         "path": "Parameters.parameter.name",
         "short": "Name des Parameters",
-        "patternString": "metadata",
+        "fixedString": "output-metadata",
         "mustSupport": true
       },
       {
-        "id": "Parameters.parameter:metadata.resource",
+        "id": "Parameters.parameter:output-metadata.resource",
         "path": "Parameters.parameter.resource",
-        "min": 1,
         "type": [
           {
             "code": "DocumentReference",
@@ -79,14 +79,38 @@
               "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
             ]
           }
-        ],
-        "mustSupport": true
+        ]
       },
       {
-        "id": "Parameters.parameter:metadata.resource.id",
+        "id": "Parameters.parameter:output-metadata.resource.id",
         "path": "Parameters.parameter.resource.id",
         "min": 1,
         "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:information",
+        "path": "Parameters.parameter",
+        "sliceName": "information",
+        "short": "Informationen/Hinweise zum Ergebnis der Operation",
+        "comment": "...",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Parameters.parameter:information.name",
+        "path": "Parameters.parameter.name",
+        "short": "Name des Parameters",
+        "fixedString": "information",
+        "mustSupport": true
+      },
+      {
+        "id": "Parameters.parameter:information.resource",
+        "path": "Parameters.parameter.resource",
+        "type": [
+          {
+            "code": "OperationOutcome"
+          }
+        ]
       }
     ]
   }
