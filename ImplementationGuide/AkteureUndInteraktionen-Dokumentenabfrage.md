@@ -1,5 +1,4 @@
 ## Dokumentenabfrage und -Zugriff
-Für alle Interaktionen gelten die Vereinbarungen zu REST-API aus dem [ISiK Basismodul Stufe 2](https://simplifier.net/guide/isik-basismodul-stufe2/UebergreifendeFestlegungenRest)
 
 ### Dokumentenabfrage
 Dokumente können anhand ihrer Metadaten gesucht werden. Im Rahmen der ISiK-Spezifikation müssen mindestens die im Kapitel {{pagelink:DocumentReferenceInteraktionen}}

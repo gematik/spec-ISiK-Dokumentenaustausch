@@ -9,11 +9,12 @@ Description: ""
 //* status = #draft
 * kind = #operation
 * name = "update-metadata"
-* description = "Update selected, uncritical document metadata in a save and controlled manner without having to replace the whole document"
+* description = "Update selected, uncritical document metadata in a safe and controlled manner without having to replace the whole document"
 * code = #update-metadata
 * comment = "
     Expected behaviour:
-Servers are expected to update the DocumentReference element(s) with the submitted values(s)
+* Servers SHALL update the DocumentReference.docStatus with the submitted values
+* Servers SHALL ensure that DocumentReference.text reflects this change
 "
 * resource = #DocumentReference
 * system = false
@@ -31,4 +32,5 @@ Servers are expected to update the DocumentReference element(s) with the submitt
   * binding 
     * strength = #required 
     * valueSet = "http://hl7.org/fhir/ValueSet/composition-status"
+
 

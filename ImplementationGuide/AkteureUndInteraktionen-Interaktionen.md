@@ -1,4 +1,7 @@
 ## Interaktionen
+
+Für alle Interaktionen gelten die Vereinbarungen zu RESTful-API aus dem [ISiK Basismodul Stufe 2](https://simplifier.net/guide/isik-basismodul-stufe2/UebergreifendeFestlegungenRest)
+
 ### Dokumentenabfrage und -Zugriff (bestätigungsrelevant)
 **UseCase:** Ein (webbasierter/mobiler) Client möchte Dokumente anhand definierter Kriterien abfragen.
 Zur Dokumenten(-Metadaten)abfrage nutzt diese Spezifikation die SEARCH-Interaktionen auf der DocumentReferenc-Ressource gemäß der FHIR-Spezifikation.

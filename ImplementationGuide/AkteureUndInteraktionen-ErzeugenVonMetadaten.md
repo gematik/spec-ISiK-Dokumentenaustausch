@@ -46,7 +46,7 @@ Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die 
 
 | Hinweis | Work in Progress!|
 |---------|---------------------|
-| {{render:Warning}} | Die hier vorliegende Definition der Operation dient als Vorschlag, der auf Basis von Implementierungserfahrungen weiterentwickelt werden soll. Kritik, Feedback und Verbesserungsvorschläge bitte im [ISiK-Community-Acht](https://chat.fhir.org/#narrow/stream/287581-german.2Fisik) diskutieren! |
+| {{render:Warning}} | Die hier vorliegende Definition der Operation dient als Vorschlag, der auf Basis von Implementierungserfahrungen weiterentwickelt werden soll. Kritik, Feedback und Verbesserungsvorschläge bitte im [ISiK-Community-Chat](https://chat.fhir.org/#narrow/stream/287581-german.2Fisik) diskutieren! |
 
 
 {{render: ISiK-Dokumentenaustausch/generatemetadata}}

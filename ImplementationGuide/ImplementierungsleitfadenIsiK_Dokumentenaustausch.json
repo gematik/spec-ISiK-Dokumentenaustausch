@@ -66,10 +66,15 @@
                  "generation": "markdown"
                 },
                 {
-                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-AErzeugenVonMetadaten.md",
-                 "title": "Interaktion: Erzeugen von Metadaten",
+                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Update.md",
+                 "title": "Interaktion: Update von Metadaten",
                  "generation": "markdown"
-                }
+                },
+                {
+                  "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-AErzeugenVonMetadaten.md",
+                  "title": "Interaktion: Erzeugen von Metadaten",
+                  "generation": "markdown"
+                 }
               ]
             }
           ]

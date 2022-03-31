@@ -1,3 +1,3 @@
 ### Motivation
 
-ToDo
+Die Ressource [DocumentReference](http://hl7.org/fhir/documentreference.html) enthält die Metadaten, die für die Verwaltung von und die Suche nach Dokumenten benötigt werden. Der Inhalt des Dokumentes wird über `DocumentReference.content` beschrieben und über `DocumentReference.content.attachment` referenziert. Die Trennung von Dokument und Metadaten ermöglicht Clients die effiziente Suche und Auflistung von verfügbaren Dokumenten, ohne dass diese vollständig vom Server geladen werden müssen. Servern ermöglicht dieser Ansatz die Trennung zwischen den Metadaten in einer Datenbank und der Dokumentenablage in z.B. einem Dateisystem.
