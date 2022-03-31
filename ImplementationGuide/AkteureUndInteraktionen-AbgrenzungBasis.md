@@ -36,3 +36,29 @@ Empfohlenes Vorgehen:
 1. Extraktion des Bundles aus der Binary-Ressource
 2. Extraktion der verarbeitbaren Ressourcen aus dem Bundle
 3. Verlinkung zwischen den extrahierten Ressourcen und dem Original-Dokument mittels einer [`Provenance`-Ressource](http://hl7.org/fhir/provenance.html).
+
+### Operation $generate-metadata
+
+Die Operation `$generate-metadata` wurde spezifiziert in Anlehnung an die Operation [`$generate` im current build der FHIR-Kernspezifikation](http://build.fhir.org/documentreference-operation-generate.html), die jedoch noch nicht in implementierbarem Zustand ist. Die hier getroffenen Änderungen werden parallel als Feedback zur Verbesserung der Kernspezifikation als [ChangeRequest](https://jira.hl7.org/browse/FHIR-34043) eingereicht.
+Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die Spezifikationd er Operation in Englisch.
+
+{{render: ISiK-Dokumentenaustausch/generatemetadata}}
+
+#### In-Parameters Definition
+
+{{render: ISiK-Dokumentenaustausch/generatemetadatainput}}
+
+#### Out-Parameters Definition
+
+{{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
+
+### Mapping Composition -> DocumentReference
+ @```
+      from StructureDefinition
+      where url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten'
+      for differential.element
+      select
+        Path: id,
+        join mapping.where(identity = 'CompositionDocumentReferenceMapping') { map, comment }
+      ```
+
