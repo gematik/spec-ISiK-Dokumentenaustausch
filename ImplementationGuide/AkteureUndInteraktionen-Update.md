@@ -15,9 +15,9 @@ Daher spezifiziert ISiK eine geeignete Operation, die das gezielte Ändern des D
 
 {{render: ISiK-Dokumentenaustausch/update-metadata}}
 
-### Beispiel Update
+### Beispiel 
 
-  [base]/DocumentReference/example/$update-metadata?docStatus=final
+    [base]/DocumentReference/example/$update-metadata?docStatus=final
 
 
 | Hinweis | Work in Progress!|
