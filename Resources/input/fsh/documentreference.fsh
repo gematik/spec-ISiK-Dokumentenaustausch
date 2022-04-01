@@ -70,7 +70,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * category.coding contains XDS 1..1 MS
-* category.coding[XDS]
+* category.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDSclassCode (required)
   * system 1..1 MS
     * ^short = "Kodiersystem"
   * code 1..1 MS
