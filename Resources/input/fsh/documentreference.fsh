@@ -64,7 +64,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
   muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden.
   Der XDS-Class-Code kann mit Hilfe der bereitgestellten [ConceptMap](https://simplifier.net/kdl/~resources?category=ConceptMap)
   aus dem KDL-Code ermittelt werden."
-* category from http://ihe-d.de/ValueSets/IHEXDSclassCode (required)
+//* category from http://ihe-d.de/ValueSets/IHEXDSclassCode (required)
 * category.coding
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
