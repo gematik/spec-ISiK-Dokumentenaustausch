@@ -447,7 +447,7 @@
         "id": "DocumentReference.content.attachment.url",
         "path": "DocumentReference.content.attachment.url",
         "short": "Link zum Dokument",
-        "comment": "Link zum Dokument (als Binary-Ressource)",
+        "comment": "Serverseitig: Absolute URL unter der das Dokument abgerufen werden kann.\r\n      Clientseitig: relative URL auf die Binary-Ressource im payload-Parameter.",
         "min": 1,
         "mustSupport": true,
         "mapping": [
