@@ -145,6 +145,12 @@ Usage: #definition
   * searchParam[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
+    * name = "status"
+    * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-status"
+    * type = #token
+  * searchParam[+]
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.valueCode = #SHALL
     * name = "patient"
     * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-patient"
     * type = #reference
@@ -153,6 +159,12 @@ Usage: #definition
     * extension.valueCode = #SHALL
     * name = "type"
     * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-type"
+    * type = #token
+  * searchParam[+]
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.valueCode = #SHALL
+    * name = "category"
+    * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-category"
     * type = #token
   * searchParam[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
