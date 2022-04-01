@@ -14,7 +14,8 @@ Zur Herstellung des Kontextes sind folgende Verfahren möglich:
 
 ### Dokumentenübermittlung
 Die Übermittlung des Dokumentes vom Client an den Server erfolgt mit Hilfe der `$submit-document` Operation.
-Hinweis: Der zum Zeitpunkt der Erstellung dieser Spezifikation vorliegende IHE-MHD-Implementierungsleitfaden sieht für die Dokumentenbereitstellung ein 
+
+**Hinweis:** Der zum Zeitpunkt der Erstellung dieser Spezifikation vorliegende IHE-MHD-Implementierungsleitfaden sieht für die Dokumentenbereitstellung ein 
 Transaction-Bundle mit POST-Interaktionen vor. 
 Aus Gründen, die [in der diesbezüglichen Diskussion im internationalen FHIR-Chat](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/MHD.20update.20and.20status) 
 nachzulesen sind, ist dieses Vorgehen jedoch zu hinterfragen und wird seitens IHE voraussichtlich in künftigen MHD-Versionen geändert.
