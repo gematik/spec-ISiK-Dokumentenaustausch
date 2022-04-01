@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "dok-beispiel",
+  "id": "dok-beispiel-server",
   "meta": {
     "security": [
       {

@@ -1,7 +1,11 @@
-### Beispiele
-
-Valides Minimalbeispiel DocumentReference:
-
-{{xml:Profilierung/fsh-generated/resources/DocumentReference-dok-beispiel.json}}
-
-{{json:Profilierung/fsh-generated/resources/DocumentReference-dok-beispiel.json}}
+## Beispiele
+### Serverseitiges Dokument (vollständig annotiert)
+#### in XML
+{{xml:dok-beispiel-server}}
+#### in JSON
+{{json:dok-beispiel-server}}
+### Clientseitiges Dokument (nur mit KDL annotiert)
+#### in XML
+{{xml:dok-beispiel-client}}
+#### in JSON
+{{json:dok-beispiel-client}}

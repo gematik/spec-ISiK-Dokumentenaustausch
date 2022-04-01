@@ -17,42 +17,11 @@ Title: "Suchergebnisse einer Dokumentensuche"
   * type.coding[XDS] 1..1 MS
   * category.coding[XDS] 1..1 MS
 
-
-Invariant: ISiK-docBundle-1
-Description: "All referenced Resources must be contained in the Bundle"
-Severity: #error
-Expression: "Bundle.entry.descendants().reference.distinct().subsetOf(%context.entry.fullUrl)"
-
-/* Profile: ISiKDokumentenBereitstellung
-Parent: Bundle
-Id: ISiKDokumentenBereitstellung
-Title: "Bereitstellung von Dokumenten"
-* type = #transaction
-* entry MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry ^slicing.rules = #closed
-* entry.resource MS
-* entry contains
-    DocumentReference 1..* and
-    Binary 1..* and
-    Patient 0..1
-* entry[DocumentReference] ^short = "Die Dokumentenmetadaten"
-* entry[DocumentReference] ^definition = "Metadaten des Dokumentes als DocumentReference-Ressource"
-* entry[DocumentReference].resource 1..
-* entry[DocumentReference].resource only ISiKDokumentenMetadaten
-* entry[DocumentReference].request 1..
-* entry[DocumentReference].request.method = #POST
-* entry[Binary] ^short = "Das Dokument (PDF/Doc/JPEG/TIFF...)"
-* entry[Binary] ^definition = "Base64-codierte Repäsentation des Dokumentes"
-* entry[Binary].resource 1..
-* entry[Binary].resource only ISiKBinary
-* entry[Binary].request 1..
-* entry[Binary].request.method = #POST
-* entry[Patient] ^short = "der Patient"
-* entry[Patient] ^definition = "Stammdaten des Patienten"
-* entry[Patient].resource 1..
-* entry[Patient].resource only Patient
-// */
-
+Instance: Suchergebnis-Beispiel
+InstanceOf: ISiKDokumentenSuchergebnisse
+Usage: #example
+Title: "Suchergebnis-Beispiel"
+Description: ""
+* total = 1
+* entry.fullUrl = "http://meinfhirserver.de/DocumentReference/dok-beispiel"
+* entry.resource = dok-beispiel-server
