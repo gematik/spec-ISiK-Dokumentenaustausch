@@ -127,7 +127,8 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
       nicht in die DocumentReference eingebettet werden, sondern müssen als separates Datenobjekt referenziert werden."
     * url 1.. MS
       * ^short = "Link zum Dokument"
-      * ^comment = "Link zum Dokument (als Binary-Ressource)"
+      * ^comment = "Serverseitig: Absolute URL unter der das Dokument abgerufen werden kann.
+      Clientseitig: relative URL auf die Binary-Ressource im payload-Parameter."
     * creation 1.. MS
       * ^short = "Dokumentendatum"
       * ^comment = "Es obliegt dem erzeugenden System, zu entscheiden, 
