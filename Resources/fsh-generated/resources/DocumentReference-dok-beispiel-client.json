@@ -28,7 +28,7 @@
   "status": "current",
   "description": "Molekularpathologiebefund vom 31.12.21",
   "subject": {
-    "reference": "Patient/example"
+    "reference": "Patient/BeispielPatient"
   },
   "securityLabel": [
     {
@@ -75,7 +75,7 @@
     },
     "encounter": [
       {
-        "reference": "Encounter/example"
+        "reference": "Encounter/BeispielBesuch"
       }
     ]
   }
