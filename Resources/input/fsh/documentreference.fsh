@@ -13,7 +13,7 @@ Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
   * value 1..1 MS
     * ^short = "Wert des Identifiers"
     * ^comment = "OID mit URI-Präfix &quot;urn:oid:&quot;"
-//* identifier 1..* MS
+* identifier 0..* MS
 * identifier ^comment = "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.
 Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.
 &#13;[Konsens der Arbeitsgruppe vom 12.11.2021]"
@@ -39,10 +39,11 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-* type.coding contains  KDL 1..1 MS and XDS 1..1 
+* type.coding contains  KDL 1..1 MS and XDS 0..1 
 * type.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
   * ^short = "Dokumenttyp gem. IHE-De-Terminologie"
-  * ^comment = "Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten 
+  * ^comment = "Die übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, 
+  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten 
   [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden"
 * type.coding[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required)  
   * ^short = "Dokumenttyp gem. KDL-Terminologie"
@@ -56,9 +57,11 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
   * display 1..1 MS
     * ^short = "Anzeigetext"
     * ^comment = "Der Anzeigetext zum KDL-Code"
-* category 1..1 
+* category 0..1 
   * ^short = "Dokumentklasse/-Kategorie"
   * ^comment = "Die Kategorisierung von Dokumenten erfolgt mittels der von IHE Deutschland publizierten XDS-Class-Codes.
+  Die übermittlung des XDS-Class-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, 
+  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden.
   Der XDS-Class-Code kann mit Hilfe der bereitgestellten [ConceptMap](https://simplifier.net/kdl/~resources?category=ConceptMap)
   aus dem KDL-Code ermittelt werden."
 * category from http://ihe-d.de/ValueSets/IHEXDSclassCode (required)

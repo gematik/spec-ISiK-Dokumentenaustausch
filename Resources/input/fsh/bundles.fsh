@@ -14,6 +14,8 @@ Title: "Suchergebnisse einer Dokumentensuche"
 * entry[DocumentReference] ^short = "DocumentReference"
 * entry[DocumentReference].resource 1..
 * entry[DocumentReference].resource only ISiKDokumentenMetadaten
+  * type.coding[XDS] 1..1 MS
+  * category.coding[XDS] 1..1 MS
 
 
 Invariant: ISiK-docBundle-1

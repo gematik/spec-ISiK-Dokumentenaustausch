@@ -37,6 +37,7 @@ ausnahmsweise auf Englisch spezifiziert.
 {{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
 
 #### Beispiel:
+**Hinweis:** Die Binary-Ressourcen sind der Lesbarkeit halber verkürzt dargestellt!
 ##### Request
 `POST [base]/$submit-document`
 {{xml: ISiK-Dokumentenaustausch/parameters-example}}

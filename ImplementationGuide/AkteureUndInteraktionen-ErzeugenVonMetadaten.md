@@ -53,7 +53,7 @@ Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die 
 
 #### In-Parameters Definition (ISiK)
 
-{{render: ISiK-Dokumentenaustausch/generatemetadatainput}}
+{{render: ISiK-Dokumentenaustausch/GenerateMetadatatInput}}
 
 #### Out-Parameters Definition (ISiK)
 
