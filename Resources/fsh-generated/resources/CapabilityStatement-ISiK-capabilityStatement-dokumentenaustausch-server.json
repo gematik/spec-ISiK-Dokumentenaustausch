@@ -1,12 +1,12 @@
 {
   "resourceType": "CapabilityStatement",
   "id": "ISiK-capabilityStatement-dokumentenaustausch-server",
+  "url": "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/dokumentenaustausch-server",
   "status": "draft",
   "experimental": false,
   "version": "2.0.0",
   "publisher": "gematik GmbH",
   "date": "2021-11-12",
-  "url": "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/dokumentenaustausch-server",
   "name": "ISiKCapabilityStatementDokumentenaustauschServer",
   "title": "ISiK CapabilityStatement Dokumentenaustausch Server",
   "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls &quot;Dokumentenaustausch&quot; zu bestehen.",
@@ -306,6 +306,17 @@
                   "valueCode": "SHALL"
                 }
               ],
+              "name": "status",
+              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-status",
+              "type": "token"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
               "name": "patient",
               "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-patient",
               "type": "reference"
@@ -319,6 +330,17 @@
               ],
               "name": "type",
               "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-type",
+              "type": "token"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "category",
+              "definition": "http://hl7.org/fhir/SearchParameter/DocumentReference-category",
               "type": "token"
             },
             {
