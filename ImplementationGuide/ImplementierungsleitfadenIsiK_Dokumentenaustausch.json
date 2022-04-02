@@ -16,62 +16,62 @@
       }
     ],
     "page": {
-      "nameUrl": "ImplementationGuide/Einfuehrung.md",
+      "nameUrl": "ImplementationGuide/markdown/Einfuehrung.md",
       "title": "Einführung",
       "generation": "markdown",
       "page": [
         {
-          "nameUrl": "ImplementationGuide/Motivation.md",
+          "nameUrl": "ImplementationGuide/markdown/Motivation.md",
           "title": "Motivation",
           "generation": "markdown"
         },
         {
-          "nameUrl": "ImplementationGuide/UebergreifendeFestlegungen.md",
+          "nameUrl": "ImplementationGuide/markdown/UebergreifendeFestlegungen.md",
           "title": "Übergreifende Festlegungen",
           "generation": "markdown",
           "page": [
             {
-              "nameUrl": "ImplementationGuide/BestaetigungsrelevanteSysteme.md",
+              "nameUrl": "ImplementationGuide/markdown/BestaetigungsrelevanteSysteme.md",
               "title": "Bestätigungsrelevante Systeme",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide/Kompatibilitaet.md",
+              "nameUrl": "ImplementationGuide/markdown/Kompatibilitaet.md",
               "title": "Kompatibilität",
               "generation": "markdown"
             },           
             {
-              "nameUrl": "ImplementationGuide/AkteureUndInteraktionen.md",
+              "nameUrl": "ImplementationGuide/markdown/AkteureUndInteraktionen.md",
               "title": "Akteure und Interaktionen",
               "generation": "markdown",
               "page": [ 
                 {
-                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Akteure.md",
+                 "nameUrl": "ImplementationGuide/markdown/AkteureUndInteraktionen-Akteure.md",
                  "title": "Akteure",
                  "generation": "markdown"
                 },
                 {
-                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Interaktionen.md",
+                 "nameUrl": "ImplementationGuide/markdown/AkteureUndInteraktionen-Interaktionen.md",
                  "title": "Interaktionen",
                  "generation": "markdown"
                 },   
                 {
-                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md",
+                 "nameUrl": "ImplementationGuide/markdown/AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md",
                  "title": "Interaktion: Dokumentenbereitstellung",
                  "generation": "markdown"
                 },
                 {
-                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Dokumentenabfrage.md",
+                 "nameUrl": "ImplementationGuide/markdown/AkteureUndInteraktionen-Dokumentenabfrage.md",
                  "title": "Interaktion: Dokumentenabfrage und -Zugriff",
                  "generation": "markdown"
                 },
                 {
-                 "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-Update.md",
+                 "nameUrl": "ImplementationGuide/markdown/AkteureUndInteraktionen-Update.md",
                  "title": "Interaktion: Update von Metadaten",
                  "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/AkteureUndInteraktionen-ErzeugenVonMetadaten.md",
+                  "nameUrl": "ImplementationGuide/markdown/AkteureUndInteraktionen-ErzeugenVonMetadaten.md",
                   "title": "Interaktion: Erzeugen von Metadaten",
                   "generation": "markdown"
                 }
@@ -81,105 +81,105 @@
         },
         {
           "generation": "markdown",
-          "nameUrl": "ImplementationGuide/Datenobjekte.md",
+          "nameUrl": "ImplementationGuide/markdown/Datenobjekte.md",
           "title": "Datenobjekte",
           "page": [
             {
-              "nameUrl": "ImplementationGuide/CapabilityStatement.md",
+              "nameUrl": "ImplementationGuide/markdown/CapabilityStatement.md",
               "title": "CapabilityStatement",
               "generation": "markdown"
             },
             {
-              "nameUrl": "ImplementationGuide/Datenobjekte_DocumentReference.md",
+              "nameUrl": "ImplementationGuide/markdown/Datenobjekte_DocumentReference.md",
               "title": "Dokumentenmetadaten (DocumentReference)",
               "generation": "markdown",
               "page": [
                 {
-                  "nameUrl": "ImplementationGuide/DocumentReference_Motivation.md",
+                  "nameUrl": "ImplementationGuide/markdown/DocumentReference_Motivation.md",
                   "title": "Motivation",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/DocumentReference_Kompatibilitaet.md",
+                  "nameUrl": "ImplementationGuide/markdown/DocumentReference_Kompatibilitaet.md",
                   "title": "Kompatibilität",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/DocumentReference_Profil.md",
+                  "nameUrl": "ImplementationGuide/markdown/DocumentReference_Profil.md",
                   "title": "Profil",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/DocumentReference_AnmerkungenZuDenMustSupportFeldern.md",
+                  "nameUrl": "ImplementationGuide/markdown/DocumentReference_AnmerkungenZuDenMustSupportFeldern.md",
                   "title": "Anmerkungen zu den Must-Support Feldern",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/DocumentReference_Interaktionen.md",
+                  "nameUrl": "ImplementationGuide/markdown/DocumentReference_Interaktionen.md",
                   "title": "Interaktionen",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/DocumentReference_Beispiele.md",
+                  "nameUrl": "ImplementationGuide/markdown/DocumentReference_Beispiele.md",
                   "title": "Beispiele",
                   "generation": "markdown"
                 }
               ]
             },
             {
-              "nameUrl": "ImplementationGuide/Datenobjekte_Bundle.md",
+              "nameUrl": "ImplementationGuide/markdown/Datenobjekte_Bundle.md",
               "title": "Aggregation (Bundle)",
               "generation": "markdown",
               "page": [
                 {
-                  "nameUrl": "ImplementationGuide/Bundle_Profile.md",
+                  "nameUrl": "ImplementationGuide/markdown/Bundle_Profile.md",
                   "title": "Profile",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/Bundle_AnmerkungenZuDenMustSupportFeldern.md",
+                  "nameUrl": "ImplementationGuide/markdown/Bundle_AnmerkungenZuDenMustSupportFeldern.md",
                   "title": "Anmerkungen zu den Must-Support Feldern",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/Bundle_Interaktionen.md",
+                  "nameUrl": "ImplementationGuide/markdown/Bundle_Interaktionen.md",
                   "title": "Interaktionen",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/Bundle_Beispiele.md",
+                  "nameUrl": "ImplementationGuide/markdown/Bundle_Beispiele.md",
                   "title": "Beispiele",
                   "generation": "markdown"
                 }
               ]
             },
             {
-              "nameUrl": "ImplementationGuide/Binary.md",
+              "nameUrl": "ImplementationGuide/markdown/Binary.md",
               "title": "Binärdaten (Binary)",
               "generation": "markdown",
               "page": [
                {
-                  "nameUrl": "ImplementationGuide/Binary/Motivation.md",
+                  "nameUrl": "ImplementationGuide/markdown/Binary/Motivation.md",
                   "title": "Motivation",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/Binary/Profil.md",
+                  "nameUrl": "ImplementationGuide/markdown/Binary/Profil.md",
                   "title": "Profile",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/Binary/AnmerkungenMustSupport.md",
+                  "nameUrl": "ImplementationGuide/markdown/Binary/AnmerkungenMustSupport.md",
                   "title": "Anmerkungen zu den Must-Support Feldern",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/Binary/Interaktionen.md",
+                  "nameUrl": "ImplementationGuide/markdown/Binary/Interaktionen.md",
                   "title": "Interaktionen",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "ImplementationGuide/Binary/Beispiele.md",
+                  "nameUrl": "ImplementationGuide/markdown/Binary/Beispiele.md",
                   "title": "Beispiele",
                   "generation": "markdown"
                 }
