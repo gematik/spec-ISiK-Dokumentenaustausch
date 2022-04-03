@@ -12,7 +12,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "name": "ISiKBinary",
   "title": "ISiKBinary",
   "status": "active",
