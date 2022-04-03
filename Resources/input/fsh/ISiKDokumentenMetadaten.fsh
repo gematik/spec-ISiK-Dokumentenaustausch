@@ -47,7 +47,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 * type.coding[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required)  
   * ^short = "Dokumenttyp gem. KDL-Terminologie"
   * system 1..1 MS
-  * system = "http://dvmd.de/fhir/CodeSystem/kdl"
+  * system = $ihe-de-class
     * ^short = "Kodiersystem"
     * ^comment = "Fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;"
   * code 1..1 MS
@@ -63,7 +63,6 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
   muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden.
   Der XDS-Class-Code kann mit Hilfe der bereitgestellten [ConceptMap](https://simplifier.net/kdl/~resources?category=ConceptMap)
   aus dem KDL-Code ermittelt werden."
-//* category from http://ihe-d.de/ValueSets/IHEXDSclassCode (required)
 * category.coding
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -161,7 +160,6 @@ Instance: dok-beispiel-server
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-//* meta.profile = "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference"
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
@@ -190,13 +188,13 @@ InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
 Description: ""
-//* meta.profile = "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference"
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 //* identifier.system = "urn:ietf:rfc:3986"
 //* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
+* category = $ihe-de-class#BEF "Befundbericht"
 * type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)

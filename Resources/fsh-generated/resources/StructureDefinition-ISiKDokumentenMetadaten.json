@@ -182,7 +182,7 @@
         "short": "Kodiersystem",
         "comment": "Fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;",
         "min": 1,
-        "patternUri": "http://dvmd.de/fhir/CodeSystem/kdl",
+        "patternUri": "http://ihe-d.de/CodeSystems/IHEXDSclassCode",
         "mustSupport": true
       },
       {

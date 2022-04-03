@@ -47,7 +47,7 @@
             "coding": [
               {
                 "code": "BEF",
-                "system": "http://ihe-d.de/CodeSystem/IHEXDSclassCode",
+                "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode",
                 "display": "Befundbericht"
               }
             ]
