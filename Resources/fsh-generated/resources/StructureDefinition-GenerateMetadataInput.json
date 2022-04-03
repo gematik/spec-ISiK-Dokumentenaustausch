@@ -156,7 +156,7 @@
         "id": "Parameters.parameter:target-endpoint",
         "path": "Parameters.parameter",
         "sliceName": "target-endpoint",
-        "short": "Server-Endpunkt auf dem passende Patient-/Encounter-Referenzen gesucht werden sollen. \r\n  Wenn der Parameter nicht gesetzt wird, verwendet der Server, der die Operation ausführt, per default den eigenen Endpunkt",
+        "short": "Server-Endpunkt auf dem passende Patient-/Encounter-Referenzen gesucht werden sollen. \n  Wenn der Parameter nicht gesetzt wird, verwendet der Server, der die Operation ausführt, per default den eigenen Endpunkt",
         "min": 0,
         "max": "1"
       },
