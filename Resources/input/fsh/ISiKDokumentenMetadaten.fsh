@@ -47,7 +47,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 * type.coding[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required)  
   * ^short = "Dokumenttyp gem. KDL-Terminologie"
   * system 1..1 MS
-  * system = $ihe-de-class
+  * system = "http://dvmd.de/fhir/CodeSystem/kdl"
     * ^short = "Kodiersystem"
     * ^comment = "Fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;"
   * code 1..1 MS
@@ -167,7 +167,7 @@ Title: "dok-beispiel"
 //* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
 * category = $ihe-de-class#BEF "Befundbericht"
-* type.coding[0] = $kdl#PT130102 "Molekularpathologiebefund"
+* type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
 * type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
@@ -195,6 +195,7 @@ Description: ""
 //* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
 * category = $ihe-de-class#BEF "Befundbericht"
+* type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
