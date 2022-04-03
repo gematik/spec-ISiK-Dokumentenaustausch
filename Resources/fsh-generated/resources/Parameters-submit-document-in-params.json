@@ -86,7 +86,7 @@
           },
           "encounter": [
             {
-              "reference": "Versorgungsstellenkontakt"
+              "reference": "Encounter/BeispielBesuch"
             }
           ]
         }
