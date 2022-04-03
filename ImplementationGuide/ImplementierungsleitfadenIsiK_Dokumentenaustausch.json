@@ -1,6 +1,6 @@
 {
   "resourceType": "ImplementationGuide",
-  "url": "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-Dokumentenaustausch",
+  "url": "https://gematik.de/fhir/ISiK/v2/ImplementationGuide/ISiK-Dokumentenaustausch",
   "name": "Implementierungsleitfaden ISiK-Modul Dokumentenaustausch",
   "status": "draft",
   "fhirVersion": [
