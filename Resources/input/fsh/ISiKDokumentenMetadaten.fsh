@@ -157,12 +157,10 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
 
 
-
 Instance: dok-beispiel-server
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-Description: ""
 //* meta.profile = "http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference"
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
@@ -213,5 +211,5 @@ Description: ""
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
-* context.practiceSetting = $sct#408467006
+* context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(BeispielBesuch)
