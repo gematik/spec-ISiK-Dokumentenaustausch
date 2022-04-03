@@ -37,6 +37,17 @@
           ]
         },
         "status": "current",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "BEF",
+                "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode",
+                "display": "Befundbericht"
+              }
+            ]
+          }
+        ],
         "description": "Molekularpathologiebefund vom 31.12.21",
         "subject": {
           "reference": "Patient/PatientinMusterfrau"
