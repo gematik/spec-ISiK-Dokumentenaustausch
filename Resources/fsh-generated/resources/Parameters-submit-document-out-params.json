@@ -30,14 +30,14 @@
         "type": {
           "coding": [
             {
-              "system": "http://ihe-d.de/CodeSystem/IHEXDStypeCode",
-              "code": "PATH",
-              "display": "Pathologiebefundberichte"
+              "system": "http://dvmd.de/fhir/CodeSystem/kdl",
+              "code": "PT130102",
+              "display": "Molekularpathologiebefund"
             },
             {
-              "code": "PT130102",
-              "system": "http://dvmd.de/fhir/CodeSystem/kdl",
-              "display": "Molekularpathologiebefund"
+              "code": "PATH",
+              "system": "http://ihe-d.de/CodeSystem/IHEXDStypeCode",
+              "display": "Pathologiebefundberichte"
             }
           ]
         },

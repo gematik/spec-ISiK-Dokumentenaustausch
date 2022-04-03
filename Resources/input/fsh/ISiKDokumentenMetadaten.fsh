@@ -169,11 +169,10 @@ Title: "dok-beispiel"
 //* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
 * category = $ihe-de-class#BEF "Befundbericht"
+* type.coding[0] = $kdl#PT130102 "Molekularpathologiebefund"
 * type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
-* type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
-//* date = "2020-12-31T23:50:50-05:00"
 * securityLabel = $v3-Confidentiality#N
 * content.attachment.contentType = #application/pdf
 * content.attachment.language = #de
@@ -198,12 +197,9 @@ Description: ""
 //* identifier.system = "urn:ietf:rfc:3986"
 //* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
-//* category = $ihe-de-class#BEF "Befundbericht"
-//* type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
-//* date = "2020-12-31T23:50:50-05:00"
 * securityLabel = $v3-Confidentiality#N
 * content.attachment.contentType = #application/pdf
 * content.attachment.language = #de
