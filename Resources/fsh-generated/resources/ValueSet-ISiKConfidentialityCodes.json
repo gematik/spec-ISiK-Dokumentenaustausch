@@ -1,15 +1,13 @@
 {
   "resourceType": "ValueSet",
-  "status": "draft",
+  "status": "active",
   "name": "ISiKConfidentialityCodes",
   "id": "ISiKConfidentialityCodes",
   "title": "ISiKConfidentialityCodes",
   "description": "Vertraulichkeitsstufen",
   "version": "2.0.0",
   "url": "https://gematik.de/fhir/ISiK/v2/ValueSet/ISiKConfidentialityCodes",
-  "experimental": false,
   "publisher": "gematik GmbH",
-  "date": "2021-11-12",
   "compose": {
     "include": [
       {

@@ -26,9 +26,20 @@
     ]
   },
   "status": "current",
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "BEF",
+          "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode",
+          "display": "Befundbericht"
+        }
+      ]
+    }
+  ],
   "description": "Molekularpathologiebefund vom 31.12.21",
   "subject": {
-    "reference": "Patient/BeispielPatient"
+    "reference": "Patient/PatientinMusterfrau"
   },
   "securityLabel": [
     {
@@ -68,8 +79,8 @@
     "practiceSetting": {
       "coding": [
         {
-          "code": "408467006",
-          "system": "http://snomed.info/sct"
+          "code": "ALLG",
+          "system": "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen"
         }
       ]
     },

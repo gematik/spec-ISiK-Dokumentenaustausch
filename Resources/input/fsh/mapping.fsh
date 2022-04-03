@@ -27,5 +27,3 @@ Title:    "Metadaten eines strukturieren Dokumentes (Document-Bundle)"
 * content.format -> "=urn:ihe:iti:xds:2017:mimeTypeSufficient"
 * context.encounter -> "Lookup Composition.encounter.resolve().identifier" "Ermittlung des korrekten Encounters auf dem Server anhand des Identifiers(Fallnummer) und/oder weiterer Kriterien erforderlich"
 * context.facilityType -> "=KHS, sofern nichts anderes bekannt"
-
-

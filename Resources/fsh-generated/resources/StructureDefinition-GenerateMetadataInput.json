@@ -11,9 +11,7 @@
   "version": "2.0.0",
   "name": "GenerateMetadatatInput",
   "title": "GenerateMetadataInput",
-  "status": "draft",
-  "experimental": false,
-  "date": "2021-11-12",
+  "status": "active",
   "publisher": "gematik GmbH",
   "description": "Profil zur Validierung der Input-Parameter für $generate-metadata",
   "fhirVersion": "4.0.1",
@@ -90,6 +88,14 @@
         "id": "Parameters.parameter:fhir-document.resource",
         "path": "Parameters.parameter.resource",
         "min": 1,
+        "type": [
+          {
+            "code": "Bundle",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
@@ -150,7 +156,7 @@
         "id": "Parameters.parameter:target-endpoint",
         "path": "Parameters.parameter",
         "sliceName": "target-endpoint",
-        "short": "Server-Endpunkt auf dem passende Patient-/Encounter-Referenzen gesucht werden sollen. \r\n  Wenn der Parameter nicht gesetzt wird, verwendet der Server, der die Operation ausführt, per default den eigenen Endpunkt",
+        "short": "Server-Endpunkt auf dem passende Patient-/Encounter-Referenzen gesucht werden sollen. \n  Wenn der Parameter nicht gesetzt wird, verwendet der Server, der die Operation ausführt, per default den eigenen Endpunkt",
         "min": 0,
         "max": "1"
       },

@@ -1,8 +1,0 @@
-canonical: http://profiles.ihe.net/ITI/MHD
-fhirVersion: 4.0.1
-FSHOnly: true
-applyExtensionMetadataToRoot: false
-id: ihe.mhd.fhir
-name: IHE_MHD
-status: active
-version: 4.0.2

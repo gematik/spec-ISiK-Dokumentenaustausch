@@ -15,9 +15,7 @@
   "version": "2.0.0",
   "name": "ISiKDokumentenMetadaten",
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
-  "status": "draft",
-  "experimental": false,
-  "date": "2021-11-12",
+  "status": "active",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -102,7 +100,7 @@
       {
         "id": "DocumentReference.identifier",
         "path": "DocumentReference.identifier",
-        "comment": "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.\r\nEin solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.\r\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "comment": "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.\nEin solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.\n&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "mustSupport": true,
         "mapping": [
           {
@@ -128,7 +126,7 @@
         "id": "DocumentReference.docStatus",
         "path": "DocumentReference.docStatus",
         "short": "Bearbeitungsstatus des Dokumentes",
-        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt. Doe Verwendung von docStatus bleibt jedoch optional, \r\n  da nicht alle Dokumentenerzeugende Systeme einen expliziten Freigabe-Workflow haben. Dekomentenserver müssen jedoch in der Lage sein, den Dokumentenstatus \r\n  - sofern vorhanden - zu persistieren, anzuzeigen und zu reproduzieren.\r\n  &#13;[Konsens der Arbeitsgruppe vom 10.12.2021]",
+        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt. Doe Verwendung von docStatus bleibt jedoch optional, \n  da nicht alle Dokumentenerzeugende Systeme einen expliziten Freigabe-Workflow haben. Dekomentenserver müssen jedoch in der Lage sein, den Dokumentenstatus \n  - sofern vorhanden - zu persistieren, anzuzeigen und zu reproduzieren.\n  &#13;[Konsens der Arbeitsgruppe vom 10.12.2021]",
         "mustSupport": true,
         "mapping": [
           {
@@ -141,7 +139,7 @@
         "id": "DocumentReference.type",
         "path": "DocumentReference.type",
         "short": "Dokumententyp",
-        "comment": "Im ISiK-Kontext ist die Typisierung eines Dokumentes mit Hilfe eines KDL-Codes *und* des IHE-XDS-Type-Codes erforderlich. \r\n  Während ersterer eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen udn Administrativen Dokumenten ermöglicht, \r\n  ist letzterer für den einrichtungsübergreifenden Dokumentenautausch maßgeblich.\r\n  Der XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)\r\n  aus dem KDL-Code ermittelt werden. Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt.\r\n\r\n  [Konsens der Arbeitgruppe vom 18.02.2022]",
+        "comment": "Im ISiK-Kontext ist die Typisierung eines Dokumentes mit Hilfe eines KDL-Codes *und* des IHE-XDS-Type-Codes erforderlich. \n  Während ersterer eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen udn Administrativen Dokumenten ermöglicht, \n  ist letzterer für den einrichtungsübergreifenden Dokumentenautausch maßgeblich.\n  Der XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)\n  aus dem KDL-Code ermittelt werden. Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt.\n\n  [Konsens der Arbeitgruppe vom 18.02.2022]",
         "min": 1,
         "mustSupport": true
       },
@@ -184,7 +182,7 @@
         "short": "Kodiersystem",
         "comment": "Fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;",
         "min": 1,
-        "patternUri": "http://dvmd.de/fhir/CodeSystem/kdl",
+        "patternUri": "http://ihe-d.de/CodeSystems/IHEXDSclassCode",
         "mustSupport": true
       },
       {
@@ -208,7 +206,7 @@
         "path": "DocumentReference.type.coding",
         "sliceName": "XDS",
         "short": "Dokumenttyp gem. IHE-De-Terminologie",
-        "comment": "Die übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, \r\n  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten \r\n  [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden",
+        "comment": "Die übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, \n  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten \n  [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden",
         "min": 0,
         "max": "1",
         "binding": {
@@ -227,7 +225,7 @@
         "id": "DocumentReference.category",
         "path": "DocumentReference.category",
         "short": "Dokumentklasse/-Kategorie",
-        "comment": "Die Kategorisierung von Dokumenten erfolgt mittels der von IHE Deutschland publizierten XDS-Class-Codes.\r\n  Die übermittlung des XDS-Class-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, \r\n  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden.\r\n  Der XDS-Class-Code kann mit Hilfe der bereitgestellten [ConceptMap](https://simplifier.net/kdl/~resources?category=ConceptMap)\r\n  aus dem KDL-Code ermittelt werden.",
+        "comment": "Die Kategorisierung von Dokumenten erfolgt mittels der von IHE Deutschland publizierten XDS-Class-Codes.\n  Die übermittlung des XDS-Class-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, \n  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden.\n  Der XDS-Class-Code kann mit Hilfe der bereitgestellten [ConceptMap](https://simplifier.net/kdl/~resources?category=ConceptMap)\n  aus dem KDL-Code ermittelt werden.",
         "max": "1"
       },
       {
@@ -320,13 +318,13 @@
       {
         "id": "DocumentReference.date",
         "path": "DocumentReference.date",
-        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend. \r\nDie Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. \r\nEin entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt."
+        "comment": "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend. \nDie Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar. \nEin entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt."
       },
       {
         "id": "DocumentReference.author",
         "path": "DocumentReference.author",
         "short": "Autor des Dokumentes",
-        "comment": "In dieser Ausbaustufe ist die Nennung des Namens oder Kürzels des Autors ausreichend. \r\n  Eine darüber hinaus gehende Verlinkung auf einen Pracitioner (auflösbar auf dem Server) ist möglich aber nicht erforderlich.",
+        "comment": "In dieser Ausbaustufe ist die Nennung des Namens oder Kürzels des Autors ausreichend. \n  Eine darüber hinaus gehende Verlinkung auf einen Pracitioner (auflösbar auf dem Server) ist möglich aber nicht erforderlich.",
         "mustSupport": true,
         "mapping": [
           {
@@ -389,7 +387,7 @@
         "id": "DocumentReference.securityLabel",
         "path": "DocumentReference.securityLabel",
         "short": "Vertraulichkeit",
-        "comment": "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\r\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\r\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\r\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\r\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\r\n&#13; \r\n\r\n[Konsens der Arbeitsgruppe vom 12.11.2021]",
+        "comment": "Die Bereitstellung des Vertraulichkeitsinformation durch den Ersteller des Dokumentes ist verpflichtend.\nEbenso sind Dokumentenserver verpflichtet, diese Information zu persistieren und bei der Dokumentenabfrage zu reproduzieren.\nDie ISiK-Spezifikation trifft jedoch keine Annahmen darüber, wie sich einzelne Vertraulichkeitsstufen auf die Zugriffsberechtigungen\nverschiedener benutzer auf ein Dokument auswirken. Im ISiK-Kontext ist die Angabe einer der drei Vertraulichkeitsstufen\nN | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher Vertraulichkeits-Flags.\n&#13; \n\n[Konsens der Arbeitsgruppe vom 12.11.2021]",
         "min": 1,
         "mustSupport": true,
         "binding": {
@@ -427,7 +425,7 @@
         "id": "DocumentReference.content.attachment.language",
         "path": "DocumentReference.content.attachment.language",
         "short": "Sprache, in der das Dokument verfasst wurde.",
-        "comment": "Kann bei Systemen, die keine Mehrsprachigkeit unterstützen, \r\n      fest auf &quotde&quot; oder &quotde-DE&quot; gesetzt werden.",
+        "comment": "Kann bei Systemen, die keine Mehrsprachigkeit unterstützen, \n      fest auf &quotde&quot; oder &quotde-DE&quot; gesetzt werden.",
         "min": 1,
         "mustSupport": true,
         "mapping": [
@@ -440,14 +438,14 @@
       {
         "id": "DocumentReference.content.attachment.data",
         "path": "DocumentReference.content.attachment.data",
-        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst \r\n      nicht in die DocumentReference eingebettet werden, sondern müssen als separates Datenobjekt referenziert werden.",
+        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst \n      nicht in die DocumentReference eingebettet werden, sondern müssen als separates Datenobjekt referenziert werden.",
         "max": "0"
       },
       {
         "id": "DocumentReference.content.attachment.url",
         "path": "DocumentReference.content.attachment.url",
         "short": "Link zum Dokument",
-        "comment": "Serverseitig: Absolute URL unter der das Dokument abgerufen werden kann.\r\n      Clientseitig: relative URL auf die Binary-Ressource im payload-Parameter.",
+        "comment": "Serverseitig: Absolute URL unter der das Dokument abgerufen werden kann.\n      Clientseitig: relative URL auf die Binary-Ressource im payload-Parameter.",
         "min": 1,
         "mustSupport": true,
         "mapping": [
@@ -461,7 +459,7 @@
         "id": "DocumentReference.content.attachment.creation",
         "path": "DocumentReference.content.attachment.creation",
         "short": "Dokumentendatum",
-        "comment": "Es obliegt dem erzeugenden System, zu entscheiden, \r\n      welches Datum als Dokumentendatum geeignet ist, z.B. Datum der Erstellung oder Datum der letzten Änderung",
+        "comment": "Es obliegt dem erzeugenden System, zu entscheiden, \n      welches Datum als Dokumentendatum geeignet ist, z.B. Datum der Erstellung oder Datum der letzten Änderung",
         "min": 1,
         "mustSupport": true,
         "mapping": [
@@ -475,7 +473,7 @@
         "id": "DocumentReference.content.format",
         "path": "DocumentReference.content.format",
         "short": "Format des Dokumentes",
-        "comment": "Sofern das Dokument nicht auf einem standardisierten, \r\n    strukturierten Austauschformat (z.B. CDA) basiert, für dessen Interpretation ein konkretes Schema herangezogen werden muss,\r\n    genügt die Angabe des Codes \r\n    &quot;urn:ihe:iti:xds:2017:mimeTypeSufficient&quot;",
+        "comment": "Sofern das Dokument nicht auf einem standardisierten, \n    strukturierten Austauschformat (z.B. CDA) basiert, für dessen Interpretation ein konkretes Schema herangezogen werden muss,\n    genügt die Angabe des Codes \n    &quot;urn:ihe:iti:xds:2017:mimeTypeSufficient&quot;",
         "min": 1,
         "mustSupport": true,
         "binding": {

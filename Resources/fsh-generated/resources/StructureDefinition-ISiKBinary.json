@@ -12,11 +12,11 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "name": "ISiKBinary",
   "title": "ISiKBinary",
   "status": "active",
-  "description": "Die Binary-Ressource erlaubt den Umgang mit FHIR-fremden Formaten (z.B. PDFs, Bilder, CDA) innerhalb des FHIR-Frameworks.\r\nDazu werden die Daten base64-codiert in der Binary-Ressource (in XML oder JSON) transportiert oder \r\nüber die REST-API am Binary-Endpunkt in ihrem nativen Format bereitgestellt. \r\nBinary-Ressourcen werden von Attachment-Elementen in DocumentReference-Ressourcen verlinkt und damit in den Kontext anderer FHIR-Ressourcen\r\n(z.B. Patient und Encounter) gestellt.  ",
+  "description": "Die Binary-Ressource erlaubt den Umgang mit FHIR-fremden Formaten (z.B. PDFs, Bilder, CDA) innerhalb des FHIR-Frameworks.\nDazu werden die Daten base64-codiert in der Binary-Ressource (in XML oder JSON) transportiert oder \nüber die REST-API am Binary-Endpunkt in ihrem nativen Format bereitgestellt. \nBinary-Ressourcen werden von Attachment-Elementen in DocumentReference-Ressourcen verlinkt und damit in den Kontext anderer FHIR-Ressourcen\n(z.B. Patient und Encounter) gestellt.  ",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
