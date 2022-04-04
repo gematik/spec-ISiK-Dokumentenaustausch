@@ -63,13 +63,14 @@
         "id": "Parameters.parameter:metadata.name",
         "path": "Parameters.parameter.name",
         "short": "Name des Parameters",
+        "comment": "=metadata",
         "fixedString": "metadata",
         "mustSupport": true
       },
       {
         "id": "Parameters.parameter:metadata.resource",
         "path": "Parameters.parameter.resource",
-        "short": "Dokumentenmetadaten als Document-Ressource",
+        "short": "Resource vom Typ `DocumentReference`",
         "min": 1,
         "type": [
           {
@@ -100,13 +101,14 @@
         "id": "Parameters.parameter:payload.name",
         "path": "Parameters.parameter.name",
         "short": "Name des Parameters",
+        "comment": "=payload",
         "fixedString": "payload",
         "mustSupport": true
       },
       {
         "id": "Parameters.parameter:payload.resource",
         "path": "Parameters.parameter.resource",
-        "short": "Dokument als Binary-Ressource",
+        "short": "Ressource vom Typ `Binary`",
         "min": 1,
         "type": [
           {

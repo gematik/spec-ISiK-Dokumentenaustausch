@@ -14,8 +14,11 @@ Description: "Profil zur Validierung der Output-Parameter für $submit-document"
   * ^comment = "..."
   * name MS 
     * ^short = "Name des Parameters"
+    * ^comment = "=output-metadata"
   * name = "output-metadata" (exactly)
+  * resource 1..1 MS
   * resource only ISiKDokumentenMetadaten
+    * ^short = "Ressource vom Type `DocumentReference`"
   * resource
     * id 1..1 MS
       * ^short = "Serverseitig zugewiesene Datensatz-ID"
@@ -24,14 +27,16 @@ Description: "Profil zur Validierung der Output-Parameter für $submit-document"
       * ^comment = "Der Server muss fehlende XDS-Type-Codes anhand des übermittelten KDL-Codes ergänzen."
     * category.coding[XDS] 1..1 MS
       * ^comment = "Der Server muss fehlende XDS-Class-Codes anhand des übermittelten KDL-Codes ergänzen."
-
 * parameter[information]
   * ^short = "Informationen/Hinweise zum Ergebnis der Operation"
   * ^comment = "..."
   * name MS 
     * ^short = "Name des Parameters"
+    * ^comment = "=information"
   * name = "information" (exactly)
+  * resource 1..1 MS 
   * resource only OperationOutcome
+    * ^short = "Ressource vom Type `OperationOutcome`"
 
 Instance: submit-document-out-params
 InstanceOf: SubmitDocumentOutput

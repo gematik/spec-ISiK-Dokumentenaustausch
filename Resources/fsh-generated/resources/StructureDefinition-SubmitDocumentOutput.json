@@ -63,12 +63,15 @@
         "id": "Parameters.parameter:output-metadata.name",
         "path": "Parameters.parameter.name",
         "short": "Name des Parameters",
+        "comment": "=output-metadata",
         "fixedString": "output-metadata",
         "mustSupport": true
       },
       {
         "id": "Parameters.parameter:output-metadata.resource",
         "path": "Parameters.parameter.resource",
+        "short": "Ressource vom Type `DocumentReference`",
+        "min": 1,
         "type": [
           {
             "code": "DocumentReference",
@@ -76,7 +79,8 @@
               "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Parameters.parameter:output-metadata.resource.id",
@@ -118,17 +122,21 @@
         "id": "Parameters.parameter:information.name",
         "path": "Parameters.parameter.name",
         "short": "Name des Parameters",
+        "comment": "=information",
         "fixedString": "information",
         "mustSupport": true
       },
       {
         "id": "Parameters.parameter:information.resource",
         "path": "Parameters.parameter.resource",
+        "short": "Ressource vom Type `OperationOutcome`",
+        "min": 1,
         "type": [
           {
             "code": "OperationOutcome"
           }
-        ]
+        ],
+        "mustSupport": true
       }
     ]
   }

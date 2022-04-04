@@ -15,20 +15,22 @@ Description: "Profil zur Validierung der Input-Parameter für $submit-document"
   * ^comment = "..."
   * name MS 
     * ^short = "Name des Parameters"
+    * ^comment = "=metadata"
   * name = "metadata" (exactly)
   * resource 1..1 MS
   * resource only ISiKDokumentenMetadaten
-    * ^short = "Dokumentenmetadaten als Document-Ressource"
+    * ^short = "Resource vom Typ `DocumentReference`"
     * content ..1
 * parameter[payload]
   * ^short = "das Dokument"
   * ^definition = "Das Dokument (z.B. PDF, DOC, JPEG etc.) base64-codiert eingebettet in eine Binary-Ressource"
   * name MS 
     * ^short = "Name des Parameters"
+    * ^comment = "=payload"
   * name = "payload" (exactly)
   * resource 1..1 MS
   * resource only ISiKBinary
-    * ^short = "Dokument als Binary-Ressource"
+    * ^short = "Ressource vom Typ `Binary`"
 
 Instance: submit-document-in-params
 InstanceOf: SubmitDocumentInput
