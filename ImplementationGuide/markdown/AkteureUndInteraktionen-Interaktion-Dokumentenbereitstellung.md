@@ -28,7 +28,7 @@ ausnahmsweise auf Englisch spezifiziert.
 
 {{render: ISiK-Dokumentenaustausch/submit-document}}
 
-#### In-Parameters Definition (ISiK)
+#### In-Parameters-Profil (ISiK)
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentinput}}
 @```from
@@ -41,7 +41,7 @@ select
 	Feldname: id, Kurzbeschreibung: short, Hinweise: comment
 ```
 
-#### Out-Parameters Definition (ISiK)
+#### Out-Parameters-Profil (ISiK)
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
 @```from
@@ -63,10 +63,7 @@ select
 {{json: ISiK-Dokumentenaustausch/parameters-example-out}}
 
 
-#### Hinweise zur Extraktion des HTML-Narratives
 
-Die menschenlesbare Repräsentation ("Narrative") eines Dokumentes setzt sich zusammen aus dem Inhalt von 'Composition.text', einer Repräsentation der Metadaten (z.B. Dokumenttyp, Patientenname, Patientennummer, Aufnahmenummer, datum) sowie der Aggregation der Inhalte von 'Composition.section', wobei zu beachten ist, dass ein Dokument beliebig viele Sections und Sub-Sections haben kann.
-Die einzelnen Bestandteile des Narratives KÖNNEN mit \<div\>-Elementen zusammengefügt werden.
 
 
 
