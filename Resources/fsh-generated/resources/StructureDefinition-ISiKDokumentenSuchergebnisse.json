@@ -95,18 +95,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "Bundle.entry:DocumentReference.resource.type.coding",
-        "path": "Bundle.entry.resource.type.coding",
-        "min": 2
-      },
-      {
-        "id": "Bundle.entry:DocumentReference.resource.type.coding:XDS",
-        "path": "Bundle.entry.resource.type.coding",
-        "sliceName": "XDS",
-        "min": 1,
-        "mustSupport": true
       }
     ]
   }
