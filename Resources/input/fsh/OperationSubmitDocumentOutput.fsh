@@ -16,7 +16,15 @@ Description: "Profil zur Validierung der Output-Parameter für $submit-document"
     * ^short = "Name des Parameters"
   * name = "output-metadata" (exactly)
   * resource only ISiKDokumentenMetadaten
-  * resource.id 1..1 MS
+  * resource
+    * id 1..1 MS
+      * ^short = "Serverseitig zugewiesene Datensatz-ID"
+      * ^comment = "Der Server mus dem Datensatz eine eindeutige ID zuweisen und diese zurückgeben."
+    * type.coding[XDS] 1..1 MS 
+      * ^comment = "Der Server muss fehlende XDS-Type-Codes anhand des übermittelten KDL-Codes ergänzen."
+    * category.coding[XDS] 1..1 MS
+      * ^comment = "Der Server muss fehlende XDS-Class-Codes anhand des übermittelten KDL-Codes ergänzen."
+
 * parameter[information]
   * ^short = "Informationen/Hinweise zum Ergebnis der Operation"
   * ^comment = "..."

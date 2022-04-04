@@ -31,10 +31,28 @@ ausnahmsweise auf Englisch spezifiziert.
 #### In-Parameters Definition (ISiK)
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentinput}}
+@```from
+	StructureDefinition
+where 
+    url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput' 
+for differential.element
+where mustSupport = true
+select
+	Feldname: id, Kurzbeschreibung: short, Hinweise: comment
+```
 
 #### Out-Parameters Definition (ISiK)
 
 {{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
+@```from
+	StructureDefinition
+where 
+    url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentOutput' 
+for differential.element
+where mustSupport = true
+select
+	Feldname: id, Kurzbeschreibung: short, Hinweise: comment
+```
 
 #### Beispiel:
 **Hinweis:** Die Binary-Ressourcen sind der Lesbarkeit halber verkürzt dargestellt!
