@@ -10,7 +10,7 @@ Zur Herstellung des Kontextes sind folgende Verfahren möglich:
 
 | Hinweis | Gefahr fehlerhafter Zuordnung!|
 |---------|---------------------|
-| {{render:Warning}} | Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeigente Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
+| {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeigente Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
 
 ### Dokumentenübermittlung
 Die Übermittlung des Dokumentes vom Client an den Server erfolgt mit Hilfe der `$submit-document` Operation.
