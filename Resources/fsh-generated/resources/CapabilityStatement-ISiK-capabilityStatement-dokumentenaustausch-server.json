@@ -1,10 +1,10 @@
 {
   "resourceType": "CapabilityStatement",
   "id": "ISiK-capabilityStatement-dokumentenaustausch-server",
+  "url": "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/dokumentenaustausch-server",
   "status": "active",
   "publisher": "gematik GmbH",
   "date": "2021-11-12",
-  "url": "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/dokumentenaustausch-server",
   "name": "ISiKCapabilityStatementDokumentenaustauschServer",
   "title": "ISiK CapabilityStatement Dokumentenaustausch Server",
   "description": "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls &quot;Dokumentenaustausch&quot; zu bestehen.",
