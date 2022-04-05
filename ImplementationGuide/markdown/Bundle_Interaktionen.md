@@ -1,2 +1,2 @@
-1. siehe Dokumentenabfrage: {{pagelink:ImplementationGuide/AkteureUndInteraktionen-Dokumentenabfrage.md}}
-2. siehe Dokumentenbereitstellung: {{pagelink:ImplementationGuide/AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md}}
+1. siehe Dokumentenabfrage: {{pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Dokumentenabfrage.md}}
+2. siehe Dokumentenbereitstellung: {{pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md}}

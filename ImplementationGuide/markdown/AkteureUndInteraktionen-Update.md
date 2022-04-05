@@ -1,7 +1,7 @@
 ## Interaktion: Update von Metadaten
 
 ### Herstellung von Dokumentenkontext
-Der Client muss zunächst die URL der DocumentReference ermitteln, auf die das Update angewendet werden soll. Hierzu kann die Interaktion {{pagelink:AkteureUndInteraktionen-Dokumentenabfrage, text:Dokumentenabfrage}} verwendet werden.
+Der Client muss zunächst die URL der DocumentReference ermitteln, auf die das Update angewendet werden soll. Hierzu kann die Interaktion {{pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Dokumentenabfrage.md, text:Dokumentenabfrage}} verwendet werden.
 
 ### Metadatenupdate
 Das Update der Metadaten erfolgt mittels der `$submit-document` Operation.
