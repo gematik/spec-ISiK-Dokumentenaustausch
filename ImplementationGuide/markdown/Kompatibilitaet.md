@@ -1,8 +1,8 @@
 
 ## Kompatibilität zu IHE-Profilen
 
-Die Festlegungen in diesem ISiK-Modul wurden auf Grundlage des [IHE MHD-Profils](http://build.fhir.org/ig/IHE/ITI.MHD/) getroffen.
-Wo die Festlegungen seitens IHE zu eng gefasst waren, um die Kompatibilität wahren zu können, ohne die Umsetzung der ISiK-UseCases einzuschränken, wurden [entsprechende Change-Requests bei IHE Int.](https://github.com/IHE/ITI.MHD/issues?q=is%3Aissue+author%3AsimoneOnFhir+) eingereicht, mit dem Ziel, die Kompatibilität in künftigen Releases von IHE-MHD wieder herzustellen.
+Die Festlegungen in diesem ISiK-Modul wurden auf Grundlage des [IHE-MHD-Profils](http://build.fhir.org/ig/IHE/ITI.MHD/) getroffen.
+Wo die Festlegungen seitens IHE zu eng gefasst waren, um die Kompatibilität wahren zu können ohne die Umsetzung der ISiK-UseCases einzuschränken, wurden [entsprechende Change-Requests bei IHE Int.](https://github.com/IHE/ITI.MHD/issues?q=is%3Aissue+author%3AsimoneOnFhir+) eingereicht, mit dem Ziel, die Kompatibilität in künftigen Releases von IHE-MHD wieder herzustellen.
 
 Die Intention der ISiK-Spezifikation ist es, die IHE-Interaktionen auf das notwendige Minimum für die einrichtungsinterne Kommunikation zu reduzieren, dabei jedoch alle erforderlichen Dokumenten-Metadaten für eine spätere Weitergabe der Dokumente an z.B. eine ePA oder ein IHE-MHD-basiertes Repository zu erheben. 
 
@@ -33,16 +33,16 @@ Für dieses ISiK-Modul kommt aufgrund der beschriebenen Problematik anstelle der
 1. Operations sind *benannte* Interaktionen. Jede Operation kann eindeutig mit einer Definition der erlaubten/benötigten Parameter und der zu implementierenden Business-Logik in Verbindung gebracht werden.
 2. Die Business-Logik einer Operation kann über die transaktionale Verarbeitung einzelner REST-Interaktionen hinaus gehen.
 3. Für Clients ist aus dem Capability-Statment des Servers klar ersichtlich, *welche* Operations unterstützt werden, und welche Parameter diese jeweils benötigen.
-4. Die API eines Server kann in Zukunft problemlos um zusätzliche Operations erweitert werden. 
+4. Die API eines Servers kann in Zukunft problemlos um zusätzliche Operations erweitert werden. 
 5. Die Transaction bleibt *frei* um für die generische transaktionale Verarbeitung einzelner REST-Interaktionen genutzt werden zu können.
 
 #### Fallkontext
-In IHE-MHD bzw. XDS ist kein Fallkontext für Dokumente vorgesehen. Bestenfalls kann die Fallnummer (ein Identifier!) als zusätzlicher Code in der EventCodeList verwahrt werden. In der FHIR-Architektur (und in allen weiteren ISiK-Modulen) wird Fallkontext jedoch durch die Verlinkung auf einen Encounter etabliert.
-In dieser ISiK-Spezifikation kommt ebenfalls die Verlinkung zum Einsatz, da der Wunsch nach eine Harmonisierung mit der FHIR-Kernspezifikation und allen anderen ISiK-Modulen dem Wunsch nach Harmonisierung mit IHE-XDS überwiegt.
+In IHE-MHD bzw. XDS ist kein Fallkontext für Dokumente vorgesehen. Bestenfalls kann die Fallnummer (ein Identifier!) als zusätzlicher Code in der EventCodeList verwahrt werden. In der FHIR-Architektur (und in allen weiteren ISiK-Modulen) wird ein Fallkontext jedoch durch die Verlinkung auf einen Encounter etabliert.
+In dieser ISiK-Spezifikation kommt ebenfalls die Verlinkung zum Einsatz, da der Wunsch nach einer Harmonisierung mit der FHIR-Kernspezifikation und allen anderen ISiK-Modulen dem Wunsch nach Harmonisierung mit IHE-XDS überwiegt.
 Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren [wurde der Änderungswunsch an IHE herangetragen](https://github.com/IHE/ITI.MHD/issues/88), den Constraint, der die Encounter-Verlinkung verbietet, zu lockern.
 
 #### Dokumentenstatus
-Vor dem Hintergrund des einrichtungsübergreifenden Dokumentenaustausches, geht IHE-MHD davon aus, dass alle kommunizierten Dokumente einen finalen Status haben.
+Vor dem Hintergrund des einrichtungsübergreifenden Dokumentenaustausches geht IHE-MHD davon aus, dass alle kommunizierten Dokumente einen finalen Status haben.
 Dies ist jedoch bei der einrichtungs*internen* Kommunikation, wie sie von ISiK spezifiziert wird, nicht gegeben. Im Gegenteil: die Suche und Filterung von Dokumenten anhand des Fertigstellungsstatus war ein häufig geäußerter Wunsch bei der Sammlung potentieller UseCases.
-Daher wird ist Verwendung des Feldes `docStatus` in ISiK explizit erlaubt.
+Daher ist die Verwendung des Feldes `docStatus` in ISiK explizit erlaubt.
 Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren [wurde der Änderungswunsch an IHE herangetragen](https://github.com/IHE/ITI.MHD/issues/96), den Constraint, der die Verwendung von `docStatus` verbietet, zu lockern.

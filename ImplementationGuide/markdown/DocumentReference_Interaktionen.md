@@ -14,7 +14,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "status" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/DocumentReference.status=final```
 
@@ -49,7 +49,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 	
 1. Der Suchparameter "type" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/DocumentReference.type=http://dvmd.de/fhir/CodeSystem/kdl|AD010101```
 
@@ -59,7 +59,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der Suchparameter "category" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/DocumentReference.category=http://ihe-d.de/CodeSystem/IHEXDSclassCode|BEF```
 
@@ -70,7 +70,7 @@ Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Ko
 
 1. Der custom Suchparameter "creation" MUSS unterstützt werden:
 
-    Beispiele
+    Beispiele:
 
     ```GET [base]/DocumentReference.creation=2021-11-05```
 

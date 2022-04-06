@@ -1,1 +1,1 @@
-siehe "Dokumentenzugriff": {{pagelink:ImplementationGuide/AkteureUndInteraktionen-Dokumentenabfrage.md}}
+siehe "Dokumentenzugriff": {{pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Dokumentenabfrage.md}}
