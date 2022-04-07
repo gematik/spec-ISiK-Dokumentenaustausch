@@ -59,7 +59,7 @@ Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die 
 
 {{render: ISiK-Dokumentenaustausch/generatemetadataoutput}}
 
-### Mapping Composition -> DocumentReference
+### ISiK-Spezifisches Mapping Composition -> DocumentReference
  @```
       from StructureDefinition
       where url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten'
