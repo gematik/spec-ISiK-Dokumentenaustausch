@@ -9,6 +9,9 @@ Es gelten die allgemeinen Festlegungen zu Suchparametern gemäß [ISiK Basisprof
 Die Ergebnisse einer Suchanfrage werden in Form eines Bundles zurückgegeben:
 {{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenSuchergebnisse, hybrid}}
 
+Suchergebnisse können zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](http://hl7.org/fhir/R4/http.html#paging) unterstützen. Server KÖNNEN im SearchSet-Bundle auch Ressourcen vom Typ [OperationOutcome](http://hl7.org/fhir/R4/operationoutcome.html) mit Informationen über die Suchergebnisse zurückgeben. Diese müssen in `Bundle.entry.search.mode` mit dem Wert `outcome` gekennzeichnet sein. Die Issues im OperationOutcome dürfen nur dem Schweregrad `information` oder `warning` entsprechen.
+Issues vom Schweregrad `error` oder `fatal` sind unzulässig.
+
 
 Beispiele:
 * Suche anhand von Patientenkontext (PID) und Dokumentendatum:
