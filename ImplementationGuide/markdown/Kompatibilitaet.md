@@ -46,3 +46,7 @@ Vor dem Hintergrund des einrichtungsübergreifenden Dokumentenaustausches geht I
 Dies ist jedoch bei der einrichtungs*internen* Kommunikation, wie sie von ISiK spezifiziert wird, nicht gegeben. Im Gegenteil: die Suche und Filterung von Dokumenten anhand des Fertigstellungsstatus war ein häufig geäußerter Wunsch bei der Sammlung potentieller UseCases.
 Daher ist die Verwendung des Feldes `docStatus` in ISiK explizit erlaubt.
 Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren [wurde der Änderungswunsch an IHE herangetragen](https://github.com/IHE/ITI.MHD/issues/96), den Constraint, der die Verwendung von `docStatus` verbietet, zu lockern.
+
+#### Patientenübergreifende Suche
+Im Kontext von IHE-MHD sind Clients verpflichtet, bei allen Suchen mindestens die Parameter `patient` oder `patient.identifier` sowie `status` zu verwenden. Typische UsesCases für die Dokumentensuche in einem Krankenhaus beinhalten jedoch auch die patientenübergreifende Suche, z.B. nach allen nicht abgeschlossenen Arztbriefen einer Station oder allen Spriometrie-Befunden der letzten Woche.
+Diese Einschränkung wurde im ISiK-Profil daher aufgehoben.
