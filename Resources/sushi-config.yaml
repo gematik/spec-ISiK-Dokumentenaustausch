@@ -6,7 +6,7 @@ id: de.gematik.isik-dokumentenaustausch
 canonical: https://gematik.de/fhir/ISiK/v2
 name: ISiK_Dokumentenaustausch
 status: active
-version: 2.0.0
+version: 2.0.0-ballot
 fhirVersion: 4.0.1
 publisher:
   name: Gematik GmbH

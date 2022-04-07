@@ -8,7 +8,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput",
-  "version": "2.0.0",
+  "version": "2.0.0-ballot",
   "name": "SubmitDocumentInput",
   "title": "SubmitDocumentInput",
   "status": "active",
@@ -110,14 +110,6 @@
         "path": "Parameters.parameter.resource",
         "short": "Ressource vom Typ `Binary`",
         "min": 1,
-        "type": [
-          {
-            "code": "Binary",
-            "profile": [
-              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
-            ]
-          }
-        ],
         "mustSupport": true
       }
     ]

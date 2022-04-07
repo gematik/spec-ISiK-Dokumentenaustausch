@@ -109,16 +109,7 @@
       }
     },
     {
-      "name": "payload",
-      "resource": {
-        "resourceType": "Binary",
-        "id": "Binary-PDF-Example-short",
-        "contentType": "application/pdf",
-        "securityContext": {
-          "reference": "DocumentReference/example"
-        },
-        "data": "JVBERi0xLjUNJeLjz9MNCjEw"
-      }
+      "name": "payload"
     }
   ]
 }
