@@ -126,7 +126,7 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
     * url 1.. MS
       * ^short = "Link zum Dokument"
       * ^comment = "Serverseitig: Absolute URL unter der das Dokument abgerufen werden kann.
-      Clientseitig: relative URL auf die Binary-Ressource im payload-Parameter."
+      Clientseitig: relative URL der Form `/Binary/&lt;id&gt;` auf die Binary-Ressource im payload-Parameter."
     * creation 1.. MS
       * ^short = "Dokumentendatum"
       * ^comment = "Es obliegt dem erzeugenden System, zu entscheiden, 
