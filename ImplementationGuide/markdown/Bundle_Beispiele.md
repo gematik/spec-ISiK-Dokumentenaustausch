@@ -1,5 +1,5 @@
 ## Beispiele
 ### in XML
-{{xml: ISiK-Dokumentenaustausch/Suchergebnis-Beispiel}}
+{{xml: Resources/fsh-generated/resources/Bundle-Suchergebnis-Beispiel.json}}
 ### in JSON
-{{json: ISiK-Dokumentenaustausch/Suchergebnis-Beispiel}}
+{{json: Resources/fsh-generated/resources/Bundle-Suchergebnis-Beispiel.json}}
