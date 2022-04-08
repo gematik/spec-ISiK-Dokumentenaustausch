@@ -110,6 +110,14 @@
         "path": "Parameters.parameter.resource",
         "short": "Ressource vom Typ `Binary`",
         "min": 1,
+        "type": [
+          {
+            "code": "Binary",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
+            ]
+          }
+        ],
         "mustSupport": true
       }
     ]

@@ -116,6 +116,14 @@
         "id": "Parameters.parameter:non-fhir-document.resource",
         "path": "Parameters.parameter.resource",
         "min": 1,
+        "type": [
+          {
+            "code": "Binary",
+            "profile": [
+              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {
