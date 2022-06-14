@@ -6,7 +6,7 @@
 * UseCase: Client übermittelt diverse strukturierte Informationen in Form eines Dokumentes an einen Empfänger. Der Empfänger (oder ggf. dessen Benutzer) kann selbst entscheiden, welche Informationen übernommen und ggf. weiterverarbeitet werden können/sollen. Als Minimum muss die Narrative (die HTML-Repräsentation des gesamten Dokumentes) übernommen werden.
 * HTTP-verb: POST auf [base]
 * Content: Bundle vom Typ `document`
-* erforderliches Verhalten: der Empfänger verarbeitet den Inhalt des Dokumentes (HTML + Ressourcen soweit möglich), das Original muss nicht zwingend persitiert werden. Es besteht keine zwingende Erfordernis, dass dass das Dokument oder seine Inhalte über die API wieder bereitgestellt werden können. 
+* erforderliches Verhalten: der Empfänger verarbeitet den Inhalt des Dokumentes (HTML + Ressourcen soweit möglich), das Original muss nicht zwingend persistiert werden. Es besteht keine zwingende Erfordernis, dass dass das Dokument oder seine Inhalte über die API wieder bereitgestellt werden können. 
 
 #### Interaktion ISiK Modul Dokumentenaustausch Stufe 2: Dokumentenbereitstellung
 * UseCase: Client übermittelt ein strukturiertes Dokument zur inhaltsagnositsche, dauerhaften, ggf. rechtssicheren Archivierung
