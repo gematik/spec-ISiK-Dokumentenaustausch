@@ -19,7 +19,7 @@ Die Übermittlung des Dokumentes vom Client an den Server erfolgt mit Hilfe der 
 Transaction-Bundle mit POST-Interaktionen vor. 
 Aus Gründen, die [in der diesbezüglichen Diskussion im internationalen FHIR-Chat](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/MHD.20update.20and.20status) 
 nachzulesen sind, ist dieses Vorgehen jedoch zu hinterfragen und wird seitens IHE voraussichtlich in künftigen MHD-Versionen geändert.
-Siehe hierzu Kapitel {{pagelink:Kompatibilitaet}}
+Siehe hierzu Kapitel {{pagelink:ImplementationGuide/markdown/DocumentReference_Kompatibilitaet.md}}
 
 Um den hier erarbeiteten Vorschlag einer Dokumentenübermittlung mittels Operations der internationalen FHIR-Community im Allgemeinen und IHE im Besonderen vorstellen zu können, in der Hoffnung und Erwartung, dass diese dem Vorgehen folgen, wird dieser Teil der ISiK-Spezifikation ausnahmsweise auf Englisch spezifiziert.
 
@@ -29,7 +29,7 @@ Um den hier erarbeiteten Vorschlag einer Dokumentenübermittlung mittels Operati
 
 #### In-Parameters-Profil (ISiK)
 
-{{render: ISiK-Dokumentenaustausch/submitdocumentinput}}
+{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput, hybrid}}
 @```from
 	StructureDefinition
 where 
@@ -42,7 +42,7 @@ select
 
 #### Out-Parameters-Profil (ISiK)
 
-{{render: ISiK-Dokumentenaustausch/submitdocumentoutput}}
+{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentOutput, hybrid}}
 @```from
 	StructureDefinition
 where 
