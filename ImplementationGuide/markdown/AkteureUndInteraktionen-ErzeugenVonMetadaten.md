@@ -49,15 +49,15 @@ Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die 
 | {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die hier vorliegende Definition der Operation dient als Vorschlag, der auf Basis von Implementierungserfahrungen weiterentwickelt werden soll. Kritik, Feedback und Verbesserungsvorschläge bitte im [ISiK-Community-Chat](https://chat.fhir.org/#narrow/stream/287581-german.2Fisik) diskutieren! |
 
 
-{{render: ISiK-Dokumentenaustausch/generatemetadata}}
+{{render:resources-input-fsh-operationgeneratemetadata}}
 
 #### In-Parameters Definition (ISiK)
 
-{{render: ISiK-Dokumentenaustausch/GenerateMetadatatInput}}
+{{render:resources-input-fsh-operationgeneratemetadatainput}}
 
 #### Out-Parameters Definition (ISiK)
 
-{{render: ISiK-Dokumentenaustausch/generatemetadataoutput}}
+{{render:generatemetadataoutput}}
 
 ### ISiK-Spezifisches Mapping Composition -> DocumentReference
  @```

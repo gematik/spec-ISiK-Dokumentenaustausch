@@ -13,7 +13,7 @@ Daher spezifiziert ISiK eine geeignete Operation, die das gezielte Ändern des D
 
 ### OperationDefinition `$update-metadata`
 
-{{render: ISiK-Dokumentenaustausch/update-metadata}}
+{{render:resources-input-fsh-operationupdatemetadata}}
 
 ### Beispiel 
 
