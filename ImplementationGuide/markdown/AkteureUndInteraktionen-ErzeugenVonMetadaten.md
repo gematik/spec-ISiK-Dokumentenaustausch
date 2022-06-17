@@ -6,7 +6,7 @@
 * UseCase: Client übermittelt diverse strukturierte Informationen in Form eines Dokumentes an einen Empfänger. Der Empfänger (oder ggf. dessen Benutzer) kann selbst entscheiden, welche Informationen übernommen und ggf. weiterverarbeitet werden können/sollen. Als Minimum muss die Narrative (die HTML-Repräsentation des gesamten Dokumentes) übernommen werden.
 * HTTP-verb: POST auf [base]
 * Content: Bundle vom Typ `document`
-* erforderliches Verhalten: der Empfänger verarbeitet den Inhalt des Dokumentes (HTML + Ressourcen soweit möglich), das Original muss nicht zwingend persitiert werden. Es besteht keine zwingende Erfordernis, dass dass das Dokument oder seine Inhalte über die API wieder bereitgestellt werden können. 
+* erforderliches Verhalten: der Empfänger verarbeitet den Inhalt des Dokumentes (HTML + Ressourcen soweit möglich), das Original muss nicht zwingend persistiert werden. Es besteht keine zwingende Erfordernis, dass dass das Dokument oder seine Inhalte über die API wieder bereitgestellt werden können. 
 
 #### Interaktion ISiK Modul Dokumentenaustausch Stufe 2: Dokumentenbereitstellung
 * UseCase: Client übermittelt ein strukturiertes Dokument zur inhaltsagnositsche, dauerhaften, ggf. rechtssicheren Archivierung
@@ -49,15 +49,15 @@ Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die 
 | {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die hier vorliegende Definition der Operation dient als Vorschlag, der auf Basis von Implementierungserfahrungen weiterentwickelt werden soll. Kritik, Feedback und Verbesserungsvorschläge bitte im [ISiK-Community-Chat](https://chat.fhir.org/#narrow/stream/287581-german.2Fisik) diskutieren! |
 
 
-{{render: ISiK-Dokumentenaustausch/generatemetadata}}
+{{render:resources-input-fsh-operationgeneratemetadata}}
 
 #### In-Parameters Definition (ISiK)
 
-{{render: ISiK-Dokumentenaustausch/GenerateMetadatatInput}}
+{{render:resources-input-fsh-operationgeneratemetadatainput}}
 
 #### Out-Parameters Definition (ISiK)
 
-{{render: ISiK-Dokumentenaustausch/generatemetadataoutput}}
+{{render:generatemetadataoutput}}
 
 ### ISiK-Spezifisches Mapping Composition -> DocumentReference
  @```

@@ -22,7 +22,7 @@ Dabei ist jedoch zu beachten, dass eine Transaction in FHIR definiert ist als di
 Innerhalb einer Transaktion sind folglich sämtliche Permutationen von REST-Interaktionen zulässig, die ein Server laut seinem Capability-Statment bereitstellt. Die Implementierung erfolgt generisch, als transaktionale Ausführung der einzelnen Interaktionen. Es gibt keine Transaktionen mit "besonderer Bedeutung".
 
 Gegen dieses Prinzip verstößt die Festlegung in IHE-MHD.
-Erstens ist die Ausführung der in der Transaktion definierten Interaktionen als atomare REST-Interaktionen in IHE-MHD nicht definiert, zweitens soll bei der Ausfühung der Transaktion in MHD erweiterte Business-Logik ausgeführt werden, die fest mit *dieser* Transaktion verknüpft ist.
+Erstens ist die Ausführung der in der Transaktion definierten Interaktionen als atomare REST-Interaktionen in IHE-MHD nicht definiert, zweitens soll bei der Ausführung  der Transaktion in MHD erweiterte Business-Logik ausgeführt werden, die fest mit *dieser* Transaktion verknüpft ist.
 Die Implementierung von IHE-MHD ist unproblematisch, so lange sie die einzige Transaktion ist und bleibt, die auf diesem Server bereitgestellt wird und Client und Server ein implizites Einverständnis darüber haben, dass *ausschließlich* diese eine Transaktion in der von IHE definierten Form mit der von IHE definierten Logik ausgeführt werden kann. 
 
 Sobald ein Server jedoch weitere Transaktionen implementieren möchte, kommt es zu Problemen, da der generische Ansatz nicht mehr möglich ist. Die verschiedenen Transaktionen sind für Client sowie Server nicht mehr unterscheidbar/identifizierbar. 
