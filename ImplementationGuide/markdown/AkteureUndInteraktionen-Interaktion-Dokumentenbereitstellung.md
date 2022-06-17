@@ -25,11 +25,11 @@ Um den hier erarbeiteten Vorschlag einer Dokumentenübermittlung mittels Operati
 
 #### OperationDefinition `$submit-document`
 
-{{render: ISiK-Dokumentenaustausch/submit-document}}
+{{render:submit-document}}
 
 #### In-Parameters-Profil (ISiK)
 
-{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput, hybrid}}
+{{render:submitdocumentinput}}
 @```from
 	StructureDefinition
 where 
@@ -42,7 +42,7 @@ select
 
 #### Out-Parameters-Profil (ISiK)
 
-{{tree:https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentOutput, hybrid}}
+{{render:submitdocumentoutput}}
 @```from
 	StructureDefinition
 where 
@@ -57,9 +57,9 @@ select
 **Hinweis:** Die Binary-Ressourcen sind der Lesbarkeit halber verkürzt dargestellt!
 ##### Request
 `POST [base]/$submit-document`
-{{json: ISiK-Dokumentenaustausch/parameters-example}}
+{{json:resources-fsh-generated-resources-parameters-submit-document-in-params}}
 ##### Response
-{{json: ISiK-Dokumentenaustausch/parameters-example-out}}
+{{json: ISiK-Dokumentenaustausch/resources-fsh-generated-resources-parameters-submit-document-out-params}}
 
 
 
