@@ -4,7 +4,7 @@ Für die Ressource DocumentReference MUSS die REST-Interaktion "READ" implementi
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination.
 
-Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens die Parameter `patient` oder `patient.identifier` sowie `status` verwenden müssen, gilt nicht. Siehe dazu Kapitel {{pagelink:Kompatibilitaet}}
+Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens die Parameter `patient` oder `patient.identifier` sowie `status` verwenden müssen, gilt nicht. Siehe dazu Kapitel  {{pagelink:ImplementationGuide/markdown/Kompatibilitaet.md}}
 
 1. Der Suchparameter "_id" MUSS unterstützt werden:
 
