@@ -59,7 +59,7 @@ select
 `POST [base]/$submit-document`
 {{json:resources-fsh-generated-resources-parameters-submit-document-in-params}}
 ##### Response
-{{json: ISiK-Dokumentenaustausch/resources-fsh-generated-resources-parameters-submit-document-out-params}}
+{{json:resources-fsh-generated-resources-parameters-submit-document-out-params}}
 
 
 
