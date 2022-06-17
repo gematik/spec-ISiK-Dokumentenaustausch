@@ -1,9 +1,9 @@
 ## Beispiele
 ### Serverseitiges Dokument (vollständig annotiert)
 #### in XML
-{{xml:dok-beispiel-server}}
+{{xml:dok-beispiel}}
 #### in JSON
-{{json:dok-beispiel-server}}
+{{json:dok-beispiel}}
 ### Clientseitiges Dokument (nur mit KDL annotiert)
 #### in XML
 {{xml:dok-beispiel-client}}
