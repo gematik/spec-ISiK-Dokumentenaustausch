@@ -4,7 +4,7 @@ Für die Ressource DocumentReference MUSS die REST-Interaktion "READ" implementi
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination.
 
-Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens die Parameter `patient` oder `patient.identifier` sowie `status` verwenden müssen, gilt nicht. Siehe dazu Kapitel  {{pagelink:ImplementationGuide/markdown/Kompatibilitaet.md}}
+Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens die Parameter `patient` oder `patient.identifier` sowie `status` verwenden müssen, gilt nicht. Siehe dazu Kapitel {{pagelink:ImplementationGuide/markdown/Kompatibilitaet.md}}
 
 1. Der Suchparameter "_id" MUSS unterstützt werden:
 
@@ -44,7 +44,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
-    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Client und Server verpflichend.
+    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Client und Server verpflichtend.
 	
 	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](http://hl7.org/fhir/search.html#chaining).
 
@@ -57,7 +57,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
-    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Server verpflichend.
+    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Server verpflichtend.
 
 1. Der Suchparameter "category" MUSS unterstützt werden:
 
@@ -67,7 +67,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
-    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Server verpflichend.
+    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Server verpflichtend.
 
 
 1. Der custom Suchparameter "creation" MUSS unterstützt werden:
@@ -80,7 +80,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 	
 	Dieser Suchparameter ist nicht Bestandteil der FHIR-Kernspezifikation und wurde [von IHE im Rahmen der MHD-Spezifikation definiert](https://profiles.ihe.net/ITI/MHD/SearchParameter-DocumentReference-Creation.html).
 
-    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Server verpflichend.
+    Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Server verpflichtend.
 
 
 1. Der Suchparameter "encounter" MUSS unterstützt werden:
@@ -100,6 +100,6 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 	
 	```GET [base]/DocumentReference?encounter.account:identifier=7567867```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern, insbedondere in Verbindung mit dem `:identifier`-Modifier finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern, insbesondere in Verbindung mit dem `:identifier`-Modifier finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
 	
 	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](http://hl7.org/fhir/search.html#chaining).
