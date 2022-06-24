@@ -2,7 +2,7 @@
 
 ### Dokumentenabfrage und -Zugriff (bestätigungsrelevant)
 **UseCase:** Ein (webbasierter/mobiler) Client möchte Dokumente anhand definierter Kriterien abfragen.
-Zur Dokumenten(-Metadaten)abfrage nutzt diese Spezifikation die SEARCH-Interaktionen auf der DocumentReferenc-Ressource gemäß der FHIR-Spezifikation.
+Zur Dokumenten(-Metadaten)abfrage nutzt diese Spezifikation die SEARCH-Interaktionen auf der DocumentReference-Ressource gemäß der FHIR-Spezifikation.
 Dabei müssen ausgewählte Suchparameter von Dokumentenservern verpflichtend unterstützt werden. Die Selektion erfolgt anhand der Relevanz der Parameter für die identifizierten UseCases.
 Der Zugriff auf die von den DocumentReferences verlinkten Dokumente (z.B. im PDF-Format) erfolgt per READ-Interaktion auf der Binary-Ressource gemäß FHIR-Spezifikation.
 
@@ -14,4 +14,4 @@ Der Zugriff auf die von den DocumentReferences verlinkten Dokumente (z.B. im PDF
 
 ### Erzeugen von Dokumentenmetadaten (optional)
 **UseCase:** Ein Client möchte ein gem. ISiK Basismodul Stufe 2 erzeugtes, strukturiertes, FHIR-basiertes Dokument an einen Dokumentenserver übermitteln.
-Der Server stellt dazu eine Operation zur Verfügung, die aus den strukturierten Daten des Dokumentes die erforderlichen Metadaten extrahiert und dem Client eine entaprechend ausgefüllte `DocumentReference`-Ressource zurückgibt. Diese Operation kann von einem Dokumentenserver aber auch einem Drittsystem bereitgestellt werden.
+Der Server stellt dazu eine Operation zur Verfügung, die aus den strukturierten Daten des Dokumentes die erforderlichen Metadaten extrahiert und dem Client eine entsprechend ausgefüllte `DocumentReference`-Ressource zurückgibt. Diese Operation kann von einem Dokumentenserver aber auch einem Drittsystem bereitgestellt werden.
