@@ -3,7 +3,7 @@
 @```from
 	StructureDefinition
 where 
-    url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/Profile: ISiKDokumentenSuchergebnisse' 
+    url = 'https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/Profile: ISiKDokumentenSuchergebnisse' 
 for differential.element
 where mustSupport = true
 select

@@ -33,7 +33,7 @@ Um den hier erarbeiteten Vorschlag einer Dokumentenübermittlung mittels Operati
 @```from
 	StructureDefinition
 where 
-    url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput' 
+    url = 'https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentInput' 
 for differential.element
 where mustSupport = true
 select
@@ -46,7 +46,7 @@ select
 @```from
 	StructureDefinition
 where 
-    url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentOutput' 
+    url = 'https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentOutput' 
 for differential.element
 where mustSupport = true
 select
