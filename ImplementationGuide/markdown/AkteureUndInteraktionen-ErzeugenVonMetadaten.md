@@ -62,7 +62,7 @@ Um die Diskussion mit der internationalen Community zu erleichtern, erfolgt die 
 ### ISiK-Spezifisches Mapping Composition -> DocumentReference
  @```
       from StructureDefinition
-      where url = 'https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten'
+      where url = 'https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten'
       for differential.element
       select
         Path: id,

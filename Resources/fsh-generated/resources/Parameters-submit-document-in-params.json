@@ -3,7 +3,7 @@
   "id": "submit-document-in-params",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput"
+      "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentInput"
     ]
   },
   "parameter": [
@@ -38,7 +38,7 @@
             }
           ],
           "profile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
+            "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
           ]
         },
         "status": "current",

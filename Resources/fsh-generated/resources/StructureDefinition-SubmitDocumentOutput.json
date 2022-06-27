@@ -7,7 +7,7 @@
       "valueString": "Foundation.Other"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentOutput",
+  "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentOutput",
   "version": "2.0.0-ballot",
   "name": "SubmitDocumentOutput",
   "title": "SubmitDocumentOutput",
@@ -76,7 +76,7 @@
           {
             "code": "DocumentReference",
             "profile": [
-              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
+              "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
             ]
           }
         ],

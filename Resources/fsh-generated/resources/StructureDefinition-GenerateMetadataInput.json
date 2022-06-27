@@ -7,7 +7,7 @@
       "valueString": "Foundation.Other"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/GenerateMetadataInput",
+  "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/GenerateMetadataInput",
   "version": "2.0.0-ballot",
   "name": "GenerateMetadatatInput",
   "title": "GenerateMetadataInput",
@@ -43,14 +43,14 @@
             "severity": "error",
             "human": "Es muss entweder der Parameter `fhir-document` oder der parameter `non-fhir-document` übermittelt werden!",
             "expression": "parameter.where(name = 'fhir-document').exists() xor parameter.where(name='non-fhir-document').exists()",
-            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/GenerateMetadataInput"
+            "source": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/GenerateMetadataInput"
           },
           {
             "key": "gen-in-2",
             "severity": "error",
             "human": "Wenn der Parameter `non-fhir-document` übermittelt wird, muss auch `non-fhir-document-type` übermittelt werden. `non-fhir-document-type` darf nicht in Verbindung mit `fhir-document` übermittelt werden.",
             "expression": "parameter.where(name = 'non-fhir-document').exists().not() xor parameter.where(name = 'non-fhir-document-type').exists()",
-            "source": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/GenerateMetadataInput"
+            "source": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/GenerateMetadataInput"
           }
         ]
       },

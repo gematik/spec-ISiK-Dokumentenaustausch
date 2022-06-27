@@ -18,8 +18,8 @@
   "system": false,
   "type": true,
   "instance": false,
-  "inputProfile": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/GenerateMetadataInput",
-  "outputProfile": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/GenerateMetadataOutput",
+  "inputProfile": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/GenerateMetadataInput",
+  "outputProfile": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/GenerateMetadataOutput",
   "parameter": [
     {
       "name": "fhir-document",

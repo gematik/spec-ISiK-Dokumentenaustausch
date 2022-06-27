@@ -9,7 +9,7 @@
       }
     ],
     "profile": [
-      "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
+      "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
     ]
   },
   "masterIdentifier": {
