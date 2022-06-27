@@ -7,7 +7,7 @@
       "valueString": "Foundation.Other"
     }
   ],
-  "url": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/GenerateMetadataOutput",
+  "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/GenerateMetadataOutput",
   "version": "2.0.0-ballot",
   "name": "GenerateMetadataOutput",
   "title": "GenerateMetadataOutput",
@@ -74,7 +74,7 @@
           {
             "code": "DocumentReference",
             "profile": [
-              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
+              "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
             ]
           }
         ]

@@ -15,8 +15,8 @@
   "system": true,
   "type": false,
   "instance": false,
-  "inputProfile": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentInput",
-  "outputProfile": "https://gematik.de/fhir/ISiK/v2/StructureDefinition/SubmitDocumentOutput",
+  "inputProfile": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentInput",
+  "outputProfile": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentOutput",
   "parameter": [
     {
       "name": "metadata",
