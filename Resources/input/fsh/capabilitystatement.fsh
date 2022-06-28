@@ -2,7 +2,7 @@ Instance: ISiK-capabilityStatement-dokumentenaustausch-server
 InstanceOf: CapabilityStatement
 Usage: #definition
 * insert Meta-Inst
-* url = "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/dokumentenaustausch-server"
+* url = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/CapabilityStatement/dokumentenaustausch-server"
 * name = "ISiKCapabilityStatementDokumentenaustauschServer"
 * title = "ISiK CapabilityStatement Dokumentenaustausch Server"
 * description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls &quot;Dokumentenaustausch&quot; zu bestehen."
@@ -17,7 +17,7 @@ Usage: #definition
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #Patient
-  * supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKPatient"
+  * supportedProfile = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKPatient"
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
@@ -66,7 +66,7 @@ Usage: #definition
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #Encounter
-  * supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+  * supportedProfile = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
@@ -127,7 +127,7 @@ Usage: #definition
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #DocumentReference
-  * supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
+  * supportedProfile = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
@@ -182,7 +182,7 @@ Usage: #definition
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #Binary
-  * supportedProfile = "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
+  * supportedProfile = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKBinary"
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #MAY
