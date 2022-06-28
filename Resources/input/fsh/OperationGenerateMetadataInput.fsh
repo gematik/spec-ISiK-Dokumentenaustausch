@@ -19,7 +19,7 @@ Description: "Profil zur Validierung der Input-Parameter für $generate-metadata
     * ^short = "Name des Parameters"
   * name = "fhir-document"
   * resource 1..1 MS
-  * resource only https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKBerichtBundle
+  * resource only https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle
 * parameter[non-fhir-document]
   * name MS 
     * ^short = "Name des Parameters"
