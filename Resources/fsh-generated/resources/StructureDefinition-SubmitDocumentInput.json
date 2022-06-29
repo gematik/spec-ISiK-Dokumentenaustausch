@@ -114,7 +114,7 @@
           {
             "code": "Binary",
             "profile": [
-              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBinary"
             ]
           }
         ],

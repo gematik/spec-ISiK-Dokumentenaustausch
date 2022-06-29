@@ -1,7 +1,7 @@
 {
   "resourceType": "CapabilityStatement",
   "id": "ISiK-capabilityStatement-dokumentenaustausch-server",
-  "url": "https://gematik.de/fhir/ISiK/v2/CapabilityStatement/dokumentenaustausch-server",
+  "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/CapabilityStatement/dokumentenaustausch-server",
   "status": "active",
   "publisher": "gematik GmbH",
   "date": "2021-11-12",
@@ -41,7 +41,7 @@
           ],
           "type": "Patient",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKPatient"
+            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKPatient"
           ],
           "interaction": [
             {
@@ -141,7 +141,7 @@
           ],
           "type": "Encounter",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           ],
           "interaction": [
             {
@@ -263,7 +263,7 @@
           ],
           "type": "DocumentReference",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKDokumentenMetadaten"
+            "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
           ],
           "interaction": [
             {
@@ -374,7 +374,7 @@
           ],
           "type": "Binary",
           "supportedProfile": [
-            "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
+            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBinary"
           ],
           "interaction": [
             {
@@ -398,7 +398,7 @@
             }
           ],
           "name": "submit-document",
-          "definition": "https://gematik.de/fhir/ISiK/v2/OperationDefinition/SubmitDocument"
+          "definition": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/SubmitDocument"
         },
         {
           "extension": [
@@ -408,7 +408,7 @@
             }
           ],
           "name": "update-metadata",
-          "definition": "https://gematik.de/fhir/ISiK/v2/OperationDefinition/UpdateMetadata"
+          "definition": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/UpdateMetadata"
         },
         {
           "extension": [
@@ -418,7 +418,7 @@
             }
           ],
           "name": "generate-metadata",
-          "definition": "https://gematik.de/fhir/ISiK/v2/OperationDefinition/GenerateMetadata"
+          "definition": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/GenerateMetadata"
         }
       ]
     }
