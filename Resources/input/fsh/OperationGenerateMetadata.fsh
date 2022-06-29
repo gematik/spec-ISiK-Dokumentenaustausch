@@ -4,7 +4,7 @@ Usage: #example
 Title: "generate-metadata"
 Description: ""
 * insert Meta-Inst
-* url = "https://gematik.de/fhir/ISiK/v2/OperationDefinition/GenerateMetadata"
+* url = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/GenerateMetadata"
 * title = "Generation of DocumentReference from structured Documents"
 //* status = #draft
 * kind = #operation

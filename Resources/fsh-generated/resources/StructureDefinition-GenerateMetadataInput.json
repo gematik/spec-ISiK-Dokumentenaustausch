@@ -92,7 +92,7 @@
           {
             "code": "Bundle",
             "profile": [
-              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBerichtBundle"
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBerichtBundle"
             ]
           }
         ],
@@ -120,7 +120,7 @@
           {
             "code": "Binary",
             "profile": [
-              "https://gematik.de/fhir/ISiK/v2/StructureDefinition/ISiKBinary"
+              "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBinary"
             ]
           }
         ],

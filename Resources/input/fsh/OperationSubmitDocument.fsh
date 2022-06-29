@@ -4,7 +4,7 @@ Usage: #example
 Title: "submit-document"
 Description: ""
 * insert Meta-Inst
-* url = "https://gematik.de/fhir/ISiK/v2/OperationDefinition/SubmitDocument"
+* url = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/SubmitDocument"
 * title = "Submission of new document"
 //* status = #draft
 * kind = #operation
