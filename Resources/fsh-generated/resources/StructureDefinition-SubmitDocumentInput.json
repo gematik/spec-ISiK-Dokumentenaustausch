@@ -8,7 +8,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentInput",
-  "version": "2.0.0-ballot",
+  "version": "2.0.0",
   "name": "SubmitDocumentInput",
   "title": "SubmitDocumentInput",
   "status": "active",

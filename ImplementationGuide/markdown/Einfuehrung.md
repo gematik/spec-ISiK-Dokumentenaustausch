@@ -1,11 +1,11 @@
 <img src="https://raw.githubusercontent.com/gematik/api-kim/master/images/gematik_logo.jpg" alt="gematik logo" width="400"/>
 
 ----
-Version: 2.0.0-ballot
+Version: 2.0.0
 
-Datum: 7.4.2022
+Datum: 30.06.2022
 
-Status: Ballotversion
+Status: Aktiv
 
 Realm: Deutschland
 

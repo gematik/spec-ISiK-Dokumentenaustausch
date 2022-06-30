@@ -3,7 +3,7 @@
 
 {{tree:https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenSuchergebnisse, hybrid}}
 
-[Link Simplifier Profil Übersicht](https://simplifier.net/ISiK-Dokumentenaustausch/ISiKDokumentenSuchergebnisse)
+[Link Simplifier Profil Übersicht](https://simplifier.net/spec-isik-dokumentenaustausch/isikdokumentensuchergebnisse)
 
 Folgende FHIRPath-Constraints sind im Profil zu beachten:
 
