@@ -1,2 +1,3 @@
 ## Modul "Dokumentenaustausch" 
-Siehe https://simplifier.net/isik-dokumentenaustausch
+
+Siehe https://simplifier.net/spec-isik-dokumentenaustausch
