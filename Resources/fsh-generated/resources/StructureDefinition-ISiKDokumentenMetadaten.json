@@ -209,6 +209,7 @@
         "comment": "Die übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, \n  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten \n  [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden",
         "min": 0,
         "max": "1",
+        "mustSupport": true,
         "binding": {
           "strength": "required",
           "valueSet": "http://ihe-d.de/ValueSets/IHEXDStypeCode"

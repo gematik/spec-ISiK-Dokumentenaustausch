@@ -38,7 +38,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-* type.coding contains  KDL 1..1 MS and XDS 0..1 
+* type.coding contains  KDL 1..1 MS and XDS 0..1 MS
 * type.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
   * ^short = "Dokumenttyp gem. IHE-De-Terminologie"
   * ^comment = "Die übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, 
