@@ -56,7 +56,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
   * display 1..1 MS
     * ^short = "Anzeigetext"
     * ^comment = "Der Anzeigetext zum KDL-Code"
-* category 0..1 
+* category 0..1  MS
   * ^short = "Dokumentklasse/-Kategorie"
   * ^comment = "Die Kategorisierung von Dokumenten erfolgt mittels der von IHE Deutschland publizierten XDS-Class-Codes.
   Die übermittlung des XDS-Class-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, 
