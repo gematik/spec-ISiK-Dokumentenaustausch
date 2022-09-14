@@ -227,7 +227,8 @@
         "path": "DocumentReference.category",
         "short": "Dokumentklasse/-Kategorie",
         "comment": "Die Kategorisierung von Dokumenten erfolgt mittels der von IHE Deutschland publizierten XDS-Class-Codes.\n  Die übermittlung des XDS-Class-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, \n  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden.\n  Der XDS-Class-Code kann mit Hilfe der bereitgestellten [ConceptMap](https://simplifier.net/kdl/~resources?category=ConceptMap)\n  aus dem KDL-Code ermittelt werden.",
-        "max": "1"
+        "max": "1",
+        "mustSupport": true
       },
       {
         "id": "DocumentReference.category.coding",
