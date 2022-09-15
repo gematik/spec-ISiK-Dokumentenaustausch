@@ -178,7 +178,7 @@ Title: "dok-beispiel"
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
-* context.practiceSetting = $sct#408467006
+* context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(BeispielBesuch)
 //* context.sourcePatientInfo = Reference(Patient/ex-patient)
 //* context.event.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
