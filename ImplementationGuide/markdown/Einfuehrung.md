@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/gematik/api-kim/master/images/gematik_logo.jpg" alt="gematik logo" width="400"/>
+<img src="https://raw.githubusercontent.com/gematik/spec-ISiK-Basismodul/master-isik-stufe-2/Material/Gematik_Logo_Flag.png" alt="gematik logo" width="400"/>
 
 ----
 Version: 2.0.1
