@@ -6,6 +6,14 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
+
+----
+Version: 2.0.1
+
+Datum: 31.10.2022
+
+- Update Basismodul Dependency -> 2.0.2
+
 ----
 Version: 2.0.0
 

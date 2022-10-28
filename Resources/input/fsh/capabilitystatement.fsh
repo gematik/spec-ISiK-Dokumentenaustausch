@@ -1,8 +1,7 @@
 Instance: ISiK-capabilityStatement-dokumentenaustausch-server
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert Meta-Inst
-* url = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/CapabilityStatement/dokumentenaustausch-server"
+* insert Meta-CapabilityStatement
 * name = "ISiKCapabilityStatementDokumentenaustauschServer"
 * title = "ISiK CapabilityStatement Dokumentenaustausch Server"
 * description = "Das vorliegende CapabilityStatement beschreibt alle verpflichtenden Interaktionen die ein ISiK-konformes System unterstützen muss um das Bestätigungsverfahren des Moduls &quot;Dokumentenaustausch&quot; zu bestehen."
@@ -11,7 +10,6 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* implementationGuide = "https://gematik.de/fhir/ISiK/ImplementationGuide/ISiK-Dokumentenaustausch|2.0.0"
 * rest.mode = #server
 * rest.resource[+]
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
