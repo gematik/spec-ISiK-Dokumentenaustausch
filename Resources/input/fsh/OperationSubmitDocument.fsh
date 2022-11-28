@@ -41,13 +41,6 @@ the `status` of the related DocumentReference to `superseded`.
   * documentation = "DocumentReference containing document metadata"
   * type = #DocumentReference
 * parameter[+]
-  * name = #payload (exactly)
-  * use = #in 
-  * min = 1
-  * max = "1"
-  * documentation = "Binary containing document payload"
-  * type = #Binary
-* parameter[+]
   * name = #output-metadata
   * use = #out
   * min = 1

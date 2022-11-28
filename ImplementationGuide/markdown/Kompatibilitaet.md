@@ -14,28 +14,6 @@ Als Terminologien kommen bei ISiK - soweit sinnvoll und möglich - die XDS-Value
 
 ### Abweichungen zwischen ISiK und IHE-MHD
 
-#### Dokumentenbereitstellung
-Die Bereitstellung von Dokumenten (Übermittlung von Client an den Server) ist in IHE-MHD als [Transaction](https://hl7.org/fhir/http.html#transaction) definiert.
-
-Dabei ist jedoch zu beachten, dass eine Transaction in FHIR definiert ist, als die Ausführung mehrerer einzelner REST-Interaktionen in einem transaktionalen Kontext. Eine Transaction hat keinen Namen und außer der Verarbeitung nach dem "Ganz oder gar nicht"-Prinzip keine andere Logik als die äquivalente Sequenz der einzelnen REST-Interaktionen.
-
-Innerhalb einer Transaktion sind folglich sämtliche Permutationen von REST-Interaktionen zulässig, die ein Server laut seinem Capability-Statement bereitstellt. Die Implementierung erfolgt generisch, als transaktionale Ausführung der einzelnen Interaktionen. Es gibt keine Transaktionen mit "besonderer Bedeutung".
-
-Gegen dieses Prinzip verstößt die Festlegung in IHE-MHD.
-Erstens ist die Ausführung der in der Transaktion definierten Interaktionen als atomare REST-Interaktionen in IHE-MHD nicht definiert, zweitens soll bei der Ausführung der Transaktion in MHD erweiterte Business-Logik ausgeführt werden, die fest mit *dieser* Transaktion verknüpft ist.
-Die Implementierung von IHE-MHD ist unproblematisch, solange sie die einzige Transaktion ist und bleibt, die auf diesem Server bereitgestellt wird und Client und Server ein implizites Einverständnis darüber haben, dass *ausschließlich* diese eine Transaktion in der von IHE definierten Form mit der von IHE definierten Logik ausgeführt werden kann. 
-
-Sobald ein Server jedoch weitere Transaktionen implementieren möchte, kommt es zu Problemen, da der generische Ansatz nicht mehr möglich ist. Die verschiedenen Transaktionen sind für Client sowie Server nicht mehr unterscheidbar/identifizierbar. 
-
-Die Problematik wird in der internationalen FHIR-Community diskutiert und [IHE prüft derzeit](https://github.com/IHE/ITI.MHD/issues/100), ob eine Anpassung der Spezifikation verfolgt werden soll.
-
-Für dieses ISiK-Modul kommt aufgrund der beschriebenen Problematik anstelle der Transaktion eine Operation zum Einsatz. Dies bietet folgende Vorteile:
-1. Operations sind *benannte* Interaktionen. Jede Operation kann eindeutig mit einer Definition der erlaubten/benötigten Parameter und der zu implementierenden Business-Logik in Verbindung gebracht werden.
-2. Die Business-Logik einer Operation kann über die transaktionale Verarbeitung einzelner REST-Interaktionen hinaus gehen.
-3. Für Clients ist aus dem Capability-Statement des Servers klar ersichtlich, *welche* Operations unterstützt werden, und welche Parameter diese jeweils benötigen.
-4. Die API eines Servers kann in Zukunft problemlos um zusätzliche Operations erweitert werden. 
-5. Die Transaction bleibt *frei*, um für die generische transaktionale Verarbeitung einzelner REST-Interaktionen genutzt werden zu können.
-
 #### Fallkontext
 In IHE-MHD bzw. XDS ist kein Fallkontext für Dokumente vorgesehen. Bestenfalls kann die Fallnummer (ein Identifier!) als zusätzlicher Code in der EventCodeList verwahrt werden. In der FHIR-Architektur (und in allen weiteren ISiK-Modulen) wird ein Fallkontext jedoch durch die Verlinkung auf einen Encounter etabliert.
 In dieser ISiK-Spezifikation kommt ebenfalls die Verlinkung zum Einsatz, da der Wunsch nach einer Harmonisierung mit der FHIR-Kernspezifikation und allen anderen ISiK-Modulen dem Wunsch nach Harmonisierung mit IHE-XDS überwiegt.
