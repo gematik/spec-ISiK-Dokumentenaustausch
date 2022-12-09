@@ -18,7 +18,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Beispiele:
 
-    ```GET [base]/DocumentReference.status=final```
+    ```GET [base]/DocumentReference?status=final```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
@@ -53,7 +53,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Beispiele:
 
-    ```GET [base]/DocumentReference.type=http://dvmd.de/fhir/CodeSystem/kdl|AD010101```
+    ```GET [base]/DocumentReference?type=http://dvmd.de/fhir/CodeSystem/kdl|AD010101```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
@@ -63,7 +63,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Beispiele:
 
-    ```GET [base]/DocumentReference.category=http://ihe-d.de/CodeSystem/IHEXDSclassCode|BEF```
+    ```GET [base]/DocumentReference?category=http://ihe-d.de/CodeSystem/IHEXDSclassCode|BEF```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
 
@@ -74,7 +74,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Beispiele:
 
-    ```GET [base]/DocumentReference.creation=2021-11-05```
+    ```GET [base]/DocumentReference?creation=2021-11-05```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/R4/search.html#date).
 	
