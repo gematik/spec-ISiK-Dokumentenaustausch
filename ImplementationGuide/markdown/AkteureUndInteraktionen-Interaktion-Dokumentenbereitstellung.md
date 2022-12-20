@@ -13,54 +13,36 @@ Zur Herstellung des Kontextes sind folgende Verfahren möglich:
 | {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeigente Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
 
 ### Dokumentenübermittlung
-Die Übermittlung des Dokumentes vom Client an den Server erfolgt mithílfe der `$submit-document` Operation.
+| Hinweis | Breaking Change!|
+|---------|---------------------|
+| {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die in dieser Version erfolgte Umstellung der Interaktion von der $submit-document-Operation auf eine REST-basierte CREATE-Interaktion ist nicht kompatibel zum vorherigen Release. Die Änderung dient dem Zweck der Harmonisierung mit zwischenzeitlich erfolgten Änderungen in der zugrundeliegenden IHE-MHD-Spezifikation.  |
 
-**Hinweis:** Der zum Zeitpunkt der Erstellung dieser Spezifikation vorliegende IHE MHD-Implementierungsleitfaden sieht für die Dokumentenbereitstellung ein 
-Transaction-Bundle mit POST-Interaktionen vor. 
-Aus Gründen, die [in der diesbezüglichen Diskussion im internationalen FHIR-Chat](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/MHD.20update.20and.20status) 
-nachzulesen sind, ist dieses Vorgehen jedoch zu hinterfragen und wird seitens IHE voraussichtlich in künftigen MHD-Versionen geändert.
-Siehe hierzu Kapitel {{pagelink:ImplementationGuide/markdown/DocumentReference_Kompatibilitaet.md}}
+#### CREATE-Interaktion 
 
-Um den hier erarbeiteten Vorschlag einer Dokumentenübermittlung mittels Operations der internationalen FHIR-Community im Allgemeinen und IHE im Besonderen vorstellen zu können, in der Hoffnung und Erwartung, dass diese dem Vorgehen folgen, wird dieser Teil der ISiK-Spezifikation ausnahmsweise auf Englisch spezifiziert.
+Die Übermittlung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](http://hl7.org/fhir/http.html#create) auf der Ressource DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt.
+`POST [base]/DocumentReference`
+{{json:dok-beispiel-client-with-binary-pdf-example-short}}
 
-
-#### OperationDefinition `$submit-document`
-
-{{render:submit-document}}
-
-#### In-Parameters-Profil (ISiK)
-
-{{render:submitdocumentinput}}
-@```from
-	StructureDefinition
-where 
-    url = 'https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentInput' 
-for differential.element
-where mustSupport = true
-select
-	Feldname: id, Kurzbeschreibung: short, Hinweise: comment
-```
-
-#### Out-Parameters-Profil (ISiK)
-
-{{render:submitdocumentoutput}}
-@```from
-	StructureDefinition
-where 
-    url = 'https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentOutput' 
-for differential.element
-where mustSupport = true
-select
-	Feldname: id, Kurzbeschreibung: short, Hinweise: comment
-```
-
-#### Beispiel:
 **Hinweis:** Die Binary-Ressourcen sind der Lesbarkeit halber verkürzt dargestellt!
-##### Request
-`POST [base]/$submit-document`
-{{json:resources-fsh-generated-resources-parameters-submit-document-in-params}}
-##### Response
-{{json:resources-fsh-generated-resources-parameters-submit-document-out-params}}
+
+#### Erwartetes Verhalten des Clients
+* Der Client muss sicherstellen, dass `DocumentReference.subject` und `DocumentReference.encounter` gültige Links auf serverseitig vorhandene Ressourcen enthalten
+* Der Client muss das eigentliche Dokument (PDF, JPEG o.ä.) base64-codiert in `DocumentReference.content.attachment.data` einbetten und den Mime-Type des Dokumentes in `DocumentReference.content.attachment.dataType` adäquat setzen.
+
+#### Erwartetes Verhalten des Servers
+* Der Server MUSS das eingebettete Dokument aus der DocumentReference herauslösen, separat persistieren und in `DocumentReference.content.attachemnt.url` auf das separierte Dokument verweisen. Beim Abruf einer DocumentReference, bzw. bei der Suche nach DocumentReference-Ressourcen darf das Dokument niemals eingebettet an den Client zurückgegeben werden. Das Dokument muss über den Binary-Endpunkt der API abrufbar gemacht werden.
+<!-- If the submission contains a structured FHIR document-Bundle, Servers MAY chose to store additional representations of the document,
+e.g. native FHIR (XML and/or JSON) for FHIR aware Clients and/or an HTML-Document representing the document's narrative to allow easy read access for FHIR agnostic clients. 
+The Binary representation mostly serves the purpose of archiving an immutable version of the document, rather than making it available to other consumers!
+If Servers can provide multiple representations of the same document, this SHOULD be reflected in multiple `content`-elements in the DocumentReference with the 
+-->
+* If a Client submits a DocumentReference which includes a `relatesTo`-Element, the Server SHALL process the submission in accordance with `relatesTo.code` as either a 
+replacement, transformation, appendix or a signature of the document referenced in `relatesTo.target`. If applicable, Servers SHALL update 
+the `status` of the related DocumentReference to `superseded`. 
+* Servers SHALL return HTTP 412 (precondition failed) the `relatesTo.target` reference does not resolve on the server.
+* Servers SHALL ignore any information submitted by the Client in `DocumentReference.content.attachment.url` and assume the content to be the Binary submitted with the `payload`parameter.
+* Servers SHALL adjust the `content`-element to reflect how and where the document has been stored by the server.
+"
 
 
 
