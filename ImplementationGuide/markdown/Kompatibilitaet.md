@@ -30,11 +30,11 @@ Sobald ein Server jedoch weitere Transaktionen implementieren möchte, kommt es 
 Die Problematik wird in der internationalen FHIR-Community diskutiert und [IHE prüft derzeit](https://github.com/IHE/ITI.MHD/issues/100), ob eine Anpassung der Spezifikation verfolgt werden soll.
 
 ##### Update für ISiK Stufe 3
-In ISiK Stufe 2 kam aufgrund der beschriebenen Problematik anstelle der Transaktion die im Rahmen von ISiK spezifiziertte Operation "$submit-document" zum Einsatz. 
+In ISiK Stufe 2 kam aufgrund der beschriebenen Problematik anstelle der Transaktion die im Rahmen von ISiK spezifizierte Operation "$submit-document" zum Einsatz. 
 Zwischenzeitlich ist IHE der oben genannten Argumentation gefolgt und lässt als Alternative zur Transaction die Übermittlung von Dokumenten als einfache CREATE-Interaktion zu (IHE MHD ITI-105 "Simplified Publish").
 
-Zur Angleichung an diese Entwicklung und der Harmonisierung mit IHE MHD tritt in Stufe 3 nun die neue IHE-Interakion an Stelle der zuvor spezifizierten Operation.
-Dies entspricht einem "Breaking Change" zwischen Stufe 2 und Stufe 3. Die Inkompatibilität zu IHE-MHD besteht dadurch jedoch in Stufe 3 nicht mehr.
+Zur Angleichung an diese Entwicklung und der Harmonisierung mit IHE MHD tritt in Stufe 3 nun ITI-105 an Stelle der zuvor spezifizierten Operation.
+Dies entspricht zwar einem "Breaking Change" zwischen Stufe 2 und Stufe 3, die Inkompatibilität zu IHE-MHD besteht dadurch jedoch in Stufe 3 nicht mehr.
 
 
 #### Fallkontext (gelöst)
