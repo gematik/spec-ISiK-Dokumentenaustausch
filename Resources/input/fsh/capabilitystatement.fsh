@@ -129,6 +129,10 @@ Usage: #definition
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
+    * code = #create
+  * interaction[+]
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.valueCode = #SHALL
     * code = #read
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -178,11 +182,6 @@ Usage: #definition
     * type = #reference
 * rest.operation[+]
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-  * extension.valueCode = #SHALL
-  * name = #submit-document
-  * definition = Canonical(SubmitDocument)
-* rest.operation[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #MAY
   * name = #update-metadata
   * definition = Canonical(UpdateMetadata)
@@ -190,4 +189,4 @@ Usage: #definition
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #MAY
   * name = #generate-metadata
-  * definition = Canonical(GenerateMetadata)
+  * definition = "https://profiles.ihe.net/ITI/MHD/OperationDefinition/generate-metadata"
