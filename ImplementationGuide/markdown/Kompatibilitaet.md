@@ -14,16 +14,46 @@ Als Terminologien kommen bei ISiK - soweit sinnvoll und möglich - die XDS-Value
 
 ### Abweichungen zwischen ISiK und IHE-MHD
 
-#### Fallkontext
+#### Dokumentenbereitstellung (gelöst)
+Die Bereitstellung von Dokumenten (Übermittlung von Client an den Server) ist in IHE-MHD als [Transaction](https://hl7.org/fhir/http.html#transaction) definiert.
+
+Dabei ist jedoch zu beachten, dass eine Transaction in FHIR definiert ist, als die Ausführung mehrerer einzelner REST-Interaktionen in einem transaktionalen Kontext. Eine Transaction hat keinen Namen und außer der Verarbeitung nach dem "Ganz oder gar nicht"-Prinzip keine andere Logik als die äquivalente Sequenz der einzelnen REST-Interaktionen.
+
+Innerhalb einer Transaktion sind folglich sämtliche Permutationen von REST-Interaktionen zulässig, die ein Server laut seinem Capability-Statement bereitstellt. Die Implementierung erfolgt generisch, als transaktionale Ausführung der einzelnen Interaktionen. Es gibt keine Transaktionen mit "besonderer Bedeutung".
+
+Gegen dieses Prinzip verstößt die Festlegung in IHE-MHD.
+Erstens ist die Ausführung der in der Transaktion definierten Interaktionen als atomare REST-Interaktionen in IHE-MHD nicht definiert, zweitens soll bei der Ausführung der Transaktion in MHD erweiterte Business-Logik ausgeführt werden, die fest mit *dieser* Transaktion verknüpft ist.
+Die Implementierung von IHE-MHD ist unproblematisch, solange sie die einzige Transaktion ist und bleibt, die auf diesem Server bereitgestellt wird und Client und Server ein implizites Einverständnis darüber haben, dass *ausschließlich* diese eine Transaktion in der von IHE definierten Form mit der von IHE definierten Logik ausgeführt werden kann. 
+
+Sobald ein Server jedoch weitere Transaktionen implementieren möchte, kommt es zu Problemen, da der generische Ansatz nicht mehr möglich ist. Die verschiedenen Transaktionen sind für Client sowie Server nicht mehr unterscheidbar/identifizierbar. 
+
+Die Problematik wird in der internationalen FHIR-Community diskutiert und [IHE prüft derzeit](https://github.com/IHE/ITI.MHD/issues/100), ob eine Anpassung der Spezifikation verfolgt werden soll.
+
+##### Update für ISiK Stufe 3
+In ISiK Stufe 2 kam aufgrund der beschriebenen Problematik anstelle der Transaktion die im Rahmen von ISiK spezifiziertte Operation "$submit-document" zum Einsatz. 
+Zwischenzeitlich ist IHE der oben genannten Argumentation gefolgt und lässt als Alternative zur Transaction die Übermittlung von Dokumenten als einfache CREATE-Interaktion zu (IHE MHD ITI-105 "Simplified Publish").
+
+Zur Angleichung an diese Entwicklung und der Harmonisierung mit IHE MHD tritt in Stufe 3 nun die neue IHE-Interakion an Stelle der zuvor spezifizierten Operation.
+Dies entspricht einem "Breaking Change" zwischen Stufe 2 und Stufe 3. Die Inkompatibilität zu IHE-MHD besteht dadurch jedoch in Stufe 3 nicht mehr.
+
+
+#### Fallkontext (gelöst)
+
 In IHE-MHD bzw. XDS ist kein Fallkontext für Dokumente vorgesehen. Bestenfalls kann die Fallnummer (ein Identifier!) als zusätzlicher Code in der EventCodeList verwahrt werden. In der FHIR-Architektur (und in allen weiteren ISiK-Modulen) wird ein Fallkontext jedoch durch die Verlinkung auf einen Encounter etabliert.
 In dieser ISiK-Spezifikation kommt ebenfalls die Verlinkung zum Einsatz, da der Wunsch nach einer Harmonisierung mit der FHIR-Kernspezifikation und allen anderen ISiK-Modulen dem Wunsch nach Harmonisierung mit IHE-XDS überwiegt.
 Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren [wurde der Änderungswunsch an IHE herangetragen](https://github.com/IHE/ITI.MHD/issues/88), den Constraint, der die Encounter-Verlinkung verbietet, zu lockern.
+
+##### Update für ISiK Stufe 3
+Der Change-Request wurde seitens IHE angenommen und in IHE-MHD Version 4.2.0 angewendet. Die Inkompatibilität wurde damit beseitigt!
 
 #### Dokumentenstatus
 Vor dem Hintergrund des einrichtungsübergreifenden Dokumentenaustausches geht IHE-MHD davon aus, dass alle kommunizierten Dokumente einen finalen Status haben.
 Dies ist jedoch bei der einrichtungs*internen* Kommunikation, wie sie von ISiK spezifiziert wird, nicht gegeben. Im Gegenteil: die Suche und Filterung von Dokumenten anhand des Fertigstellungsstatus war ein häufig geäußerter Wunsch bei der Sammlung potentieller UseCases.
 Daher ist die Verwendung des Feldes `docStatus` in ISiK explizit erlaubt.
 Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren [wurde der Änderungswunsch an IHE herangetragen](https://github.com/IHE/ITI.MHD/issues/96), den Constraint, der die Verwendung von `docStatus` verbietet, zu lockern.
+
+##### Update für ISiK Stufe 3
+Der Change-Request wurde seitens IHE abgelehnt. Hier besteht weiterhin eine Inkompatibilität zwischen ISiK und IHE-MHD. Die Empfehlung an Implementierer lautet, bei der ISiK-konformen, einrichtung*internen* Dokumentenaustausch, den Status mitzuführen, ihn jedoch bei der Überführung des Dokumentes in den einrichtungs*übergreifenden* Dokumentenaustausch zu entfernen. Weiterhin sollte sichergestellt werden, dass nur Dokumente mit dem docStatus "final" in den einreichtungsübergreifenden Kontext überführt werden.
 
 #### Patientenübergreifende Suche
 Im Kontext von IHE-MHD sind Clients verpflichtet, bei allen Suchen mindestens die Parameter `patient` oder `patient.identifier` sowie `status` zu verwenden. Typische UsesCases für die Dokumentensuche in einem Krankenhaus beinhalten jedoch auch die patientenübergreifende Suche, z.B. nach allen nicht abgeschlossenen Arztbriefen einer Station oder allen Spirometrie-Befunden der letzten Woche.
