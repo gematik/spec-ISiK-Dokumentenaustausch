@@ -51,7 +51,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 ##### [2:3.67.4.2.2.1.1 Document Location](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236742211-document-location)
 Die Vereinbarungen gelten uneingeschränkt.
 
-Alle weiteren Unterkapitel von [2:3.67.4.2.2.1 DocumentReference Resource Contents](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674221-documentreference-resource-contents) sind für den ISiK-Kontet nicht relevant.
+Alle weiteren Unterkapitel von [2:3.67.4.2.2.1 DocumentReference Resource Contents](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674221-documentreference-resource-contents) sind für den ISiK-Kontext nicht relevant.
 
 #### [2:3.67.4.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236743-expected-actions)
 Die Vereinbarungen gelten uneingeschränkt.
