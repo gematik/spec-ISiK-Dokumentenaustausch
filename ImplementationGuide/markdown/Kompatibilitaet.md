@@ -52,9 +52,20 @@ Dies ist jedoch bei der einrichtungs*internen* Kommunikation, wie sie von ISiK s
 Daher ist die Verwendung des Feldes `docStatus` in ISiK explizit erlaubt.
 Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren [wurde der Änderungswunsch an IHE herangetragen](https://github.com/IHE/ITI.MHD/issues/96), den Constraint, der die Verwendung von `docStatus` verbietet, zu lockern.
 
+Im Kontext von ISiK muss es auch möglich sein, den Status eines Dokumentes ändern zu können, ohne dabei das Dokument vollständig ersetzen zu müssen, wie es im IHE-MHD-Kontext der Fall ist. In ISiK wurde hierfür die Interaktion "Update von Dokumentenmetadaten" definiert.
+
 ##### Update für ISiK Stufe 3
 Der Change-Request wurde seitens IHE abgelehnt. Hier besteht weiterhin eine Inkompatibilität zwischen ISiK und IHE-MHD. Die Empfehlung an Implementierer lautet, bei der ISiK-konformen, einrichtung*internen* Dokumentenaustausch, den Status mitzuführen, ihn jedoch bei der Überführung des Dokumentes in den einrichtungs*übergreifenden* Dokumentenaustausch zu entfernen. Weiterhin sollte sichergestellt werden, dass nur Dokumente mit dem docStatus "final" in den einreichtungsübergreifenden Kontext überführt werden.
+
+Für die Interaktion "Update von Dokumentenmetadaten" gibt es in IHE MHD weiterhin keine Entsprechung.
 
 #### Patientenübergreifende Suche
 Im Kontext von IHE-MHD sind Clients verpflichtet, bei allen Suchen mindestens die Parameter `patient` oder `patient.identifier` sowie `status` zu verwenden. Typische UsesCases für die Dokumentensuche in einem Krankenhaus beinhalten jedoch auch die patientenübergreifende Suche, z.B. nach allen nicht abgeschlossenen Arztbriefen einer Station oder allen Spirometrie-Befunden der letzten Woche.
 Diese Einschränkung wurde im ISiK-Profil daher aufgehoben.
+
+#### Erzeugen von Metadaten (gelöst)
+Für das automatische Erzeugen von IHE MHD-konformen Metadaten auf Basis von existierenden strukturierten Dokumenten (z.B. FHIR Documents) gibt es in IHE MHD keine entsprechende Interaktion. Eine entsprechende Funktionalität wäre jedoch sinnvoll, da entsprechende Mappings am besten von serverseitigen Implementierungen, wie sie mit dem Akteur "Document Recipient" in IHE MHD definiert werden, bereitgestellt werden könnten. Im Kontext von FHIR-Implementierungen wäre es unsinnig, komplexe Mappings und Nachschlage-Funktionen clientseitig implementieren zu müssen, nur um bereits vorhandene Dokumentenmetadaten in das vom Server erwartete Format zu bringen. Für die Stufe 2 wurde daher eine entsprechende Operation "$generate-metadata" mit dem Hinweis "Work in Progress" entworfen, die Server optional zur Verfügung stellen können, um Erfahrungen zu Implementierbarkeit und Nutzwert dieser Operation zu sammeln. Gleichzeitig wurde die Operation bei IHE als mögliche Erweiterung für künftige Versionen von MHD eingereicht.
+
+#### Update für ISiK Stufe 3
+Seitens IHE wurde die Interaktion [Generate Metadata [ITI-106]](https://profiles.ihe.net/ITI/MHD/ITI-106.html) in MHD Version 4.2.0. hinzugefügt.
+Die für ISiK spezifizierte Operation wird daher zurückgezogen und statt dessen die in IHE MHD definierte Operation genutzt. Die Inkompatibilität wurde damit beseitigt!
