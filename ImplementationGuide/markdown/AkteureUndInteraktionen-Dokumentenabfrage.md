@@ -36,14 +36,6 @@ Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.67.4.1.3.1 XDS on FHIR Option](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674131-xds-on-fhir-option)
 Die Implementierung der "XDS on FHIR"-Option ist im ISiK-Kontext nicht gefordert.
-
-#### Beispiele
-* Suche anhand von Patientenkontext (PID) und Dokumentendatum:
-  `[base]/DocumentReference?patient.identifier=1234&creation=gt2021-10-06`
-* Suche nach vorläufigen Endoskopiebefunden (anhand KDL-Dokumenttyp und `docStatus`):
-  `[base]/DocumentReference?type=http://dvmd.de/fhir/CodeSystem/kdl|DG02010&doc-status=preliminary`
-* Suche von Dokumenten anhand der Nummer des Abrechnungsfalles:
-  `[base]/DocumentReference?encounter.account:identifier=56789`
   
   
 #### [2:3.67.4.2 Find Document References Response Message](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236742-find-document-references-response-message)
@@ -59,18 +51,65 @@ Die Vereinbarungen gelten uneingeschränkt.
 ##### [2:3.67.4.2.2.1.1 Document Location](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236742211-document-location)
 Die Vereinbarungen gelten uneingeschränkt.
 
-##### [2:3.67.4.2.2.1.2 Support for On-Demand Documents](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236742212-support-for-on-demand-documents)
-Das Kapitel ist für den ISiK-Kontext nicht relevant.
+Alle weiteren Unterkapitel von [2:3.67.4.2.2.1 DocumentReference Resource Contents](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674221-documentreference-resource-contents) sind für den ISiK-Kontet nicht relevant.
 
-### Dokumentenzugriff
+#### [2:3.67.4.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236743-expected-actions)
+Die Vereinbarungen gelten uneingeschränkt.
+
+#### [2:3.67.4.4 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236744-capabilitystatement-resource)
+
+Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide-markdown-CapabilityStatement.md}}
+
+#### [2:3.67.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23675-security-considerations)
+Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/spec-isik-sicherheit)
+
+
+#### Beispiele
+* Suche anhand von Patientenkontext (PID) und Dokumentendatum:
+  `[base]/DocumentReference?patient.identifier=1234&creation=gt2021-10-06`
+* Suche nach vorläufigen Endoskopiebefunden (anhand KDL-Dokumenttyp und `docStatus`):
+  `[base]/DocumentReference?type=http://dvmd.de/fhir/CodeSystem/kdl|DG02010&doc-status=preliminary`
+* Suche von Dokumenten anhand der Nummer des Abrechnungsfalles:
+  `[base]/DocumentReference?encounter.account:identifier=56789`
+
+### Dokumentenzugriff (IHE MHD ITI-68 (Retrieve Document))
 
 Das den Metadaten zugeordnete Dokument kann jeweils unter `DocumentReference.content.attachment.url` vom Server abgerufen werden.
-Es gelten die Festlegungen gem. [IHE ITI-68: Retrieve Document](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message)
 
-Der einzige MIME-Type, den alle Dokumentenserver verpflichtend zurückgeben können MÜSSEN ist der MIME Type, der dem `DocumentReference.content.attachment.contentType` entspricht.
+### Hinweise und Anmerkungen zur Implementierung von [IHE MHD ITI-68 (Retrieve Document)](https://profiles.ihe.net/ITI/MHD/ITI-68.html)
 
-Dokumentenserver SOLLEN das Dokument präferiert über einen [Binary-Endpunkt](http://hl7.org/fhir/binary.html) bereitstellen. Dieser verfügt über folgende Besonderheit:
+Für die Implementierung der Interaktion "Dokumentenzugriff" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-68 (Retrieve Document)](https://profiles.ihe.net/ITI/MHD/ITI-68.html) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt.
+
+#### [2:3.68.4.1 Retrieve Document Request Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236841-retrieve-document-request-message)
+
+##### [2:3.68.4.1.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-68.html#2368411-trigger-events)
+Die Vereinbarungen gelten uneingeschränkt.
+
+##### [2:3.68.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-68.html#2368412-message-semantics)
+Der einzige MIME-Type, den alle Dokumentenserver verpflichtend zurückgeben können MÜSSEN, ist der MIME Type, der dem `DocumentReference.content.attachment.contentType` entspricht.
+
+Im ISiK-Kontext SOLLEN Dokumentenserver das Dokument darüber hinaus über einen [Binary-Endpunkt](http://hl7.org/fhir/binary.html) bereitstellen können. Dieser verfügt über folgende Besonderheit:
 
 * Wenn der Zugriff mit dem Accept-Header `application/fhir+xml` oder `application/fhir+json` erfolgt, müssen die Daten als Binary-Ressource im angeforderten Format zurückgegeben werden.
 * Wenn der Zugriff mit einem *anderen* Accept-Header als `application/fhir+xml` oder `application/fhir+json` erfolgt, so soll das Dokument im angeforderten Format zurückgegeben werden,
 z.B. MUSS bei Zugriffen mit Accept-Header `application/pdf` das Dokument unmittelbar als PDF zurückgegeben werden, sofern dies dem Content-Type der Binary-Ressource entspricht.
+
+##### [2:3.68.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-68.html#2368413-expected-actions)
+Die Vereinbarungen gelten uneingeschränkt.
+
+#### [2:3.68.4.2 Retrieve Document Response Message](https://profiles.ihe.net/ITI/MHD/ITI-68.html#236842-retrieve-document-response-message)
+Die Vereinbarungen dieses Kapitels und aller Unterkapitel gelten uneingeschränkt.
+
+##### [2:3.68.4.2.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-68.html#2368421-trigger-events)
+Die Vereinbarungen gelten uneingeschränkt.
+##### [2:3.68.4.2.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-68.html#2368422-message-semantics)
+Die Vereinbarungen gelten uneingeschränkt.
+##### [2:3.68.4.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-68.html#2368423-expected-actions)
+Die Vereinbarungen gelten uneingeschränkt.
+
+##### [2:3.68.4.4 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236843-capabilitystatement-resource)
+Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide-markdown-CapabilityStatement.md}}
+
+#### [2:3.68.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-68.html#23685-security-considerations)
+Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/spec-isik-sicherheit)
+
