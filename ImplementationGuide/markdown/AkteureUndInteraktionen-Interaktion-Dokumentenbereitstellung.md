@@ -34,17 +34,18 @@ Die Übermittlung des Dokumentes vom Client an den Server erfolgt mittels einer 
 * Der Server MUSS das eingebettete Dokument aus der DocumentReference herauslösen, separat persistieren und in `DocumentReference.content.attachemnt.url` auf das separierte Dokument verweisen. Beim Abruf einer DocumentReference, bzw. bei der Suche nach DocumentReference-Ressourcen darf das Dokument niemals eingebettet an den Client zurückgegeben werden. Das Dokument muss über den Binary-Endpunkt der API abrufbar gemacht werden.
 * Die Antwort des Servers erfolgt in Form einer DocumentReference-Ressource (im Erfolgsfall) bzw. einer OperationOutcome-Ressource im Fehlerfall anstelle wie bisher einer Parameters-Ressource.
 
-### Hinweise und Anmerkungen zur Implementierung von ITI-105 (Simplified Publish) im Kontext von ISiK
+### Hinweise und Anmerkungen zur Implementierung von [ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html) im Kontext von ISiK
+Für die Implementierung der Interaktion "Dokumentenbereitstellung" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt.
 
 #### [2:3.105.4.1 Simplified Publish Request Message](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310541-simplified-publish-request-message)
 
 ##### [2:3.105.4.1.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105411-trigger-events)
-Die Vereinbarungen gelten uneingeschränkt
+Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.105.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105412-message-semantics)
 * Die übermittelte Ressource muss nur gegen das Profil "ISiKDokumentenMetadaten" valide sein, nicht gegen die IHE-DocumentReference-Profile, da die Übermittlung des Elementes `DocumentReference.docStatus` im ISiK-Kontext erlaubt, im IHE-Kontext jedoch verboten ist.
 
-##### [2:3.105.4.1.2.1 DocumentReference Resources](2:3.105.4.1.2.1 DocumentReference Resources)
+##### [2:3.105.4.1.2.1 DocumentReference Resources](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054121-documentreference-resources)
 * Die DocumentReference-Ressoucen müssen im ISiK-Kontext auf Basis des Profils "ISiKDokumentenMetadaten" und den dort vereinbarten Kardinalitäten bzw. MustSupport-Flags erstellt werden.
 * Die Verwendung von Contained-Ressourcen ist im ISiK-Kontext nicht erlaubt
 
@@ -53,24 +54,24 @@ Die Vereinbarungen gelten uneingeschränkt
 * Logische Referenzen für Patient und Encounter sind im ISiK-Kontext nicht erlaubt
 * `DocumentReference.sourcePatientInfo` wird im ISiK-Kontext nicht verwendet
 ##### [2:3.105.4.1.2.3 Replace, Transform, Signs, and Append Associations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054123-replace-transform-signs-and-append-associations)
-Die Vereinbarungen gelten uneingeschränkt
+Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.105.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105413-expected-actions)
 Die Erzeugung einer SubmisstionSet Ressource durch den Server ist im ISiK-Kontext nicht erforderlich. 
 
 ##### [2:3.105.4.1.3.1 Grouping with Actors in other Document Sharing Profiles](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054131-grouping-with-actors-in-other-document-sharing-profiles)
-Das Kapitel ist für den ISiK-Kontext nicht relevant
+Das Kapitel ist für den ISiK-Kontext nicht relevant.
 
 #### [2:3.105.4.2 Simplified Publish Response Message](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310542-simplified-publish-response-message)
 
 ##### [2:3.105.4.2.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105421-trigger-events)
-Die Vereinbarungen gelten uneingeschränkt
+Die Vereinbarungen gelten uneingeschränkt.
  
 ##### [2:3.105.4.2.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105422-message-semantics)
-Die Vereinbarungen gelten uneingeschränkt
+Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.105.4.2.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105423-expected-actions)
-Die Vereinbarungen gelten uneingeschränkt
+Die Vereinbarungen gelten uneingeschränkt.
 
 #### [2:3.105.4.3 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310543-capabilitystatement-resource)
 Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide-markdown-CapabilityStatement}}
