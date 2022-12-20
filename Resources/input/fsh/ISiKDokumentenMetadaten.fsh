@@ -15,14 +15,18 @@ Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
 * identifier 0..* MS
 * identifier ^comment = "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.
 Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.
-&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]"
+&#13;[Konsens der Arbeitsgruppe vom 12.11.2021]
+
+Update für Stufe 3:
+In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.
+"
 * status MS
   * ^short = "Status des Dokumentenmetadatensatzes"
   * ^comment = "Der Status des Dokumentes wird in DocumentReference.docStatus gesetzt!"
 * docStatus 0..1 MS
   * ^short = "Bearbeitungsstatus des Dokumentes"
   * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von docStatus im ISiK-Kontext erlaubt. Doe Verwendung von docStatus bleibt jedoch optional,
-  da nicht alle Dokumentenerzeugende Systeme einen expliziten Freigabe-Workflow haben. Dekomentenserver müssen jedoch in der Lage sein, den Dokumentenstatus
+  da nicht alle Dokumentenerzeugende Systeme einen expliziten Freigabe-Workflow haben. Dokumentenserver müssen jedoch in der Lage sein, den Dokumentenstatus
   - sofern vorhanden - zu persistieren, anzuzeigen und zu reproduzieren.
   &#13;[Konsens der Arbeitsgruppe vom 10.12.2021]"
 * type 1.. MS
@@ -41,7 +45,7 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 * type.coding contains  KDL 1..1 MS and XDS 0..1 MS
 * type.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
   * ^short = "Dokumenttyp gem. IHE-De-Terminologie"
-  * ^comment = "Die übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend,
+  * ^comment = "Die Übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend,
   muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten
   [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden"
 * type.coding[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required)
@@ -89,7 +93,11 @@ Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt
 * date
   * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung von date im ISiK-Kontext nicht verpflichtend.
 Die Motivation für die verbindliche Verwendung von `date` seitens IHE ist nicht nachvollziehbar.
-Ein entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt."
+Ein entsprechender Change Request zur Harmonisierung wurde eingereicht. Das Dokumentendatum wird in attachment.creation gesetzt.
+
+Update für Stufe 3:
+In MHD 4.2.0 wurde die Verpflichtung zur Angabe von date gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.
+"
 * author MS
   * ^short = "Autor des Dokumentes"
   * ^comment = "In dieser Ausbaustufe ist die Nennung des Namens oder Kürzels des Autors ausreichend.
@@ -124,7 +132,21 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
       fest auf &quotde&quot; oder &quotde-DE&quot; gesetzt werden."
     * data 0..1 MS
       *  ^short = "Base64-codierte Binärdaten"
-      *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, sondern müssen als separates Datenobjekt referenziert werden."
+      *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
+      sondern müssen als separates Datenobjekt referenziert werden. 
+      
+      Update für Stufe 3:
+      Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
+      bei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate Ressource ausgelagert und über Attachment.url referenziert werden. 
+    * url 0..1 MS
+      *  ^short = "Referenz auf Dokument"
+      *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
+      sondern müssen als separates Datenobjekt referenziert werden. 
+      
+      Update für Stufe 3:
+      Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
+      bei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate Ressource ausgelagert und über Attachment.url referenziert werden. 
+    
     * creation 1.. MS
       * ^short = "Dokumentendatum"
       * ^comment = "Es obliegt dem erzeugenden System, zu entscheiden,
@@ -138,7 +160,10 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
     &quot;urn:ihe:iti:xds:2017:mimeTypeSufficient&quot;"
 * context 1.. MS
   * encounter ..1 MS
-    * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung der Encounter-Referenz im ISiK-Kontext erlaubt."
+    * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung der Encounter-Referenz im ISiK-Kontext erlaubt.
+    Update für Stufe 3: 
+    In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.
+    "
   * event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
     * coding 1..1
@@ -153,8 +178,6 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
   * practiceSetting from http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
 
-//TODO Abgrenzung Submit
-//TODO Parameter Resource erstellen
 
 
 Instance: dok-beispiel-server
@@ -164,8 +187,6 @@ Title: "dok-beispiel"
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
-//* identifier.system = "urn:ietf:rfc:3986"
-//* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
 * category = $ihe-de-class#BEF "Befundbericht"
 * type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
@@ -174,14 +195,13 @@ Title: "dok-beispiel"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
 * content.attachment.contentType = #application/pdf
+* content.attachment.url = "https://mein-Dokumentenserver/dokumente/1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340.pdf"
 * content.attachment.language = #de
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
 * context.practiceSetting = $sct#408467006
 * context.encounter = Reference(BeispielBesuch)
-//* context.sourcePatientInfo = Reference(Patient/ex-patient)
-//* context.event.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
 
 Instance: dok-beispiel-client-with-binary-pdf-example-short
 InstanceOf: ISiKDokumentenMetadaten
@@ -191,11 +211,7 @@ Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
-//* identifier.system = "urn:ietf:rfc:3986"
-//* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
-* category = $ihe-de-class#BEF "Befundbericht"
-* type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
@@ -217,11 +233,7 @@ Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
-//* identifier.system = "urn:ietf:rfc:3986"
-//* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
-* category = $ihe-de-class#BEF "Befundbericht"
-* type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * type.coding[+] = $kdl#ED020101 "Fotodokumentation Operation"
 * description = "Fotodokumentation Operation vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
@@ -243,11 +255,7 @@ Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
-//* identifier.system = "urn:ietf:rfc:3986"
-//* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
-* category = $ihe-de-class#BEF "Befundbericht"
-* type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * type.coding[+] = $kdl#ED020101 "Fotodokumentation Operation"
 * description = "Fotodokumentation Operation vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
@@ -269,11 +277,7 @@ Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
-//* identifier.system = "urn:ietf:rfc:3986"
-//* identifier.value = "urn:uuid:0c287d32-01e3-4d87-9953-9fcc9404eb21"
 * status = #current
-* category = $ihe-de-class#BEF "Befundbericht"
-* type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
