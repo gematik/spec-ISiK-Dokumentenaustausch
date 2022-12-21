@@ -12,7 +12,7 @@ publisher:
   name: Gematik GmbH
   url: https://gematik.de
 dependencies: 
-    ihe.mhd.fhir: 4.2.0
+    ihe.iti.mhd: 4.2.0
     de.gematik.isik-basismodul: 2.0.2
-    dvmd.kdl.r4.2021: 2022.1.2
+    dvmd.kdl.r4.2022: 2022.1.2
 FSHOnly: true
