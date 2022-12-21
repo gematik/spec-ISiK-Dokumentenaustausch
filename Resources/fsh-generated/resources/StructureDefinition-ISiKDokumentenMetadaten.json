@@ -11,7 +11,7 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten",
+  "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten",
   "version": "2.0.1",
   "name": "ISiKDokumentenMetadaten",
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
@@ -394,7 +394,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/ValueSet/ISiKConfidentialityCodes"
+          "valueSet": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/ValueSet/ISiKConfidentialityCodes"
         }
       },
       {

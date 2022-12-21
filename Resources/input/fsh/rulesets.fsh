@@ -13,4 +13,4 @@ RuleSet: Meta-CapabilityStatement
 * publisher = "gematik GmbH"
 * date = "2022-12-22"
 * implementationGuide = "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/ImplementationGuide|3.0.0-alpha1"
-* url = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/CapabilityStatement/dokumentenaustausch-server"
+* url = "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/CapabilityStatement/dokumentenaustausch-server"

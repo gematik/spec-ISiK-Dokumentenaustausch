@@ -4,7 +4,7 @@
   "status": "active",
   "publisher": "gematik GmbH",
   "date": "2021-11-12",
-  "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/GenerateMetadata",
+  "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/OperationDefinition/GenerateMetadata",
   "title": "Generation of DocumentReference from structured Documents",
   "kind": "operation",
   "name": "GenerateMetadata",
@@ -18,8 +18,8 @@
   "system": false,
   "type": true,
   "instance": false,
-  "inputProfile": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/GenerateMetadataInput",
-  "outputProfile": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/GenerateMetadataOutput",
+  "inputProfile": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/GenerateMetadataInput",
+  "outputProfile": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/GenerateMetadataOutput",
   "parameter": [
     {
       "name": "fhir-document",

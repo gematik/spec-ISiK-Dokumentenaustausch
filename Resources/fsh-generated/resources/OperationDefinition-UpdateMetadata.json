@@ -4,7 +4,7 @@
   "status": "active",
   "publisher": "gematik GmbH",
   "date": "2021-11-12",
-  "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/UpdateMetadata",
+  "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/OperationDefinition/UpdateMetadata",
   "title": "Update document metadata",
   "kind": "operation",
   "name": "update-metadata",

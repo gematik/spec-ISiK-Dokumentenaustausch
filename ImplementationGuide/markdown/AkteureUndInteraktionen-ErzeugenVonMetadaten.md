@@ -39,7 +39,7 @@ Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-
 ### ISiK-Spezifisches Mapping Composition -> DocumentReference
  @```
       from StructureDefinition
-      where url = 'https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten'
+      where url = 'https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten'
       for differential.element
       select
         Path: id,
