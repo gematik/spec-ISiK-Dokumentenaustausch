@@ -13,6 +13,6 @@ publisher:
   url: https://gematik.de
 dependencies: 
     ihe.mhd.fhir: 4.2.0
-    de.gematik.isik-basismodul: 2.0.3
+    de.gematik.isik-basismodul: 2.0.2
     dvmd.kdl.r4.2021: 2022.1.2
 FSHOnly: true
