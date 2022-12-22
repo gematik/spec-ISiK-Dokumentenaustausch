@@ -15,7 +15,7 @@ Usage: #definition
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #Patient
-  * supportedProfile = "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKPatient"
+  * supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient"
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
@@ -64,7 +64,7 @@ Usage: #definition
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #Encounter
-  * supportedProfile = "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+  * supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
@@ -125,7 +125,11 @@ Usage: #definition
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #DocumentReference
-  * supportedProfile = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
+  * supportedProfile = "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
+  * interaction[+]
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.valueCode = #SHALL
+    * code = #create
   * interaction[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
@@ -176,20 +180,6 @@ Usage: #definition
     * name = "encounter"
     * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-encounter"
     * type = #reference
-* rest.resource[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-  * extension.valueCode = #SHALL
-  * type = #Binary
-  * supportedProfile = "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBinary"
-  * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #MAY
-    * code = #read   
-* rest.operation[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-  * extension.valueCode = #SHALL
-  * name = #submit-document
-  * definition = Canonical(SubmitDocument)
 * rest.operation[+]
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #MAY
@@ -199,4 +189,4 @@ Usage: #definition
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #MAY
   * name = #generate-metadata
-  * definition = Canonical(GenerateMetadata)
+  * definition = "https://profiles.ihe.net/ITI/MHD/OperationDefinition/generate-metadata"

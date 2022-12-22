@@ -1,20 +1,12 @@
 ### Kompatibilität
 
-Dieses Profil basiert auf dem [Profil "MHD DocumentReference Comprehensive UnContained References Option" (Version 4.0.2 ci-build) von IHE International](http://build.fhir.org/ig/IHE/ITI.MHD/StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html).
+Dieses Profil basiert auf dem [Profil "MHD DocumentReference Comprehensive UnContained References Option" (Version 4.2.0) von IHE International](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.UnContained.Comprehensive.DocumentReference.html).
 
 ### Abweichungen vom IHE-Profil
 
-* Die Verwendung von `context.encounter` ist im ISiK-Kontext gestattet, da der Fallbezug eines Dokumentes bei der internen Kommunikation von maßgeblicher Bedeutung ist.
-
-CR zur Harmonisierung mit IHE: https://github.com/IHE/ITI.MHD/issues/88
-
-* Die Verpflichtung zur Verwendung von `date` wurde im ISiK-Kontext aufgehoben.
-
-CR zur Harmonisierung mit IHE: https://github.com/IHE/ITI.MHD/issues/94
-
-* Die Verwendung von `docStatus` ist im ISiK-Kontext gestattet.
-
-CR zur Harmonisierung mit IHE: https://github.com/IHE/ITI.MHD/issues/96
+* Die Verwendung von `DocumentReference.docStatus` ist im ISiK-Kontext gestattet.
+* `DocumentReference.category` muss vom Client bei Vorhandensein eines KDL-Codes in `DocumentReference.type` nicht gefüllt werden. Bei der Verarbeitung auf dem Server im Rahmen der Interaktion "Dokumentenbereitstellung" wird `DocumentReference.category` anhand der [KDL-Mappings](https://simplifier.net/kdl/~resources?category=ConceptMap&sortBy=RankScore_desc) ergänzt und damit die IHE-Kompatibilität hergestellt.
+* `DocumentReference.sourcePatientInfo` muss im Rahmen von ISiK nicht gefüllt werden
 
 
 ### Einschränkungen des IHE-Profils

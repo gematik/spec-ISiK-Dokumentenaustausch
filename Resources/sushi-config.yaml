@@ -3,16 +3,16 @@
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: de.gematik.isik-dokumentenaustausch
-canonical: https://gematik.de/fhir/isik/v2/Dokumentenaustausch
+canonical: https://gematik.de/fhir/isik/v3/Dokumentenaustausch
 name: ISiK_Dokumentenaustausch
 status: active
-version: 2.0.1
+version: 3.0.0-alpha1
 fhirVersion: 4.0.1
 publisher:
   name: Gematik GmbH
   url: https://gematik.de
 dependencies: 
-    ihe.mhd.fhir: 4.0.1
+    ihe.iti.mhd: 4.2.0
     de.gematik.isik-basismodul: 2.0.2
-    dvmd.kdl.r4.2021: 2021.1.1
+    dvmd.kdl.r4.2022: 2022.1.2
 FSHOnly: true

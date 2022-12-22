@@ -12,54 +12,84 @@ Zur Herstellung des Kontextes sind folgende Verfahren möglich:
 |---------|---------------------|
 | {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeigente Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
 
-### Dokumentenübermittlung
-Die Übermittlung des Dokumentes vom Client an den Server erfolgt mithílfe der `$submit-document` Operation.
+### Dokumentenübermittlung (IHE MHD ITI-105 (Simplified Publish))
 
-**Hinweis:** Der zum Zeitpunkt der Erstellung dieser Spezifikation vorliegende IHE MHD-Implementierungsleitfaden sieht für die Dokumentenbereitstellung ein 
-Transaction-Bundle mit POST-Interaktionen vor. 
-Aus Gründen, die [in der diesbezüglichen Diskussion im internationalen FHIR-Chat](https://chat.fhir.org/#narrow/stream/179223-ihe/topic/MHD.20update.20and.20status) 
-nachzulesen sind, ist dieses Vorgehen jedoch zu hinterfragen und wird seitens IHE voraussichtlich in künftigen MHD-Versionen geändert.
-Siehe hierzu Kapitel {{pagelink:ImplementationGuide/markdown/DocumentReference_Kompatibilitaet.md}}
+Die Dokumentenübermittlung erfolgt mittels [IHE MHD ITI-105 (Simplifierd Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html)
 
-Um den hier erarbeiteten Vorschlag einer Dokumentenübermittlung mittels Operations der internationalen FHIR-Community im Allgemeinen und IHE im Besonderen vorstellen zu können, in der Hoffnung und Erwartung, dass diese dem Vorgehen folgen, wird dieser Teil der ISiK-Spezifikation ausnahmsweise auf Englisch spezifiziert.
+Die Übermittlung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](http://hl7.org/fhir/http.html#create) auf dem Ressourcentyp DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt.
 
-#### OperationDefinition `$submit-document`
+| Hinweis | Breaking Change!|
+|---------|---------------------|
+| {{render:ImplementationGuide-Images-ig-bilder-Warning}} | Die in dieser Version erfolgte Umstellung der Interaktion von der $submit-document-Operation auf eine REST-basierte CREATE-Interaktion ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-105 (Simplified Publish), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand.  |
 
-{{render:submit-document}}
+#### Maßgebliche Änderungen gegenüber Stufe 2 für den Client
+* Der Client muss das eigentliche Dokument (PDF, JPEG o.ä.) base64-codiert in `DocumentReference.content.attachment.data` einbetten und den Mime-Type des Dokumentes in `DocumentReference.content.attachment.dataType` adäquat setzen
+* Die Übermittlung erfolgt mittels POST auf den Endpunkt `[base]/DocumentReference` anstatt wie bisher mittels POST auf den Endpunkt `[base]\DocumentReference\$submit-document`
+* Die DocumentReference-Ressource mit den eingebetteten Binärdaten wird nun unmittelbar im Body der Interaktion gesendet. Die Notwendigkeit, DocumentReference und Binary in eine Parameters-Ressource zu wrappen, entfällt damit.
+* Die Antwort des Servers erfolgt in Form einer DocumentReference-Ressource (im Erfolgsfall) bzw. einer OperationOutcome-Ressource im Fehlerfall anstelle wie bisher einer Parameters-Ressource.
 
-#### In-Parameters-Profil (ISiK)
+#### Maßgebliche Änderungen gegenüber Stufe 2 für den Server
+* Die DocumentReference-Ressource mit den eingebetteten Binärdaten wird nun unmittelbar im Body der Interaktion gesendet. Die Notwendigkeit, DocumentReference und Binary aus der Parameters-Ressource zu extrahieren, entfällt damit.
+* Die Übermittlung erfolgt mittels POST auf den Endpunkt `[base]/DocumentReference` anstatt wie bisher mittels POST auf den Endpunkt `[base]\DocumentReference\$submit-document`
+* Der Server MUSS das eingebettete Dokument aus der DocumentReference herauslösen, separat persistieren und in `DocumentReference.content.attachemnt.url` auf das separierte Dokument verweisen. Beim Abruf einer DocumentReference, bzw. bei der Suche nach DocumentReference-Ressourcen darf das Dokument niemals eingebettet an den Client zurückgegeben werden. Das Dokument muss über den Binary-Endpunkt der API abrufbar gemacht werden.
+* Die Antwort des Servers erfolgt in Form einer DocumentReference-Ressource (im Erfolgsfall) bzw. einer OperationOutcome-Ressource im Fehlerfall anstelle wie bisher einer Parameters-Ressource.
 
-{{render:submitdocumentinput}}
-@```from
-	StructureDefinition
-where 
-    url = 'https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentInput' 
-for differential.element
-where mustSupport = true
-select
-	Feldname: id, Kurzbeschreibung: short, Hinweise: comment
-```
+### Hinweise und Anmerkungen zur Implementierung von [ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html) im Kontext von ISiK
+Für die Implementierung der Interaktion "Dokumentenbereitstellung" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt.
 
-#### Out-Parameters-Profil (ISiK)
+#### [2:3.105.4.1 Simplified Publish Request Message](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310541-simplified-publish-request-message)
 
-{{render:submitdocumentoutput}}
-@```from
-	StructureDefinition
-where 
-    url = 'https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/SubmitDocumentOutput' 
-for differential.element
-where mustSupport = true
-select
-	Feldname: id, Kurzbeschreibung: short, Hinweise: comment
-```
+##### [2:3.105.4.1.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105411-trigger-events)
+Die Vereinbarungen gelten uneingeschränkt.
 
-#### Beispiel:
+##### [2:3.105.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105412-message-semantics)
+* Die übermittelte Ressource muss nur gegen das Profil "ISiKDokumentenMetadaten" valide sein, nicht gegen die IHE-DocumentReference-Profile, da die Übermittlung des Elementes `DocumentReference.docStatus` im ISiK-Kontext erlaubt, im IHE-Kontext jedoch verboten ist.
+* Für Clients ist es ausreichend, das Dokument mit Hilfe eines KDL-Codes in DocumentReference.type zu klassifizieren. Die entsprechenden XDS-Class- und -Type-Codes müssen vom Server bei der Verarbeitung ergänzt werden. DocumentReference.category kann bei der Dokumentenbereitstellung leer bleiben.
+
+##### [2:3.105.4.1.2.1 DocumentReference Resources](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054121-documentreference-resources)
+* Die DocumentReference-Ressoucen müssen im ISiK-Kontext auf Basis des Profils "ISiKDokumentenMetadaten" und den dort vereinbarten Kardinalitäten bzw. MustSupport-Flags erstellt werden.
+* Die Verwendung von Contained-Ressourcen ist im ISiK-Kontext nicht erlaubt
+
+##### [2:3.105.4.1.2.2 Patient Identity](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054122-patient-identity)
+* Der Client MUSS eine der im  Kapitel "Herstellung von Patient- und Enocunterkontext" beschriebenen Optionen verwenden, um den Patienten- und Encounter-Kontext zu etablieren.
+* Logische Referenzen für Patient und Encounter sind im ISiK-Kontext nicht erlaubt
+* `DocumentReference.sourcePatientInfo` wird im ISiK-Kontext nicht verwendet
+##### [2:3.105.4.1.2.3 Replace, Transform, Signs, and Append Associations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054123-replace-transform-signs-and-append-associations)
+Die Vereinbarungen gelten uneingeschränkt.
+
+##### [2:3.105.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105413-expected-actions)
+* Die Erzeugung einer SubmissionSet Ressource durch den Server ist im ISiK-Kontext nicht erforderlich. 
+* Der Server muss ggf. fehlende XDS-Class- und -Type-Codes anhand des übermittelten KDL-Codes ergänzen und in DocumentReference.type bzw. DocumentReference.class zurückliefern.
+Die XDS-Codes können über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden. 
+Die XDS-Codes werden für den einrichtungsübergreifenden Dokumentenaustausch über IHE XDS, bzw. MHD oder für die Übermittlung der Dokumente an die ePA des Patienten benötigt.
+
+##### [2:3.105.4.1.3.1 Grouping with Actors in other Document Sharing Profiles](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054131-grouping-with-actors-in-other-document-sharing-profiles)
+Das Kapitel ist für den ISiK-Kontext nicht relevant.
+
+#### [2:3.105.4.2 Simplified Publish Response Message](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310542-simplified-publish-response-message)
+
+##### [2:3.105.4.2.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105421-trigger-events)
+Die Vereinbarungen gelten uneingeschränkt.
+ 
+##### [2:3.105.4.2.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105422-message-semantics)
+Die Vereinbarungen gelten uneingeschränkt.
+
+##### [2:3.105.4.2.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105423-expected-actions)
+Die Vereinbarungen gelten uneingeschränkt.
+
+#### [2:3.105.4.3 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310543-capabilitystatement-resource)
+Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide-markdown-CapabilityStatement.md}}
+
+### [2:3.105.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231055-security-considerations)
+Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/spec-isik-sicherheit)
+
+
+### Beispiel
+
+`POST [base]/DocumentReference`
+{{json:dok-beispiel-client-with-binary-pdf-example-short}}
+
 **Hinweis:** Die Binary-Ressourcen sind der Lesbarkeit halber verkürzt dargestellt!
-##### Request
-`POST [base]/$submit-document`
-{{json:resources-fsh-generated-resources-parameters-submit-document-in-params}}
-##### Response
-{{json:resources-fsh-generated-resources-parameters-submit-document-out-params}}
 
 
 
