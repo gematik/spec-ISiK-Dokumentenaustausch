@@ -11,8 +11,8 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenSuchergebnisse",
-  "version": "2.0.1",
+  "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenSuchergebnisse",
+  "version": "3.0.0-alpha1",
   "name": "ISiKDokumentenSuchergebnisse",
   "title": "Suchergebnisse einer Dokumentensuche",
   "status": "active",
@@ -91,7 +91,7 @@
           {
             "code": "DocumentReference",
             "profile": [
-              "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
+              "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
             ]
           }
         ]

@@ -6,7 +6,18 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
+Version: 2.0.2
 
+Datum: 22.12.2022
+- Interaktion Dokumentenbereitstellung: Ersetzen der Operation $submit-document mit IHE ITI-105
+- Interaktion Metadaten erzeugen: Ersetzen der Operation $generate-metadata mit IHE ITI-106
+- Profil ISiKDokumentenMetadaten: 
+  - Kardinalität von DocumentReference.content.attachment.data und .url gelockert, um ITI-105 bedienen zu können
+  - Kommentare zu Inkompatibilitäten angepasst auf die Änderungen in IHE MHD Version 4.2.0
+- Akteure und Interaktionen: Anpassung der Dokumentation and die IHE Nomenklaturen
+- Update MHD Dependency -> 4.2.0
+- Update KDL Dependency -> 2022.1.2
+- Beispieldaten an Änderungen in den Interaktionen angepasst
 ----
 Version: 2.0.1
 

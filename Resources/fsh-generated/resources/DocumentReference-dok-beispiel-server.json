@@ -9,7 +9,7 @@
       }
     ],
     "profile": [
-      "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
+      "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
     ]
   },
   "masterIdentifier": {
@@ -60,8 +60,8 @@
     {
       "attachment": {
         "contentType": "application/pdf",
+        "url": "https://mein-Dokumentenserver/dokumente/1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340.pdf",
         "language": "de",
-        "url": "http://example.com/Binary/12345",
         "creation": "2020-12-31T23:50:50-05:00"
       },
       "format": {
@@ -84,8 +84,8 @@
     "practiceSetting": {
       "coding": [
         {
-          "code": "ALLG",
-          "system": "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen"
+          "code": "408467006",
+          "system": "http://snomed.info/sct"
         }
       ]
     },
