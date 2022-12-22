@@ -1,6 +1,6 @@
 {
   "resourceType": "DocumentReference",
-  "id": "dok-beispiel-client",
+  "id": "dok-beispiel-client-with-binary-jpeg-example-short",
   "meta": {
     "security": [
       {
@@ -9,7 +9,7 @@
       }
     ],
     "profile": [
-      "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
+      "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
     ]
   },
   "masterIdentifier": {
@@ -19,30 +19,14 @@
   "type": {
     "coding": [
       {
-        "system": "http://ihe-d.de/CodeSystem/IHEXDStypeCode",
-        "code": "PATH",
-        "display": "Pathologiebefundberichte"
-      },
-      {
-        "code": "PT130102",
         "system": "http://dvmd.de/fhir/CodeSystem/kdl",
-        "display": "Molekularpathologiebefund"
+        "code": "ED020101",
+        "display": "Fotodokumentation Operation"
       }
     ]
   },
   "status": "current",
-  "category": [
-    {
-      "coding": [
-        {
-          "code": "BEF",
-          "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode",
-          "display": "Befundbericht"
-        }
-      ]
-    }
-  ],
-  "description": "Molekularpathologiebefund vom 31.12.21",
+  "description": "Fotodokumentation Operation vom 31.12.21",
   "subject": {
     "reference": "Patient/PatientinMusterfrau"
   },
@@ -59,9 +43,9 @@
   "content": [
     {
       "attachment": {
-        "contentType": "application/pdf",
+        "contentType": "image/jpeg",
+        "data": "4AAQSkZJRgABAQEB",
         "language": "de",
-        "url": "Binary/12345",
         "creation": "2020-12-31T23:50:50-05:00"
       },
       "format": {

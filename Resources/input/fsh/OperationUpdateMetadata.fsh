@@ -4,7 +4,7 @@ Usage: #example
 Title: "update-metadata"
 Description: ""
 * insert Meta-Inst
-* url = "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/UpdateMetadata"
+* url = "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/OperationDefinition/UpdateMetadata"
 * title = "Update document metadata"
 //* status = #draft
 * kind = #operation
