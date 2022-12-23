@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Implementierungsleitfaden ISiK-Modul Dokumentenaustausch</title>
+
+        <link rel="icon" href="static/styles/common/favicon.ico" />
+
+        <script src="static/styles/common/jquery/jquery.min.js"></script>
+        <script src="static/styles/common/bootstrap/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/common/main.min.css" />
+        <link rel="stylesheet" href="static/styles/common/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/styles/common/rendering/rendering.min.css" />
+
+        <script src="static/styles/common/rendering/stu3TreeTable.min.js"></script>
+        <script src="static/styles/common/rendering/baseTreetable.min.js"></script>
+
+        <link rel="stylesheet" href="static/styles/twolevelmenu/style.css?v=1d91610e3b94900" />
+
+    </head>
+
+    <body>
+
+        <div id="ig-viewer">
+
+            <div class="ig-view-content">
+
+                <div id="ig-view-twolevelmenu">
+
+                    <div class="header" role="banner" aria-label="Header">
+                        
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="ImplementationGuide-markdown-Einfuehrung.html">
+                Implementierungsleitfaden ISiK-Modul Dokumentenaustausch
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+
+                    <li>
+                        <a href="ImplementationGuide-markdown-Einfuehrung.html">
+                            Einf&#xFC;hrung
+                        </a>
+                    </li>
+
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseNotes.html">
+                                Release Notes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-ReleaseMatrix.html">
+                                Release Matrix
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImplementationGuide-markdown-Motivation.html">
+                                Motivation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                &#xDC;bergreifende Festlegungen <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-UebergreifendeFestlegungen.html">
+                                            &#xDC;bergreifende Festlegungen
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-BestaetigungsrelevanteSysteme.html">
+                                            Best&#xE4;tigungsrelevante Systeme
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Kompatibilitaet.html">
+                                            Kompatibilit&#xE4;t
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-AkteureUndInteraktionen.html">
+                                            Akteure und Interaktionen
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Datenobjekte <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte.html">
+                                            Datenobjekte
+                                        </a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-CapabilityStatement.html">
+                                            CapabilityStatement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_DocumentReference.html">
+                                            Dokumentenmetadaten (DocumentReference)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ImplementationGuide-markdown-Datenobjekte_Bundle.html">
+                                            Aggregation (Bundle)
+                                        </a>
+                                    </li>
+
+                            </ul>
+                        </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+                    </div>
+
+                    <div class="content container" role="main" aria-label="Main content">
+                        
+
+    <div class="row">
+
+
+        <div class="col-md-24">
+
+            <div id="preview-content">
+
+                <h2 id="kompatibilitat-zu-ihe-profilen">Kompatibilität zu IHE-Profilen</h2>
+<p>Die Festlegungen in diesem ISiK-Modul wurden auf Grundlage des <a href="http://build.fhir.org/ig/IHE/ITI.MHD/">IHE-MHD-Profils</a> getroffen.
+Wo die Festlegungen seitens IHE zu eng gefasst waren, um die Kompatibilität wahren zu können, ohne die Umsetzung der ISiK-UseCases einzuschränken, wurden <a href="https://github.com/IHE/ITI.MHD/issues?q=is%3Aissue+author%3AsimoneOnFhir+">entsprechende Change-Requests bei IHE Int.</a> eingereicht, mit dem Ziel, die Kompatibilität in künftigen Releases von IHE-MHD wieder herzustellen.</p>
+<p>Die Intention der ISiK-Spezifikation ist es, die IHE-Interaktionen auf das notwendige Minimum für die einrichtungsinterne Kommunikation zu reduzieren, dabei jedoch alle erforderlichen Dokumenten-Metadaten für eine spätere Weitergabe der Dokumente an z.B. eine ePA oder ein IHE-MHD-basiertes Repository zu erheben.</p>
+<p>Das IHE-MHD Profil ist kompatibel zu IHE-XDS. Die Mappings von MHD zu XDS sind seitens IHE definiert.</p>
+<p>Dabei ist jedoch zu beachten, dass bei der Einstellung von Dokumenten in eine IHE-Registry weitere Metadaten über den Vorgang des Einstellens (Abgebildet im IHE-Konzept &quot;SubmissionSet&quot;) hinzugefügt werden müssen, die im Kontext der ISiK Spezifikation keine Berücksichtigung finden.</p>
+<p>Als Terminologien kommen bei ISiK - soweit sinnvoll und möglich - die XDS-ValueSets von IHE Deutschland zum Einsatz.</p>
+<h3 id="abweichungen-zwischen-isik-und-ihe-mhd">Abweichungen zwischen ISiK und IHE-MHD</h3>
+<h4 id="dokumentenbereitstellung">Dokumentenbereitstellung</h4>
+<p>Die Bereitstellung von Dokumenten (Übermittlung von Client an den Server) ist in IHE-MHD als <a href="https://hl7.org/fhir/http.html#transaction">Transaction</a> definiert.</p>
+<p>Dabei ist jedoch zu beachten, dass eine Transaction in FHIR definiert ist, als die Ausführung mehrerer einzelner REST-Interaktionen in einem transaktionalen Kontext. Eine Transaction hat keinen Namen und außer der Verarbeitung nach dem &quot;Ganz oder gar nicht&quot;-Prinzip keine andere Logik als die äquivalente Sequenz der einzelnen REST-Interaktionen.</p>
+<p>Innerhalb einer Transaktion sind folglich sämtliche Permutationen von REST-Interaktionen zulässig, die ein Server laut seinem Capability-Statement bereitstellt. Die Implementierung erfolgt generisch, als transaktionale Ausführung der einzelnen Interaktionen. Es gibt keine Transaktionen mit &quot;besonderer Bedeutung&quot;.</p>
+<p>Gegen dieses Prinzip verstößt die Festlegung in IHE-MHD.
+Erstens ist die Ausführung der in der Transaktion definierten Interaktionen als atomare REST-Interaktionen in IHE-MHD nicht definiert, zweitens soll bei der Ausführung der Transaktion in MHD erweiterte Business-Logik ausgeführt werden, die fest mit <em>dieser</em> Transaktion verknüpft ist.
+Die Implementierung von IHE-MHD ist unproblematisch, solange sie die einzige Transaktion ist und bleibt, die auf diesem Server bereitgestellt wird und Client und Server ein implizites Einverständnis darüber haben, dass <em>ausschließlich</em> diese eine Transaktion in der von IHE definierten Form mit der von IHE definierten Logik ausgeführt werden kann.</p>
+<p>Sobald ein Server jedoch weitere Transaktionen implementieren möchte, kommt es zu Problemen, da der generische Ansatz nicht mehr möglich ist. Die verschiedenen Transaktionen sind für Client sowie Server nicht mehr unterscheidbar/identifizierbar.</p>
+<p>Die Problematik wird in der internationalen FHIR-Community diskutiert und <a href="https://github.com/IHE/ITI.MHD/issues/100">IHE prüft derzeit</a>, ob eine Anpassung der Spezifikation verfolgt werden soll.</p>
+<p>Für dieses ISiK-Modul kommt aufgrund der beschriebenen Problematik anstelle der Transaktion eine Operation zum Einsatz. Dies bietet folgende Vorteile:</p>
+<ol>
+<li>Operations sind <em>benannte</em> Interaktionen. Jede Operation kann eindeutig mit einer Definition der erlaubten/benötigten Parameter und der zu implementierenden Business-Logik in Verbindung gebracht werden.</li>
+<li>Die Business-Logik einer Operation kann über die transaktionale Verarbeitung einzelner REST-Interaktionen hinaus gehen.</li>
+<li>Für Clients ist aus dem Capability-Statement des Servers klar ersichtlich, <em>welche</em> Operations unterstützt werden, und welche Parameter diese jeweils benötigen.</li>
+<li>Die API eines Servers kann in Zukunft problemlos um zusätzliche Operations erweitert werden.</li>
+<li>Die Transaction bleibt <em>frei</em>, um für die generische transaktionale Verarbeitung einzelner REST-Interaktionen genutzt werden zu können.</li>
+</ol>
+<h4 id="fallkontext">Fallkontext</h4>
+<p>In IHE-MHD bzw. XDS ist kein Fallkontext für Dokumente vorgesehen. Bestenfalls kann die Fallnummer (ein Identifier!) als zusätzlicher Code in der EventCodeList verwahrt werden. In der FHIR-Architektur (und in allen weiteren ISiK-Modulen) wird ein Fallkontext jedoch durch die Verlinkung auf einen Encounter etabliert.
+In dieser ISiK-Spezifikation kommt ebenfalls die Verlinkung zum Einsatz, da der Wunsch nach einer Harmonisierung mit der FHIR-Kernspezifikation und allen anderen ISiK-Modulen dem Wunsch nach Harmonisierung mit IHE-XDS überwiegt.
+Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren <a href="https://github.com/IHE/ITI.MHD/issues/88">wurde der Änderungswunsch an IHE herangetragen</a>, den Constraint, der die Encounter-Verlinkung verbietet, zu lockern.</p>
+<h4 id="dokumentenstatus">Dokumentenstatus</h4>
+<p>Vor dem Hintergrund des einrichtungsübergreifenden Dokumentenaustausches geht IHE-MHD davon aus, dass alle kommunizierten Dokumente einen finalen Status haben.
+Dies ist jedoch bei der einrichtungs<em>internen</em> Kommunikation, wie sie von ISiK spezifiziert wird, nicht gegeben. Im Gegenteil: die Suche und Filterung von Dokumenten anhand des Fertigstellungsstatus war ein häufig geäußerter Wunsch bei der Sammlung potentieller UseCases.
+Daher ist die Verwendung des Feldes <code>docStatus</code> in ISiK explizit erlaubt.
+Um die technische Kompatibilität mit dem DocumentReference-Profil von IHE-MHD zu wahren <a href="https://github.com/IHE/ITI.MHD/issues/96">wurde der Änderungswunsch an IHE herangetragen</a>, den Constraint, der die Verwendung von <code>docStatus</code> verbietet, zu lockern.</p>
+<h4 id="patientenubergreifende-suche">Patientenübergreifende Suche</h4>
+<p>Im Kontext von IHE-MHD sind Clients verpflichtet, bei allen Suchen mindestens die Parameter <code>patient</code> oder <code>patient.identifier</code> sowie <code>status</code> zu verwenden. Typische UsesCases für die Dokumentensuche in einem Krankenhaus beinhalten jedoch auch die patientenübergreifende Suche, z.B. nach allen nicht abgeschlossenen Arztbriefen einer Station oder allen Spirometrie-Befunden der letzten Woche.
+Diese Einschränkung wurde im ISiK-Profil daher aufgehoben.</p>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ig-view-footer" role="contentinfo" aria-label="Footer">
+                
+<div class="container">
+    <div class="row">
+        <p>Powered by <b>SIMPLIFIER.NET</b></p>
+        <div>
+            HL7<sup>&reg;</sup> and FHIR<sup>&reg;</sup> are the registered trademarks of Health Level Seven International
+        </div>
+    </div>
+</div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
