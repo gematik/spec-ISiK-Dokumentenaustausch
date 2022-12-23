@@ -1,14 +1,14 @@
 {
   "resourceType": "CapabilityStatement",
   "id": "ISiK-capabilityStatement-dokumentenaustausch-server",
-  "url": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/CapabilityStatement/dokumentenaustausch-server",
+  "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/CapabilityStatement/dokumentenaustausch-server",
   "status": "active",
   "experimental": false,
-  "version": "2.0.1",
+  "version": "3.0.0-rc1",
   "publisher": "gematik GmbH",
-  "date": "2022-10-31",
+  "date": "2022-12-22",
   "implementationGuide": [
-    "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/ImplementationGuide|2.0.1"
+    "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/ImplementationGuide|3.0.0-rc1"
   ],
   "name": "ISiKCapabilityStatementDokumentenaustauschServer",
   "title": "ISiK CapabilityStatement Dokumentenaustausch Server",
@@ -43,7 +43,7 @@
           ],
           "type": "Patient",
           "supportedProfile": [
-            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKPatient"
+            "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient"
           ],
           "interaction": [
             {
@@ -143,7 +143,7 @@
           ],
           "type": "Encounter",
           "supportedProfile": [
-            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+            "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
           ],
           "interaction": [
             {
@@ -265,9 +265,18 @@
           ],
           "type": "DocumentReference",
           "supportedProfile": [
-            "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
+            "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
           ],
           "interaction": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "code": "create"
+            },
             {
               "extension": [
                 {
@@ -366,42 +375,9 @@
               "type": "reference"
             }
           ]
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "type": "Binary",
-          "supportedProfile": [
-            "https://gematik.de/fhir/isik/v2/Basismodul/StructureDefinition/ISiKBinary"
-          ],
-          "interaction": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "code": "read"
-            }
-          ]
         }
       ],
       "operation": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-              "valueCode": "SHALL"
-            }
-          ],
-          "name": "submit-document",
-          "definition": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/SubmitDocument"
-        },
         {
           "extension": [
             {
@@ -410,7 +386,7 @@
             }
           ],
           "name": "update-metadata",
-          "definition": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/UpdateMetadata"
+          "definition": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/OperationDefinition/UpdateMetadata"
         },
         {
           "extension": [
@@ -420,7 +396,7 @@
             }
           ],
           "name": "generate-metadata",
-          "definition": "https://gematik.de/fhir/isik/v2/Dokumentenaustausch/OperationDefinition/GenerateMetadata"
+          "definition": "https://profiles.ihe.net/ITI/MHD/OperationDefinition/generate-metadata"
         }
       ]
     }
