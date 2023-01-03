@@ -129,7 +129,7 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
     * language 1.. MS
       * ^short = "Sprache, in der das Dokument verfasst wurde."
       * ^comment = "Kann bei Systemen, die keine Mehrsprachigkeit unterstützen,
-      fest auf &quotde&quot; oder &quotde-DE&quot; gesetzt werden."
+      fest auf &quot;de&quot; oder &quot;de-DE&quot; gesetzt werden."
     * data 0..1 MS
       *  ^short = "Base64-codierte Binärdaten"
       *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
