@@ -427,7 +427,7 @@
         "id": "DocumentReference.content.attachment.language",
         "path": "DocumentReference.content.attachment.language",
         "short": "Sprache, in der das Dokument verfasst wurde.",
-        "comment": "Kann bei Systemen, die keine Mehrsprachigkeit unterstützen,\n      fest auf &quotde&quot; oder &quotde-DE&quot; gesetzt werden.",
+        "comment": "Kann bei Systemen, die keine Mehrsprachigkeit unterstützen,\n      fest auf &quot;de&quot; oder &quot;de-DE&quot; gesetzt werden.",
         "min": 1,
         "mustSupport": true,
         "mapping": [
