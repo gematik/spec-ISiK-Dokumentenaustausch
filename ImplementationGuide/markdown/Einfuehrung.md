@@ -3,7 +3,7 @@
 ----
 Version: 3.0.0-rc1 
 
-Datum: XX.XX.2023
+Datum: 04.01.2023
 
 Status: Aktiv
 
