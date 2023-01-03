@@ -8,7 +8,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 Version: 3.0.0-rc1
 
-Datum: XX.01.2023
+Datum: 04.01.2023
 - Interaktion Dokumentenbereitstellung: Ersetzen der Operation $submit-document mit IHE ITI-105
 - Interaktion Metadaten erzeugen: Ersetzen der Operation $generate-metadata mit IHE ITI-106
 - Profil ISiKDokumentenMetadaten: 
