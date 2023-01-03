@@ -135,19 +135,19 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
       *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
       sondern müssen als separates Datenobjekt referenziert werden. 
       
-      Update für Stufe 3:
-      Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
-      bei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate 
-      Ressource ausgelagert und über Attachment.url referenziert werden."
+Update für Stufe 3:
+Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
+bei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate 
+Ressource ausgelagert und über Attachment.url referenziert werden."
     * url 0..1 MS
       *  ^short = "Referenz auf Dokument"
       *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
       sondern müssen als separates Datenobjekt referenziert werden. 
       
-      Update für Stufe 3:
-      Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
-      bei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate 
-      Ressource ausgelagert und über Attachment.url referenziert werden." 
+Update für Stufe 3:
+Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
+bei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate 
+Ressource ausgelagert und über Attachment.url referenziert werden." 
     
     * creation 1.. MS
       * ^short = "Dokumentendatum"
@@ -163,8 +163,8 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
 * context 1.. MS
   * encounter ..1 MS
     * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung der Encounter-Referenz im ISiK-Kontext erlaubt.
-    Update für Stufe 3: 
-    In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.
+Update für Stufe 3: 
+In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.
     "
   * event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"

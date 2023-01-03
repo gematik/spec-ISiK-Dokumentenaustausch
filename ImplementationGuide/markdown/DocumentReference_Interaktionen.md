@@ -1,7 +1,7 @@
 ### Interaktionen
 
-Für die Ressource DocumentReference MUSS die REST-Interaktion "CREATE" implementiert werden, siehe {{pagelink:AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md}}.
-Für die Ressource DocumentReference MUSS die REST-Interaktion "READ" implementiert werden, siehe {{pagelink:AkteureUndInteraktionen-Dokumentenabfrage.md}}.
+Für die Ressource DocumentReference MUSS die REST-Interaktion "CREATE" implementiert werden, siehe {{pagelink:pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md}}.
+Für die Ressource DocumentReference MUSS die REST-Interaktion "READ" implementiert werden, siehe {{pagelink:pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Dokumentenabfrage.md}}.
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
 
@@ -31,7 +31,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     ```GET [base]/DocumentReference?patient=Patient/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 	
 	Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Clients und Server verpflichend.
 
@@ -47,7 +47,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Client und Server verpflichtend.
 	
-	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](http://hl7.org/fhir/search.html#chaining).
+	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](http://hl7.org/fhir/R4/search.html#chaining).
 
 	
 1. Der Suchparameter "type" MUSS unterstützt werden:
