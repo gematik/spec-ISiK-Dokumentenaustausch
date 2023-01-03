@@ -14,7 +14,7 @@ Zur Herstellung des Kontextes sind folgende Verfahren möglich:
 
 ### Dokumentenübermittlung (IHE MHD ITI-105 (Simplified Publish))
 
-Die Dokumentenübermittlung erfolgt mittels [IHE MHD ITI-105 (Simplifierd Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html)
+Die Dokumentenübermittlung erfolgt mittels [IHE MHD ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html)
 
 Die Übermittlung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](http://hl7.org/fhir/http.html#create) auf dem Ressourcentyp DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt.
 
@@ -78,7 +78,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 Die Vereinbarungen gelten uneingeschränkt.
 
 #### [2:3.105.4.3 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-105.html#2310543-capabilitystatement-resource)
-Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide-markdown-CapabilityStatement.md}}
+Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}
 
 ### [2:3.105.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231055-security-considerations)
 Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/spec-isik-sicherheit)
@@ -87,7 +87,7 @@ Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-
 ### Beispiel
 
 `POST [base]/DocumentReference`
-{{json:dok-beispiel-client-with-binary-pdf-example-short}}
+{{json:dok-beispiel-client}}
 
 **Hinweis:** Die Binary-Ressourcen sind der Lesbarkeit halber verkürzt dargestellt!
 
