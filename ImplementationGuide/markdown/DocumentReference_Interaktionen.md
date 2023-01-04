@@ -1,7 +1,7 @@
 ### Interaktionen
 
-Für die Ressource DocumentReference MUSS die REST-Interaktion "CREATE" implementiert werden, siehe {{pagelink:pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md}}.
-Für die Ressource DocumentReference MUSS die REST-Interaktion "READ" implementiert werden, siehe {{pagelink:pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Dokumentenabfrage.md}}.
+Für die Ressource DocumentReference MUSS die REST-Interaktion "CREATE" implementiert werden, siehe {{pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Interaktion-Dokumentenbereitstellung.md}}.
+Für die Ressource DocumentReference MUSS die REST-Interaktion "READ" implementiert werden, siehe {{pagelink:ImplementationGuide/markdown/AkteureUndInteraktionen-Dokumentenabfrage.md}}.
 
 Folgende Suchparameter sind für das Bestätigungsverfahren relevant, auch in Kombination:
 

@@ -14,7 +14,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 ##### [2:3.106.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106412-message-semantics)
 Die Vereinbarungen gelten uneingeschränkt.
 ##### [2:3.106.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-106.html#23106413-expected-actions)
-Der Fokus für die Implementierung der Operation ISiK-Kontext sollte auf dem persitieren und Erzeugen von Metadaten für ISiK-konforme Bundles gemäß [Interaktion ISiK Modul Basis Stufe 2: Bericht aus Subsystem](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/ImplementationGuide-markdown-Datenobjekte-Datenobjekte-BerichtSubsystem?version=current)liegen. Für die Implementierung kann das unten angegeben ISiK-Spezifische Mapping Composition -> DocumentReference als Anhaltspunkt verwendet werden.
+Der Fokus für die Implementierung der Operation ISiK-Kontext sollte auf dem Persistieren und Erzeugen von Metadaten für ISiK-konforme Bundles gemäß [Interaktion ISiK Modul Basis Stufe 2: Bericht aus Subsystem](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/ImplementationGuide-markdown-Datenobjekte-Datenobjekte-BerichtSubsystem?version=current) liegen. Für die Implementierung kann das unten angegeben ISiK-Spezifische Mapping Composition -> DocumentReference als Anhaltspunkt verwendet werden.
 
 Die Unterstützung weiterer Input-Formate (z.B. CDA oder andere FHIR-Dokumente, wie MIOs, eRezept, eAU etc.) ist optional.
 
@@ -30,7 +30,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 Die Vereinbarungen gelten uneingeschränkt.
 
 #### [2:3.106.4.3 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-106.html#2310643-capabilitystatement-resource)
-Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide-markdown-CapabilityStatement.md}}
+Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}
 
 #### [2:3.106.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-106.html#231065-security-considerations)
 Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/spec-isik-sicherheit)
@@ -55,7 +55,7 @@ Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-
 * erforderliches Verhalten: der Empfänger verarbeitet den Inhalt des Dokumentes (HTML + Ressourcen soweit möglich), das Original muss nicht zwingend persistiert werden. Es besteht kein zwingendes Erfordernis, dass das Dokument oder seine Inhalte über die API wieder bereitgestellt werden können. 
 
 ### Interaktion ISiK Modul Dokumentenaustausch Stufe 2: Dokumentenbereitstellung
-* UseCase: Client übermittelt ein strukturiertes Dokument zur inhaltsagnositschen, dauerhaften, ggf. rechtssicheren Archivierung
+* UseCase: Client übermittelt ein strukturiertes Dokument zur inhaltsagnostischen, dauerhaften, ggf. rechtssicheren Archivierung
 * HTTP-verb: POST auf [base]/DocumentReference
 * Content: DocumentReference mit Base64-codiertem Bundle vom Typ `document` eingebettet in DocumentReference.content.attachment.data)
 * erforderliches Verhalten: das Dokument sowie seine Metadaten werden persistiert und über die API mittels der Interaktionen "Dokumentenabfrage" und "Dokumentenzugriff" bereitgestellt.
