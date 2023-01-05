@@ -58,7 +58,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 
 #### [2:3.67.4.4 CapabilityStatement Resource](https://profiles.ihe.net/ITI/MHD/ITI-67.html#236744-capabilitystatement-resource)
 
-Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide-markdown-CapabilityStatement.md}}
+Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide/markdown/CapabilityStatement.md}}
 
 #### [2:3.67.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23675-security-considerations)
 Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/spec-isik-sicherheit)
