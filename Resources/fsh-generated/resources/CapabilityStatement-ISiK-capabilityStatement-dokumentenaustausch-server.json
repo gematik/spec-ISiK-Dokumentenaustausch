@@ -2,7 +2,7 @@
   "resourceType": "CapabilityStatement",
   "id": "ISiK-capabilityStatement-dokumentenaustausch-server",
   "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/CapabilityStatement/dokumentenaustausch-server",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
   "version": "3.0.0-rc1",
   "publisher": "gematik GmbH",
