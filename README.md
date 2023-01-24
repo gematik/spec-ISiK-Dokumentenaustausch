@@ -1,7 +1,2 @@
 ## Modul "Dokumentenaustausch" 
-
-**Wir werden die aktuelle Version des "Modul Dokumentenaustausch" in Kürze zurückziehen und durch eine neue Version ersetzen, die sich an ITI MHD 4.2.0 ausrichtet, insbesondere [3.105 Simplified Publish [ITI-105]](https://profiles.ihe.net/ITI/MHD/ITI-105.html) und [3.106 Generate Metadata [ITI-106]]( https://profiles.ihe.net/ITI/MHD/ITI-106.html). Die wesentlichen Änderungen sind in folgendem pull request (work in progress) enthalten: https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/100. Es handelt sich um punktuelle Änderungen, allerdings brechen diese mit der Abwärtskompatibilität. Sie können uns kontaktieren, wenn Sie gerade an der Implementierung der aktuellen Version arbeiten und Fragen zu den anstehenden Änderungen haben.**
-
-**We will soon withdraw the current version of the "Document Exchange Module" and replace it with a new version aligned with ITI MHD 4.2.0, specifically [3.105 Simplified Publish [ITI-105]]( https://profiles.ihe.net/ITI/MHD/ITI-105.html) and [3.106 Generate Metadata [ITI-106]](https://profiles.ihe.net/ITI/MHD/ITI-106.html). The major changes are contained in the following pull request (work in progress): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/100. These are selective changes, however they break backward compatibility. You can contact us if you are currently working on the implementation of the current version and have questions about the upcoming changes.**
-
-Siehe https://simplifier.net/spec-isik-dokumentenaustausch
+in diesem Branch werden die unterschiedlichen Versionen des IG persistiert.
