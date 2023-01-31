@@ -5,7 +5,7 @@
   "id": "ISiKConfidentialityCodes",
   "title": "ISiKConfidentialityCodes",
   "description": "Vertraulichkeitsstufen",
-  "version": "3.0.0-rc1",
+  "version": "3.0.0-rc2",
   "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/ValueSet/ISiKConfidentialityCodes",
   "publisher": "gematik GmbH",
   "compose": {
