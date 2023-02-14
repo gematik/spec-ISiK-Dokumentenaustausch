@@ -6,7 +6,7 @@ id: de.gematik.isik-dokumentenaustausch
 canonical: https://gematik.de/fhir/isik/v3/Dokumentenaustausch
 name: ISiK_Dokumentenaustausch
 status: draft
-version: 3.0.0-rc2
+version: 3.0.0-rc3
 fhirVersion: 4.0.1
 publisher:
   name: Gematik GmbH
