@@ -5,7 +5,7 @@ Der Client muss zunächst die URL der DocumentReference ermitteln, auf die das U
 
 ### Metadatenupdate
 Das Update der Metadaten erfolgt mittels der `$update-metadata` Operation.
-Hinweis: Der zum Zeitpunkt der Erstellung dieser Spezifikation vorliegende IHE-MHD-Implementierungsleitfaden sieht kein Metadatenupdate vor. Hier müsste stets ein neues Dokument (`$submit-document` mit Referenz auf das zu ersetzende Dokument in `DocumentReference.relatesTo`) übermittelt werden.
+Hinweis: Der zum Zeitpunkt der Erstellung dieser Spezifikation vorliegende IHE-MHD-Implementierungsleitfaden sieht kein Metadatenupdate vor. Hier müsste stets ein neues Dokument übermittelt werden.
 
 Für den ISiK-Usecase als maßgeblich relevant und unkritisch in Bezug auf die Versionierung hat sich jedoch das Element `docStatus`erwiesen, welches im IHE-Kontext keine Berücksichtigung findet. Im einrichtungsinternen Dokumentenaustausch kommt es häufig vor, dass sich der Status eines Dokumentes ändert (z.b. vorläufig -> final), ohne dass dies Auswirkungen auf den Inhalt hat. Die Anlage eines neuen Dokumentes wäre in diesem Kontext nicht effizient.
 
