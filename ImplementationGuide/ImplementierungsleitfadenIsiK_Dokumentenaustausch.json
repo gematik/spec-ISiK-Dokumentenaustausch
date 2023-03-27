@@ -4,7 +4,7 @@
   "name": "Implementierungsleitfaden ISiK-Modul Dokumentenaustausch",
   "status": "draft",
   "fhirVersion": [
-    "4.0.0"
+    "4.0.1"
   ],
   "packageId": "0.0.1",
   "definition": {
