@@ -12,13 +12,14 @@ Datum: 04.04.2023
 
 * Update der Dependency auf Basismodul 3.0.0-rc2
 
+---
 Version: 3.0.0-rc2
 
 Datum: 31.01.2023
 - Status-Korrektur: "draft"
 - Dependency update auf ISiK Basis-Version 2.0.4
 - weitere Änderungen an Implementierungsleitfaden (informativ)
-
+---
 Version: 3.0.0-rc1
 
 Datum: 04.01.2023
