@@ -12,7 +12,7 @@
     }
   ],
   "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten",
-  "version": "3.0.0-rc2",
+  "version": "3.0.0-rc3",
   "name": "ISiKDokumentenMetadaten",
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
   "status": "active",
@@ -139,7 +139,7 @@
         "id": "DocumentReference.type",
         "path": "DocumentReference.type",
         "short": "Dokumententyp",
-        "comment": "Im ISiK-Kontext ist die Typisierung eines Dokumentes mit Hilfe eines KDL-Codes *und* des IHE-XDS-Type-Codes erforderlich.\n  Während ersterer eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen udn Administrativen Dokumenten ermöglicht,\n  ist letzterer für den einrichtungsübergreifenden Dokumentenautausch maßgeblich.\n  Der XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)\n  aus dem KDL-Code ermittelt werden. Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt.\n\n  [Konsens der Arbeitgruppe vom 18.02.2022]",
+        "comment": "Im ISiK-Kontext ist die Typisierung eines Dokumentes mit Hilfe eines KDL-Codes *und* des IHE-XDS-Type-Codes erforderlich und ein Server MUSS beide Kodierungen bereitstellen - trotz der Kardinalität DocumentReference.type.coding:XDS 0..1 -, jedoch ist der IHE-XDS-Type-Code bei Übermittlung für Clients nicht verpflichtend (s.u. zu XDS).\n  Während KDL-Codes eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen und Administrativen Dokumenten ermöglichen,\n  sind IHE-XDS-Type-Codes für den einrichtungsübergreifenden Dokumentenaustausch maßgeblich.\n  Der XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)\n  aus dem KDL-Code ermittelt werden. Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt.\n\n  [Konsens der Arbeitgruppe vom 18.02.2022]",
         "min": 1,
         "mustSupport": true
       },
@@ -206,7 +206,7 @@
         "path": "DocumentReference.type.coding",
         "sliceName": "XDS",
         "short": "Dokumenttyp gem. IHE-De-Terminologie",
-        "comment": "Die Übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend,\n  muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten\n  [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden",
+        "comment": "Die Übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend,\n  MUSS jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten\n  [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden",
         "min": 0,
         "max": "1",
         "mustSupport": true,
