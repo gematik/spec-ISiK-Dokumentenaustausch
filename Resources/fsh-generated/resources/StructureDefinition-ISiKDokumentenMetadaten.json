@@ -401,6 +401,8 @@
         "id": "DocumentReference.content",
         "path": "DocumentReference.content",
         "short": "Beschreibung des Dokumenteninhaltes",
+        "comment": "Die Kardinalität wurde angepasst, um den Vorgaben von IHE MHD zu ensprechen [Änderung im Zuge der Kommentierung Stufe 3].",
+        "max": "1",
         "mustSupport": true
       },
       {
