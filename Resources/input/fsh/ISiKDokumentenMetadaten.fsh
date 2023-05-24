@@ -119,7 +119,7 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
 &#13;
 
 [Konsens der Arbeitsgruppe vom 12.11.2021]"
-* content MS ..1
+* content ..1 MS 
   * ^comment = "Die Kardinalität wurde angepasst, um den Vorgaben von IHE MHD zu ensprechen [Änderung im Zuge der Kommentierung Stufe 3]."
   * ^short = "Beschreibung des Dokumenteninhaltes"
   * attachment MS
