@@ -1,16 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKDokumentenSuchergebnisse",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Foundation.Other"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
-      "valueCode": "not-classified"
-    }
-  ],
   "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenSuchergebnisse",
   "version": "3.0.0-rc3",
   "name": "ISiKDokumentenSuchergebnisse",
