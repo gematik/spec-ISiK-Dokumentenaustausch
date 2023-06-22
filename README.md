@@ -5,4 +5,4 @@
 **This is a new version (3.0.0-rc3 - release candidate) of the Document Exchange module that aligns with ITI MHD 4.2.0, specifically [3.105 Simplified Publish [ITI-105]](https://profiles.ihe.net/ITI/MHD/ITI-105.html) and [3.106 Generate Metadata [ITI-106]]( https://profiles.ihe.net/ITI/MHD/ITI-106.html). These are selective changes, however they break backward compatibility. You can contact us if you are in the process of implementing the current version and have questions about the changes.**
 
 
-Siehe https://simplifier.net/spec-isik-dokumentenaustausch
+Siehe [ISiK Dokumentenaustausch Stufe 3](https://simplifier.net/isik-dokumentenaustausch-v3)
