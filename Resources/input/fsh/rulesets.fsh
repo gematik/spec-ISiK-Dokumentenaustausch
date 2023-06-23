@@ -2,15 +2,15 @@ RuleSet: Meta
 * ^publisher = "gematik GmbH"
 
 RuleSet: Meta-Inst
-* status = #draft
+* status = #active
 * publisher = "gematik GmbH"
-* date = "2023-05-31"
+* date = "2023-07-01"
 
 RuleSet: Meta-CapabilityStatement
-* status = #draft
+* status = #active
 * experimental = false
-* version = "3.0.0-rc4"
+* version = "3.0.0"
 * publisher = "gematik GmbH"
-* date = "2023-05-31"
-* implementationGuide = "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/ImplementationGuide|3.0.0-rc4"
+* date = "2023-07-01"
+* implementationGuide = "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/ImplementationGuide|3.0.0"
 * url = "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/CapabilityStatement/dokumentenaustausch-server"

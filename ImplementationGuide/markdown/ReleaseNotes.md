@@ -6,6 +6,15 @@ Die erste Ziffer X bezeichnet ein Major-Release und regelt die Gültigkeit von R
 
 Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gematik/ISiK-Dokumentenaustausch/issues?q=is%3Aissue+is%3Aopen+label%3A%22offene+Punkte+Ballot%22)
 
+
+----
+Version: 3.0.0
+
+Datum: 01.07.2023
+
+* Mit dem Release der Stufe 3.0.0 werden die unten gelisteten Änderungen normativ festgesetzt.
+
+----
 Version: 3.0.0-rc4
 
 Datum: 31.05.2023
