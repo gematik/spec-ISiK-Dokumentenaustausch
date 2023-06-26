@@ -1,6 +1,4 @@
 ## Modul "Dokumentenaustausch" 
 
 
-Dieser Branch enthält .html Versionen der ImplementationGuides vorangegangener Versionen. 
-
-- Stufe 1: https://gematik.github.io/spec-ISiK-Dokumentenaustausch/index.html
+Dieser Branch enthält zwecks Archivierung ImplementationGuides vorangegangener Versionen. Diese werden hier gerendert: https://gematik.github.io/spec-ISiK-Dokumentenaustausch/index.html
