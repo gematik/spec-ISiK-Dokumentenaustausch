@@ -1,11 +1,11 @@
 ## Beispiele
 ### Serverseitiges Dokument (vollständig annotiert)
 #### in XML
-{{xml:dok-beispiel}}
+{{xml:dok-beispiel-server}}
 #### in JSON
-{{json:dok-beispiel}}
+{{json:dok-beispiel-server}}
 ### Clientseitiges Dokument (nur mit KDL annotiert)
 #### in XML
-{{xml:dok-beispiel-client}}
+{{xml:dok-beispiel-client-with-binary-pdf-example-short}}
 #### in JSON
-{{json:dok-beispiel-client}}
+{{json:dok-beispiel-client-with-binary-pdf-example-short}}
