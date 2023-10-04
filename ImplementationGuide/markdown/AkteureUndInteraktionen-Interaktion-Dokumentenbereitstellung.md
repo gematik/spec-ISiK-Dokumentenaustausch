@@ -87,7 +87,7 @@ Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-
 ### Beispiel
 
 `POST [base]/DocumentReference`
-{{json:dok-beispiel-client}}
+{{json:dok-beispiel-client-with-binary-jpeg-example-short}}
 
 **Hinweis:** Die Binary-Ressourcen sind der Lesbarkeit halber verkürzt dargestellt!
 
