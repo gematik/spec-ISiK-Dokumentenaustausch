@@ -20,7 +20,7 @@ Für die Implementierung der Interaktion "Dokumentenabfrage" gelten die in IHE M
 Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.67.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-67.html#2367412-message-semantics)
-Es gelten darüber hinaus die allgemeinen Festlegungen zu Suchparametern gemäß [ISiK Basisprofil Stufe 2](https://simplifier.net/guide/implementierungsleitfadenisik-basismodul/I-m-UebergreifendeFestlegungen-UebergreifendeFestlegungen-Suchparameter?version=current)
+Es gelten darüber hinaus die allgemeinen Festlegungen zu Suchparametern gemäß [ISiK Basisprofil Stufe 3](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Basismodul-Stufe-3/UebergreifendeFestlegungen-UebergreifendeFestlegungen-Suchparameter?version=current)
 
 ##### [2:3.67.4.1.2.1 Query Search Parameters](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters)
 Im Rahmen der ISiK-Spezifikation müssen mindestens die im Kapitel {{pagelink:ImplementationGuide/markdown/DocumentReference_Interaktionen.md}}
