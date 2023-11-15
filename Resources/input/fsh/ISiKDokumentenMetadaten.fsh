@@ -43,17 +43,17 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
 * type.coding contains  KDL 1..1 MS and XDS 0..1 MS
-* type.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDStypeCode (required)
+* type.coding[XDS] from https://ihe-d.de/ValueSets/IHEXDStypeCode (required)
   * ^short = "Dokumenttyp gem. IHE-De-Terminologie"
   * ^comment = "Die Übermittlung des XDS-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend,
   MUSS jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten
   [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden"
-* type.coding[KDL] from http://dvmd.de/fhir/ValueSet/kdl (required)
+* type.coding[KDL] from https://dvmd.de/fhir/kdl (required)
   * ^short = "Dokumenttyp gem. KDL-Terminologie"
   * system 1..1 MS
-  * system = "http://dvmd.de/fhir/CodeSystem/kdl"
+  * system = "https://dvmd.de/fhir/kdl"
     * ^short = "Kodiersystem"
-    * ^comment = "Fix: &quot;http://dvmd.de/fhir/CodeSystem/kdl&quot;"
+    * ^comment = "Fix: &quot;https://dvmd.de/fhir/kdl&quot;"
   * code 1..1 MS
     * ^short = "Code"
     * ^comment = "Der KDL-Code"
@@ -73,7 +73,7 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
   * ^slicing.rules = #open
 * category.coding contains XDS 1..1 MS
 
-* category.coding[XDS] from http://ihe-d.de/ValueSets/IHEXDSclassCode (required)
+* category.coding[XDS] from https://ihe-d.de/ValueSets/IHEXDSclassCode (required)
   * system 1..1 MS
     * ^short = "Kodiersystem"
   * code 1..1 MS
@@ -85,7 +85,7 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
 * subject only Reference(Patient)
 * subject 1..1 MS
   * ^short = "Patientenbezug des Dokumentes"
-  * ^comment = "Siehe Beschreibung in der [FHIR Kernspezifikation](http://hl7.org/fhir/documentreference-definitions.html#DocumentReference.subject)"
+  * ^comment = "Siehe Beschreibung in der [FHIR Kernspezifikation](https://hl7.org/fhir/R4/documentreference-definitions.html#DocumentReference.subject)"
   * reference 1..1 MS
   * reference 1..1 MS
     * ^short = "Absolute oder relative URL des Patienten auf dem Server"
@@ -155,7 +155,7 @@ Ressource ausgelagert und über Attachment.url referenziert werden."
       * ^comment = "Es obliegt dem erzeugenden System, zu entscheiden,
       welches Datum als Dokumentendatum geeignet ist, z.B. Datum der Erstellung oder Datum der letzten Änderung"
   * format 1.. MS
-  * format from http://ihe-d.de/ValueSets/IHEXDSformatCodeDE (required)
+  * format from https://ihe-d.de/ValueSets/IHEXDSformatCodeDE (required)
     * ^short = "Format des Dokumentes"
     * ^comment = "Sofern das Dokument nicht auf einem standardisierten,
     strukturierten Austauschformat (z.B. CDA) basiert, für dessen Interpretation ein konkretes Schema herangezogen werden muss,
@@ -167,18 +167,18 @@ Ressource ausgelagert und über Attachment.url referenziert werden."
 Update für Stufe 3: 
 In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.
     "
-  * event from http://ihe-d.de/ValueSets/IHEXDSeventCodeList (required)
+  * event from https://ihe-d.de/ValueSets/IHEXDSeventCodeList (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
     * coding 1..1
       * system 1..1
       * code 1..1
 //  * period MS
   * facilityType 1.. MS
-  * facilityType from http://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (required)
+  * facilityType from https://ihe-d.de/ValueSets/IHEXDShealthcareFacilityTypeCode (required)
     * ^short = "Art der Einrichtung, aus der das Dokument stammt"
     * ^comment = "Kann, sofern keine abweichende Information bekannt ist auf &quot;KHS&quot; gesetzt werden."
   * practiceSetting 1.. MS
-  * practiceSetting from http://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (required)
+  * practiceSetting from https://ihe-d.de/ValueSets/IHEXDSpracticeSettingCode (required)
     * ^comment = "Binding auf IHE-DE Terminologie hinzugefügt"
 
 
@@ -225,7 +225,7 @@ Description: ""
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
-* context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
+* context.practiceSetting = https://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(BeispielBesuch)
 
 Instance: dok-beispiel-client-with-binary-jpeg-example-short
@@ -247,7 +247,7 @@ Description: ""
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
-* context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
+* context.practiceSetting = https://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(BeispielBesuch)
 
 Instance: dok-beispiel-client-with-binary-jpeg-example
@@ -269,7 +269,7 @@ Description: ""
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
-* context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
+* context.practiceSetting = https://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(BeispielBesuch)
 
 Instance: dok-beispiel-client-with-binary-pdf-example
@@ -291,5 +291,5 @@ Description: ""
 * content.attachment.creation = "2020-12-31T23:50:50-05:00"
 * content.format = $ihe-format#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.facilityType = $ihe-de-fac#KHS "Krankenhaus"
-* context.practiceSetting = http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
+* context.practiceSetting = https://ihe-d.de/CodeSystems/AerztlicheFachrichtungen#ALLG
 * context.encounter = Reference(BeispielBesuch)

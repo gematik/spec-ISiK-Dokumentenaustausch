@@ -12,181 +12,181 @@ Usage: #definition
 * format[+] = #application/fhir+json
 * rest.mode = #server
 * rest.resource[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #Patient
   * supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient"
   * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * code = #read
   * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * code = #search-type
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "_id"
-    * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Resource-id"
     * type = #token
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "identifier"
-    * definition = "http://hl7.org/fhir/SearchParameter/Patient-identifier"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Patient-identifier"
     * type = #token
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "family"
-    * definition = "http://hl7.org/fhir/SearchParameter/individual-family"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/individual-family"
     * type = #string
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "given"
-    * definition = "http://hl7.org/fhir/SearchParameter/individual-given"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/individual-given"
     * type = #string
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "birthdate"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/individual-birthdate"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/individual-birthdate"
     * type = #date
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "gender"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/individual-gender"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/individual-gender"
     * type = #token
 * rest.resource[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #Encounter
   * supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
   * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * code = #read
   * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * code = #search-type
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "_id"
-    * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Resource-id"
     * type = #token
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "identifier"
-    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-identifier"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Encounter-identifier"
     * type = #token
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "status"
-    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-status"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Encounter-status"
     * type = #token  
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "class"
-    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-class"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Encounter-class"
     * type = #token
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "type"
-    * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/clinical-patient"
     * type = #reference
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "subject"
-    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-subject"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Encounter-subject"
     * type = #reference
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "part-of"
-    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-part-of"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Encounter-part-of"
     * type = #reference
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "date"
-    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-date"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Encounter-date"
     * type = #date
 * rest.resource[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
   * type = #DocumentReference
   * supportedProfile = "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
   * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * code = #create
   * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * code = #read
   * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * code = #search-type
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "_id"
-    * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/Resource-id"
     * type = #token
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "status"
-    * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-status"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/DocumentReference-status"
     * type = #token
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "patient"
-    * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-patient"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/DocumentReference-patient"
     * type = #reference
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "type"
-    * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-type"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/DocumentReference-type"
     * type = #token
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "category"
-    * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-category"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/DocumentReference-category"
     * type = #token
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "creation"
-    * definition = "http://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"
+    * definition = "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"
     * type = #date
   * searchParam[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "encounter"
-    * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-encounter"
+    * definition = "https://hl7.org/fhir/R4/SearchParameter/DocumentReference-encounter"
     * type = #reference
 * rest.operation[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #MAY
   * name = #update-metadata
   * definition = Canonical(UpdateMetadata)
 * rest.operation[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.url = "https://hl7.org/fhir/R4/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #MAY
   * name = #generate-metadata
   * definition = "https://profiles.ihe.net/ITI/MHD/OperationDefinition/generate-metadata"

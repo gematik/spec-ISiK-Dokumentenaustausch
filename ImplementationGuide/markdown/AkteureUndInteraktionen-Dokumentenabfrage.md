@@ -7,7 +7,7 @@ mit `MUSS` gekennzeichneten Suchparameter unterstützt werden. Einzelnen Systeme
 Die Ergebnisse einer Suchanfrage werden in Form eines Bundles zurückgegeben:
 {{tree:https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenSuchergebnisse, hybrid}}
 
-Suchergebnisse können zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](http://hl7.org/fhir/R4/http.html#paging) unterstützen. Server KÖNNEN im SearchSet-Bundle auch Ressourcen vom Typ [OperationOutcome](http://hl7.org/fhir/R4/operationoutcome.html) mit Informationen über die Suchergebnisse zurückgeben. Diese müssen in `Bundle.entry.search.mode` mit dem Wert `outcome` gekennzeichnet sein. Die Issues im OperationOutcome dürfen nur dem Schweregrad `information` oder `warning` entsprechen.
+Suchergebnisse können zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](https://hl7.org/fhir/R4/http.html#paging) unterstützen. Server KÖNNEN im SearchSet-Bundle auch Ressourcen vom Typ [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) mit Informationen über die Suchergebnisse zurückgeben. Diese müssen in `Bundle.entry.search.mode` mit dem Wert `outcome` gekennzeichnet sein. Die Issues im OperationOutcome dürfen nur dem Schweregrad `information` oder `warning` entsprechen.
 Issues vom Schweregrad `error` oder `fatal` sind unzulässig.
 
 ### Hinweise und Anmerkungen zur Implementierung von [IHE MHD ITI-67 (Find DocumentReferences)](https://profiles.ihe.net/ITI/MHD/ITI-67.html)
@@ -42,7 +42,7 @@ Die Implementierung der "XDS on FHIR"-Option ist im ISiK-Kontext nicht gefordert
 ##### [2:3.67.4.2.1 Trigger Events](https://profiles.ihe.net/ITI/MHD/ITI-67.html#2367421-trigger-events)
 Die Vereinbarungen gelten uneingeschränkt.
 ##### [2:3.67.4.2.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-67.html#2367422-message-semantics)
-* Suchergebnisse können zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](http://hl7.org/fhir/R4/http.html#paging) unterstützen. Server KÖNNEN im * SearchSet-Bundle auch Ressourcen vom Typ [OperationOutcome](http://hl7.org/fhir/R4/operationoutcome.html) mit Informationen über die Suchergebnisse zurückgeben. Diese müssen in `Bundle.entry.search.mode` mit dem Wert `outcome` gekennzeichnet sein. Die Issues im OperationOutcome dürfen nur dem Schweregrad `information` oder `warning` entsprechen. Issues vom Schweregrad `error` oder `fatal` sind unzulässig.
+* Suchergebnisse können zahlreich sein. Server MÜSSEN daher [FHIR-konformes Paging](https://hl7.org/fhir/R4/http.html#paging) unterstützen. Server KÖNNEN im * SearchSet-Bundle auch Ressourcen vom Typ [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) mit Informationen über die Suchergebnisse zurückgeben. Diese müssen in `Bundle.entry.search.mode` mit dem Wert `outcome` gekennzeichnet sein. Die Issues im OperationOutcome dürfen nur dem Schweregrad `information` oder `warning` entsprechen. Issues vom Schweregrad `error` oder `fatal` sind unzulässig.
 * Das Ergebnis-Bundle der Suche muss konform sein zum Profil "ISiKDokumentenSuchergebnisse"{{tree:https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenSuchergebnisse, hybrid}}
 
 ##### [2:3.67.4.2.2.1 DocumentReference Resource Contents](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674221-documentreference-resource-contents)
@@ -68,7 +68,7 @@ Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-
 * Suche anhand von Patientenkontext (PID) und Dokumentendatum:
   `[base]/DocumentReference?patient.identifier=1234&creation=gt2021-10-06`
 * Suche nach vorläufigen Endoskopiebefunden (anhand KDL-Dokumenttyp und `docStatus`):
-  `[base]/DocumentReference?type=http://dvmd.de/fhir/CodeSystem/kdl|DG02010&doc-status=preliminary`
+  `[base]/DocumentReference?type=https://dvmd.de/fhir/kdl|DG02010&doc-status=preliminary`
 * Suche von Dokumenten anhand der Nummer des Abrechnungsfalles:
   `[base]/DocumentReference?encounter.account:identifier=56789`
 
@@ -88,7 +88,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 ##### [2:3.68.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-68.html#2368412-message-semantics)
 Der einzige MIME-Type, den alle Dokumentenserver verpflichtend zurückgeben können MÜSSEN, ist der MIME Type, der dem `DocumentReference.content.attachment.contentType` entspricht.
 
-Im ISiK-Kontext SOLLEN Dokumentenserver das Dokument darüber hinaus über einen [Binary-Endpunkt](http://hl7.org/fhir/binary.html) bereitstellen können. Dieser verfügt über folgende Besonderheit:
+Im ISiK-Kontext SOLLEN Dokumentenserver das Dokument darüber hinaus über einen [Binary-Endpunkt](https://hl7.org/fhir/R4/binary.html) bereitstellen können. Dieser verfügt über folgende Besonderheit:
 
 * Wenn der Zugriff mit dem Accept-Header `application/fhir+xml` oder `application/fhir+json` erfolgt, müssen die Daten als Binary-Ressource im angeforderten Format zurückgegeben werden.
 * Wenn der Zugriff mit einem *anderen* Accept-Header als `application/fhir+xml` oder `application/fhir+json` erfolgt, so soll das Dokument im angeforderten Format zurückgegeben werden,

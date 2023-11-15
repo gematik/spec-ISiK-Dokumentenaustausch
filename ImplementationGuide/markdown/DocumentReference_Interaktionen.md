@@ -13,7 +13,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     ```GET [base]/DocumentReference?_id=103270```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](http://hl7.org/fhir/R4/search.html#all).
+    Anwendungshinweise: Weitere Informationen zur Suche nach "_id" finden sich in der [FHIR-Basisspezifikation - Abschnitt "Parameters for all resources"](https://hl7.org/fhir/R4/search.html#all).
 
 1. Der Suchparameter "status" MUSS unterstützt werden:
 
@@ -21,7 +21,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     ```GET [base]/DocumentReference?status=final```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
     Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Clients und Server verpflichend.
 
@@ -39,24 +39,24 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Beispiele:
 
-    ```GET [base]/DocumentReference?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702```
+    ```GET [base]/DocumentReference?patient.identifier=https://mein-krankenhaus.example/fhir/sid/patienten|1032702```
 
     ```GET [base]/DocumentReference?patient.identifier=1032702```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
     Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Client und Server verpflichtend.
 	
-	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](http://hl7.org/fhir/R4/search.html#chaining).
+	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](https://hl7.org/fhir/R4/search.html#chaining).
 
 	
 1. Der Suchparameter "type" MUSS unterstützt werden:
 
     Beispiele:
 
-    ```GET [base]/DocumentReference?type=http://dvmd.de/fhir/CodeSystem/kdl|AD010101```
+    ```GET [base]/DocumentReference?type=https://dvmd.de/fhir/kdl|AD010101```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
     Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Server verpflichtend.
 
@@ -64,9 +64,9 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Beispiele:
 
-    ```GET [base]/DocumentReference?category=http://ihe-d.de/CodeSystem/IHEXDSclassCode|BEF```
+    ```GET [base]/DocumentReference?category=https://ihe-d.de/CodeSystem/IHEXDSclassCode|BEF```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](http://hl7.org/fhir/R4/search.html#token).
+    Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
     Dieser Suchparameter ist für die Umsetzung des IHE MHD Profils für Server verpflichtend.
 
@@ -77,7 +77,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     ```GET [base]/DocumentReference?creation=2021-11-05```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](http://hl7.org/fhir/R4/search.html#date).
+    Anwendungshinweise: Weitere Informationen zur Suche nach Date-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Date Search"](https://hl7.org/fhir/R4/search.html#date).
 	
 	Dieser Suchparameter ist nicht Bestandteil der FHIR-Kernspezifikation und wurde [von IHE im Rahmen der MHD-Spezifikation definiert](https://profiles.ihe.net/ITI/MHD/SearchParameter-DocumentReference-Creation.html).
 
@@ -90,17 +90,17 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     ```GET [base]/DocumentReference?encounter=Encounter/123```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 
 
 1. Der verkettete Suchparameter "encounter.account:identifier" (zur Suche anhand der Abrechnungsfallnummer) MUSS unterstützt werden:
 
    Beispiele:
 
-    ```GET [base]/DocumentReference?encounter.account:identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867```
+    ```GET [base]/DocumentReference?encounter.account:identifier=https://mein-krankenhaus.example/fhir/sid/fallnummern|7567867```
 	
 	```GET [base]/DocumentReference?encounter.account:identifier=7567867```
 
-    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern, insbesondere in Verbindung mit dem `:identifier`-Modifier finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/search.html#reference).
+    Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern, insbesondere in Verbindung mit dem `:identifier`-Modifier finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
 	
-	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](http://hl7.org/fhir/search.html#chaining).
+	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](https://hl7.org/fhir/R4/search.html#chaining).

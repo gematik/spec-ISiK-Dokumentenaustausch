@@ -1,7 +1,7 @@
 
 ## Kompatibilität zu IHE-Profilen
 
-Die Festlegungen in diesem ISiK-Modul wurden auf Grundlage des [IHE-MHD-Profils](http://build.fhir.org/ig/IHE/ITI.MHD/) getroffen.
+Die Festlegungen in diesem ISiK-Modul wurden auf Grundlage des [IHE-MHD-Profils](https://build.fhir.org/ig/IHE/ITI.MHD/) getroffen.
 Wo die Festlegungen seitens IHE zu eng gefasst waren, um die Kompatibilität wahren zu können, ohne die Umsetzung der ISiK-UseCases einzuschränken, wurden [entsprechende Change-Requests bei IHE Int.](https://github.com/IHE/ITI.MHD/issues?q=is%3Aissue+author%3AsimoneOnFhir+) eingereicht, mit dem Ziel, die Kompatibilität in künftigen Releases von IHE-MHD wieder herzustellen.
 
 Die Intention der ISiK-Spezifikation ist es, die IHE-Interaktionen auf das notwendige Minimum für die einrichtungsinterne Kommunikation zu reduzieren, dabei jedoch alle erforderlichen Dokumenten-Metadaten für eine spätere Weitergabe der Dokumente an z.B. eine ePA oder ein IHE-MHD-basiertes Repository zu erheben. 
@@ -15,7 +15,7 @@ Als Terminologien kommen bei ISiK - soweit sinnvoll und möglich - die XDS-Value
 ### Abweichungen zwischen ISiK und IHE-MHD
 
 #### Dokumentenbereitstellung (gelöst)
-Die Bereitstellung von Dokumenten (Übermittlung von Client an den Server) ist in IHE-MHD als [Transaction](https://hl7.org/fhir/http.html#transaction) definiert.
+Die Bereitstellung von Dokumenten (Übermittlung von Client an den Server) ist in IHE-MHD als [Transaction](https://hl7.org/fhir/R4/http.html#transaction) definiert.
 
 Dabei ist jedoch zu beachten, dass eine Transaction in FHIR definiert ist, als die Ausführung mehrerer einzelner REST-Interaktionen in einem transaktionalen Kontext. Eine Transaction hat keinen Namen und außer der Verarbeitung nach dem "Ganz oder gar nicht"-Prinzip keine andere Logik als die äquivalente Sequenz der einzelnen REST-Interaktionen.
 
@@ -66,7 +66,7 @@ Diese Einschränkung wurde im ISiK-Profil daher aufgehoben.
 #### Erzeugen von Metadaten (gelöst)
 Für das automatische Erzeugen von IHE MHD-konformen Metadaten auf Basis von existierenden strukturierten Dokumenten (z.B. FHIR Documents) gibt es in IHE MHD keine entsprechende Interaktion. Eine entsprechende Funktionalität wäre jedoch sinnvoll, da entsprechende Mappings am besten von serverseitigen Implementierungen, wie sie mit dem Akteur "Document Recipient" in IHE MHD definiert werden, bereitgestellt werden könnten. Im Kontext von FHIR-Implementierungen wäre es unsinnig, komplexe Mappings und Nachschlage-Funktionen clientseitig implementieren zu müssen, nur um bereits vorhandene Dokumentenmetadaten in das vom Server erwartete Format zu bringen. Für die Stufe 2 wurde daher eine entsprechende Operation "$generate-metadata" mit dem Hinweis "Work in Progress" entworfen, die Server optional zur Verfügung stellen können, um Erfahrungen zu Implementierbarkeit und Nutzwert dieser Operation zu sammeln. 
 
-Die Operation `$generate-metadata` wurde spezifiziert in Anlehnung an die Operation [`$generate` im current build der FHIR-Kernspezifikation](http://build.fhir.org/documentreference-operation-generate.html), die jedoch noch nicht in implementierbarem Zustand ist. Die hier getroffenen Änderungen werden parallel als Feedback zur Verbesserung der Kernspezifikation als [ChangeRequest](https://jira.hl7.org/browse/FHIR-34043) eingereicht.
+Die Operation `$generate-metadata` wurde spezifiziert in Anlehnung an die Operation [`$generate` im current build der FHIR-Kernspezifikation](https://build.fhir.org/documentreference-operation-generate.html), die jedoch noch nicht in implementierbarem Zustand ist. Die hier getroffenen Änderungen werden parallel als Feedback zur Verbesserung der Kernspezifikation als [ChangeRequest](https://jira.hl7.org/browse/FHIR-34043) eingereicht.
 
 #### Update für ISiK Stufe 3
 Seitens IHE wurde die Interaktion [Generate Metadata [ITI-106]](https://profiles.ihe.net/ITI/MHD/ITI-106.html) basierend auf der ISiK-Spezifikation (mit leichten Änderungen) in MHD Version 4.2.0. hinzugefügt.
