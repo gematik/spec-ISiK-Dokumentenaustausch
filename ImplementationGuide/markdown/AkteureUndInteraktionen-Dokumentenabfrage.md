@@ -68,7 +68,7 @@ Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-
 * Suche anhand von Patientenkontext (PID) und Dokumentendatum:
   `[base]/DocumentReference?patient.identifier=1234&creation=gt2021-10-06`
 * Suche nach vorläufigen Endoskopiebefunden (anhand KDL-Dokumenttyp und `docStatus`):
-  `[base]/DocumentReference?type=https://dvmd.de/fhir/kdl|DG02010&doc-status=preliminary`
+  `[base]/DocumentReference?type=http://dvmd.de/fhir/kdl|DG02010&doc-status=preliminary`
 * Suche von Dokumenten anhand der Nummer des Abrechnungsfalles:
   `[base]/DocumentReference?encounter.account:identifier=56789`
 

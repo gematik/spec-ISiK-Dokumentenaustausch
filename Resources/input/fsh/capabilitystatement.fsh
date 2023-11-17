@@ -52,7 +52,7 @@ Usage: #definition
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "birthdate"
-    * definition = "https://hl7.org/fhir/R4/SearchParameter/individual-birthdate"
+    * definition = "http://hl7.org/fhir/SearchParameter/individual-birthdate"
     * type = #date
   * searchParam[+]
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"

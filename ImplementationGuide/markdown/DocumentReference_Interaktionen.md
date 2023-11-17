@@ -39,7 +39,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Beispiele:
 
-    ```GET [base]/DocumentReference?patient.identifier=https://mein-krankenhaus.example/fhir/sid/patienten|1032702```
+    ```GET [base]/DocumentReference?patient.identifier=http://mein-krankenhaus.example/fhir/sid/patienten|1032702```
 
     ```GET [base]/DocumentReference?patient.identifier=1032702```
 
@@ -54,7 +54,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
     Beispiele:
 
-    ```GET [base]/DocumentReference?type=https://dvmd.de/fhir/kdl|AD010101```
+    ```GET [base]/DocumentReference?type=http://dvmd.de/fhir/kdl|AD010101```
 
     Anwendungshinweise: Weitere Informationen zur Suche nach Token-type Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Token Search"](https://hl7.org/fhir/R4/search.html#token).
 
@@ -97,7 +97,7 @@ Die in IHE-MHD geltende Einschränkung, dass Clients bei allen Suchen mindestens
 
    Beispiele:
 
-    ```GET [base]/DocumentReference?encounter.account:identifier=https://mein-krankenhaus.example/fhir/sid/fallnummern|7567867```
+    ```GET [base]/DocumentReference?encounter.account:identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867```
 	
 	```GET [base]/DocumentReference?encounter.account:identifier=7567867```
 
