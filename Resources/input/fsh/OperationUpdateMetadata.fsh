@@ -31,4 +31,4 @@ Description: ""
   * type = #code
   * binding 
     * strength = #required 
-    * valueSet = "https://hl7.org/fhir/R4/ValueSet/composition-status"
+    * valueSet = "http://hl7.org/fhir/ValueSet/composition-status"

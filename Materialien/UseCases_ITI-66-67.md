@@ -38,7 +38,7 @@ um die Befundfreigabe vorantreiben zu können.
 * practiceSetting und facilityType enthalten keine geeigneten Codes, um gezielt "Endoskopie" zu selektieren
 * implementierbar in Verbindung mit der Verwendung von KDL (XDS:eventCodeList) und der Suche nach dem Code "DG02010" (Endoskopiebefund)
 #### Umsetzung im Rahmen von ISiK Stufe 2
-* Selektion nach Dokumenttyp "Endoskopiebefund" und Dokumentationsstatus (`docStatus`) `/DocumentReference?type=DG02010|https://dvmd.de/fhir/kdl&doc-status=preliminary`
+* Selektion nach Dokumenttyp "Endoskopiebefund" und Dokumentationsstatus (`docStatus`) `/DocumentReference?type=DG02010|http://dvmd.de/fhir/CodeSystem/kdl&doc-status=preliminary`
   * CAVE: `doc-status` ist kein im FHIR core definierter Suchparameter, nur als custom Parameter abbildbar!
   * Setzt Nutzung von KDL-Codes zur Dokumentenklassifikation voraus. 
 

@@ -21,5 +21,5 @@ Usage: #example
 Title: "Suchergebnis-Beispiel"
 Description: ""
 * total = 1
-* entry.fullUrl = "https://meinfhirserver.de/DocumentReference/dok-beispiel"
+* entry.fullUrl = "http://meinfhirserver.de/DocumentReference/dok-beispiel"
 * entry.resource = dok-beispiel-server

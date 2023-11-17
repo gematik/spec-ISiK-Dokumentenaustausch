@@ -1,6 +1,6 @@
 Mapping:  CompositionDocumentReferenceMapping
 Source:   ISiKDokumentenMetadaten 
-Target:   "https://hl7.org/fhir/R4/StructureDefinition/Composition"
+Target:   "http://hl7.org/fhir/StructureDefinition/Composition"
 Id:       CompositionDocumentReferenceMapping
 Title:    "Metadaten eines strukturieren Dokumentes (Document-Bundle)"
 //Syntax:
