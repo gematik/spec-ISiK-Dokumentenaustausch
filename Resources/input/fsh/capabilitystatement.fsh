@@ -58,7 +58,7 @@ Usage: #definition
     * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
     * extension.valueCode = #SHALL
     * name = "gender"
-    * definition = "hhttp://hl7.org/fhir/SearchParameter/individual-gender"
+    * definition = "http://hl7.org/fhir/SearchParameter/individual-gender"
     * type = #token
 * rest.resource[+]
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
