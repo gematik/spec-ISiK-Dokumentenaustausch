@@ -6,7 +6,7 @@
   "experimental": false,
   "version": "3.0.0",
   "publisher": "gematik GmbH",
-  "date": "2023-07-01",
+  "date": "2023-11-28",
   "implementationGuide": [
     "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/ImplementationGuide|3.0.0"
   ],
@@ -118,7 +118,7 @@
                 }
               ],
               "name": "birthdate",
-              "definition": "hhttp://hl7.org/fhir/SearchParameter/individual-birthdate",
+              "definition": "http://hl7.org/fhir/SearchParameter/individual-birthdate",
               "type": "date"
             },
             {
@@ -129,7 +129,7 @@
                 }
               ],
               "name": "gender",
-              "definition": "hhttp://hl7.org/fhir/SearchParameter/individual-gender",
+              "definition": "http://hl7.org/fhir/SearchParameter/individual-gender",
               "type": "token"
             }
           ]

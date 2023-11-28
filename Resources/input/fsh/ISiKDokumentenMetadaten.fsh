@@ -281,7 +281,7 @@ Description: ""
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
-* type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
+* type.coding[KDL] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N

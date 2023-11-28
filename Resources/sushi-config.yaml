@@ -2,15 +2,8 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: de.gematik.isik-dokumentenaustausch
 canonical: https://gematik.de/fhir/isik/v3/Dokumentenaustausch
-name: ISiK_Dokumentenaustausch
-status: active
-version: 3.0.0
 fhirVersion: 4.0.1
-publisher:
-  name: gematik GmbH
-  url: https://gematik.de
 dependencies:
     ihe.iti.mhd: 4.2.0
     de.gematik.isik-basismodul: 3.0.0
