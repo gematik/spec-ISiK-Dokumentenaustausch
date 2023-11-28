@@ -192,8 +192,8 @@ Title: "dok-beispiel"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
 * category = $ihe-de-class#BEF "Befundbericht"
-* type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
-* type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
+* type.coding[KDL] = $kdl#PT130102 "Molekularpathologiebefund"
+* type.coding[XDS] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
@@ -210,12 +210,11 @@ Instance: dok-beispiel-client-with-binary-pdf-example-short
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
-* type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
+* type.coding[KDL] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
@@ -232,12 +231,11 @@ Instance: dok-beispiel-client-with-binary-jpeg-example-short
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
-* type.coding[+] = $kdl#ED020101 "Fotodokumentation Operation"
+* type.coding[KDL] = $kdl#ED020101 "Fotodokumentation Operation"
 * description = "Fotodokumentation Operation vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
@@ -254,12 +252,11 @@ Instance: dok-beispiel-client-with-binary-jpeg-example
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
-* type.coding[+] = $kdl#ED020101 "Fotodokumentation Operation"
+* type.coding[KDL] = $kdl#ED020101 "Fotodokumentation Operation"
 * description = "Fotodokumentation Operation vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
@@ -276,7 +273,6 @@ Instance: dok-beispiel-client-with-binary-pdf-example
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
