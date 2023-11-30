@@ -180,6 +180,15 @@ Usage: #definition
     * name = "encounter"
     * definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-encounter"
     * type = #reference
+* rest.resource[+]
+  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+  * extension.valueCode = #SHALL
+  * type = #Binary
+  * supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBinary"
+  * interaction[+]
+    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+    * extension.valueCode = #SHALL
+    * code = #read
 * rest.operation[+]
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #MAY
