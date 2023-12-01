@@ -59,7 +59,7 @@ Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.105.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105413-expected-actions)
 * Die Erzeugung einer SubmissionSet Ressource durch den Server ist im ISiK-Kontext nicht erforderlich. 
-* Der Server muss ggf. fehlende XDS-Class- und -Type-Codes anhand des übermittelten KDL-Codes ergänzen und in DocumentReference.type bzw. DocumentReference.class zurückliefern.
+* Der Server muss ggf. fehlende XDS-Class- und -Type-Codes anhand des übermittelten KDL-Codes ergänzen und in DocumentReference.type bzw. DocumentReference.category zurückliefern.
 Die XDS-Codes können über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden. 
 Die XDS-Codes werden für den einrichtungsübergreifenden Dokumentenaustausch über IHE XDS, bzw. MHD oder für die Übermittlung der Dokumente an die ePA des Patienten benötigt.
 
