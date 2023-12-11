@@ -11,6 +11,7 @@ Version: 3.0.1
 Datum: WIP
 
 * tbd. Anforderungen zur Nutzung der Ressourcen aus ISIK Basismodul präzisiert
+* Update Dependency zu Basismodul (Technical Correction 3.0.1)
 ----
 Version: 3.0.0
 
