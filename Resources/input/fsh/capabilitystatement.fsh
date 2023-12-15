@@ -11,25 +11,7 @@ Usage: #definition
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * rest.mode = #server
-* rest.resource[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-  * extension.valueCode = #SHALL
-  * type = #Patient
-  * supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient"
-  * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #SHALL
-    * code = #read
   
-* rest.resource[+]
-  * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-  * extension.valueCode = #SHALL
-  * type = #Encounter
-  * supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
-  * interaction[+]
-    * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-    * extension.valueCode = #SHALL
-    * code = #read
 * rest.resource[+]
   * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
   * extension.valueCode = #SHALL
