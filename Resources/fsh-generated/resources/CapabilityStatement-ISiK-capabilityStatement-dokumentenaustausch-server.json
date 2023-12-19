@@ -375,6 +375,29 @@
               "type": "reference"
             }
           ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHALL"
+            }
+          ],
+          "type": "Binary",
+          "supportedProfile": [
+            "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBinary"
+          ],
+          "interaction": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "code": "read"
+            }
+          ]
         }
       ],
       "operation": [
