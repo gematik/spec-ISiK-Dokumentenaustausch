@@ -6,6 +6,8 @@
   "name": "ISiKDokumentenSuchergebnisse",
   "title": "Suchergebnisse einer Dokumentensuche",
   "status": "active",
+  "experimental": false,
+  "date": "2023-07-01",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [

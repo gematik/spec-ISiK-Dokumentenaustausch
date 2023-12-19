@@ -1,5 +1,9 @@
 RuleSet: Meta
+* ^version = "3.0.0"
+* ^status = #active
+* ^experimental = false
 * ^publisher = "gematik GmbH"
+* ^date = "2023-07-01"
 
 RuleSet: Meta-Inst
 * status = #active
