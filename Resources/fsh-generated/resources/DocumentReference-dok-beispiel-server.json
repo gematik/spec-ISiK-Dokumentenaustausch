@@ -84,8 +84,8 @@
     "practiceSetting": {
       "coding": [
         {
-          "code": "408467006",
-          "system": "http://snomed.info/sct"
+          "code": "ALLG",
+          "system": "http://ihe-d.de/CodeSystems/AerztlicheFachrichtungen"
         }
       ]
     },
