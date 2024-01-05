@@ -2,7 +2,6 @@ Instance: UpdateMetadata
 InstanceOf: OperationDefinition
 Usage: #example
 Title: "update-metadata"
-Description: ""
 * insert Meta-Inst
 * url = "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/OperationDefinition/UpdateMetadata"
 * title = "Update document metadata"

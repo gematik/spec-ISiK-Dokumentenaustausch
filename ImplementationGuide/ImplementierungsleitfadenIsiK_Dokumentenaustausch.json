@@ -157,6 +157,11 @@
                   "generation": "markdown"
                 }
               ]
+            },
+            {
+              "nameUrl": "ImplementationGuide/markdown/Datenobjekte_ISiKBinary.md",
+              "title": "ISiKBinary",
+              "generation": "markdown"
             }
           ]
         }

@@ -85,7 +85,9 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
 * subject only Reference(Patient)
 * subject 1..1 MS
   * ^short = "Patientenbezug des Dokumentes"
-  * ^comment = "Siehe Beschreibung in der [FHIR Kernspezifikation](http://hl7.org/fhir/documentreference-definitions.html#DocumentReference.subject)"
+  * ^comment = "Im ISIK-Kontext MUSS der referenzierte Patient konform zum [ISIKPatient](https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient) des Basismoduls sein.
+  
+  Für sonstige Kontexte siehe [FHIR Kernspezifikation](http://hl7.org/fhir/documentreference-definitions.html#DocumentReference.subject)"
   * reference 1..1 MS
   * reference 1..1 MS
     * ^short = "Absolute oder relative URL des Patienten auf dem Server"
@@ -144,6 +146,8 @@ Ressource ausgelagert und über Attachment.url referenziert werden."
       *  ^short = "Referenz auf Dokument"
       *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
       sondern müssen als separates Datenobjekt referenziert werden. 
+
+Wird ein separates Datenobjekt im ISIK-Kontext referenziert, so MUSS dieses konform zum Profil [ISIKBinary](https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBinary) aus dem Basismodul sein.
       
 Update für Stufe 3:
 Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
@@ -164,6 +168,8 @@ Ressource ausgelagert und über Attachment.url referenziert werden."
 * context 1.. MS
   * encounter ..1 MS
     * ^comment = "Abweichend zu MHD V4.0.1 ist die Verwendung der Encounter-Referenz im ISiK-Kontext erlaubt.
+
+    Wird ein Encounter im ISIK-Kontext referenziert, so MUSS dieser konform zum Profil [ISIKKontaktGesundheitseinrichtung](https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung) aus dem Basismodul sein. 
 Update für Stufe 3: 
 In MHD 4.2.0 wurde das Verbot der Angabe einer Encounter-Referenz gelockert, das ISiK-Profil ist damit in diesem Punkt wieder kompatibel zu IHE MHD.
     "
@@ -192,8 +198,8 @@ Title: "dok-beispiel"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
 * category = $ihe-de-class#BEF "Befundbericht"
-* type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
-* type.coding[+] = $ihe-de-type#PATH "Pathologiebefundberichte"
+* type.coding[KDL] = $kdl#PT130102 "Molekularpathologiebefund"
+* type.coding[XDS] = $ihe-de-type#PATH "Pathologiebefundberichte"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
@@ -210,12 +216,11 @@ Instance: dok-beispiel-client-with-binary-pdf-example-short
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
-* type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
+* type.coding[KDL] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
@@ -232,12 +237,11 @@ Instance: dok-beispiel-client-with-binary-jpeg-example-short
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
-* type.coding[+] = $kdl#ED020101 "Fotodokumentation Operation"
+* type.coding[KDL] = $kdl#ED020101 "Fotodokumentation Operation"
 * description = "Fotodokumentation Operation vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
@@ -254,12 +258,11 @@ Instance: dok-beispiel-client-with-binary-jpeg-example
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
-* type.coding[+] = $kdl#ED020101 "Fotodokumentation Operation"
+* type.coding[KDL] = $kdl#ED020101 "Fotodokumentation Operation"
 * description = "Fotodokumentation Operation vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
@@ -276,12 +279,11 @@ Instance: dok-beispiel-client-with-binary-pdf-example
 InstanceOf: ISiKDokumentenMetadaten
 Usage: #example
 Title: "dok-beispiel"
-Description: ""
 * meta.security = $v3-ActReason#HTEST
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.2.840.113556.1.8000.2554.58783.21864.3474.19410.44358.58254.41281.46340"
 * status = #current
-* type.coding[+] = $kdl#PT130102 "Molekularpathologiebefund"
+* type.coding[KDL] = $kdl#PT130102 "Molekularpathologiebefund"
 * description = "Molekularpathologiebefund vom 31.12.21"
 * subject = Reference(PatientinMusterfrau)
 * securityLabel = $v3-Confidentiality#N
