@@ -8,7 +8,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 Version: 3.0.1
 
-Datum: 03.01.2024
+Datum: 05.01.2024
 
 * Update Dependency zu Basismodul (Technical Correction 3.0.1)
 * Nutzung der ISiKBinary präzisiert und im CapabilityStatement entsprechend korrigiert: add CpS statement and reference regarding ISIK binary PTDATA-605 by @f-peverali in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/157
