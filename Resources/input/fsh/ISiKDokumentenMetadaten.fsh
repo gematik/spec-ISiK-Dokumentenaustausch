@@ -147,7 +147,7 @@ Ressource ausgelagert und über Attachment.url referenziert werden."
       *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
       sondern müssen als separates Datenobjekt referenziert werden. 
 
-Wird ein separates Datenobjekt im ISIK-Kontext referenziert, so MUSS dieser konform zum Profil [ISIKBinary](https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBinary) aus dem Basismodul sein.
+Wird ein separates Datenobjekt im ISIK-Kontext referenziert, so MUSS dieses konform zum Profil [ISIKBinary](https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKBinary) aus dem Basismodul sein.
       
 Update für Stufe 3:
 Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
