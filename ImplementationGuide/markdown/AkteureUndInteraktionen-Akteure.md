@@ -20,4 +20,4 @@ Der Client nimmt im IHE-MHD-Kontext die Rollen [Document Source](https://profile
 * Find Document References [ITI-67] (optional)
 * Retrieve Document [ITI-68] (optional)
 
-{{render:isikprimrscope}} 
+{{render:Material-Images-isikprimaerscope}} 
