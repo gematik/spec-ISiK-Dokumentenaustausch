@@ -1,5 +1,5 @@
 {
-  "name": "de.gematik.isik-basismodul-dokumentenaustausch",
+  "name": "de.gematik.isik-dokumentenaustausch",
   "version": "3.0.1",
   "fhirVersions": [
     "4.0.1"

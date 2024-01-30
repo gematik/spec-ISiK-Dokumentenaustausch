@@ -6,7 +6,7 @@
   "fhirVersion": [
     "4.0.1"
   ],
-  "packageId": "de.gematik.isik-basismodul-dokumentenaustausch-stufe-3",
+  "packageId": "de.gematik.isik-dokumentenaustausch",
   "definition": {
     "resource": [
       {
