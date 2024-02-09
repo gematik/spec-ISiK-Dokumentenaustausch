@@ -2,7 +2,7 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-canonical: https://gematik.de/fhir/isik/v3/Dokumentenaustausch
+canonical: https://gematik.de/fhir/isik/v4/Dokumentenaustausch
 fhirVersion: 4.0.1
 dependencies:
     ihe.iti.mhd: 4.2.0
