@@ -3,7 +3,7 @@
   "id": "Suchergebnis-Beispiel",
   "meta": {
     "profile": [
-      "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenSuchergebnisse"
+      "https://gematik.de/fhir/isik/v4/Dokumentenaustausch/StructureDefinition/ISiKDokumentenSuchergebnisse"
     ]
   },
   "type": "searchset",
@@ -22,7 +22,7 @@
             }
           ],
           "profile": [
-            "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
+            "https://gematik.de/fhir/isik/v4/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
           ]
         },
         "masterIdentifier": {
