@@ -110,6 +110,7 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe von date gelockert, das ISiK-Pro
 * description 1..1 MS
   * ^comment = "Genaue menschenlesbare Beschreibung des Dokumentes, z.B. &quot;Lungenfunktionstest vom 18.02.2022&quot;"
 * relatesTo MS
+  * ^comment = "Inbesondere relevant im Kontext von Updates. Bei inhaltlichen Updates MUSS eine `replaces`-Relation angegeben werden."
 * securityLabel 1.. MS
 * securityLabel from ISiKConfidentialityCodes (required)
   * ^short = "Vertraulichkeit"
