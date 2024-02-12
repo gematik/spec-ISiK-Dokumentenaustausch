@@ -13,7 +13,11 @@ Datum: xx.xx.2024
 
 * Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann
   * Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
-* Hinweis zu FHIR Bundles hinzugefügt: https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
+* Hinweis zum Umgang mit Dokumentenupdates hinzugefügt
+  * Fix/versionierung von dokumenten #177 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/177
+* Hinweis zur base64-Kodierung von FHIR-nativen Dokumenten hinzugefügt
+  * Hinweis zur Kodierung von FHIR Bundles hinzugefügt #178 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
+* Hinweis zur Verwendung des ‘UNK’-Codes im KDL-Mapping hinzugefügt (#179): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/179
 
 
 ----
