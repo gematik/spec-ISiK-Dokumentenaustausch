@@ -1,40 +1,12 @@
 ----
 
 ## Interaktion: Dokumentenbereitstellung
-### Herstellung von Patient- und Encounterkontext
-Vor der Bereitstellung von Dokumenten muss ein Client einen Patienten- und Encounterkontext herstellen, damit das Dokument serverseitig anhand der Patient- und Encounter-Verlinkungen in der DocumentReference korrekt zugeordnet werden kann.
-Zur Herstellung des Kontextes sind folgende Verfahren möglich:
-
-1. **SMARTApp Launch**: Wenn der Aufruf der App im Rahmen des SMART-Frameworks erfolgt, kennt der Client bereits beim Start den aktuellen Patienten- und ggf. den Encounterkontext. Dabei wählt ein Anwender im Primärsystem (Server) einen Patienten und Fall aus und startet in diesem Kontext die App. Referenzen auf Patient und Encounter werden im Zuge der Autorisierung vom Server an Client übermittelt. (Siehe Modul [Sicherheit - Launch Context und Scopes](https://simplifier.net/guide/isik-sicherheit/ImplementationGuide-markdown-ScopesAndLaunchContext?version=current)). 
-2. **Bekannte Fallnummer**: Der Client kennt die (Abrechnungs-)Fallnummer (z.B. durch das Einscannen eines Barcodes, oder beim Mapping von V2 auf FHIR aus PV1.#19). Der Client sucht den Encounter im Patienten-führenden System anhand der Fallnummer (`[base]/Encounter?account:identifier=<Fallnummer>`). Da unter einer Abrechnungs-Fallnummer mehrere Encounter (Besuche) zusammengefasst werden können (z.B. vorstationär + stationär + nachstationär), sollte als zusätzliches Suchkriterium entweder ein Datum/Zeitraum oder eine Selektion auf `Encounter.status` verwendet werden. Wenn ein zutreffender Encounter gefunden wurde, kann der Patientenkontext aus der subject-Referenz des Encounters entnommen werden. 
-3. **Arbeitsliste**: Der Client ruft auf dem Server eine Arbeitsliste ab (z.B. Liste aller Encounter, die aktuell auf einer bestimmten Station/Ambulanz stattfinden, Liste aller ServiceRequests/Tasks, die durch den Client abgearbeitet werden müssen (aktuell noch nicht im Scope der ISiK-Spezifikationen!) und etabliert den Kontext, nachdem der Benutzer einen Eintrag der Liste ausgewählt hat.
-4. **Manuelle Auswahl**. Nach dem Start des Clients verwendet der Benutzer eine Suchmaske, in der anhand von Patientennummer oder anderer demografischer Daten gesucht werden kann. Der Client verwendet die [Patient-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Basismodul-Stufe-3/ImplementationGuide-markdown-Datenobjekte-Datenobjekte-Patient?version=current#ImplementationGuide-markdown-Patient-Patient-Interaktionen), um auf dem Server nach zutreffenden Patienten zu suchen. Der Anwender wählt den gesuchten Patienten aus der Liste der Suchtreffer aus. Im Anschluss listet der Client, mithilfe der [Encounter-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Basismodul-Stufe-3/ImplementationGuide-markdown-Datenobjekte-Datenobjekte-Kontakt?version=current#I-markdown-KontaktGesundheitseinrichtung-Kontakt-Interaktionen), die relevanten Besuche des ausgewählten Patienten auf. (Anm.: Welche Besuche als "relevant" erachtet werden, liegt im Ermessen des Clients. Es könnte z.B. anhand von `Encounter.period`, `Encounter.class` und/oder `Encounter.status` gefiltert werden). Der Anwender wählt den zutreffenden Encounter aus.
-
-| Hinweis | Gefahr fehlerhafter Zuordnung!|
-|---------|---------------------|
-| {{render:Material/images/ig_bilder_Warning.jpg}} |  Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
 
 ### Dokumentenübermittlung (IHE MHD ITI-105 (Simplified Publish))
 
 Die Dokumentenübermittlung erfolgt mittels [IHE MHD ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html)
 
 Die Übermittlung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](https://hl7.org/fhir/R4/http.html#create) auf dem Ressourcentyp DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt.
-
-| Hinweis | Breaking Change!|
-|---------|---------------------|
-| {{render:Material/imagesig_bilder_Warning.jpg}} |  Die in dieser Version erfolgte Umstellung der Interaktion von der $submit-document-Operation auf eine REST-basierte CREATE-Interaktion ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-105 (Simplified Publish), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand.  |
-
-#### Maßgebliche Änderungen gegenüber Stufe 2 für den Client
-* Der Client muss das eigentliche Dokument (PDF, JPEG o.ä.) base64-codiert in `DocumentReference.content.attachment.data` einbetten und den Mime-Type des Dokumentes in `DocumentReference.content.attachment.contentType` adäquat setzen
-* Die Übermittlung erfolgt mittels POST auf den Endpunkt `[base]/DocumentReference` anstatt wie bisher mittels POST auf den Endpunkt `[base]\DocumentReference\$submit-document`
-* Die DocumentReference-Ressource mit den eingebetteten Binärdaten wird nun unmittelbar im Body der Interaktion gesendet. Die Notwendigkeit, DocumentReference und Binary in eine Parameters-Ressource zu wrappen, entfällt damit.
-* Die Antwort des Servers erfolgt in Form einer DocumentReference-Ressource (im Erfolgsfall) bzw. einer OperationOutcome-Ressource im Fehlerfall anstelle wie bisher einer Parameters-Ressource.
-
-#### Maßgebliche Änderungen gegenüber Stufe 2 für den Server
-* Die DocumentReference-Ressource mit den eingebetteten Binärdaten wird nun unmittelbar im Body der Interaktion gesendet. Die Notwendigkeit, DocumentReference und Binary aus der Parameters-Ressource zu extrahieren, entfällt damit.
-* Die Übermittlung erfolgt mittels POST auf den Endpunkt `[base]/DocumentReference` anstatt wie bisher mittels POST auf den Endpunkt `[base]\DocumentReference\$submit-document`
-* Der Server MUSS das eingebettete Dokument aus der DocumentReference herauslösen, separat persistieren und in `DocumentReference.content.attachemnt.url` auf das separierte Dokument verweisen. Beim Abruf einer DocumentReference, bzw. bei der Suche nach DocumentReference-Ressourcen darf das Dokument niemals eingebettet an den Client zurückgegeben werden. Das Dokument muss über den Binary-Endpunkt der API abrufbar gemacht werden.
-* Die Antwort des Servers erfolgt in Form einer DocumentReference-Ressource (im Erfolgsfall) bzw. einer OperationOutcome-Ressource im Fehlerfall anstelle wie bisher einer Parameters-Ressource.
 
 ### Hinweise und Anmerkungen zur Implementierung von [ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html) im Kontext von ISiK
 Für die Implementierung der Interaktion "Dokumentenbereitstellung" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt.
@@ -58,6 +30,8 @@ Die Vereinbarungen gelten uneingeschränkt.
 * `DocumentReference.sourcePatientInfo` wird im ISiK-Kontext nicht verwendet
 ##### [2:3.105.4.1.2.3 Replace, Transform, Signs, and Append Associations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231054123-replace-transform-signs-and-append-associations)
 Die Vereinbarungen gelten uneingeschränkt.
+
+**Hinweis**: Dies bedeutet, dass inhaltliche Updates von Dokumenten, in Abgrenzung zu Updates von Dokumentenmetadaten, durch den Client als neue Create-Interaktion durchgeführt werden muss. Update-Interaktionen sind in diesem Kontext undefiniert. Das Dokument, welches das Update repräsentiert, muss eine entsprechende relatesTo-Relation zum vorherigen Dokument aufweisen. Der Status des vorherigen Dokumentes MUSS durch den Server auf ``superseded`` gesetzt werden.
 
 ##### [2:3.105.4.1.3 Expected Actions](https://profiles.ihe.net/ITI/MHD/ITI-105.html#23105413-expected-actions)
 * Die Erzeugung einer SubmissionSet Ressource durch den Server ist im ISiK-Kontext nicht erforderlich. 
@@ -85,6 +59,36 @@ Es gelten die Vereinbarungen gemäß {{pagelink:ImplementationGuide/markdown/Cap
 ### [2:3.105.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-105.html#231055-security-considerations)
 Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/isik-sicherheit-v3)
 
+### Herstellung von Patient- und Encounterkontext
+Vor der Bereitstellung von Dokumenten muss ein Client einen Patienten- und Encounterkontext herstellen, damit das Dokument serverseitig anhand der Patient- und Encounter-Verlinkungen in der DocumentReference korrekt zugeordnet werden kann.
+Zur Herstellung des Kontextes sind folgende Verfahren möglich:
+
+1. **SMARTApp Launch**: Wenn der Aufruf der App im Rahmen des SMART-Frameworks erfolgt, kennt der Client bereits beim Start den aktuellen Patienten- und ggf. den Encounterkontext. Dabei wählt ein Anwender im Primärsystem (Server) einen Patienten und Fall aus und startet in diesem Kontext die App. Referenzen auf Patient und Encounter werden im Zuge der Autorisierung vom Server an Client übermittelt. (Siehe Modul [Sicherheit - Launch Context und Scopes](https://simplifier.net/guide/isik-sicherheit/ImplementationGuide-markdown-ScopesAndLaunchContext?version=current)). 
+2. **Bekannte Fallnummer**: Der Client kennt die (Abrechnungs-)Fallnummer (z.B. durch das Einscannen eines Barcodes, oder beim Mapping von V2 auf FHIR aus PV1.#19). Der Client sucht den Encounter im Patienten-führenden System anhand der Fallnummer (`[base]/Encounter?account:identifier=<Fallnummer>`). Da unter einer Abrechnungs-Fallnummer mehrere Encounter (Besuche) zusammengefasst werden können (z.B. vorstationär + stationär + nachstationär), sollte als zusätzliches Suchkriterium entweder ein Datum/Zeitraum oder eine Selektion auf `Encounter.status` verwendet werden. Wenn ein zutreffender Encounter gefunden wurde, kann der Patientenkontext aus der subject-Referenz des Encounters entnommen werden. 
+3. **Arbeitsliste**: Der Client ruft auf dem Server eine Arbeitsliste ab (z.B. Liste aller Encounter, die aktuell auf einer bestimmten Station/Ambulanz stattfinden, Liste aller ServiceRequests/Tasks, die durch den Client abgearbeitet werden müssen (aktuell noch nicht im Scope der ISiK-Spezifikationen!) und etabliert den Kontext, nachdem der Benutzer einen Eintrag der Liste ausgewählt hat.
+4. **Manuelle Auswahl**. Nach dem Start des Clients verwendet der Benutzer eine Suchmaske, in der anhand von Patientennummer oder anderer demografischer Daten gesucht werden kann. Der Client verwendet die [Patient-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Basismodul-Stufe-3/ImplementationGuide-markdown-Datenobjekte-Datenobjekte-Patient?version=current#ImplementationGuide-markdown-Patient-Patient-Interaktionen), um auf dem Server nach zutreffenden Patienten zu suchen. Der Anwender wählt den gesuchten Patienten aus der Liste der Suchtreffer aus. Im Anschluss listet der Client, mithilfe der [Encounter-Interaktionen des ISiK-Basismoduls](https://simplifier.net/guide/Implementierungsleitfaden-ISiK-Basismodul-Stufe-3/ImplementationGuide-markdown-Datenobjekte-Datenobjekte-Kontakt?version=current#I-markdown-KontaktGesundheitseinrichtung-Kontakt-Interaktionen), die relevanten Besuche des ausgewählten Patienten auf. (Anm.: Welche Besuche als "relevant" erachtet werden, liegt im Ermessen des Clients. Es könnte z.B. anhand von `Encounter.period`, `Encounter.class` und/oder `Encounter.status` gefiltert werden). Der Anwender wählt den zutreffenden Encounter aus.
+
+| Hinweis | Gefahr fehlerhafter Zuordnung!|
+|---------|---------------------|
+| {{render:Material/images/ig_bilder_Warning.jpg}} |  Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
+
+### Änderungen zu ISiK Stufe 2
+
+| Hinweis | Breaking Change!|
+|---------|---------------------|
+| {{render:Material/images/ig_bilder_Warning.jpg}} |  Die in dieser Version erfolgte Umstellung der Interaktion von der $submit-document-Operation auf eine REST-basierte CREATE-Interaktion ist nicht kompatibel zu den Festlegungen dieses Moduls in Stufe 2! Die Änderung dient dem Zweck der Harmonisierung mit der IHE-MHD-Interaktion ITI-105 (Simplified Publish), die zum Zeitpunkt des Releases von Stufe 2 noch nicht zur Verfügung stand.  |
+
+#### Maßgebliche Änderungen gegenüber Stufe 2 für den Client
+* Der Client muss das eigentliche Dokument (PDF, JPEG o.ä.) base64-codiert in `DocumentReference.content.attachment.data` einbetten und den Mime-Type des Dokumentes in `DocumentReference.content.attachment.contentType` adäquat setzen
+* Die Übermittlung erfolgt mittels POST auf den Endpunkt `[base]/DocumentReference` anstatt wie bisher mittels POST auf den Endpunkt `[base]\DocumentReference\$submit-document`
+* Die DocumentReference-Ressource mit den eingebetteten Binärdaten wird nun unmittelbar im Body der Interaktion gesendet. Die Notwendigkeit, DocumentReference und Binary in eine Parameters-Ressource zu wrappen, entfällt damit.
+* Die Antwort des Servers erfolgt in Form einer DocumentReference-Ressource (im Erfolgsfall) bzw. einer OperationOutcome-Ressource im Fehlerfall anstelle wie bisher einer Parameters-Ressource.
+
+#### Maßgebliche Änderungen gegenüber Stufe 2 für den Server
+* Die DocumentReference-Ressource mit den eingebetteten Binärdaten wird nun unmittelbar im Body der Interaktion gesendet. Die Notwendigkeit, DocumentReference und Binary aus der Parameters-Ressource zu extrahieren, entfällt damit.
+* Die Übermittlung erfolgt mittels POST auf den Endpunkt `[base]/DocumentReference` anstatt wie bisher mittels POST auf den Endpunkt `[base]\DocumentReference\$submit-document`
+* Der Server MUSS das eingebettete Dokument aus der DocumentReference herauslösen, separat persistieren und in `DocumentReference.content.attachemnt.url` auf das separierte Dokument verweisen. Beim Abruf einer DocumentReference, bzw. bei der Suche nach DocumentReference-Ressourcen darf das Dokument niemals eingebettet an den Client zurückgegeben werden. Das Dokument muss über den Binary-Endpunkt der API abrufbar gemacht werden.
+* Die Antwort des Servers erfolgt in Form einer DocumentReference-Ressource (im Erfolgsfall) bzw. einer OperationOutcome-Ressource im Fehlerfall anstelle wie bisher einer Parameters-Ressource.
 
 ### Beispiel
 
