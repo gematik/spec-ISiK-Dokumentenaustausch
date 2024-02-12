@@ -85,7 +85,7 @@
         "id": "DocumentReference.masterIdentifier.value",
         "path": "DocumentReference.masterIdentifier.value",
         "short": "Wert des Identifiers",
-        "comment": "OID mit URI-Präfix &quot;urn:oid:&quot;",
+        "comment": "OID mit URI-Präfix &quot;urn:oid:&quot;. Es sei darauf hingewiesen, dass OIDs auf Basis von UUIDs generiert werden können, ohne einen eigenen Namesraum zu beantragen. Zunächst müssen hierzu alle 128 Bit der UUID in einen Integer-Wert umgerechnet werden. Das Ergebnis muss ohne Bindestriche an die Root-OID '2.25' angehängt werden. Siehe [IHE International - Creating Unique IDs - OID and UUID](https://wiki.ihe.net/index.php/Creating_Unique_IDs_-_OID_and_UUID).",
         "min": 1,
         "mustSupport": true
       },
