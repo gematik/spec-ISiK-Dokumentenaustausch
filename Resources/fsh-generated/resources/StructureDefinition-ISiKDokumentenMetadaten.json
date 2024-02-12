@@ -436,7 +436,7 @@
         "id": "DocumentReference.content.attachment.data",
         "path": "DocumentReference.content.attachment.data",
         "short": "Base64-codierte Binärdaten",
-        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden. \n      \nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.",
+        "comment": "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, \n      sondern müssen als separates Datenobjekt referenziert werden. \n      \nUpdate für Stufe 3:\nDie Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, \nbei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate \nRessource ausgelagert und über Attachment.url referenziert werden.\n\nEs ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet.",
         "mustSupport": true
       },
       {
