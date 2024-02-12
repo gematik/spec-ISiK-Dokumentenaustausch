@@ -1,3 +1,5 @@
+----
+
 ## Interaktion: Dokumentenbereitstellung
 ### Herstellung von Patient- und Encounterkontext
 Vor der Bereitstellung von Dokumenten muss ein Client einen Patienten- und Encounterkontext herstellen, damit das Dokument serverseitig anhand der Patient- und Encounter-Verlinkungen in der DocumentReference korrekt zugeordnet werden kann.
