@@ -13,9 +13,10 @@ Datum: xx.xx.2024
 
 * Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann
   * Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
+* Hinweis zu FHIR Bundles hinzugefügt: https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
 
-----  
 
+----
 Version: 3.0.1
 
 Datum: 05.01.2024

@@ -110,6 +110,7 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe von date gelockert, das ISiK-Pro
 * description 1..1 MS
   * ^comment = "Genaue menschenlesbare Beschreibung des Dokumentes, z.B. &quot;Lungenfunktionstest vom 18.02.2022&quot;"
 * relatesTo MS
+  * ^comment = "Inbesondere relevant im Kontext von Updates. Bei inhaltlichen Updates MUSS eine `replaces`-Relation angegeben werden."
 * securityLabel 1.. MS
 * securityLabel from ISiKConfidentialityCodes (required)
   * ^short = "Vertraulichkeit"
@@ -141,7 +142,9 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
 Update für Stufe 3:
 Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
 bei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate 
-Ressource ausgelagert und über Attachment.url referenziert werden."
+Ressource ausgelagert und über Attachment.url referenziert werden.
+
+Es ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet."
     * url 0..1 MS
       *  ^short = "Referenz auf Dokument"
       *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
