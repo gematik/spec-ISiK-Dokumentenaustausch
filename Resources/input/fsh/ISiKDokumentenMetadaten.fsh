@@ -11,7 +11,7 @@ Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
     * ^comment = "Fix: `urn:ietf:rfc:3986`"
   * value 1..1 MS
     * ^short = "Wert des Identifiers"
-    * ^comment = "OID mit URI-Präfix &quot;urn:oid:&quot;"
+    * ^comment = "OID mit URI-Präfix &quot;urn:oid:&quot;. Es sei darauf hingewiesen, dass OIDs auf Basis von UUIDs generiert werden können, ohne einen eigenen Namesraum zu beantragen. Zunächst müssen hierzu alle 128 Bit der UUID in einen Integer-Wert umgerechnet werden. Das Ergebnis muss ohne Bindestriche an die Root-OID '2.25' angehängt werden. Siehe [IHE International - Creating Unique IDs - OID and UUID](https://wiki.ihe.net/index.php/Creating_Unique_IDs_-_OID_and_UUID)."
 * identifier 0..* MS
 * identifier ^comment = "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.
 Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.
