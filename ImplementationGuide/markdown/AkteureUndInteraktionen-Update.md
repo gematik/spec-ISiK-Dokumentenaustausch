@@ -24,4 +24,4 @@ Daher spezifiziert ISiK eine geeignete Operation, die das gezielte Ändern des D
 
 | Hinweis | Work in Progress!|
 |---------|---------------------|
-| {{render:Material/imagesig_bilder_Warning.jpg}} |  Die hier vorliegende Definition der Operation dient als Vorschlag, der auf Basis von Implementierungserfahrungen weiterentwickelt werden soll. Kritik, Feedback und Verbesserungsvorschläge, insbesondere UseCases für das Update weiterer Metadaten-Elemente bitte im [ISiK-Community-Chat](https://chat.fhir.org/#narrow/stream/287581-german.2Fisik) diskutieren! |
+| {{render:Material/images/ig_bilder_Warning.jpg}} |  Die hier vorliegende Definition der Operation dient als Vorschlag, der auf Basis von Implementierungserfahrungen weiterentwickelt werden soll. Kritik, Feedback und Verbesserungsvorschläge, insbesondere UseCases für das Update weiterer Metadaten-Elemente bitte im [ISiK-Community-Chat](https://chat.fhir.org/#narrow/stream/287581-german.2Fisik) diskutieren! |

@@ -12,7 +12,7 @@ Zur Herstellung des Kontextes sind folgende Verfahren möglich:
 
 | Hinweis | Gefahr fehlerhafter Zuordnung!|
 |---------|---------------------|
-| {{render:Material/imagesig_bilder_Warning.jpg}} |  Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
+| {{render:Material/images/ig_bilder_Warning.jpg}} |  Die manuelle Auswahl von Patienten- und Fallkontext durch einen Benutzer ist fehleranfällig. Clients müssen geeignete Vorkehrungen und Plausibilitätsprüfungen implementieren um Falschzuordnungen zu verhindern.|
 
 ### Dokumentenübermittlung (IHE MHD ITI-105 (Simplified Publish))
 
