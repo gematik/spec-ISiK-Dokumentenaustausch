@@ -341,6 +341,7 @@
       {
         "id": "DocumentReference.relatesTo",
         "path": "DocumentReference.relatesTo",
+        "comment": "Inbesondere relevant im Kontext von Updates. Bei inhaltlichen Updates MUSS eine `replaces`-Relation angegeben werden.",
         "mustSupport": true
       },
       {
