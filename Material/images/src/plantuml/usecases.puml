@@ -22,32 +22,28 @@ actor :Heilberufler:
 actor :Versicherter:
 storage adverseUC as "Adverse Use Case" {
     storage (Verwechslung){
-        (Dauer)
-        (Termin)
-        (Benötigte Expertise)
-        (Patient)
+        (Metainformationen)
+        (Zuordnung)
+        (Dokumenttyp)
     }
-    (Mehrfachbelegung)
-    (Terminüberhang)
-    (Nicht-Erscheinen)
-    (Personalüberhang)
+    (Merhfachdokumentation)
+    (Dokumentationslücken)
+    (Nicht-Verfügbarkeit)
+    (Verlust)
 }
 
 storage gnrlUC as "Allgemein" {
     (Information)
-    (Benachrichtigung)
-    (Terminbuchung)
-    (Sprechzeiten)
-    (Schließzeiten)
-    (Terminhistorie)
-    (Personalplanung)
-    storage booKUC as "Buchung von Terminen"{
-        (Absage) 
-        (Verschieben)
-        (Durchführung)
-        (Anfrage-Ablehnung)
-        (Anfrage-Abbruch)
-        (Anfrage-Reservierung)
+    (Erstellung)
+    (Aktualisierung)
+    (Digitalisierung)
+    (Strukturierung)
+    (Archivierung)
+    storage booKUC as "Dokumentenübermittlung"{
+        (Übernahme) 
+        (Verarbeitung)
+        (Einsicht)
+        (Prüfung)
     }
 }
 

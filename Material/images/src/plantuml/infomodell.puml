@@ -26,367 +26,62 @@
 'verhindere Probleme mit gewinkelten Krähenfüßen
 'skinparam linetype ortho
 
-'Namespace enhancement
-set separator none
-
-
 
 'ISiK_Medikation.ISiKMedikationsListe::subject --> ISiK_Basis.ISiKPatient
 'ISiK_Medikation.ISiKMedikationTransaction --> R4_Core.Bundle
 'ISiK_Medikation.ISiKMedikationTransactionResponse --|> R4_Core.Bundle
 
-
-
-namespace ISiK_Medikation {
-   class  ISiKMedikament <Medication><<(P,#8DA5C4)>>{
-      id
-      code
-      |_ coding­
-         |_ PZN : **Pattern**
-         |_ ATC-DE : **Pattern**
-         |_ WG14 : **Pattern**
-      |_ text
-      status
-      manufacturer : Reference (**Organization**)
-      |_ display
-      form 
-      |_ coding
-         |_ EDQM : **Binding**
-      amount
-      |_ numerator : **Pattern**
-         |_ value
-         |_ unit
-         |_ system
-         |_ code
-      |_ denominator : **Pattern**
-         |_ value
-         |_ unit
-         |_ system
-         |_ code
-      ingredient
-      |_ extension
-         |_ Wirkstofftyp : **Extension**
-      |_ item[x]
-         |_ itemCodeableConcept
-            |_ coding­
-               |_ ASK : **Pattern**
-               |_ PZN : **Pattern**
-               |_ ATC-DE : **Pattern**
-               |_ WG14 : **Pattern**
-            |_ text
-         |_ itemReference : Reference (**Substance** | **Medication**)
-            |_ reference
-      |_ isActive
-      |_ strength
-         |_ numerator : **Pattern**
-         '   |_ value
-         '   |_ unit
-         '   |_ system
-         '   |_ code
-         |_ denominator : **Pattern**
-         '   |_ value
-         '   |_ unit
-         '   |_ system
-         '   |_ code
-      batch
-      |_ lotNumber
-
-   }
-   'ISiKMedikation::itemReference --> ISiKMedikation
-
-   class ISiKMedikationsInformation <MedicationStatement><<(P,#8DA5C4)>>{
-      id	
-      partOf : Reference (**MedicationAdministration** | **MedicationDispense** |\n **MedicationStatement** | **Procedure** | Observation)
-      status
-      medication[x]
-      |_ medicationCodeableConcept
-         |_ coding­
-            |_ PZN : **Pattern**
-            |_ ATC-DE : **Pattern**
-            |_ WG14 : **Pattern**
-         text
-      |_ medicationReference : Reference (**Medication**)
-         |_ reference
-      subject : Reference (**Patient**)
-         |_ reference
-      context : Reference (**Encounter** | EpisodeOfCare)
-         |_ reference
-      effective[x]
-      |_ effectiveDateTime
-      |_ effectivePeriod
-         |_ start
-         |_ end
-      dateAsserted
-      reasonCode
-      |_ coding
-         '|_ system
-         '|_ code
-         '|_ display
-      |_ text
-      reasonReference : Reference (**Condition** | Observation | DiagnosticReport)
-      |_ reference
-      note
-      |_ text
-      dosage
-      |_ text
-      |_ patientInstruction
-      |_ timing
-         |_ event
-         |_ repeat
-      |_ site
-      |_	coding
-      |_ text
-      |_route
-         |_	coding
-            |_	EDQM : **Pattern**
-            |_	SNOMED-CT : **Pattern**
-         |_ text	
-      |_ doseAndRate
-         '|_ dose[x]
-         '   |_ doseRange
-         '   |_ doseQuantity
-         '|_ rate[x]
-         '   |_ rateRatio
-         '   |_ rateRange
-         '   |_ rateQuantity
-      |_ maxDosePerPeriod
-         |_ numerator : **Pattern**
-         |_ denominator : **Pattern**
-      |_ maxDosePerAdministration : **SimpleQuantity**
-         '|_ value
-         '|_ unit
-         '|_ system
-         '|_ code
-   }
-   'ISiKMedikationsInformation::medicationReference ---> ISiKMedikation
-   
-   class  ISiKMedikationsListe <List><<(P,#8DA5C4)>>{
-      id
-      status : **Binding**
-      mode : **Binding**
-      code
-      |_ coding
-         |_ medications : **Pattern**
-            |_ system
-            |_ code
-            |_ display
-      subject : Reference (**Patient**)
-      |_ reference
-      encounter : Reference (**Encounter**)
-      |_ reference
-      date
-      entry
-      |_ date
-      |_ item : Reference (**MedicationStatement**)
-         |_ reference
-   }
-   'ISiKMedikationsListe::item --> ISiKMedikationsInformation
-
-   class ISiKMedikationsVerabreichung <MedicationAdministration><<(P,#8DA5C4)>>{
-      id
-      status
-      subject : Reference (**Patient**)
-      |_ reference
-      context : Reference (**Encounter** | EpisodeOfCare)
-      |_ reference
-      effective[x]
-      |_ effectiveDateTime
-      |_ effectivePeriod
-         |_ start
-         |_ end
-      peformer
-      |_ actor
-         |_ reference
-      reasonReference : Reference (**Condition** | Observation |\n DiagnosticReport)
-      |_ reference
-      note : **Annotation**
-      |_ text
-      dosage
-      |_ text
-      |_ site
-         |_	coding
-            |_	SNOMED-CT : **Pattern**
-         |_ text	
-      |_ route
-         |_	coding
-            |_	EDQM : **Pattern**
-            |_	SNOMED-CT : **Pattern**
-         |_ text	
-      |_ dose
-      |_ rate[x]
-         |_ rateRatio : **Ratio**
-            |_ numerator : **Pattern**
-            |_ denominator : **Pattern**
-         |_ rateQuantity : **SimpleQuantity**
-   }
-
-   class ISiKMedikationsVerordnung <MedicationRequest><<(P,#8DA5C4)>>{
-      id
-      status
-      intent
-      <s>doNotPerform</s>
-      medication[x]
-      |_ medicationCodeableConcept
-          |_ coding­
-               |_ PZN : **Pattern**
-               |_ ATC-DE : **Pattern**
-               |_ WG14 : **Pattern**
-            |_ text
-      |_ medicationReference (**Medication**)
-         |_ reference
-      subject : Reference (**Patient**)
-      |_ reference
-      encounter : Reference (**Encounter**)
-      |_ reference
-      authoredOn
-      requester : Reference (**Practitioner** | PractitionerRole |\n Organization | **Patient** | **RelatedPerson** | Device)
-      |_ reference
-      note : **Annotation**
-      |_ text
-      dosageInstruction
-      |_ text
-      |_ patientInstruction
-      |_ timing	
-         |_ event
-         |_ repeat
-      |_ site
-         |_	coding
-            |_	SNOMED-CT : **Pattern**
-         |_ text	
-      |_ route
-         |_	coding
-            |_	EDQM : **Pattern**
-            |_	SNOMED-CT : **Pattern**
-         |_ text	
-      |_ doseAndRate
-         '|_ dose[x]
-         '   |_ doseRange
-         '   |_ doseQuantity
-         '|_ rate[x]
-         '   |_ rateRatio
-         '   |_ rateRange
-         '   |_ rateQuantity
-      |_ maxDosePerPeriod
-         |_ numerator : **Pattern**
-         |_ denominator : **Pattern**
-      |_ maxDosePerAdministration : **SimpleQuantity**
-         '|_ value
-         '|_ unit
-         '|_ system
-         '|_ code
-      dispenseRequest
-      |_ quantity
-      substitution
-      |_ allowed[x]
-         |_ allowedBoolean
-   }
-
-   class ISiKMedikationTransaction <Bundle><<(P,#8DA5C4)>>{
-      type : BundleType.**Transaction**
-      entry
-      |_ <s>link</s>
-      |_ fullUrl
-      |_ resource
-      |_ <s>search</s>
-      |_ **request**
-         |_ method
-         |_ url
-      |_ <s>response</s>
-   }
-   class ISiKMedikationTransactionResponse <Bundle><<(P,#8DA5C4)>>{
-      type : BundleType.**Response**
-      entry
-      |_ <s>link</s>
-      |_ fullUrl
-      |_ resource
-      |_ <s>search</s>
-      |_ <s>request</s>
-      |_ **response**
-         |_ status
-         |_ location
-         |_ outcome
-   }
-   class SctRouteOfAdministration <ValueSet><<(V,#8DA5C4)>>{
+'together ISiK_DokumentenAustausch {
+   class  ISiKDokumentenMetadaten <DocumentReference><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-medikation-v3/sctrouteofadministration SNOMED CT Route Of Administration]]
-      Beeinhaltet Codes aus SNOMED CT bei denen das \nConcept 284009009 (Route Of Administration) ist
-      [[https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/80147 SNOMED_CT 284009009]]
-      --
-      codes : **$CS-SCT** is-a **284009009**
+      [[https://simplifier.net/isik-dokumentenaustausch-v3/isikdokumentenmetadaten ISiK Dokumenten Metadaten]]
    }
+
+   class ISiKDokumentenSuchergebnisse <Bundle><<(P,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-dokumentenaustausch-v3/isikdokumentensuchergebnisse ISiK Dokumenten Suchergebnisse]]
+   }
+
+   class ISiKConfidentialityCodes <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/isik-dokumentenaustausch-v3/ISiKConfidentialityCodes/ ISiK Confidentiality Codes]]
+   }
+'}
+
+'together DE_Basisprofile_R4 {
+   class IHEXDShealthcareFacilityTypeCode <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656621 IHEXDS Healthcare Facility Type Code]]
+   }
+   class IHEXDSpracticeSettingCode <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656622 IHEXDS Practice Setting Code]]
+   }
+   class IHEXDStypeCode <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656623 IHEXDS Type Code]]
+   }
+   class IHEXDSclassCode <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656617 IHEXDS Class Code]]
+   }
+   class IHEXDSeventCodeList <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656619 IHEXDS Event Code List]]
+   }
+   class IHEXDSformatCodeDE <ValueSet><<(V,#8DA5C4)>>{
+      Dokumentation auf Simplifier 
+      [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656620 IHEXDS Format Code]]
+   }
+'}
+
+
+class vsKDL as "valueset-kdl-2022" <ValueSet><<(V,#8DA5C4)>>{
+   Dokumentation auf Simplifier 
+   [[https://simplifier.net/packages/dvmd.kdl.r4.2022/2022.1.2/files/773899 Valueset KDL 2022]]
 }
 
-namespace MII_Kerndatensatz {
-   class Extension_Wirkstofftyp <<(E,#7A8495)>>{
-      Dokumentation auf Simplifier 
-      [[https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/wirkstofftyp MII Wirkstofftyp]]
-   }
-}
-
-namespace R4_Core {
-   class Foundation_Modul <<(M,#FFAAAA)>>{
-      Dokumentation auf HL7 Org
-      [[https://hl7.org/fhir/R4/ HL7 FHIR R4 Core Foundation]]
-   }
-   class Bundle <<(P,#FFAAAA)>>{
-      Dokumentation [[https://hl7.org/fhir/R4/bundle.html R4 Bundle]]
-      --
-      identifier
-      type : BundleType
-      timestamp
-      total
-      link
-      |_ relation
-      |_ url
-      entry
-      |_ link
-      |_ fullUrl
-      |_ resource : ** Resource **
-      |_ search
-         |_ mode
-         |_ score
-      |_ request
-         |_ method
-         |_ url
-         |_ ifNoneMatch
-         |_ ifModifiedSince
-         |_ ifMatch
-         |_ ifNoneExist
-      |_ response
-         |_ status
-         |_ location
-         |_ etag
-         |_ lastModified
-         |_ outcome
-   }
-   class List <<(P,#FFAAAA)>>{
-      Dokumentation [[https://hl7.org/fhir/R4/list.html R4 List]]
-      --
-      identifier
-      status : ListStatus
-      mode : ListMode
-      title 
-      code
-      subject : Reference (**Patient** |\n Group | Device | Location)
-      encounter : Reference (**Encounter**)
-      date
-      source : Reference (**Practitioner** |\n PractitionerRole | **Patient** | Device)
-      orderedBy
-      note
-      entry
-      |_ flag
-      |_ deleted
-      |_ date
-      |_ item : Reference(Any)
-      emptyReason
-   }
-}
-
-namespace ISiK_Basis {
-   class Basismodul_Stufe_3 <<(M,#FFDC36)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v3/~introduction ISiK Basis Stufe 3]]
-   }
+'together ISiK_Basis {
    class ISiKPatient <Patient><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/isik-basis-v3/isikpatient ISiK Patient]]
@@ -399,19 +94,40 @@ namespace ISiK_Basis {
       Dokumentation auf Simplifier 
       [[https://simplifier.net/isik-basis-v3/isikpersonimgesundheitsberuf ISiK Person im Gesundheitsberuf]]
    }
-   class ISiKDiagnose <Condition><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v3/isikdiagnose ISiK Diagnose]]
-   }
-   class ISiKProzedur <Procedure><<(P,#8DA5C4)>>{
-      Dokumentation auf Simplifier 
-      [[https://simplifier.net/isik-basis-v3/isikprozedur ISiK Prozedur]]
-   }
    class ISiKAngehoeriger <RelatedPerson><<(P,#8DA5C4)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/isik-basis-v3/isikangehoeriger ISiK Angehoeriger]]
    }  
+'}
+
+'Realtions
+
+'diamonds
+together {
+<> MultiRef_PracPatRel
+MultiRef_PracPatRel -- ISiKPractitioner
+MultiRef_PracPatRel -- ISiKPatient
+MultiRef_PracPatRel -- ISiKAngehoeriger
+<> MultiRef_KDLXDS
+MultiRef_KDLXDS -- vsKDL
+MultiRef_KDLXDS -- IHEXDStypeCode
 }
+
+'Relations
+ISiKDokumentenSuchergebnisse::DocumentReference -down- "  1..1  "   ISiKDokumentenMetadaten 
+
+
+ISiKDokumentenMetadaten::type -- "  1..1  " MultiRef_KDLXDS
+ISiKDokumentenMetadaten::category -- "  0..1  " IHEXDSclassCode
+
+ISiKDokumentenMetadaten::subject -- "  1..1  " ISiKPatient
+ISiKDokumentenMetadaten::author -- "  0..1  " MultiRef_PracPatRel
+ISiKDokumentenMetadaten::securityLabel -up- "  1..*  "ISiKConfidentialityCodes  
+ISiKDokumentenMetadaten::content -- "  1..1  " IHEXDSformatCodeDE
+ISiKDokumentenMetadaten::encounter -- "  0..1  " ISiKKontaktGesundheitseinrichtung
+ISiKDokumentenMetadaten::context -- "  1..1  " IHEXDSeventCodeList
+ISiKDokumentenMetadaten::context -- "  1..1  " IHEXDShealthcareFacilityTypeCode
+ISiKDokumentenMetadaten::context -- "  1..1  " IHEXDSpracticeSettingCode
 
 
 'namespace dummy {
