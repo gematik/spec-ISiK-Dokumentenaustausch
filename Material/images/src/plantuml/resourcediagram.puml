@@ -142,7 +142,7 @@ namespace DE_Basisprofile_R4 {
       **Codes** from **LOINC**
       **Codes** from **IDEXDStypeCode**
    }
-      class IHEXDSclassCode <ValueSet><<(V,#8DA5C4)>>{
+   class IHEXDSclassCode <ValueSet><<(V,#8DA5C4)>>{
       Dokumentation auf Simplifier 
       [[https://simplifier.net/packages/de.basisprofil.r4/1.4.0/files/656617 IHEXDS Class Code]]
       Includes codes from the underlying code System

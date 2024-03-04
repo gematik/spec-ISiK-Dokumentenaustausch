@@ -26,7 +26,6 @@
 'verhindere Probleme mit gewinkelten Krähenfüßen
 'skinparam linetype ortho
 
-
 'ISiK_Medikation.ISiKMedikationsListe::subject --> ISiK_Basis.ISiKPatient
 'ISiK_Medikation.ISiKMedikationTransaction --> R4_Core.Bundle
 'ISiK_Medikation.ISiKMedikationTransactionResponse --|> R4_Core.Bundle
@@ -120,8 +119,8 @@ ISiKDokumentenSuchergebnisse::DocumentReference -down- "  1..1  "   ISiKDokument
 ISiKDokumentenMetadaten::type -- "  1..1  " MultiRef_KDLXDS
 ISiKDokumentenMetadaten::category -- "  0..1  " IHEXDSclassCode
 
-ISiKDokumentenMetadaten::subject -- "  1..1  " ISiKPatient
-ISiKDokumentenMetadaten::author -- "  0..1  " MultiRef_PracPatRel
+ISiKDokumentenMetadaten::subject --> "  1..1  " ISiKPatient
+ISiKDokumentenMetadaten::author <--> "  0..1  " MultiRef_PracPatRel
 ISiKDokumentenMetadaten::securityLabel -up- "  1..*  "ISiKConfidentialityCodes  
 ISiKDokumentenMetadaten::content -- "  1..1  " IHEXDSformatCodeDE
 ISiKDokumentenMetadaten::encounter -- "  0..1  " ISiKKontaktGesundheitseinrichtung
@@ -130,16 +129,16 @@ ISiKDokumentenMetadaten::context -- "  1..1  " IHEXDShealthcareFacilityTypeCode
 ISiKDokumentenMetadaten::context -- "  1..1  " IHEXDSpracticeSettingCode
 
 
-'namespace dummy {
-'   class Foo {
-'   + field1
-'   + field2
-'   }
-'   class Bar {
-'   + field3
-'   + field4
-'   }
-'   Foo::field1 --> Bar::field3 : foo
-'   Foo::field2 --> Bar::field4 : bar
-'}
+' namespace dummy {
+'    class Foo {
+'    + field1
+'    + field2
+'    }
+'    class Bar {
+'    + field3
+'    + field4
+'    }
+'    Foo::field1 --> Bar::field3 : foo
+'    Foo::field2 --> Bar::field4 : bar
+' }
 @enduml
