@@ -12,6 +12,6 @@ RuleSet: Meta-Inst
 * date = "2024-03-13"
 
 RuleSet: Meta-CapabilityStatement
-* insert MetaInstance
+* insert Meta-Inst
 * implementationGuide = "https://gematik.de/fhir/isik/ImplementationGuide/ISiK-Dokumentenaustausch"
 * url = "https://gematik.de/fhir/isik/CapabilityStatement/ISiKCapabilityStatementDokumentenaustauschServer"
