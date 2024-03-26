@@ -6,7 +6,7 @@
 
 Die Dokumentenübermittlung erfolgt mittels [IHE MHD ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html)
 
-Die Übermittlung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](https://hl7.org/fhir/R4/http.html#create) auf dem Ressourcentyp DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt.
+Die Übermittlung des Dokumentes vom Client an den Server erfolgt mittels einer [CREATE-Interaktion](https://hl7.org/fhir/R4/http.html#create) auf dem Ressourcentyp DocumentReference. Das anzulegende Dokument wird im Body der Interaktion übermittelt. Es gelten die Vorgaben der FHIR-Kernspezifikation für den Rückgabewert der Create-Interaktion, siehe [Managing Return Content](https://www.hl7.org/fhir/R4/http.html#return).
 
 ### Hinweise und Anmerkungen zur Implementierung von [ITI-105 (Simplified Publish)](https://profiles.ihe.net/ITI/MHD/ITI-105.html) im Kontext von ISiK
 Für die Implementierung der Interaktion "Dokumentenbereitstellung" gelten die in IHE MHD festgelegten Vereinbarungen zu [ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html) gemäß der unten aufgelisteten Kapitel. Abweichungen bzw. zusätzliche Festlegungen im Kontext von ISiK sind im Folgenden zu den einzelnen Kapiteln vermerkt.
