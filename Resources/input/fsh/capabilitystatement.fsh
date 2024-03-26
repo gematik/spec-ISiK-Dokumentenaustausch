@@ -1,7 +1,7 @@
 Instance: ISiKCapabilityStatementDokumentenaustauschServer
 InstanceOf: CapabilityStatement
 Usage: #definition
-* insert MetaInstance
+* insert Meta-Inst
 * insert Meta-CapabilityStatement
 * name = "ISiKCapabilityStatementDokumentenaustauschServer"
 * title = "ISiK CapabilityStatement Dokumentenaustausch Server"
