@@ -9,7 +9,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 ----
 Version: 3.0.2
 
-Datum: xx.xx.2024
+Datum: 27.03.2024
 
 * Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann
   * Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
@@ -19,6 +19,7 @@ Datum: xx.xx.2024
   * Hinweis zur Kodierung von FHIR Bundles hinzugefügt #178 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
 * Hinweis zur Verwendung des ‘UNK’-Codes im KDL-Mapping hinzugefügt (#179): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/179
 * Beispiel Encounter geändert zu Abteilungskontakt (kohärent mit Basis): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/184/files
+* Update Basis dependency to 3.0.4
 
 
 ----
