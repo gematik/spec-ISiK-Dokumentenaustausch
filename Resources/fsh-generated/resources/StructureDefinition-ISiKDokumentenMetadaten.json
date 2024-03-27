@@ -1,11 +1,11 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKDokumentenMetadaten",
-  "url": "https://gematik.de/fhir/isik/v4/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten",
-  "version": "3.0.2",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten",
+  "version": "4.0.0-rc",
   "name": "ISiKDokumentenMetadaten",
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
   "date": "2024-03-27",
   "publisher": "gematik GmbH",
@@ -387,7 +387,7 @@
         "mustSupport": true,
         "binding": {
           "strength": "required",
-          "valueSet": "https://gematik.de/fhir/isik/v4/Dokumentenaustausch/ValueSet/ISiKConfidentialityCodes"
+          "valueSet": "https://gematik.de/fhir/isik/ValueSet/ISiKConfidentialityCodes"
         }
       },
       {

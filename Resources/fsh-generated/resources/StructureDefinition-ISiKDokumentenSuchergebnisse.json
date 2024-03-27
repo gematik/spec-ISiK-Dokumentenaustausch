@@ -1,11 +1,11 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ISiKDokumentenSuchergebnisse",
-  "url": "https://gematik.de/fhir/isik/v4/Dokumentenaustausch/StructureDefinition/ISiKDokumentenSuchergebnisse",
-  "version": "3.0.2",
+  "url": "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenSuchergebnisse",
+  "version": "4.0.0-rc",
   "name": "ISiKDokumentenSuchergebnisse",
   "title": "Suchergebnisse einer Dokumentensuche",
-  "status": "active",
+  "status": "draft",
   "experimental": false,
   "date": "2024-03-27",
   "publisher": "gematik GmbH",
@@ -83,7 +83,7 @@
           {
             "code": "DocumentReference",
             "profile": [
-              "https://gematik.de/fhir/isik/v4/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten"
+              "https://gematik.de/fhir/isik/StructureDefinition/ISiKDokumentenMetadaten"
             ]
           }
         ]
