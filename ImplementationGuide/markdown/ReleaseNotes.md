@@ -18,10 +18,11 @@ Datum: 27.03.2024
 * Hinweis zur base64-Kodierung von FHIR-nativen Dokumenten hinzugefügt
   * Hinweis zur Kodierung von FHIR Bundles hinzugefügt #178 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
 * Hinweis zur Verwendung des ‘UNK’-Codes im KDL-Mapping hinzugefügt (#179): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/179
+* Klarstellung, dass keine Vorgaben für "Managing Return Content" bestehen by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/183
 * Beispiel Encounter geändert zu Abteilungskontakt (kohärent mit Basis): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/184/files
 * Update Basis dependency to 3.0.4
 
-All changes in TC 3.0.2 see https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/180
+**Full Changelog**: https://github.com/gematik/spec-ISiK-Dokumentenaustausch/compare/v3.0.1...v.3.0.2
 
 ----
 Version: 3.0.1
