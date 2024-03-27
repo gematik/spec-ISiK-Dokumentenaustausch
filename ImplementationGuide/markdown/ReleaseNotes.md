@@ -11,8 +11,7 @@ Version: 3.0.2
 
 Datum: 27.03.2024
 
-* Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann
-  * Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
+* Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
 * Hinweis zum Umgang mit Dokumentenupdates hinzugefügt
   * Fix/versionierung von dokumenten #177 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/177
 * Hinweis zur base64-Kodierung von FHIR-nativen Dokumenten hinzugefügt
