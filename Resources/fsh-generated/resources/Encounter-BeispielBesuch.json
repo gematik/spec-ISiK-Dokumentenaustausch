@@ -63,7 +63,7 @@
     {
       "coding": [
         {
-          "code": "versorgungsstellenkontakt",
+          "code": "abteilungskontakt",
           "system": "http://fhir.de/CodeSystem/Kontaktebene"
         }
       ]
