@@ -21,6 +21,7 @@ Datum: 27.03.2024
 * Beispiel Encounter geändert zu Abteilungskontakt (kohärent mit Basis): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/184/files
 * Update Basis dependency to 3.0.4
 
+All changes in TC 3.0.2 see https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/180
 
 ----
 Version: 3.0.1
