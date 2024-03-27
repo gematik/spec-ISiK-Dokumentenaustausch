@@ -14,6 +14,31 @@ Datum: tbd
 
 ----
 
+Version: 4.0.0-rc
+
+Datum: tbd
+
+* Dependency hinzugefügt zu IHE-Package zwecks Auflösung von ValueSets https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/181
+
+----
+
+Version: 3.0.2
+
+Datum: 27.03.2024
+
+* Hinweis hinzugefügt wie aus einer UUID eine OID generiert werden kann #172 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/172
+* Hinweis zum Umgang mit Dokumentenupdates hinzugefügt
+  * Fix/versionierung von dokumenten #177 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/177
+* Hinweis zur base64-Kodierung von FHIR-nativen Dokumenten hinzugefügt
+  * Hinweis zur Kodierung von FHIR Bundles hinzugefügt #178 by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/178
+* Hinweis zur Verwendung des ‘UNK’-Codes im KDL-Mapping hinzugefügt (#179): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/179
+* Klarstellung, dass keine Vorgaben für "Managing Return Content" bestehen by @alexzautke in https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/183
+* Beispiel Encounter geändert zu Abteilungskontakt (kohärent mit Basis): https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/184/files
+* Update Basis dependency to 3.0.4
+
+**Full Changelog**: https://github.com/gematik/spec-ISiK-Dokumentenaustausch/compare/v3.0.1...v.3.0.2
+
+----
 Version: 3.0.1
 
 Datum: 05.01.2024

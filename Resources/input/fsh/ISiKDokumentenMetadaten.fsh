@@ -11,7 +11,7 @@ Title: "Erforderliche Metadaten für Dokumentenaustausch in ISiK"
     * ^comment = "Fix: `urn:ietf:rfc:3986`"
   * value 1..1 MS
     * ^short = "Wert des Identifiers"
-    * ^comment = "OID mit URI-Präfix &quot;urn:oid:&quot;"
+    * ^comment = "OID mit URI-Präfix &quot;urn:oid:&quot;. Es sei darauf hingewiesen, dass OIDs auf Basis von UUIDs generiert werden können, ohne einen eigenen Namesraum zu beantragen. Zunächst müssen hierzu alle 128 Bit der UUID in einen Integer-Wert umgerechnet werden. Das Ergebnis muss ohne Bindestriche an die Root-OID '2.25' angehängt werden. Siehe [IHE International - Creating Unique IDs - OID and UUID](https://wiki.ihe.net/index.php/Creating_Unique_IDs_-_OID_and_UUID)."
 * identifier 0..* MS
 * identifier ^comment = "Abweichend zu MHD V4.0.1 ist die Angabe eines Identifiers in ISiK nicht erforderlich.
 Ein solcher kann bei Bedarf (z.B. zur Weitergabe des Dokumentes per XDS) erzeugt werden.
@@ -35,9 +35,7 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe eines Identifiers gelockert, das
   Während KDL-Codes eine feingranulare Dokumentenklassifikation für die gezielte Suche nach medizinischen und Administrativen Dokumenten ermöglichen,
   sind IHE-XDS-Type-Codes für den einrichtungsübergreifenden Dokumentenaustausch maßgeblich.
   Der XDS-Type-Code kann mit Hilfe der bereitgestellten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap)
-  aus dem KDL-Code ermittelt werden. Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt.
-
-  [Konsens der Arbeitgruppe vom 18.02.2022]"
+  aus dem KDL-Code ermittelt werden. Weitere Typisierungen (z.B. nach SNOMED oder LOINC) sind uneingeschränkt erlaubt. [Konsens der Arbeitgruppe vom 18.02.2022]. Im Falle, dass der Code 'UNK' entsprechend der ConceptMap verwendet werden soll, MUSS das System 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' verwendet werden."
 * type.coding 1..
   * ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
@@ -110,6 +108,7 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe von date gelockert, das ISiK-Pro
 * description 1..1 MS
   * ^comment = "Genaue menschenlesbare Beschreibung des Dokumentes, z.B. &quot;Lungenfunktionstest vom 18.02.2022&quot;"
 * relatesTo MS
+  * ^comment = "Inbesondere relevant im Kontext von Updates. Bei inhaltlichen Updates MUSS eine `replaces`-Relation angegeben werden."
 * securityLabel 1.. MS
 * securityLabel from ISiKConfidentialityCodes (required)
   * ^short = "Vertraulichkeit"
@@ -141,7 +140,9 @@ N | R | V verpflichtend, jedoch ohne Einschränkung der Verwendung zusätzlicher
 Update für Stufe 3:
 Die Ausnahme bildet die Interaktion &quot;Dokumentenbereitstellung&quot;, 
 bei der die Binärdaten des Dokumentes eingebettet in die DocumentReference an den Server übermittelt und dort dann in eine separate 
-Ressource ausgelagert und über Attachment.url referenziert werden."
+Ressource ausgelagert und über Attachment.url referenziert werden.
+
+Es ist zu beachten, dass diese base64-codierten Daten wiederum ein FHIR-Bundle (z.B. ein MIO oder ein ISiK Bericht aus einem Subsystem) repräsentieren können. Um eine einheitliche Handhabung der Dokumente für Clients zu ermöglichen werden diese trotz strukturiertem Inhalt per base64 abgebildet."
     * url 0..1 MS
       *  ^short = "Referenz auf Dokument"
       *  ^comment = "Um die Suche nach Dokumenten effizient zu gestalten, dürfen die Dokumente selbst nicht in die DocumentReference eingebettet werden, 
