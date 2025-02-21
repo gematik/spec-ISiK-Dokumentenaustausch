@@ -33,6 +33,99 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * rest.mode = #server
+
+* rest.resource[+]
+  * insert Expectation (#SHALL)
+  * type = #Patient
+  * supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKPatient"
+  * interaction[+]
+    * insert Expectation (#SHALL)
+    * code = #read
+  * interaction[+]
+    * insert Expectation (#SHALL)
+    * code = #search-type
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "_id"
+    * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+    * type = #token
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "identifier"
+    * definition = "http://hl7.org/fhir/SearchParameter/Patient-identifier"
+    * type = #token
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "family"
+    * definition = "http://hl7.org/fhir/SearchParameter/individual-family"
+    * type = #string
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "given"
+    * definition = "http://hl7.org/fhir/SearchParameter/individual-given"
+    * type = #string
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "birthdate"
+    * definition = "http://hl7.org/fhir/SearchParameter/individual-birthdate"
+    * type = #date
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "gender"
+    * definition = "http://hl7.org/fhir/SearchParameter/individual-gender"
+    * type = #token
+
+* rest.resource[+]
+  * insert Expectation (#SHALL)
+  * type = #Encounter
+  * supportedProfile = "https://gematik.de/fhir/isik/v3/Basismodul/StructureDefinition/ISiKKontaktGesundheitseinrichtung"
+  * interaction[+]
+    * insert Expectation (#SHALL)
+    * code = #read
+  * interaction[+]
+    * insert Expectation (#SHALL)
+    * code = #search-type
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "_id"
+    * definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+    * type = #token
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "identifier"
+    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-identifier"
+    * type = #token
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "status"
+    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-status"
+    * type = #token  
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "class"
+    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-class"
+    * type = #token
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "type"
+    * definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
+    * type = #reference
+  * searchParam[+]
+    * insert Expectation (#MAY)
+     // Kommentar zur Festlegung mit MAY: Da die Implementierung von subject als Suchparameter vom Typ Reference komplex ist, wird hier im Sinne der Übergreifenden Festlegung eine Umsetzung nicht zwingend erfordert.
+    * name = "subject"
+    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-subject"
+    * type = #reference
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "part-of"
+    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-part-of"
+    * type = #reference
+  * searchParam[+]
+    * insert Expectation (#SHALL)
+    * name = "date"
+    * definition = "http://hl7.org/fhir/SearchParameter/Encounter-date"
+    * type = #date
   
 * rest.resource[+]
   * insert Expectation (#SHALL)
@@ -119,7 +212,19 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
         "**Beispiel:**
         `GET [base]/DocumentReference?encounter=Encounter/123`
         **Anwendungshinweis:**
-        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  "
+        Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  
+        
+        Der verkettete Suchparameter "encounter.account:identifier" (zur Suche anhand der Abrechnungsfallnummer) MUSS unterstützt werden:
+
+        Beispiele:
+
+        ```GET [base]/DocumentReference?encounter.account:identifier=http://mein-krankenhaus.example/fhir/sid/fallnummern|7567867```
+
+      	```GET [base]/DocumentReference?encounter.account:identifier=7567867```
+
+        Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern, insbesondere in Verbindung mit dem `:identifier`-Modifier finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+
+	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](https://hl7.org/fhir/R4/search.html#chaining)."
   * searchInclude[+] = "DocumentReference:patient"
     * insert Expectation(#SHALL)
   * searchInclude[+] = "DocumentReference:encounter"
