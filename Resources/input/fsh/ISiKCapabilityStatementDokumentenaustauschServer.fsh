@@ -214,7 +214,7 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
         **Anwendungshinweis:**
         Weitere Details siehe [FHIR-Kernspezifikation](https://hl7.org/fhir/R4/search.html#reference).  
         
-        Der verkettete Suchparameter "encounter.account:identifier" (zur Suche anhand der Abrechnungsfallnummer) MUSS unterstützt werden:
+        Der verkettete Suchparameter `encounter.account:identifier` (zur Suche anhand der Abrechnungsfallnummer) MUSS unterstützt werden:
 
         Beispiele:
 
@@ -222,9 +222,9 @@ Die Verwendung der CapabilityStatement-Expectation-Extension ist im CapabilitySt
 
       	```GET [base]/DocumentReference?encounter.account:identifier=7567867```
 
-        Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern, insbesondere in Verbindung mit dem `:identifier`-Modifier finden sich in der [FHIR-Basisspezifikation - Abschnitt "Reference Search"](https://www.hl7.org/fhir/R4/search.html#reference).
+        Anwendungshinweise: Weitere Informationen zur Suche nach Reference-type Parametern, insbesondere in Verbindung mit dem `:identifier`-Modifier finden sich in der [FHIR-Basisspezifikation - Abschnitt Reference Search](https://www.hl7.org/fhir/R4/search.html#reference).
 
-	Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt "Chained Parameters"](https://hl7.org/fhir/R4/search.html#chaining)."
+	      Weitere Informationen zur Suche nach verketteten Parametern finden sich in der [FHIR-Basisspezifikation - Abschnitt Chained Parameters](https://hl7.org/fhir/R4/search.html#chaining)."
   * searchInclude[+] = "DocumentReference:patient"
     * insert Expectation(#SHALL)
   * searchInclude[+] = "DocumentReference:encounter"
