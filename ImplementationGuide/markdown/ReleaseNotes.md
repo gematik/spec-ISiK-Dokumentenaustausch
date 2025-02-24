@@ -10,9 +10,9 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 Version: 3.0.5
 
-Datum: tbd
+Datum: 24.02.2025
 
-* `fix` `test modifying` Rollback der Entfernung von Patienten- und Encounter-Interaktionen (veranlasste Änderung in TC 3.0.1) - in diesem Zusammenhang wird auch der Suchparameter "subject" von SHALL auf MAY gesetzt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/226
+* `fix` Rollback der Entfernung von Patienten- und Encounter-Interaktionen (veranlasste Änderung in TC 3.0.1) - in diesem Zusammenhang wird auch der Suchparameter "subject" von SHALL auf MAY gesetzt https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/226
 
 ----
 
