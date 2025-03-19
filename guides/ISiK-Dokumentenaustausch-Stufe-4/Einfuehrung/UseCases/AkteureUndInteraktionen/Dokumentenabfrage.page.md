@@ -23,7 +23,7 @@ Für die Implementierung der Interaktion "Dokumentenabfrage" gelten die in IHE M
 Die Vereinbarungen gelten uneingeschränkt.
 
 ##### [2:3.67.4.1.2 Message Semantics](https://profiles.ihe.net/ITI/MHD/ITI-67.html#2367412-message-semantics)
-Es gelten darüber hinaus die allgemeinen Festlegungen zu Suchparametern gemäß [ISiK Basisprofil Stufe 4](https://simplifier.net/guide/isik-basis-401/Einfuehrung/UebergreifendeFestlegungen/UebergreifendeFestlegungen_Suchparameter.page.md?version=current)
+Es gelten darüber hinaus die allgemeinen Festlegungen zu Suchparametern gemäß [ISiK Basisprofil Stufe 4](https://simplifier.net/guide/isik-basis-403/Einfuehrung/UebergreifendeFestlegungen/UebergreifendeFestlegungen_Suchparameter.page.md?version=current)
 
 ##### [2:3.67.4.1.2.1 Query Search Parameters](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23674121-query-search-parameters)
 Im Rahmen der ISiK-Spezifikation müssen mindestens die im Kapitel {{pagelink:DocumentReference_Interaktionen}}
@@ -66,6 +66,13 @@ Es gelten die Vereinbarungen gemäß {{pagelink:CapabilityStatement}}
 #### [2:3.67.5 Security Considerations](https://profiles.ihe.net/ITI/MHD/ITI-67.html#23675-security-considerations)
 Für Hinweise zur Implementierung von Autorisation und Authentifikation im ISiK-Kontext, siehe [Modul ISiK-Sicherheit](https://simplifier.net/isik-sicherheit-v3).
 
+#### Beispiele
+* Suche anhand von Patientenkontext (PID) und Dokumentendatum:
+  `[base]/DocumentReference?patient.identifier=1234&creation=gt2021-10-06`
+* Suche nach vorläufigen Endoskopiebefunden (anhand KDL-Dokumenttyp und `docStatus`):
+  `[base]/DocumentReference?type=http://dvmd.de/fhir/CodeSystem/kdl|DG02010&doc-status=preliminary`
+* Suche von Dokumenten anhand der Nummer des Abrechnungsfalles:
+  `[base]/DocumentReference?encounter.account:identifier=56789`
 
 ### Dokumentenzugriff (IHE MHD ITI-68 (Retrieve Document))
 

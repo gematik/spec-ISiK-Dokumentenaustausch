@@ -5,9 +5,9 @@ topic: ImplementationGuide-markdown-Einfuehrung
 
 ----
 
-Version: 4.0.1
+Version: 4.0.2
 
-Datum: 24.01.2025
+Datum: 19.03.2025
 
 Status: Active
 
