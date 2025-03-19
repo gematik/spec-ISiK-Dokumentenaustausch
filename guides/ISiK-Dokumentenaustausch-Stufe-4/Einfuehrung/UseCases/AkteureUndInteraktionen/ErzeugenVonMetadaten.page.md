@@ -79,7 +79,7 @@ Der Sender eines Subsystem-Berichtes gem. Modul "Basis" möchte parallel zur Üb
 Empfohlenes Vorgehen:
 1. Erzeugen einer DocumentReference-Ressource (siehe dazu $generate-metadata) 
 2. Übermittlung der DocumentReference sowie des Base64-codierten Bundles gemäß {{pagelink:Dokumentenbereitstellung, text:Interaktion ISiK Modul Dokumentenaustausch: Dokumentenbereitstellung}}
-3. Übermittlung des Dokumentes zur Verarbeitung gemäß [Interaktion ISiK Modul Basis Stufe 4: Bericht aus Subsystem](https://simplifier.net/guide/isik-basis-401/Einfuehrung/Datenobjekte/Datenobjekte_BerichtSubsystem?)
+3. Übermittlung des Dokumentes zur Verarbeitung gemäß [Interaktion ISiK Modul Basis Stufe 4: Bericht aus Subsystem](https://simplifier.net/guide/isik-basis-403/Einfuehrung/Datenobjekte/Datenobjekte_BerichtSubsystem?)
 
 
 Der Empfänger eines Dokumentes gem. Modul "Dokumentenaustausch" möchte neben der Archivierung des Dokumentes auch dessen Inhalte weiterverarbeiten.
