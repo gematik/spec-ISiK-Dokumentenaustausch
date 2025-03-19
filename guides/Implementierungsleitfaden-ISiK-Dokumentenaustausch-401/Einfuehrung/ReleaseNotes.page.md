@@ -11,7 +11,7 @@ Offene Punkte und bekannte Probleme siehe [GitHub Issues](https://github.com/gem
 
 Version: 4.0.2
 
-Datum: tbd.
+Datum: 19.3.2025
 
 * 'revert' 'improve' Patient-/Encounter-Interaktionen hinzugefügt - https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/233/commits/105c1cffdf91ccb5e51dc7adf5e8a238019fd7d4
 
