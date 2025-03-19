@@ -13,7 +13,7 @@ Version: 4.0.2
 
 Datum: tbd.
 
-
+* 'revert' 'improve' Patient-/Encounter-Interaktionen hinzugefügt - https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/233/commits/105c1cffdf91ccb5e51dc7adf5e8a238019fd7d4
 
 ----
 
