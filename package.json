@@ -10,5 +10,9 @@
     "de.ihe-d.terminology": "3.0.1",
     "dvmd.kdl.r4.2022": "2022.1.2",
     "ihe.formatcode.fhir": "1.2.0"
+  },
+  "devDependencies": {
+    "bfarm.terminologien.icd10gm": "2024.0.0",
+    "bfarm.terminologien.ops": "2024.0.0"
   }
 }
