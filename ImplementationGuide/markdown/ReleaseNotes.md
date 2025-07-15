@@ -10,7 +10,7 @@ Version: 3.0.6
 
 Datum: XX.XX.2025
 
-* `improve`: Update Anforderungen zu Herstellung von Patient- und Encounterkontext
+* `improve`: Update Anforderungen zu Herstellung von Patient- und Encounterkontext https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/238
 
 ---
 
