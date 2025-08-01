@@ -12,6 +12,10 @@ Datum: XX.XX.2025
 
 * `improve`: Update Anforderungen zu Herstellung von Patient- und Encounterkontext https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/238
 * `improve`: Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/241
+* `fixed`: Entfernung des fixed values "urn:ietf:rfc:3986" auf DocumentReference.masterIdentifier.system, um auch Identifier der Form root+extension zu ermöglichen, siehe
+https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types
+https://chat.fhir.org/#narrow/channel/287581-german.2Fisik/topic/.5BDOK.5D.20masterIdentifier.20als.20OID.3F https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/239
+
 
 ---
 
