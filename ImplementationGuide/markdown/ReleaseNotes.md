@@ -11,6 +11,7 @@ Version: 3.0.6
 Datum: XX.XX.2025
 
 * `improve`: Update Anforderungen zu Herstellung von Patient- und Encounterkontext https://github.com/gematik/spec-ISiK-Dokumentenaustausch/pull/238
+* `improve`: Einschränkenden Kardinalität auf DocumentReference.custodian wurde aufgehoben, da Custodian in MHD mit der neuesten Version ebenfalls zulässig ist https://github.com/gematik/spec-ISiK-Basismodul/pull/725
 
 ---
 
