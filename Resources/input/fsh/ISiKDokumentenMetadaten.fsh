@@ -111,8 +111,6 @@ In MHD 4.2.0 wurde die Verpflichtung zur Angabe von date gelockert, das ISiK-Pro
   * ^comment = "In dieser Ausbaustufe ist die Nennung des Namens oder Kürzels des Autors ausreichend.
   Eine darüber hinaus gehende Verlinkung auf einen Pracitioner (auflösbar auf dem Server) ist möglich aber nicht erforderlich."
   * display MS
-* custodian ..0
-  * ^comment = "Einschränkung der Kardinalität analog MHD V4.0.1"
 * description 1..1 MS
   * ^comment = "Genaue menschenlesbare Beschreibung des Dokumentes, z.B. &quot;Lungenfunktionstest vom 18.02.2022&quot;"
 * relatesTo MS
