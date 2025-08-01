@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKDokumentenMetadaten",
   "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "name": "ISiKDokumentenMetadaten",
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
   "status": "active",
   "experimental": false,
-  "date": "2025-02-24",
+  "date": "2025-08-01",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -327,12 +327,6 @@
         "id": "DocumentReference.author.display",
         "path": "DocumentReference.author.display",
         "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.custodian",
-        "path": "DocumentReference.custodian",
-        "comment": "Einschränkung der Kardinalität analog MHD V4.0.1",
-        "max": "0"
       },
       {
         "id": "DocumentReference.relatesTo",
