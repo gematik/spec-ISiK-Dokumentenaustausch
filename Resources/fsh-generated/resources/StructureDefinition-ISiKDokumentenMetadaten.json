@@ -2,12 +2,12 @@
   "resourceType": "StructureDefinition",
   "id": "ISiKDokumentenMetadaten",
   "url": "https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "name": "ISiKDokumentenMetadaten",
   "title": "Erforderliche Metadaten für Dokumentenaustausch in ISiK",
   "status": "active",
   "experimental": false,
-  "date": "2025-02-24",
+  "date": "2025-08-01",
   "publisher": "gematik GmbH",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -41,9 +41,8 @@
         "id": "DocumentReference.masterIdentifier.system",
         "path": "DocumentReference.masterIdentifier.system",
         "short": "Namensraum des Identifiers",
-        "comment": "Fix: `urn:ietf:rfc:3986`",
+        "comment": "Bei OIDs und UUIDs ist hier stets der Wert `urn:ietf:rfc:3986` anzugeben. Weitere Hinweise zur AbbildungVerwendung von MasterIdentifiern und deren Abbildung auf FHIR sind [in IHE-ITI](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.9-fhir-data-types) zu finden.",
         "min": 1,
-        "patternUri": "urn:ietf:rfc:3986",
         "mustSupport": true
       },
       {
@@ -327,12 +326,6 @@
         "id": "DocumentReference.author.display",
         "path": "DocumentReference.author.display",
         "mustSupport": true
-      },
-      {
-        "id": "DocumentReference.custodian",
-        "path": "DocumentReference.custodian",
-        "comment": "Einschränkung der Kardinalität analog MHD V4.0.1",
-        "max": "0"
       },
       {
         "id": "DocumentReference.relatesTo",
